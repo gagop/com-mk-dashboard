@@ -135,6 +135,66 @@
     return text.split('\n\n').map((s) => s.trim()).filter(Boolean);
   }
 
+  function findChartByTitle(paragraph, pattern) {
+    const re = typeof pattern === 'string' ? new RegExp(pattern, 'i') : pattern;
+    return (paragraph.charts || []).find(c => re.test(c.title || '')) || null;
+  }
+
+  function classifyUnemploymentShare(value) {
+    if (value <= 1.4) return 'Bardzo niski';
+    if (value <= 1.9) return 'Niski';
+    if (value <= 2.4) return 'Średni';
+    if (value <= 2.9) return 'Wysoki';
+    return 'Bardzo wysoki';
+  }
+
+  function buildUnemploymentTable(paragraph) {
+    const chart = findChartByTitle(paragraph, /Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym/);
+    const rows = parseMaybeJson(chart?.data);
+    if (!rows || rows.length === 0) return [];
+    const extracted = rows
+      .map(r => ({
+        Gmina: r.gmina || r.Gmina,
+        value: typeof r.wskaźnik === 'number' ? r.wskaźnik : parseFloat(String(r.wskaźnik).replace(',', '.')),
+      }))
+      .filter(r => r.Gmina);
+    const byName = new Map(extracted.map(r => [r.Gmina, r.value]));
+    // Return all canonical gminy; mark missing as null with "Brak danych"
+    return METROPOLIA_GMINY.map(g => {
+      const val = byName.get(g);
+      return {
+        Gmina: g,
+        'Bezrobotni zarejestrowani (%)': typeof val === 'number' && isFinite(val) ? val : null,
+        Ocena: typeof val === 'number' && isFinite(val) ? classifyUnemploymentShare(val) : 'Brak danych'
+      };
+    });
+  }
+
+  function mergeEnterprisesChartData(paragraph, existing) {
+    const chartRows = Array.isArray(existing) ? existing : [];
+    const valueByGmina = new Map();
+    chartRows.forEach(r => {
+      const g = r.gmina || r.Gmina;
+      const v = r.podmioty;
+      if (g && typeof v === 'number' && isFinite(v)) valueByGmina.set(g, v);
+    });
+
+    // Look for supporting tables within the same paragraph
+    (paragraph.tables || []).forEach(t => {
+      const rows = parseMaybeJson(t.data);
+      rows.forEach(r => {
+        const g = r.gmina || r.Gmina;
+        const raw = r['Podmioty na 1000 mieszkańców'] || r['podmioty'] || r['Podmioty'];
+        if (!g || raw == null) return;
+        const v = typeof raw === 'number' ? raw : parseFloat(String(raw).replace(',', '.'));
+        if (typeof v === 'number' && isFinite(v)) valueByGmina.set(g, v);
+      });
+    });
+
+    // Build ordered array for all canonical gminy, include undefined where missing (will render gaps until JSON is completed)
+    return METROPOLIA_GMINY.map(g => ({ gmina: g, podmioty: valueByGmina.get(g) }));
+  }
+
   // Canonical list of gminy in Metropolia Krakowska
   const METROPOLIA_GMINY = [
     'Biskupice', 'Czernichów', 'Igołomia-Wawrzeńczyce', 'Kocmyrzów-Luborzyca', 'Kraków',
@@ -374,10 +434,11 @@
                   {#each p.charts as chart, chartIdx}
                     {@const filteredData = filterData(parseMaybeJson(chart.data), p)}
                     {#if filteredData.length > 0}
+                      {@const chartData = /Liczba podmiotów gospodarczych na 1 tys\./i.test(chart.title) ? mergeEnterprisesChartData(p, filteredData) : filteredData}
                       <div class="dashboard-item" in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 3 + chartIdx) * 150, easing: quartOut }}>
                         <Chart 
                           kind={chart.type} 
-                          data={filteredData} 
+                          data={chartData} 
                           title={chart.title}
                           height="400px"
                           interactive={true}
@@ -401,7 +462,8 @@
 
                 {#if p.tables && p.tables.length}
                   {#each p.tables as t, tableIdx}
-                    {@const filteredTableData = filterData(parseMaybeJson(t.data), p)}
+                    {@const baseTableData = filterData(parseMaybeJson(t.data), p)}
+                    {@const filteredTableData = /Wskaźniki bezrobocia w gminach Metropolii Krakowskiej/i.test(t.title) ? buildUnemploymentTable(p) : baseTableData}
                     {#if filteredTableData.length > 0}
                       <div class="dashboard-item dashboard-item--table" in:fly={{ y: 30, duration: 500, delay: 700 + (idx * 3 + tableIdx) * 150, easing: quartOut }}>
                         <div class="table-container">
