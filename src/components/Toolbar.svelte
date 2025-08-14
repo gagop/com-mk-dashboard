@@ -10,13 +10,21 @@
   let fontScale = 1;
   let fontFamily = 'system';
   let highContrast = false;
+  let darkMode = false;
 
   function applySettings() {
     const root = document.documentElement;
-    root.dataset.theme = highContrast ? 'high-contrast' : '';
+    // Theme priority: high-contrast > dark > light
+    if (highContrast) {
+      root.dataset.theme = 'high-contrast';
+    } else if (darkMode) {
+      root.dataset.theme = 'dark';
+    } else {
+      root.dataset.theme = '';
+    }
     root.dataset.font = fontFamily === 'serif' ? 'serif' : fontFamily === 'mono' ? 'mono' : '';
     root.style.setProperty('--base-font-size', `${Math.round(16 * fontScale)}px`);
-    localStorage.setItem('mk.settings', JSON.stringify({ fontScale, fontFamily, highContrast }));
+    localStorage.setItem('mk.settings', JSON.stringify({ fontScale, fontFamily, highContrast, darkMode }));
   }
 
   function incFont() {
@@ -39,6 +47,7 @@
         fontScale = saved.fontScale ?? fontScale;
         fontFamily = saved.fontFamily ?? fontFamily;
         highContrast = saved.highContrast ?? highContrast;
+        darkMode = saved.darkMode ?? darkMode;
       }
     } catch {}
     applySettings();
@@ -68,7 +77,16 @@
         <button type="button" on:click={resetFont} aria-label="Resetuj rozmiar">A</button>
         <button type="button" on:click={incFont} aria-label="Zwiększ czcionkę">A+</button>
       </div>
-      <label><input type="checkbox" bind:checked={highContrast} on:change={applySettings} /> Wysoki kontrast</label>
+      <label class="theme-toggle">
+        <input type="checkbox" bind:checked={darkMode} on:change={applySettings} /> 
+        <span class="theme-icon">{darkMode ? '☀️' : '🌙'}</span>
+        Tryb ciemny
+      </label>
+      <label class="theme-toggle">
+        <input type="checkbox" bind:checked={highContrast} on:change={applySettings} /> 
+        <span class="theme-icon">🔍</span>
+        Wysoki kontrast
+      </label>
     </div>
   </div>
 </div>

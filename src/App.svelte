@@ -2,7 +2,9 @@
   import Toolbar from './components/Toolbar.svelte';
   import Chart from './components/Chart.svelte';
   import Table from './components/Table.svelte';
-  import { fade, slide } from 'svelte/transition';
+  import FilterPanel from './components/FilterPanel.svelte';
+  import { fade, slide, fly } from 'svelte/transition';
+  import { quartOut } from 'svelte/easing';
   import heroLogo from './assets/mk-logo.svg?url';
 
   const modules = import.meta.glob('../data/*.json', { eager: true, import: 'default' });
@@ -26,6 +28,82 @@
     .sort((a, b) => a.label.localeCompare(b.label, 'pl'));
 
   let selectedKey = sections[0]?.key || '';
+  let showFilters = false;
+  let activeFilters = {
+    municipalities: [],
+    years: [],
+    categories: []
+  };
+
+  // Extract available filter options from all data
+  function getFilterOptions() {
+    const municipalities = new Set();
+    const years = new Set();
+    const categories = new Set();
+
+    sections.forEach(section => {
+      section.doc.paragraphs.forEach(paragraph => {
+        if (paragraph.charts) {
+          paragraph.charts.forEach(chart => {
+            const data = parseMaybeJson(chart.data);
+            data.forEach(row => {
+              // Extract municipalities
+              ['gmina', 'Gmina'].forEach(key => {
+                if (row[key]) municipalities.add(row[key]);
+              });
+              // Extract years
+              ['rok', 'Rok', 'year'].forEach(key => {
+                if (row[key]) years.add(row[key]);
+              });
+              // Extract categories from chart titles
+              categories.add(paragraph.title);
+            });
+          });
+        }
+      });
+    });
+
+    return {
+      municipalities: Array.from(municipalities).sort(),
+      years: Array.from(years).sort((a, b) => b - a),
+      categories: Array.from(categories).sort()
+    };
+  }
+
+  $: filterOptions = getFilterOptions();
+
+  function handleFilterChange(event) {
+    activeFilters = event.detail;
+  }
+
+  function filterData(data, paragraph) {
+    if (!data || !Array.isArray(data)) return data;
+    
+    let filtered = [...data];
+
+    // Filter by municipalities
+    if (activeFilters.municipalities.length > 0) {
+      filtered = filtered.filter(row => {
+        const municipality = row.gmina || row.Gmina;
+        return !municipality || activeFilters.municipalities.includes(municipality);
+      });
+    }
+
+    // Filter by years  
+    if (activeFilters.years.length > 0) {
+      filtered = filtered.filter(row => {
+        const year = row.rok || row.Rok || row.year;
+        return !year || activeFilters.years.includes(year);
+      });
+    }
+
+    // Filter by categories
+    if (activeFilters.categories.length > 0) {
+      return activeFilters.categories.includes(paragraph.title) ? filtered : [];
+    }
+
+    return filtered;
+  }
 
   function selectByHash() {
     const hash = (location.hash || '').replace(/^#/, '');
@@ -54,6 +132,74 @@
     if (!text) return [];
     return text.split('\n\n').map((s) => s.trim()).filter(Boolean);
   }
+
+  // Extract KPI metrics from data
+  function extractKPIs(doc) {
+    const kpis = [];
+    
+    doc.paragraphs.forEach(paragraph => {
+      if (paragraph.charts) {
+        paragraph.charts.forEach(chart => {
+          const data = parseMaybeJson(chart.data);
+          if (data.length > 0) {
+            // Extract meaningful metrics based on chart type and data
+            const numericKeys = Object.keys(data[0]).filter(k => typeof data[0][k] === 'number');
+            
+            if (numericKeys.length > 0) {
+              const latestData = data[data.length - 1] || data[0];
+              numericKeys.forEach(key => {
+                if (latestData[key] != null) {
+                  kpis.push({
+                    title: key,
+                    value: latestData[key],
+                    unit: key.includes('%') || key.includes('Frekwencja') ? '%' : 
+                           key.includes('zł') || key.includes('Koszt') ? 'zł' : 
+                           key.includes('kg') ? 'kg' : 
+                           key.includes('t)') ? 't' : '',
+                    category: paragraph.title,
+                    trend: data.length > 1 ? calculateTrend(data, key) : null
+                  });
+                }
+              });
+            }
+          }
+        });
+      }
+    });
+    
+    return kpis.slice(0, 8); // Limit to most important KPIs
+  }
+
+  function calculateTrend(data, key) {
+    if (data.length < 2) return null;
+    
+    const recent = data[data.length - 1][key];
+    const previous = data[data.length - 2][key];
+    
+    if (recent > previous) return 'up';
+    if (recent < previous) return 'down';
+    return 'stable';
+  }
+
+  function formatKPIValue(value, unit) {
+    if (typeof value !== 'number') return value;
+    
+    if (unit === '%') {
+      return value.toFixed(1) + '%';
+    } else if (unit === 'zł') {
+      return new Intl.NumberFormat('pl-PL', { 
+        style: 'currency', 
+        currency: 'PLN',
+        maximumFractionDigits: 0
+      }).format(value);
+    } else if (value > 1000000) {
+      return (value / 1000000).toFixed(1) + 'M';
+    } else if (value > 1000) {
+      return (value / 1000).toFixed(1) + 'K';
+    }
+    
+    return value.toLocaleString('pl-PL');
+  }
 </script>
 
 <Toolbar {sections} {selectedKey} on:select={(e) => { selectedKey = e.detail; history.replaceState(null, '', `#ch-${selectedKey}`); }} />
@@ -63,8 +209,14 @@
     <div class="hero-inner">
       <img class="hero-logo" src={heroLogo} alt="Metropolia Krakowska" />
       <div class="hero-content">
-        <h1>Raport: Metropolia Krakowska</h1>
-        <p class="hero-sub" style="color: var(--muted-text)">Rozdziały: {sections.map(s => s.label).join(', ')}</p>
+        <h1>Dashboard: Metropolia Krakowska</h1>
+        <p class="hero-sub" style="color: var(--muted-text)">Interaktywne wizualizacje danych - {sections.length} modułów analitycznych</p>
+        <div class="hero-actions">
+          <button class="hero-btn" on:click={() => showFilters = !showFilters}>
+            <span class="hero-btn-icon">{showFilters ? '🔍' : '⚙️'}</span>
+            {showFilters ? 'Ukryj filtry' : 'Pokaż filtry'}
+          </button>
+        </div>
       </div>
     </div>
   </header>
@@ -73,50 +225,130 @@
     {#if sections.length}
       {#await Promise.resolve(sections.find(s => s.key === selectedKey)) then current}
         {#if current}
-          <section id={`ch-${current.key}`} class="section" aria-labelledby={`h-${current.key}`} in:fade={{ duration: 300, delay: 100 }} out:fade={{ duration: 200 }}>
-            <h2 id={`h-${current.key}`} in:slide={{ duration: 400, delay: 200 }}>{current.label}</h2>
+          <section id={`ch-${current.key}`} class="dashboard-section" aria-labelledby={`h-${current.key}`} in:fade={{ duration: 300, delay: 100 }} out:fade={{ duration: 200 }}>
+            
+            <!-- Interactive Filters -->
+            <FilterPanel 
+              municipalities={filterOptions.municipalities}
+              years={filterOptions.years}
+              categories={filterOptions.categories}
+              bind:selectedMunicipalities={activeFilters.municipalities}
+              bind:selectedYears={activeFilters.years}
+              bind:selectedCategories={activeFilters.categories}
+              bind:showFilters={showFilters}
+              on:filter-change={handleFilterChange}
+            />
 
-            {#each current.doc.paragraphs as p, idx}
-              <article class="card" aria-labelledby={`p-${current.key}-${idx}`} in:slide={{ duration: 350, delay: 300 + idx * 100 }}>
-                <h3 id={`p-${current.key}-${idx}`}>{p.title}</h3>
-                {#each splitParagraphs(p.content) as para}
-                  <p>{para}</p>
-                {/each}
+            <div class="section-header" in:slide={{ duration: 400, delay: 200 }}>
+              <h2 id={`h-${current.key}`}>{current.label}</h2>
+              <div class="section-stats">
+                <span class="stat-item">
+                  <span class="stat-value">{current.doc.paragraphs.reduce((acc, p) => acc + (p.charts?.length || 0), 0)}</span>
+                  <span class="stat-label">wykresów</span>
+                </span>
+                <span class="stat-item">
+                  <span class="stat-value">{current.doc.paragraphs.reduce((acc, p) => acc + (p.tables?.length || 0), 0)}</span>
+                  <span class="stat-label">tabel</span>
+                </span>
+                {#if activeFilters.municipalities.length + activeFilters.years.length + activeFilters.categories.length > 0}
+                  <span class="stat-item stat-item--filter">
+                    <span class="stat-value">{activeFilters.municipalities.length + activeFilters.years.length + activeFilters.categories.length}</span>
+                    <span class="stat-label">aktywnych filtrów</span>
+                  </span>
+                {/if}
+              </div>
+            </div>
 
-                {#if p.charts && p.charts.length}
-                  <div class="charts">
-                    {#each p.charts as chart, chartIdx}
-                      <div class="card" in:fade={{ duration: 400, delay: 500 + chartIdx * 150 }}>
-                        <h4>{chart.title}</h4>
-                        <Chart kind={chart.type} data={parseMaybeJson(chart.data)} />
-                      </div>
-                    {/each}
+            <!-- KPI Overview -->
+            {#if extractKPIs(current.doc).length > 0}
+              {@const kpis = extractKPIs(current.doc)}
+              <div class="kpi-grid" in:fly={{ y: 30, duration: 500, delay: 300, easing: quartOut }}>
+                {#each kpis.slice(0, 4) as kpi, kpiIdx}
+                  <div class="kpi-card" in:fly={{ y: 20, duration: 400, delay: 400 + kpiIdx * 100, easing: quartOut }}>
+                    <div class="kpi-header">
+                      <span class="kpi-title">{kpi.title}</span>
+                      {#if kpi.trend}
+                        <span class="kpi-trend kpi-trend--{kpi.trend}">
+                          {#if kpi.trend === 'up'}↗{:else if kpi.trend === 'down'}↘{:else}→{/if}
+                        </span>
+                      {/if}
+                    </div>
+                    <div class="kpi-value">{formatKPIValue(kpi.value, kpi.unit)}</div>
+                    <div class="kpi-category">{kpi.category}</div>
                   </div>
+                {/each}
+              </div>
+            {/if}
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+              {#each current.doc.paragraphs as p, idx}
+                {#if p.charts && p.charts.length}
+                  {#each p.charts as chart, chartIdx}
+                    {@const filteredData = filterData(parseMaybeJson(chart.data), p)}
+                    {#if filteredData.length > 0}
+                      <div class="dashboard-item" in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 2 + chartIdx) * 150, easing: quartOut }}>
+                        <Chart 
+                          kind={chart.type} 
+                          data={filteredData} 
+                          title={chart.title}
+                          height="400px"
+                          interactive={true}
+                        />
+                      </div>
+                    {/if}
+                  {/each}
                 {/if}
 
                 {#if p.tables && p.tables.length}
-                  <div style="display: grid; gap: 1rem;">
-                    {#each p.tables as t, tableIdx}
-                      <div in:slide={{ duration: 300, delay: 600 + tableIdx * 100 }}>
-                        <Table title={t.title} rows={parseMaybeJson(t.data)} />
+                  {#each p.tables as t, tableIdx}
+                    {@const filteredTableData = filterData(parseMaybeJson(t.data), p)}
+                    {#if filteredTableData.length > 0}
+                      <div class="dashboard-item dashboard-item--table" in:fly={{ y: 30, duration: 500, delay: 600 + (idx * 2 + tableIdx) * 150, easing: quartOut }}>
+                        <div class="table-container">
+                          <h4 class="table-title">{t.title}</h4>
+                          <Table title="" rows={filteredTableData} />
+                        </div>
                       </div>
-                    {/each}
-                  </div>
+                    {/if}
+                  {/each}
                 {/if}
+              {/each}
+            </div>
 
-                {#if p.sources && p.sources.length}
-                  <p><strong>Źródła:</strong> {p.sources.join(', ')}</p>
-                {/if}
-              </article>
-            {/each}
+            <!-- Data Sources -->
+            {#if [...new Set(current.doc.paragraphs.flatMap(p => p.sources || []))].length > 0}
+              {@const allSources = [...new Set(current.doc.paragraphs.flatMap(p => p.sources || []))]}
+              <div class="sources-section" in:fade={{ duration: 400, delay: 800 }}>
+                <h4>Źródła danych</h4>
+                <div class="sources-tags">
+                  {#each allSources as source}
+                    <span class="source-tag">{source}</span>
+                  {/each}
+                </div>
+              </div>
+            {/if}
           </section>
         {/if}
       {/await}
     {/if}
   {/key}
   
-  <footer class="section" style="color: var(--muted-text)">
-    Opracowanie demonstracyjne. Interaktywne wykresy i tabele z danych JSON. 
+  <footer class="dashboard-footer" style="color: var(--muted-text)">
+    <div class="footer-content">
+      <div class="footer-stats">
+        <span class="footer-stat">
+          <strong>{sections.reduce((acc, s) => acc + s.doc.paragraphs.reduce((pacc, p) => pacc + (p.charts?.length || 0), 0), 0)}</strong> interaktywnych wykresów
+        </span>
+        <span class="footer-stat">
+          <strong>{sections.reduce((acc, s) => acc + s.doc.paragraphs.reduce((pacc, p) => pacc + (p.tables?.length || 0), 0), 0)}</strong> tabel danych
+        </span>
+        <span class="footer-stat">
+          <strong>{sections.length}</strong> modułów analitycznych
+        </span>
+      </div>
+      <p>Dashboard analityczny Metropolii Krakowskiej - wizualizacja danych w czasie rzeczywistym</p>
+    </div>
   </footer>
 </main>
 

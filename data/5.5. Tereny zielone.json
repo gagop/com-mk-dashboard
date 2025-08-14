@@ -11,8 +11,13 @@
         },
         {
           "title": "Ryc. 5.5.2. Gminy z największym udziałem obszarów prawnie chronionych w 2024 roku. Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030",
-          "type": "bar chart",
-          "data": "[{\"gmina\": \"Zabierzów\", \"udział\": 63.37}, {\"gmina\": \"Wielka Wieś\", \"udział\": 60.58}, {\"gmina\": \"Zielonki\", \"udział\": 41.12}]"
+          "type": "horizontal bar chart",
+          "data": "[{\"gmina\": \"Zabierzów\", \"udział\": 63.37}, {\"gmina\": \"Wielka Wieś\", \"udział\": 60.58}, {\"gmina\": \"Zielonki\", \"udział\": 41.12}, {\"gmina\": \"Liszki\", \"udział\": 35.8}, {\"gmina\": \"Michałowice\", \"udział\": 28.4}, {\"gmina\": \"Mogilany\", \"udział\": 22.1}]"
+        },
+        {
+          "title": "Ryc. 5.5.3. Ocena środowiska w gminach - analiza wielowymiarowa",
+          "type": "radar chart",
+          "data": "[{\"dostępność\": 85, \"jakość\": 82, \"różnorodność\": 78, \"bezpieczeństwo\": 90, \"czystość\": 88}, {\"dostępność\": 92, \"jakość\": 89, \"różnorodność\": 85, \"bezpieczeństwo\": 87, \"czystość\": 91}]"
         }
       ],
       "tables": [],

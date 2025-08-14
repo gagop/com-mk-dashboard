@@ -57,6 +57,16 @@
           "title": "Ryc. 4.4.3. Struktura frekwencji w wyborach samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
           "type": "donut chart",
           "data": "[{\"kategoria\": \"Powyżej 60%\", \"liczba gmin\": 2}, {\"kategoria\": \"55% - 60%\", \"liczba gmin\": 6}, {\"kategoria\": \"50% - 55%\", \"liczba gmin\": 5}, {\"kategoria\": \"Poniżej 50%\", \"liczba gmin\": 2}]"
+        },
+        {
+          "title": "Ryc. 4.4.4. Korelacja między liczbą mieszkańców a frekwencją wyborczą",
+          "type": "scatter plot",
+          "data": "[{\"mieszkańcy\": 780000, \"frekwencja\": 51.8}, {\"mieszkańcy\": 48000, \"frekwencja\": 52.1}, {\"mieszkańcy\": 34000, \"frekwencja\": 48.55}, {\"mieszkańcy\": 23000, \"frekwencja\": 55.43}, {\"mieszkańcy\": 22000, \"frekwencja\": 60.49}, {\"mieszkańcy\": 18000, \"frekwencja\": 55.3}, {\"mieszkańcy\": 14000, \"frekwencja\": 51.5}, {\"mieszkańcy\": 13000, \"frekwencja\": 58.66}, {\"mieszkańcy\": 11000, \"frekwencja\": 55.41}, {\"mieszkańcy\": 11000, \"frekwencja\": 60.35}, {\"mieszkańcy\": 9000, \"frekwencja\": 59.8}, {\"mieszkańcy\": 8500, \"frekwencja\": 56.58}, {\"mieszkańcy\": 8300, \"frekwencja\": 57.09}, {\"mieszkańcy\": 6100, \"frekwencja\": 51.99}, {\"mieszkańcy\": 11700, \"frekwencja\": 49.59}]"
+        },
+        {
+          "title": "Ryc. 4.4.5. Wskaźnik zaangażowania wyborczego (średnia z wszystkich wyborów)",
+          "type": "gauge",
+          "data": "[{\"wskaźnik\": 67.2}]"
         }
       ],
       "tables": [

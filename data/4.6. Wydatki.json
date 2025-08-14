@@ -58,6 +58,11 @@
           "title": "Ryc. 4.6.4. Relacja wydatków inwestycyjnych do całości wydatków majątkowych w Metropolii Krakowskiej w 2024 r.",
           "type": "donut chart",
           "data": "[{\"kategoria\":\"Wydatki inwestycyjne\",\"wartosc\":1240947201.71},{\"kategoria\":\"Pozostałe wydatki majątkowe\",\"wartosc\":167991126.87}]"
+        },
+        {
+          "title": "Ryc. 4.6.9. Wskaźnik efektywności wydatków inwestycyjnych",
+          "type": "gauge",
+          "data": "[{\"efektywność\": 74.2}]"
         }
       ],
       "tables": [],
