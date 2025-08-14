@@ -243,6 +243,60 @@
     // Scatter plot
     if (isScatter) {
       const keys = getNumericKeys(data, '');
+      // Fallback: if there is only one numeric column, render as a horizontal bar chart by category
+      if (keys.length < 2) {
+        const categoryKey = getCategoryKey(data[0] || {});
+        const valueKey = keys[0];
+        const categories = data.map(row => row[categoryKey]);
+        const axisName = /Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym/i.test(title)
+          ? 'Udział bezrobotnych (%)'
+          : (valueKey || '');
+        return {
+          ...baseOptions,
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'shadow' },
+            textStyle: { fontSize: 12 }
+          },
+          grid: {
+            left: 60,
+            right: 30,
+            top: 50,
+            bottom: 60,
+            containLabel: true
+          },
+          xAxis: { 
+            type: 'value',
+            name: axisName,
+            nameLocation: 'middle',
+            nameGap: 30,
+            nameTextStyle: { fontSize: 12 }
+          },
+          yAxis: {
+            type: 'category',
+            data: categories,
+            axisLabel: { interval: 0 }
+          },
+          series: [{
+            type: 'bar',
+            data: data.map(row => row[valueKey]),
+            itemStyle: {
+              borderRadius: [4, 4, 0, 0],
+              color: colors[0]
+            },
+            label: {
+              show: true,
+              position: 'right',
+              fontSize: 11,
+              color: isDark ? '#e5e7eb' : '#111827',
+              formatter: function(p) {
+                return typeof p.value === 'number' ? p.value.toFixed((p.value < 10 ? 2 : 1)) : p.value;
+              }
+            }
+          }]
+        };
+      }
+
       const xKey = keys[0];
       const yKey = keys[1];
       
@@ -251,7 +305,7 @@
         tooltip: {
           trigger: 'item',
           formatter: function(params) {
-            return `${xKey}: ${params.value[0]}<br/>${yKey}: ${params.value[1]}`;
+            return `${xKey}: ${params.value[0]}\n${yKey}: ${params.value[1]}`;
           }
         },
         xAxis: {

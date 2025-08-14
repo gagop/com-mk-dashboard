@@ -135,6 +135,37 @@
     return text.split('\n\n').map((s) => s.trim()).filter(Boolean);
   }
 
+  // Canonical list of gminy in Metropolia Krakowska
+  const METROPOLIA_GMINY = [
+    'Biskupice', 'Czernichów', 'Igołomia-Wawrzeńczyce', 'Kocmyrzów-Luborzyca', 'Kraków',
+    'Liszki', 'Michałowice', 'Mogilany', 'Niepołomice', 'Skawina', 'Świątniki Górne',
+    'Wieliczka', 'Wielka Wieś', 'Zabierzów', 'Zielonki'
+  ];
+
+  function collectGminyFromDoc(doc) {
+    const found = new Set();
+    doc.paragraphs.forEach(p => {
+      (p.charts || []).forEach(chart => {
+        parseMaybeJson(chart.data).forEach(row => {
+          const g = row.gmina || row.Gmina;
+          if (typeof g === 'string' && g.trim()) found.add(g.trim());
+        });
+      });
+      (p.tables || []).forEach(t => {
+        parseMaybeJson(t.data).forEach(row => {
+          const g = row.gmina || row.Gmina;
+          if (typeof g === 'string' && g.trim()) found.add(g.trim());
+        });
+      });
+    });
+    return Array.from(found);
+  }
+
+  function missingGminy(doc) {
+    const present = collectGminyFromDoc(doc);
+    return METROPOLIA_GMINY.filter(g => !present.includes(g));
+  }
+
   // Extract KPI metrics from data with explicit units and titles
   function extractKPIs(doc) {
     const kpis = [];
@@ -304,6 +335,12 @@
                   <span class="stat-item stat-item--filter">
                     <span class="stat-value">{activeFilters.municipalities.length + activeFilters.years.length + activeFilters.categories.length}</span>
                     <span class="stat-label">aktywnych filtrów</span>
+                  </span>
+                {/if}
+                {#if missingGminy(current.doc).length}
+                  <span class="stat-item stat-item--filter" title="Brakujące gminy w danych rozdziału (nie występują w JSON)">
+                    <span class="stat-value">{missingGminy(current.doc).length}</span>
+                    <span class="stat-label">brakujących gmin</span>
                   </span>
                 {/if}
               </div>
