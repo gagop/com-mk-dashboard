@@ -58,7 +58,6 @@
   <div class="toolbar-inner container">
     <div class="brand">
       <img src={logoUrl} alt="Metropolia Krakowska" />
-      <span class="brand-name">Raport: Metropolia Krakowska</span>
     </div>
     <nav class="nav-chapters" aria-label="Spis treści">
       {#each sections as section}
