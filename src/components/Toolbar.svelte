@@ -1,7 +1,7 @@
 <script>
   import { onMount, createEventDispatcher } from 'svelte';
-  import logoUrl from '../assets/mk-logo.svg?url';
-
+  import logoUrl from '../assets/image.png?url';
+  
   export let sections = [];
   export let selectedKey = '';
 

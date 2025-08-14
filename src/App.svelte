@@ -5,7 +5,8 @@
   import InteractiveMap from './components/InteractiveMap.svelte';
   import { fade, slide, fly } from 'svelte/transition';
   import { quartOut } from 'svelte/easing';
-  import heroLogo from './assets/mk-logo.svg?url';
+  import heroLogoDefault from './assets/image.png?url';
+  let heroLogo = heroLogoDefault;
 
   const modules = import.meta.glob('../data/*.json', { eager: true, import: 'default' });
 
@@ -117,6 +118,11 @@
   }
 
   if (typeof window !== 'undefined') {
+    // Resolve custom logo from <meta name="app-logo" content="/path/to/logo.png"> if provided
+    const metaLogo = document.querySelector('meta[name="app-logo"]')?.getAttribute('content');
+    if (metaLogo && typeof metaLogo === 'string' && metaLogo.trim().length > 0) {
+      heroLogo = metaLogo.trim();
+    }
     selectByHash();
     window.addEventListener('hashchange', selectByHash);
   }
@@ -345,7 +351,7 @@
 <main class="container">
   <header class="section hero">
     <div class="hero-inner">
-      <img class="hero-logo" src={heroLogo} alt="Metropolia Krakowska" />
+      <img class="hero-logo" src="image.png" alt="Metropolia Krakowska" />
       <div class="hero-content">
         <h1>Dashboard: Metropolia Krakowska</h1>
         <p class="hero-sub" style="color: var(--muted-text)">Interaktywne wizualizacje danych - {sections.length} modułów analitycznych</p>
