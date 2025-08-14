@@ -489,6 +489,10 @@ button, select {
   min-height: 400px;
 }
 
+.dashboard-item--full {
+  grid-column: 1 / -1;
+}
+
 .dashboard-item--table {
   grid-column: span 1;
 }

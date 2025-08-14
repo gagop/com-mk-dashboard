@@ -12,6 +12,7 @@
   export let interactive = true;
   export let showInsights = false;
   export let enableExport = true;
+  export let labelColor = '';
 
   let chartElement;
   let chartInstance;
@@ -176,13 +177,13 @@
             rotate: 'tangential',
             formatter: function (value) {
               if (value === 87.5) {
-                return 'Grade A';
+                return 'Bardzo wysoka';
               } else if (value === 62.5) {
-                return 'Grade B';
+                return 'Wysoka';
               } else if (value === 37.5) {
-                return 'Grade C';
+                return 'Średnia';
               } else if (value === 12.5) {
-                return 'Grade D';
+                return 'Niska';
               }
               return '';
             }
@@ -379,7 +380,7 @@
           show: true,
           position: 'top',
           fontSize: 11,
-          color: isDark ? '#e5e7eb' : '#111827',
+          color: labelColor || (isDark ? '#e5e7eb' : '#111827'),
           formatter: function(p) {
             return typeof p.value === 'number' ? p.value.toFixed( (p.value < 10 ? 2 : 1) ) : p.value;
           }

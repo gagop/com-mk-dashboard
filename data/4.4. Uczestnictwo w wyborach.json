@@ -1,82 +1,95 @@
 {
   "paragraphs": [
     {
-      "title": "4.4. Uczestnictwo w wyborach",
-      "content": "Frekwencja wyborcza w Metropolii Krakowskiej w 2024 roku charakteryzuje się umiarkowanym poziomem zaangażowania obywatelskiego mieszkańców. W wyborach samorządowych w 2024 roku frekwencja w metropolii wyniosła 52,52% (obliczona jako stosunek liczby wydanych kart wyborczych do liczby uprawnionych do głosowania: 429 001 głosów oddanych na 816 714 uprawnionych). Najwyższą frekwencję osiągnęły gminy Zabierzów (60,49%) i Wielka Wieś (60,35%), najniższą Skawina (48,55%).\n\nAnaliza obejmuje 15 gmin wchodzących w skład Metropolii Krakowskiej: Biskupice, Czernichów, Igołomia-Wawrzeńczyce, Kocmyrzów-Luborzyca, Kraków, Liszki, Michałowice, Mogilany, Niepołomice, Skawina, Świątniki Górne, Wieliczka, Wielka Wieś, Zabierzów i Zielonki.\n\nW kontekście historycznym, frekwencja w wyborach samorządowych 2024 roku była niższa niż w poprzednich wyborach ogólnokrajowych. W wyborach parlamentarnych w 2019 roku średnia frekwencja w metropolii wyniosła 66,15%. W wyborach prezydenckich w 2020 roku (II tura) frekwencja osiągnęła 71,81%.\n\nDla wyborów parlamentarnych w 2023 roku, na podstawie danych z poszczególnych gmin, średnia arytmetyczna frekwencji w Metropolii Krakowskiej wyniosła 78,51%. Należy zauważyć, że w źródłowych danych Państwowej Komisji Wyborczej średnia jest podana jako 0,0, co wskazuje na problem z automatycznym obliczeniem średniej w systemie PKW dla tego obszaru. Najwyższą frekwencję odnotowano w Zielonkach (84,49%) i Wielka Wieś (84,33%), najniższą zaś w Igołomii-Wawrzeńczycach (69,98%).\n\nPorównanie z danymi ogólnopolskimi nie jest możliwe na podstawie dostępnych źródeł danych.",
+      "title": "4.4. Uczestnictwo w wyborach — przegląd i kluczowe wskaźniki",
+      "content": "W wyborach samorządowych 2024 na obszarze Metropolii Krakowskiej udział w głosowaniu wyniósł 52,52% (299 729 kart na 578 674 uprawnionych w Krakowie oraz łącznie 429 001 kart na 816 714 uprawnionych w metropolii). Najwyższą frekwencję zanotowały: Zabierzów (60,49%), Wielka Wieś (60,35%) i Michałowice (59,80%), najniższą: Skawina (48,55%) i Czernichów (49,59%). Dane w rozdziale obejmują wszystkie 15 gmin Metropolii Krakowskiej.",
       "charts": [
         {
-          "title": "Ryc. 4.4.1. Średnia frekwencja wyborcza w Metropolii Krakowskiej (2019-2024). Źródło: Państwowa Komisja Wyborcza",
+          "title": "Średnia frekwencja w MK według typu wyborów (2019–2024)",
           "type": "bar chart",
-          "data": "[{\"Wybory\": \"Parlamentarne 2019\", \"Frekwencja (%)\": 66.15}, {\"Wybory\": \"Prezydenckie 2020 (II tura)\", \"Frekwencja (%)\": 71.81}, {\"Wybory\": \"Parlamentarne 2023\", \"Frekwencja (%)\": 78.51}, {\"Wybory\": \"Samorządowe 2024\", \"Frekwencja (%)\": 52.52}]"
-        }
-      ],
-      "tables": [
-        {
-          "title": "Tab. 4.4.1. Frekwencja wyborcza w Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "data": "[{\"Wybory\": \"Parlamentarne 2019\", \"Średnia frekwencja (%)\": \"66,15\"}, {\"Wybory\": \"Prezydenckie 2020 (II tura)\", \"Średnia frekwencja (%)\": \"71,81\"}, {\"Wybory\": \"Parlamentarne 2023\", \"Średnia frekwencja (%)\": \"78,51\"}, {\"Wybory\": \"Samorządowe 2024\", \"Średnia frekwencja (%)\": \"52,52\"}]"
-        }
-      ],
-      "sources": [
-        "Państwowa Komisja Wyborcza"
-      ]
-    },
-    {
-      "title": "4.4. Uczestnictwo w wyborach",
-      "content": "Analiza uczestnictwa wyborczego w Metropolii Krakowskiej w 2024 roku ujawnia znaczące różnice w mobilizacji społecznej w zależności od rodzaju wyborów. W wyborach samorządowych 2024 roku frekwencja wahała się od 48,55% w gminie Skawina do 60,49% w gminie Zabierzów, ze średnią na poziomie 54,31%. Najwyższą frekwencję odnotowano w gminach Zabierzów (60,49%), Wielka Wieś (60,35%) oraz Michałowice (59,80%). Najniższą mobilizację wyborczą zaobserwowano w gminach Skawina (48,55%), Czernichów (49,59%) oraz Liszki (51,50%).\n\nPorównanie z wyborami parlamentarnymi z 2023 roku pokazuje dramatyczny spadek uczestnictwa wyborczego. Średnia frekwencja w wyborach parlamentarnych 2023 roku wynosiła 79,17% (obliczona na podstawie danych z poszczególnych gmin). Średnia frekwencja w metropolii spadła o około 24,86 punktu procentowego w stosunku do wyborów parlamentarnych 2023 roku. Największy spadek odnotowano w Krakowie - z 81,95% w 2023 roku do 51,80% w 2024 roku (spadek o 30,15 p.p.), oraz w gminie Skawina - z 76,55% do 48,55% (spadek o 28 p.p.). Nawet gminy o najwyższej frekwencji w 2024 roku, takie jak Zabierzów, odnotowały znaczący spadek z 82,92% w 2023 roku do 60,49% w 2024 roku.\n\nAnaliza historyczna wyborów parlamentarnych 2019-2023 pokazuje przeciwny trend - wzrost mobilizacji wyborczej o 13,02 punktu procentowego (z 66,15% w 2019 roku do 79,17% w 2023 roku). Największą dynamikę wzrostu w tym okresie odnotowano w gminie Igołomia-Wawrzeńczyce (wzrost o 15,57 p.p.), Biskupice (14,73 p.p.) oraz Kocmyrzów-Luborzyca (14,71 p.p.).",
-      "charts": [
-        {
-          "title": "Ryc. 4.4.1. Frekwencja w wyborach samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "type": "bar chart",
-          "data": "[{\"gmina\": \"Zabierzów\", \"frekwencja\": 60.49}, {\"gmina\": \"Wielka Wieś\", \"frekwencja\": 60.35}, {\"gmina\": \"Michałowice\", \"frekwencja\": 59.80}, {\"gmina\": \"Kocmyrzów-Luborzyca\", \"frekwencja\": 58.66}, {\"gmina\": \"Świątniki Górne\", \"frekwencja\": 57.09}, {\"gmina\": \"Biskupice\", \"frekwencja\": 56.58}, {\"gmina\": \"Niepołomice\", \"frekwencja\": 55.43}, {\"gmina\": \"Mogilany\", \"frekwencja\": 55.41}, {\"gmina\": \"Zielonki\", \"frekwencja\": 55.30}, {\"gmina\": \"Wieliczka\", \"frekwencja\": 52.10}, {\"gmina\": \"Igołomia-Wawrzeńczyce\", \"frekwencja\": 51.99}, {\"gmina\": \"Kraków\", \"frekwencja\": 51.80}, {\"gmina\": \"Liszki\", \"frekwencja\": 51.50}, {\"gmina\": \"Czernichów\", \"frekwencja\": 49.59}, {\"gmina\": \"Skawina\", \"frekwencja\": 48.55}]"
+          "data": "[{\"Wybory\":\"Parlamentarne 2019 (Sejm)\",\"Frekwencja (%)\":66.15},{\"Wybory\":\"Prezydenckie 2020 (II tura)\",\"Frekwencja (%)\":71.81},{\"Wybory\":\"Parlamentarne 2023 (Sejm)\",\"Frekwencja (%)\":78.51},{\"Wybory\":\"Samorządowe 2024\",\"Frekwencja (%)\":52.52}]",
+          "fullWidth": true
         },
         {
-          "title": "Ryc. 4.4.2. Porównanie frekwencji w wyborach parlamentarnych 2023 i samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "type": "line chart",
-          "data": "[{\"gmina\": \"Biskupice\", \"2023_parlamentarne\": 78.35, \"2024_samorządowe\": 56.58}, {\"gmina\": \"Czernichów\", \"2023_parlamentarne\": 73.89, \"2024_samorządowe\": 49.59}, {\"gmina\": \"Igołomia-Wawrzeńczyce\", \"2023_parlamentarne\": 69.98, \"2024_samorządowe\": 51.99}, {\"gmina\": \"Kocmyrzów-Luborzyca\", \"2023_parlamentarne\": 77.07, \"2024_samorządowe\": 58.66}, {\"gmina\": \"Kraków\", \"2023_parlamentarne\": 81.95, \"2024_samorządowe\": 51.80}, {\"gmina\": \"Liszki\", \"2023_parlamentarne\": 77.35, \"2024_samorządowe\": 51.50}, {\"gmina\": \"Michałowice\", \"2023_parlamentarne\": 82.19, \"2024_samorządowe\": 59.80}, {\"gmina\": \"Mogilany\", \"2023_parlamentarne\": 81.50, \"2024_samorządowe\": 55.41}, {\"gmina\": \"Niepołomice\", \"2023_parlamentarne\": 79.41, \"2024_samorządowe\": 55.43}, {\"gmina\": \"Skawina\", \"2023_parlamentarne\": 76.55, \"2024_samorządowe\": 48.55}, {\"gmina\": \"Świątniki Górne\", \"2023_parlamentarne\": 77.51, \"2024_samorządowe\": 57.09}, {\"gmina\": \"Wieliczka\", \"2023_parlamentarne\": 80.02, \"2024_samorządowe\": 52.10}, {\"gmina\": \"Wielka Wieś\", \"2023_parlamentarne\": 84.33, \"2024_samorządowe\": 60.35}, {\"gmina\": \"Zabierzów\", \"2023_parlamentarne\": 82.92, \"2024_samorządowe\": 60.49}, {\"gmina\": \"Zielonki\", \"2023_parlamentarne\": 84.49, \"2024_samorządowe\": 55.30}]"
-        }
-      ],
-      "tables": [
-        {
-          "title": "Tab. 4.4.1. Frekwencja w wyborach samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "data": "[{\"Gmina\": \"Zabierzów\", \"Liczba uprawnionych\": \"21 747\", \"Liczba kart wydanych\": \"13 154\", \"Frekwencja (%)\": \"60,49\"}, {\"Gmina\": \"Wielka Wieś\", \"Liczba uprawnionych\": \"11 237\", \"Liczba kart wydanych\": \"6 782\", \"Frekwencja (%)\": \"60,35\"}, {\"Gmina\": \"Michałowice\", \"Liczba uprawnionych\": \"8 912\", \"Liczba kart wydanych\": \"5 329\", \"Frekwencja (%)\": \"59,80\"}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Liczba uprawnionych\": \"13 084\", \"Liczba kart wydanych\": \"7 675\", \"Frekwencja (%)\": \"58,66\"}, {\"Gmina\": \"Świątniki Górne\", \"Liczba uprawnionych\": \"8 291\", \"Liczba kart wydanych\": \"4 733\", \"Frekwencja (%)\": \"57,09\"}, {\"Gmina\": \"Biskupice\", \"Liczba uprawnionych\": \"8 492\", \"Liczba kart wydanych\": \"4 805\", \"Frekwencja (%)\": \"56,58\"}, {\"Gmina\": \"Niepołomice\", \"Liczba uprawnionych\": \"23 221\", \"Liczba kart wydanych\": \"12 871\", \"Frekwencja (%)\": \"55,43\"}, {\"Gmina\": \"Mogilany\", \"Liczba uprawnionych\": \"11 444\", \"Liczba kart wydanych\": \"6 341\", \"Frekwencja (%)\": \"55,41\"}, {\"Gmina\": \"Zielonki\", \"Liczba uprawnionych\": \"18 421\", \"Liczba kart wydanych\": \"10 187\", \"Frekwencja (%)\": \"55,30\"}, {\"Gmina\": \"Wieliczka\", \"Liczba uprawnionych\": \"47 954\", \"Liczba kart wydanych\": \"24 986\", \"Frekwencja (%)\": \"52,10\"}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Liczba uprawnionych\": \"6 142\", \"Liczba kart wydanych\": \"3 193\", \"Frekwencja (%)\": \"51,99\"}, {\"Gmina\": \"Kraków\", \"Liczba uprawnionych\": \"578 674\", \"Liczba kart wydanych\": \"299 729\", \"Frekwencja (%)\": \"51,80\"}, {\"Gmina\": \"Liszki\", \"Liczba uprawnionych\": \"13 721\", \"Liczba kart wydanych\": \"7 067\", \"Frekwencja (%)\": \"51,50\"}, {\"Gmina\": \"Czernichów\", \"Liczba uprawnionych\": \"11 678\", \"Liczba kart wydanych\": \"5 791\", \"Frekwencja (%)\": \"49,59\"}, {\"Gmina\": \"Skawina\", \"Liczba uprawnionych\": \"33 696\", \"Liczba kart wydanych\": \"16 358\", \"Frekwencja (%)\": \"48,55\"}]"
-        },
-        {
-          "title": "Tab. 4.4.2. Porównanie frekwencji w wyborach parlamentarnych 2023 i samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "data": "[{\"Gmina\": \"Kraków\", \"Frekwencja 2023 parlamentarne (%)\": \"81,95\", \"Frekwencja 2024 samorządowe (%)\": \"51,80\", \"Zmiana (p.p.)\": \"-30,15\"}, {\"Gmina\": \"Zielonki\", \"Frekwencja 2023 parlamentarne (%)\": \"84,49\", \"Frekwencja 2024 samorządowe (%)\": \"55,30\", \"Zmiana (p.p.)\": \"-29,19\"}, {\"Gmina\": \"Skawina\", \"Frekwencja 2023 parlamentarne (%)\": \"76,55\", \"Frekwencja 2024 samorządowe (%)\": \"48,55\", \"Zmiana (p.p.)\": \"-28,00\"}, {\"Gmina\": \"Wieliczka\", \"Frekwencja 2023 parlamentarne (%)\": \"80,02\", \"Frekwencja 2024 samorządowe (%)\": \"52,10\", \"Zmiana (p.p.)\": \"-27,92\"}, {\"Gmina\": \"Mogilany\", \"Frekwencja 2023 parlamentarne (%)\": \"81,50\", \"Frekwencja 2024 samorządowe (%)\": \"55,41\", \"Zmiana (p.p.)\": \"-26,09\"}, {\"Gmina\": \"Liszki\", \"Frekwencja 2023 parlamentarne (%)\": \"77,35\", \"Frekwencja 2024 samorządowe (%)\": \"51,50\", \"Zmiana (p.p.)\": \"-25,85\"}, {\"Gmina\": \"Czernichów\", \"Frekwencja 2023 parlamentarne (%)\": \"73,89\", \"Frekwencja 2024 samorządowe (%)\": \"49,59\", \"Zmiana (p.p.)\": \"-24,30\"}, {\"Gmina\": \"Wielka Wieś\", \"Frekwencja 2023 parlamentarne (%)\": \"84,33\", \"Frekwencja 2024 samorządowe (%)\": \"60,35\", \"Zmiana (p.p.)\": \"-23,98\"}, {\"Gmina\": \"Niepołomice\", \"Frekwencja 2023 parlamentarne (%)\": \"79,41\", \"Frekwencja 2024 samorządowe (%)\": \"55,43\", \"Zmiana (p.p.)\": \"-23,98\"}, {\"Gmina\": \"Zabierzów\", \"Frekwencja 2023 parlamentarne (%)\": \"82,92\", \"Frekwencja 2024 samorządowe (%)\": \"60,49\", \"Zmiana (p.p.)\": \"-22,43\"}, {\"Gmina\": \"Michałowice\", \"Frekwencja 2023 parlamentarne (%)\": \"82,19\", \"Frekwencja 2024 samorządowe (%)\": \"59,80\", \"Zmiana (p.p.)\": \"-22,39\"}, {\"Gmina\": \"Biskupice\", \"Frekwencja 2023 parlamentarne (%)\": \"78,35\", \"Frekwencja 2024 samorządowe (%)\": \"56,58\", \"Zmiana (p.p.)\": \"-21,77\"}, {\"Gmina\": \"Świątniki Górne\", \"Frekwencja 2023 parlamentarne (%)\": \"77,51\", \"Frekwencja 2024 samorządowe (%)\": \"57,09\", \"Zmiana (p.p.)\": \"-20,42\"}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Frekwencja 2023 parlamentarne (%)\": \"77,07\", \"Frekwencja 2024 samorządowe (%)\": \"58,66\", \"Zmiana (p.p.)\": \"-18,41\"}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Frekwencja 2023 parlamentarne (%)\": \"69,98\", \"Frekwencja 2024 samorządowe (%)\": \"51,99\", \"Zmiana (p.p.)\": \"-17,99\"}]"
-        }
-      ],
-      "sources": [
-        "Państwowa Komisja Wyborcza"
-      ]
-    },
-    {
-      "title": "4.4. Uczestnictwo w wyborach",
-      "content": "Wybory o charakterze ogólnokrajowym cieszą się w Metropolii Krakowskiej znacznie większym zainteresowaniem niż te o znaczeniu lokalnym. W drugiej turze wyborów prezydenckich w 2020 roku frekwencja wyniosła 71,81%, a w gminie Wielka Wieś sięgnęła nawet 78,21%. Dla porównania, w wyborach samorządowych w 2024 roku średnia frekwencja była niższa o 17,5 punktu procentowego i wyniosła 54,31%. W wyborach samorządowych tylko dwie gminy przekroczyły próg 60% frekwencji (Zabierzów - 60,49% i Wielka Wieś - 60,35%), a dwie znalazły się poniżej progu 50% (Czernichów - 49,59% i Skawina - 48,55%).",
-      "charts": [
-        {
-          "title": "Ryc. 4.4.3. Struktura frekwencji w wyborach samorządowych 2024 w gminach Metropolii Krakowskiej. Źródło: Państwowa Komisja Wyborcza",
-          "type": "donut chart",
-          "data": "[{\"kategoria\": \"Powyżej 60%\", \"liczba gmin\": 2}, {\"kategoria\": \"55% - 60%\", \"liczba gmin\": 6}, {\"kategoria\": \"50% - 55%\", \"liczba gmin\": 5}, {\"kategoria\": \"Poniżej 50%\", \"liczba gmin\": 2}]"
-        },
-        {
-          "title": "Ryc. 4.4.4. Korelacja między liczbą mieszkańców a frekwencją wyborczą",
-          "type": "scatter plot",
-          "data": "[{\"mieszkańcy\": 780000, \"frekwencja\": 51.8}, {\"mieszkańcy\": 48000, \"frekwencja\": 52.1}, {\"mieszkańcy\": 34000, \"frekwencja\": 48.55}, {\"mieszkańcy\": 23000, \"frekwencja\": 55.43}, {\"mieszkańcy\": 22000, \"frekwencja\": 60.49}, {\"mieszkańcy\": 18000, \"frekwencja\": 55.3}, {\"mieszkańcy\": 14000, \"frekwencja\": 51.5}, {\"mieszkańcy\": 13000, \"frekwencja\": 58.66}, {\"mieszkańcy\": 11000, \"frekwencja\": 55.41}, {\"mieszkańcy\": 11000, \"frekwencja\": 60.35}, {\"mieszkańcy\": 9000, \"frekwencja\": 59.8}, {\"mieszkańcy\": 8500, \"frekwencja\": 56.58}, {\"mieszkańcy\": 8300, \"frekwencja\": 57.09}, {\"mieszkańcy\": 6100, \"frekwencja\": 51.99}, {\"mieszkańcy\": 11700, \"frekwencja\": 49.59}]"
-        },
-        {
-          "title": "Ryc. 4.4.5. Wskaźnik zaangażowania wyborczego (średnia z wszystkich wyborów)",
+          "title": "Wskaźnik frekwencji MK w 2024 r.",
           "type": "gauge",
-          "data": "[{\"wskaźnik\": 67.2}]"
+          "data": "[{\"Wskaźnik 2024 (samorządowe)\":52.52}]"
+        }
+      ],
+      "maps": [],
+      "tables": [
+        
+      ],
+      "sources": [
+        "Państwowa Komisja Wyborcza (PKW)",
+        "samorzad2024.pkw.gov.pl (frekwencja końcowa; powiat krakowski + Kraków)"
+      ]
+    },
+    {
+      "title": "4.4.2. Porównania między wyborami i dynamika zmian",
+      "content": "W wyborach ogólnokrajowych frekwencja w MK istotnie przewyższała wyniki wyborów samorządowych 2024. Różnica między parlamentarnymi 2023 (Sejm) a samorządowymi 2024 to ok. -26 p.p. na poziomie przeciętnej dla gmin. W latach 2019–2023 odnotowano silny wzrost frekwencji parlamentarnych, po czym w 2024 nastąpił wyraźny spadek przy elekcji lokalnej.",
+      "charts": [
+        {
+          "title": "Zmiana frekwencji (p.p.) 2019 → 2023 (Sejm) — według gmin",
+          "type": "horizontal bar chart",
+          "data": "[{\"gmina\":\"Igołomia-Wawrzeńczyce\",\"Zmiana (p.p.)\":15.57},{\"gmina\":\"Biskupice\",\"Zmiana (p.p.)\":14.73},{\"gmina\":\"Kocmyrzów-Luborzyca\",\"Zmiana (p.p.)\":14.71},{\"gmina\":\"Wieliczka\",\"Zmiana (p.p.)\":14.08},{\"gmina\":\"Michałowice\",\"Zmiana (p.p.)\":13.99},{\"gmina\":\"Świątniki Górne\",\"Zmiana (p.p.)\":13.47},{\"gmina\":\"Skawina\",\"Zmiana (p.p.)\":13.05},{\"gmina\":\"Wielka Wieś\",\"Zmiana (p.p.)\":12.90},{\"gmina\":\"Liszki\",\"Zmiana (p.p.)\":12.72},{\"gmina\":\"Niepołomice\",\"Zmiana (p.p.)\":12.59},{\"gmina\":\"Zabierzów\",\"Zmiana (p.p.)\":11.85},{\"gmina\":\"Czernichów\",\"Zmiana (p.p.)\":11.87},{\"gmina\":\"Mogilany\",\"Zmiana (p.p.)\":11.23},{\"gmina\":\"Zielonki\",\"Zmiana (p.p.)\":11.72},{\"gmina\":\"Kraków\",\"Zmiana (p.p.)\":10.74}]",
+          "labelColor": "#ffffff"
+        },
+        {
+          "title": "2019: Sejm vs Senat — porównanie frekwencji wg gmin",
+          "type": "bar chart",
+          "data": "[{\"gmina\":\"Biskupice\",\"Sejm 2019\":63.62,\"Senat 2019\":63.62},{\"gmina\":\"Czernichów\",\"Sejm 2019\":62.02,\"Senat 2019\":62.01},{\"gmina\":\"Igołomia-Wawrzeńczyce\",\"Sejm 2019\":54.41,\"Senat 2019\":54.38},{\"gmina\":\"Kocmyrzów-Luborzyca\",\"Sejm 2019\":62.36,\"Senat 2019\":62.36},{\"gmina\":\"Kraków\",\"Sejm 2019\":71.21,\"Senat 2019\":71.20},{\"gmina\":\"Liszki\",\"Sejm 2019\":64.63,\"Senat 2019\":64.64},{\"gmina\":\"Michałowice\",\"Sejm 2019\":68.20,\"Senat 2019\":68.18},{\"gmina\":\"Mogilany\",\"Sejm 2019\":70.27,\"Senat 2019\":70.27},{\"gmina\":\"Niepołomice\",\"Sejm 2019\":66.82,\"Senat 2019\":66.81},{\"gmina\":\"Skawina\",\"Sejm 2019\":63.50,\"Senat 2019\":63.50},{\"gmina\":\"Świątniki Górne\",\"Sejm 2019\":64.04,\"Senat 2019\":64.05},{\"gmina\":\"Wieliczka\",\"Sejm 2019\":65.94,\"Senat 2019\":65.94},{\"gmina\":\"Wielka Wieś\",\"Sejm 2019\":71.43,\"Senat 2019\":71.43},{\"gmina\":\"Zabierzów\",\"Sejm 2019\":71.07,\"Senat 2019\":71.06},{\"gmina\":\"Zielonki\",\"Sejm 2019\":72.77,\"Senat 2019\":72.73}]",
+          "fullWidth": true
+        },
+        {
+          "title": "Frekwencja w wyborach prezydenckich 2020: I vs II tura — porównanie wg gmin",
+          "type": "line chart",
+          "data": "[{\"gmina\":\"Biskupice\",\"I tura 2020\":63.62,\"II tura 2020\":63.62},{\"gmina\":\"Czernichów\",\"I tura 2020\":67.08,\"II tura 2020\":70.58},{\"gmina\":\"Igołomia-Wawrzeńczyce\",\"I tura 2020\":58.80,\"II tura 2020\":64.57},{\"gmina\":\"Kocmyrzów-Luborzyca\",\"I tura 2020\":67.33,\"II tura 2020\":70.97},{\"gmina\":\"Kraków\",\"I tura 2020\":71.54,\"II tura 2020\":73.77},{\"gmina\":\"Liszki\",\"I tura 2020\":70.23,\"II tura 2020\":74.17},{\"gmina\":\"Michałowice\",\"I tura 2020\":68.18,\"II tura 2020\":75.36},{\"gmina\":\"Mogilany\",\"I tura 2020\":72.99,\"II tura 2020\":75.99},{\"gmina\":\"Niepołomice\",\"I tura 2020\":66.81,\"II tura 2020\":66.81},{\"gmina\":\"Skawina\",\"I tura 2020\":67.83,\"II tura 2020\":70.60},{\"gmina\":\"Świątniki Górne\",\"I tura 2020\":69.42,\"II tura 2020\":72.19},{\"gmina\":\"Wieliczka\",\"I tura 2020\":65.94,\"II tura 2020\":65.94},{\"gmina\":\"Wielka Wieś\",\"I tura 2020\":74.96,\"II tura 2020\":78.21},{\"gmina\":\"Zabierzów\",\"I tura 2020\":75.30,\"II tura 2020\":77.05},{\"gmina\":\"Zielonki\",\"I tura 2020\":74.74,\"II tura 2020\":77.31}]"
         }
       ],
       "tables": [
         {
-          "title": "Tab. 4.4.3. Porównanie frekwencji w wyborach prezydenckich (2020) i samorządowych (2024). Źródło: Państwowa Komisja Wyborcza",
-          "data": "[{\"Gmina\": \"Biskupice\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"63,62\", \"Frekwencja - Samorządowe 2024 (%)\": \"56,58\", \"Różnica (p.p.)\": \"-7,04\"}, {\"Gmina\": \"Czernichów\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"70,58\", \"Frekwencja - Samorządowe 2024 (%)\": \"49,59\", \"Różnica (p.p.)\": \"-20,99\"}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"64,57\", \"Frekwencja - Samorządowe 2024 (%)\": \"51,99\", \"Różnica (p.p.)\": \"-12,58\"}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"70,97\", \"Frekwencja - Samorządowe 2024 (%)\": \"58,66\", \"Różnica (p.p.)\": \"-12,31\"}, {\"Gmina\": \"Kraków\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"73,77\", \"Frekwencja - Samorządowe 2024 (%)\": \"51,80\", \"Różnica (p.p.)\": \"-21,97\"}, {\"Gmina\": \"Liszki\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"74,17\", \"Frekwencja - Samorządowe 2024 (%)\": \"51,50\", \"Różnica (p.p.)\": \"-22,67\"}, {\"Gmina\": \"Michałowice\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"75,36\", \"Frekwencja - Samorządowe 2024 (%)\": \"59,80\", \"Różnica (p.p.)\": \"-15,56\"}, {\"Gmina\": \"Mogilany\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"75,99\", \"Frekwencja - Samorządowe 2024 (%)\": \"55,41\", \"Różnica (p.p.)\": \"-20,58\"}, {\"Gmina\": \"Niepołomice\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"66,81\", \"Frekwencja - Samorządowe 2024 (%)\": \"55,43\", \"Różnica (p.p.)\": \"-11,38\"}, {\"Gmina\": \"Skawina\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"70,60\", \"Frekwencja - Samorządowe 2024 (%)\": \"48,55\", \"Różnica (p.p.)\": \"-22,05\"}, {\"Gmina\": \"Świątniki Górne\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"72,19\", \"Frekwencja - Samorządowe 2024 (%)\": \"57,09\", \"Różnica (p.p.)\": \"-15,10\"}, {\"Gmina\": \"Wieliczka\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"65,94\", \"Frekwencja - Samorządowe 2024 (%)\": \"52,10\", \"Różnica (p.p.)\": \"-13,84\"}, {\"Gmina\": \"Wielka Wieś\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"78,21\", \"Frekwencja - Samorządowe 2024 (%)\": \"60,35\", \"Różnica (p.p.)\": \"-17,86\"}, {\"Gmina\": \"Zabierzów\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"77,05\", \"Frekwencja - Samorządowe 2024 (%)\": \"60,49\", \"Różnica (p.p.)\": \"-16,56\"}, {\"Gmina\": \"Zielonki\", \"Frekwencja - Prezydenckie 2020 (II tura) (%)\": \"77,31\", \"Frekwencja - Samorządowe 2024 (%)\": \"55,30\", \"Różnica (p.p.)\": \"-22,01\"}]"
+          "title": "Średnia frekwencja w MK wg typu wyborów",
+          "data": "[{\"Wybory\":\"Parlamentarne 2019 (Sejm)\",\"Średnia MK (%)\":\"66,15\"},{\"Wybory\":\"Prezydenckie 2020 (I tura)\",\"Średnia MK (%)\":\"68,98\"},{\"Wybory\":\"Prezydenckie 2020 (II tura)\",\"Średnia MK (%)\":\"71,81\"},{\"Wybory\":\"Parlamentarne 2023 (Sejm)\",\"Średnia MK (%)\":\"78,51\"},{\"Wybory\":\"Samorządowe 2024\",\"Średnia MK (%)\":\"52,52\"}]"
         }
       ],
       "sources": [
-        "Państwowa Komisja Wyborcza"
+        "Państwowa Komisja Wyborcza (PKW) — Arkusze 2019/2020/2023",
+        "Pliki źródłowe: 2019_Sejm, 2020_I/II tura, 2023_Sejm"
+      ]
+    },
+    {
+      "title": "4.4.3. Spadek frekwencji 2023 → 2024 (parlamentarne → samorządowe)",
+      "content": "We wszystkich gminach MK odnotowano spadek frekwencji między parlamentarnymi 2023 a samorządowymi 2024. Największe spadki: Kraków (-30,15 p.p.), Skawina (-28,00 p.p.), Zielonki (-29,19 p.p.), Wieliczka (-27,92 p.p.).",
+      "charts": [
+        {
+          "title": "Frekwencja: 2023 (Sejm) vs 2024 (samorządowe) — porównanie wg gmin",
+          "type": "line chart",
+          "data": "[{\"gmina\":\"Biskupice\",\"2023\":78.35,\"2024\":56.58},{\"gmina\":\"Czernichów\",\"2023\":73.89,\"2024\":49.59},{\"gmina\":\"Igołomia-Wawrzeńczyce\",\"2023\":69.98,\"2024\":51.99},{\"gmina\":\"Kocmyrzów-Luborzyca\",\"2023\":77.07,\"2024\":58.66},{\"gmina\":\"Kraków\",\"2023\":81.95,\"2024\":51.80},{\"gmina\":\"Liszki\",\"2023\":77.35,\"2024\":51.50},{\"gmina\":\"Michałowice\",\"2023\":82.19,\"2024\":59.80},{\"gmina\":\"Mogilany\",\"2023\":81.50,\"2024\":55.41},{\"gmina\":\"Niepołomice\",\"2023\":79.41,\"2024\":55.43},{\"gmina\":\"Skawina\",\"2023\":76.55,\"2024\":48.55},{\"gmina\":\"Świątniki Górne\",\"2023\":77.51,\"2024\":57.09},{\"gmina\":\"Wieliczka\",\"2023\":80.02,\"2024\":52.10},{\"gmina\":\"Wielka Wieś\",\"2023\":84.33,\"2024\":60.35},{\"gmina\":\"Zabierzów\",\"2023\":82.92,\"2024\":60.49},{\"gmina\":\"Zielonki\",\"2023\":84.49,\"2024\":55.30}]"
+        },
+        {
+          "title": "Struktura frekwencji: 2023 (Sejm) vs 2024 (samorządowe)",
+          "type": "100% stacked bar chart",
+          "data": "[{\"Rok\":\"2023 (Sejm)\",\">=80%\":46.7,\"70–80%\":53.3,\"60–70%\":0,\"55–60%\":0,\"50–55%\":0,\"<50%\":0},{\"Rok\":\"2024 (samorządowe)\",\">=80%\":0,\"70–80%\":0,\"60–70%\":13.3,\"55–60%\":46.7,\"50–55%\":26.7,\"<50%\":13.3}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Spadek frekwencji 2023 → 2024 (p.p.)",
+          "data": "[{\"Gmina\":\"Kraków\",\"2023 (Sejm) (%)\":\"81,95\",\"2024 (Samorządowe) (%)\":\"51,80\",\"Zmiana (p.p.)\":\"-30,15\"},{\"Gmina\":\"Zielonki\",\"2023 (Sejm) (%)\":\"84,49\",\"2024 (Samorządowe) (%)\":\"55,30\",\"Zmiana (p.p.)\":\"-29,19\"},{\"Gmina\":\"Skawina\",\"2023 (Sejm) (%)\":\"76,55\",\"2024 (Samorządowe) (%)\":\"48,55\",\"Zmiana (p.p.)\":\"-28,00\"},{\"Gmina\":\"Wieliczka\",\"2023 (Sejm) (%)\":\"80,02\",\"2024 (Samorządowe) (%)\":\"52,10\",\"Zmiana (p.p.)\":\"-27,92\"}]"
+        }
+      ],
+      "sources": [
+        "PKW — 2023 (Sejm) vs 2024 (samorządowe)"
+      ]
+    },
+    {
+      "title": "4.4.4. Wnioski końcowe (2024)",
+      "content": "1) W 2024 r. (wybory samorządowe) przeciętna frekwencja w MK była niska na tle lat ogólnokrajowych — 52,52% wobec 78,51% w 2023 r. (Sejm).\n2) Najwyższa frekwencja 2024: Zabierzów, Wielka Wieś, Michałowice (≈60%); najniższa: Skawina (48,55%), Czernichów (49,59%).\n3) Spadek 2023→2024 dotknął wszystkie gminy; największy w Krakowie (−30,15 p.p.). To sygnał niższej mobilizacji w wyborach lokalnych.\n4) Na tle 2019–2023 obserwowano wzrost frekwencji w wyborach ogólnokrajowych, co podkreśla różnicę w motywacji obywateli między skalą krajową a lokalną.\n\nWniosek dla 2024 r.: priorytetem powinny być działania profrekwencyjne w największych ośrodkach (Kraków) i w gminach z najniższą frekwencją, przy wykorzystaniu dobrych praktyk z gmin-liderów.",
+      "charts": [],
+      "tables": [],
+      "sources": [
+        "Państwowa Komisja Wyborcza (PKW)"
       ]
     }
   ]

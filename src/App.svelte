@@ -276,10 +276,12 @@
   function detectUnitAndFormat(value, key, title) {
     let unit = '';
     const lower = `${key} ${title}`.toLowerCase();
-    if (/%|\bfrekwencja\b|odsetek|udział/.test(lower)) unit = '%';
+    // Elections: catch any form of the word "frekwencja" (frekwencja, frekwencji, itp.)
+    if (/%|frekwencj|odsetek|udział/.test(lower)) unit = '%';
     else if (/zł|pln|kwota|wydatki|koszt/.test(lower)) unit = 'zł';
-    else if (/(kg)\b/.test(lower)) unit = 'kg';
-    else if (/(t\)?|tony|t\.)\b/.test(lower)) unit = 't';
+    else if (/(^|\s)kg(\b|\.)/.test(lower)) unit = 'kg';
+    // Tons: be strict to avoid matching arbitrary 't' letters in Polish text
+    else if (/(^|\s)(?:tona|tony|ton|t\.|t\))\b/.test(lower)) unit = 't';
     else if (/szt\.|liczba|podmioty/.test(lower)) unit = ''; // count
 
     const formatted = formatKPIValue(value, unit);
@@ -435,13 +437,14 @@
                     {@const filteredData = filterData(parseMaybeJson(chart.data), p)}
                     {#if filteredData.length > 0}
                       {@const chartData = /Liczba podmiotów gospodarczych na 1 tys\./i.test(chart.title) ? mergeEnterprisesChartData(p, filteredData) : filteredData}
-                      <div class="dashboard-item" in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 3 + chartIdx) * 150, easing: quartOut }}>
+                      <div class="dashboard-item" class:dashboard-item--full={chart.fullWidth} in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 3 + chartIdx) * 150, easing: quartOut }}>
                         <Chart 
                           kind={chart.type} 
                           data={chartData} 
                           title={chart.title}
                           height="400px"
                           interactive={true}
+                          labelColor={chart.labelColor}
                         />
                       </div>
                     {/if}
