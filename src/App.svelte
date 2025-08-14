@@ -2,7 +2,6 @@
   import Toolbar from './components/Toolbar.svelte';
   import Chart from './components/Chart.svelte';
   import Table from './components/Table.svelte';
-  import FilterPanel from './components/FilterPanel.svelte';
   import InteractiveMap from './components/InteractiveMap.svelte';
   import { fade, slide, fly } from 'svelte/transition';
   import { quartOut } from 'svelte/easing';
@@ -350,12 +349,7 @@
       <div class="hero-content">
         <h1>Dashboard: Metropolia Krakowska</h1>
         <p class="hero-sub" style="color: var(--muted-text)">Interaktywne wizualizacje danych - {sections.length} modułów analitycznych</p>
-        <div class="hero-actions">
-          <button class="hero-btn" on:click={() => showFilters = !showFilters}>
-            <span class="hero-btn-icon">{showFilters ? '🔍' : '⚙️'}</span>
-            {showFilters ? 'Ukryj filtry' : 'Pokaż filtry'}
-          </button>
-        </div>
+        
       </div>
     </div>
   </header>
@@ -366,17 +360,7 @@
         {#if current}
           <section id={`ch-${current.key}`} class="dashboard-section" aria-labelledby={`h-${current.key}`} in:fade={{ duration: 300, delay: 100 }} out:fade={{ duration: 200 }}>
             
-            <!-- Interactive Filters -->
-            <FilterPanel 
-              municipalities={filterOptions.municipalities}
-              years={filterOptions.years}
-              categories={filterOptions.categories}
-              bind:selectedMunicipalities={activeFilters.municipalities}
-              bind:selectedYears={activeFilters.years}
-              bind:selectedCategories={activeFilters.categories}
-              bind:showFilters={showFilters}
-              on:filter-change={handleFilterChange}
-            />
+            
 
             <div class="section-header" in:slide={{ duration: 400, delay: 200 }}>
               <h2 id={`h-${current.key}`}>{current.label}</h2>
@@ -393,12 +377,7 @@
                   <span class="stat-value">{current.doc.paragraphs.reduce((acc, p) => acc + (p.tables?.length || 0), 0)}</span>
                   <span class="stat-label">tabel</span>
                 </span>
-                {#if activeFilters.municipalities.length + activeFilters.years.length + activeFilters.categories.length > 0}
-                  <span class="stat-item stat-item--filter">
-                    <span class="stat-value">{activeFilters.municipalities.length + activeFilters.years.length + activeFilters.categories.length}</span>
-                    <span class="stat-label">aktywnych filtrów</span>
-                  </span>
-                {/if}
+                
                 {#if missingGminy(current.doc).length}
                   <span class="stat-item stat-item--filter" title="Brakujące gminy w danych rozdziału (nie występują w JSON)">
                     <span class="stat-value">{missingGminy(current.doc).length}</span>
