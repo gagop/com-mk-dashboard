@@ -1,0 +1,175 @@
+{
+  "paragraphs": [
+    {
+      "title": "4.3.1. Wskaźniki rynku pracy",
+      "content": "Analiza rynku pracy w Metropolii Krakowskiej obejmuje kluczowe wskaźniki dotyczące bezrobocia i aktywności ekonomicznej mieszkańców. Interaktywne mapy przedstawiają rozkład przestrzenny poszczególnych wskaźników na terenie metropolii.",
+      "charts": [
+        {
+          "title": "Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym",
+          "type": "scatter plot",
+          "data": "[{\"gmina\": \"Kraków\", \"wskaźnik\": 2.1}, {\"gmina\": \"Wieliczka\", \"wskaźnik\": 1.8}, {\"gmina\": \"Niepołomice\", \"wskaźnik\": 2.3}, {\"gmina\": \"Skawina\", \"wskaźnik\": 2.7}, {\"gmina\": \"Zabierzów\", \"wskaźnik\": 1.2}, {\"gmina\": \"Zielonki\", \"wskaźnik\": 1.5}, {\"gmina\": \"Liszki\", \"wskaźnik\": 1.9}, {\"gmina\": \"Mogilany\", \"wskaźnik\": 1.6}, {\"gmina\": \"Michałowice\", \"wskaźnik\": 1.4}, {\"gmina\": \"Świątniki Górne\", \"wskaźnik\": 2.0}, {\"gmina\": \"Biskupice\", \"wskaźnik\": 2.2}, {\"gmina\": \"Czernichów\", \"wskaźnik\": 1.7}, {\"gmina\": \"Kocmyrzów-Luborzyca\", \"wskaźnik\": 1.8}, {\"gmina\": \"Wielka Wieś\", \"wskaźnik\": 1.3}, {\"gmina\": \"Igołomia-Wawrzeńczyce\", \"wskaźnik\": 2.5}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym",
+          "src": "https://experience.arcgis.com/experience/d45b0673154f4b54a99a321ad705a655",
+          "description": "Interaktywna mapa przedstawiająca rozkład przestrzenny wskaźnika bezrobocia w gminach Metropolii Krakowskiej."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Wskaźniki bezrobocia w gminach Metropolii Krakowskiej",
+          "data": "[{\"Gmina\": \"Kraków\", \"Bezrobotni zarejestrowani (%)\": \"2.1\", \"Ocena\": \"Średni\"}, {\"Gmina\": \"Wieliczka\", \"Bezrobotni zarejestrowani (%)\": \"1.8\", \"Ocena\": \"Niski\"}, {\"Gmina\": \"Niepołomice\", \"Bezrobotni zarejestrowani (%)\": \"2.3\", \"Ocena\": \"Średni\"}, {\"Gmina\": \"Skawina\", \"Bezrobotni zarejestrowani (%)\": \"2.7\", \"Ocena\": \"Wysoki\"}, {\"Gmina\": \"Zabierzów\", \"Bezrobotni zarejestrowani (%)\": \"1.2\", \"Ocena\": \"Bardzo niski\"}]"
+        }
+      ],
+      "sources": [
+        "Powiatowy Urząd Pracy",
+        "GUS - Bank Danych Lokalnych"
+      ]
+    },
+    {
+      "title": "4.3.2. Długotrwałe bezrobocie",
+      "content": "Analiza długotrwałego bezrobocia stanowi kluczowy element oceny sytuacji na rynku pracy. Udział osób długotrwale bezrobotnych w ogólnej liczbie bezrobotnych wskazuje na strukturalne problemy rynku pracy.",
+      "charts": [
+        {
+          "title": "Udział długotrwale bezrobotnych w liczbie bezrobotnych ogółem",
+          "type": "horizontal bar chart",
+          "data": "[{\"gmina\": \"Kraków\", \"udział\": 45.2}, {\"gmina\": \"Wieliczka\", \"udział\": 42.1}, {\"gmina\": \"Skawina\", \"udział\": 48.7}, {\"gmina\": \"Niepołomice\", \"udział\": 44.3}, {\"gmina\": \"Zabierzów\", \"udział\": 38.9}, {\"gmina\": \"Zielonki\", \"udział\": 41.5}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Udział długotrwale bezrobotnych w liczbie bezrobotnych ogółem",
+          "src": "https://experience.arcgis.com/experience/d36dd064a10b41a9ac558c99a6177199",
+          "description": "Mapa przestrzennego rozkładu wskaźnika długotrwałego bezrobocia w Metropolii Krakowskiej."
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Powiatowy Urząd Pracy",
+        "Ministerstwo Rodziny i Polityki Społecznej"
+      ]
+    },
+    {
+      "title": "4.3.3. Przedsiębiorczość i rozwój gospodarczy",
+      "content": "Wskaźnik liczby podmiotów gospodarczych na 1000 ludności w wieku produkcyjnym obrazuje poziom przedsiębiorczości i aktywności gospodarczej w poszczególnych gminach metropolii.",
+      "charts": [
+        {
+          "title": "Liczba podmiotów gospodarczych na 1 tys. ludności w wieku produkcyjnym",
+          "type": "bar chart",
+          "data": "[{\"gmina\": \"Kraków\", \"podmioty\": 156.8}, {\"gmina\": \"Zabierzów\", \"podmioty\": 134.2}, {\"gmina\": \"Wieliczka\", \"podmioty\": 128.9}, {\"gmina\": \"Michałowice\", \"podmioty\": 142.1}, {\"gmina\": \"Mogilany\", \"podmioty\": 139.7}, {\"gmina\": \"Zielonki\", \"podmioty\": 131.4}, {\"gmina\": \"Skawina\", \"podmioty\": 118.6}, {\"gmina\": \"Niepołomice\", \"podmioty\": 122.3}]"
+        },
+        {
+          "title": "Wskaźnik przedsiębiorczości w Metropolii Krakowskiej",
+          "type": "gauge",
+          "data": "[{\"wskaźnik\": 135.8}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Liczba podmiotów gospodarczych na 1 tys. ludności w wieku produkcyjnym",
+          "src": "https://experience.arcgis.com/experience/d75f7f46b47041cdbf4e66fafc25182f",
+          "description": "Interaktywna mapa przedstawiająca rozkład przedsiębiorczości w gminach Metropolii Krakowskiej."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Podmioty gospodarcze w gminach Metropolii Krakowskiej",
+          "data": "[{\"Gmina\": \"Kraków\", \"Podmioty na 1000 mieszkańców\": \"156.8\", \"Kategoria\": \"Bardzo wysoka\"}, {\"Gmina\": \"Michałowice\", \"Podmioty na 1000 mieszkańców\": \"142.1\", \"Kategoria\": \"Wysoka\"}, {\"Gmina\": \"Mogilany\", \"Podmioty na 1000 mieszkańców\": \"139.7\", \"Kategoria\": \"Wysoka\"}, {\"Gmina\": \"Zabierzów\", \"Podmioty na 1000 mieszkańców\": \"134.2\", \"Kategoria\": \"Wysoka\"}, {\"Gmina\": \"Zielonki\", \"Podmioty na 1000 mieszkańców\": \"131.4\", \"Kategoria\": \"Średnia\"}]"
+        }
+      ],
+      "sources": [
+        "REGON - GUS",
+        "Ministerstwo Rozwoju i Technologii"
+      ]
+    },
+    {
+      "title": "4.3.4. Wpływy z podatku CIT",
+      "content": "Udział wpływów z podatku od osób prawnych (CIT) w budżecie gminy stanowi istotny wskaźnik kondycji finansowej jednostek samorządu terytorialnego oraz aktywności gospodarczej przedsiębiorstw na ich terenie.",
+      "charts": [
+        {
+          "title": "Udział wpływów z podatku CIT w budżecie gminy ogółem",
+          "type": "donut chart",
+          "data": "[{\"zakres\": \"0-5%\", \"liczba_gmin\": 8}, {\"zakres\": \"5-10%\", \"liczba_gmin\": 4}, {\"zakres\": \"10-15%\", \"liczba_gmin\": 2}, {\"zakres\": \"15%+\", \"liczba_gmin\": 1}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Udział wpływów z podatku CIT w budżecie gminy ogółem",
+          "src": "https://experience.arcgis.com/experience/8979bbcd027542bdad25b09329ab5bbb",
+          "description": "Mapa przestrzenna udziału wpływów z podatku CIT w budżetach gmin Metropolii Krakowskiej."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Wpływy z podatku CIT w gminach Metropolii Krakowskiej",
+          "data": "[{\"Gmina\": \"Kraków\", \"Udział CIT w budżecie (%)\": \"12.4\", \"Kwota (mln zł)\": \"1,245.6\"}, {\"Gmina\": \"Zabierzów\", \"Udział CIT w budżecie (%)\": \"8.7\", \"Kwota (mln zł)\": \"22.5\"}, {\"Gmina\": \"Michałowice\", \"Udział CIT w budżecie (%)\": \"6.2\", \"Kwota (mln zł)\": \"5.2\"}, {\"Gmina\": \"Mogilany\", \"Udział CIT w budżecie (%)\": \"4.8\", \"Kwota (mln zł)\": \"6.4\"}, {\"Gmina\": \"Wieliczka\", \"Udział CIT w budżecie (%)\": \"7.1\", \"Kwota (mln zł)\": \"36.2\"}]"
+        }
+      ],
+      "sources": [
+        "Ministerstwo Finansów",
+        "Sprawozdania budżetowe gmin"
+      ]
+    },
+    {
+      "title": "4.3.5. Zadowolenie mieszkańców z sytuacji zawodowej",
+      "content": "Poziom zadowolenia mieszkańców z sytuacji zawodowej stanowi subiektywny wskaźnik jakości rynku pracy i możliwości rozwoju zawodowego w Metropolii Krakowskiej.",
+      "charts": [
+        {
+          "title": "Poziom zadowolenia mieszkańców z sytuacji zawodowej",
+          "type": "bar chart",
+          "data": "[{\"kategoria\": \"Bardzo zadowoleni\", \"odsetek\": 28.4}, {\"kategoria\": \"Zadowoleni\", \"odsetek\": 45.2}, {\"kategoria\": \"Neutralni\", \"odsetek\": 18.7}, {\"kategoria\": \"Niezadowoleni\", \"odsetek\": 5.9}, {\"kategoria\": \"Bardzo niezadowoleni\", \"odsetek\": 1.8}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Poziom zadowolenia mieszkańców z sytuacji zawodowej",
+          "src": "https://experience.arcgis.com/experience/5276f7ad75ec4877a9309f84a9c2f83e",
+          "description": "Interaktywna mapa zadowolenia mieszkańców Metropolii Krakowskiej z sytuacji zawodowej."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Zadowolenie z sytuacji zawodowej w gminach",
+          "data": "[{\"Gmina\": \"Zabierzów\", \"Bardzo zadowoleni + Zadowoleni (%)\": \"78.2\"}, {\"Gmina\": \"Michałowice\", \"Bardzo zadowoleni + Zadowoleni (%)\": \"76.8\"}, {\"Gmina\": \"Kraków\", \"Bardzo zadowoleni + Zadowoleni (%)\": \"73.6\"}, {\"Gmina\": \"Mogilany\", \"Bardzo zadowoleni + Zadowoleni (%)\": \"75.1\"}, {\"Gmina\": \"Wieliczka\", \"Bardzo zadowoleni + Zadowoleni (%)\": \"71.9\"}]"
+        }
+      ],
+      "sources": [
+        "Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+      ]
+    },
+    {
+      "title": "4.3.6. Możliwości rozwoju zawodowego",
+      "content": "Ocena mieszkańców dotycząca możliwości rozwoju zawodowego w miejscu zamieszkania stanowi istotny wskaźnik atrakcyjności regionu jako miejsca realizacji kariery zawodowej.",
+      "charts": [
+        {
+          "title": "Poziom zadowolenia z możliwości rozwoju zawodowego",
+          "type": "100% stacked bar chart",
+          "data": "[{\"kategoria\": \"Pozytywne oceny\", \"odsetek\": 65.3}, {\"kategoria\": \"Neutralne\", \"odsetek\": 22.1}, {\"kategoria\": \"Negatywne oceny\", \"odsetek\": 12.6}]"
+        },
+        {
+          "title": "Ocena możliwości rozwoju zawodowego - analiza porównawcza",
+          "type": "radar chart", 
+          "data": "[{\"dostępność_szkoleń\": 68, \"możliwości_awansu\": 62, \"różnorodność_branż\": 78, \"wsparcie_instytucjonalne\": 55, \"infrastruktura\": 82}, {\"dostępność_szkoleń\": 45, \"możliwości_awansu\": 38, \"różnorodność_branż\": 42, \"wsparcie_instytucjonalne\": 35, \"infrastruktura\": 48}]"
+        }
+      ],
+      "maps": [
+        {
+          "title": "Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego",
+          "src": "https://experience.arcgis.com/experience/874988e39157487eae18d0a9b3ae4a5d",
+          "description": "Mapa przestrzenna zadowolenia z możliwości rozwoju zawodowego w Metropolii Krakowskiej."
+        }
+      ],
+      "tables": [
+        {
+          "title": "Zadowolenie z możliwości rozwoju zawodowego w gminach",
+          "data": "[{\"Gmina\": \"Kraków\", \"Pozytywne oceny (%)\": \"68.4\", \"Neutralne (%)\": \"20.8\", \"Negatywne (%)\": \"10.8\"}, {\"Gmina\": \"Zabierzów\", \"Pozytywne oceny (%)\": \"72.1\", \"Neutralne (%)\": \"19.3\", \"Negatywne (%)\": \"8.6\"}, {\"Gmina\": \"Michałowice\", \"Pozytywne oceny (%)\": \"69.7\", \"Neutralne (%)\": \"21.5\", \"Negatywne (%)\": \"8.8\"}, {\"Gmina\": \"Wieliczka\", \"Pozytywne oceny (%)\": \"61.2\", \"Neutralne (%)\": \"25.4\", \"Negatywne (%)\": \"13.4\"}, {\"Gmina\": \"Mogilany\", \"Pozytywne oceny (%)\": \"66.8\", \"Neutralne (%)\": \"22.7\", \"Negatywne (%)\": \"10.5\"}]"
+        }
+      ],
+      "sources": [
+        "Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+      ]
+    }
+  ]
+}

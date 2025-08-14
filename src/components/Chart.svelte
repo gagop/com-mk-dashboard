@@ -67,7 +67,7 @@
       backgroundColor: 'transparent',
       textStyle: {
         fontFamily: 'var(--font-family)',
-        fontSize: 12,
+        fontSize: 13,
         color: isDark ? '#f1f5f9' : isHighContrast ? '#ffffff' : '#111111'
       },
       animation: true,
@@ -88,7 +88,7 @@
         legend: { 
           orient: 'horizontal',
           bottom: 10,
-          textStyle: { fontSize: 11 }
+          textStyle: { fontSize: 12 }
         },
         series: [{
           type: 'pie',
@@ -313,9 +313,22 @@
 
       if (isLine) {
         seriesConfig.symbol = 'circle';
-        seriesConfig.symbolSize = 6;
+        seriesConfig.symbolSize = 7;
         seriesConfig.lineStyle = {
-          width: 3
+          width: 3.5
+        };
+      }
+
+      // Show value labels on bars for readability
+      if (isBar) {
+        seriesConfig.label = {
+          show: true,
+          position: 'top',
+          fontSize: 11,
+          color: isDark ? '#e5e7eb' : '#111827',
+          formatter: function(p) {
+            return typeof p.value === 'number' ? p.value.toFixed( (p.value < 10 ? 2 : 1) ) : p.value;
+          }
         };
       }
 
@@ -328,12 +341,13 @@
         trigger: 'axis',
         axisPointer: {
           type: isLine ? 'cross' : 'shadow'
-        }
+        },
+        textStyle: { fontSize: 12 }
       },
               legend: { 
           top: 10,
           textStyle: { 
-            fontSize: 11,
+            fontSize: 12,
             color: isDark ? '#94a3b8' : isHighContrast ? '#e0e0e0' : '#444444'
           }
         },
@@ -369,7 +383,7 @@
         axisLabel: { 
           interval: 0, 
           rotate: categories.length > 8 ? 45 : 0,
-          fontSize: 10,
+          fontSize: 12,
           color: isDark ? '#94a3b8' : isHighContrast ? '#e0e0e0' : '#444444'
         },
         axisLine: {
@@ -381,12 +395,14 @@
           lineStyle: {
             color: isDark ? '#334155' : isHighContrast ? '#333333' : '#f0f0f0'
           }
-        }
+        },
+        nameTextStyle: { fontSize: 12 }
       };
       chartOptions.yAxis = { 
         type: 'value',
         axisLabel: {
-          color: isDark ? '#94a3b8' : isHighContrast ? '#e0e0e0' : '#444444'
+          color: isDark ? '#94a3b8' : isHighContrast ? '#e0e0e0' : '#444444',
+          fontSize: 12
         },
         axisLine: {
           lineStyle: {
@@ -397,7 +413,8 @@
           lineStyle: {
             color: isDark ? '#334155' : isHighContrast ? '#333333' : '#f0f0f0'
           }
-        }
+        },
+        nameTextStyle: { fontSize: 12 }
       };
     }
 

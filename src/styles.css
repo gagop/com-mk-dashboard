@@ -493,6 +493,11 @@ button, select {
   grid-column: span 1;
 }
 
+.dashboard-item--map {
+  grid-column: span 1;
+  min-height: 450px;
+}
+
 .table-container {
   background: var(--surface);
   border: 1px solid var(--border);

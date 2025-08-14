@@ -3,6 +3,7 @@
   import Chart from './components/Chart.svelte';
   import Table from './components/Table.svelte';
   import FilterPanel from './components/FilterPanel.svelte';
+  import InteractiveMap from './components/InteractiveMap.svelte';
   import { fade, slide, fly } from 'svelte/transition';
   import { quartOut } from 'svelte/easing';
   import heroLogo from './assets/mk-logo.svg?url';
@@ -247,6 +248,10 @@
                   <span class="stat-label">wykresów</span>
                 </span>
                 <span class="stat-item">
+                  <span class="stat-value">{current.doc.paragraphs.reduce((acc, p) => acc + (p.maps?.length || 0), 0)}</span>
+                  <span class="stat-label">map</span>
+                </span>
+                <span class="stat-item">
                   <span class="stat-value">{current.doc.paragraphs.reduce((acc, p) => acc + (p.tables?.length || 0), 0)}</span>
                   <span class="stat-label">tabel</span>
                 </span>
@@ -287,7 +292,7 @@
                   {#each p.charts as chart, chartIdx}
                     {@const filteredData = filterData(parseMaybeJson(chart.data), p)}
                     {#if filteredData.length > 0}
-                      <div class="dashboard-item" in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 2 + chartIdx) * 150, easing: quartOut }}>
+                      <div class="dashboard-item" in:fly={{ y: 30, duration: 500, delay: 500 + (idx * 3 + chartIdx) * 150, easing: quartOut }}>
                         <Chart 
                           kind={chart.type} 
                           data={filteredData} 
@@ -300,11 +305,23 @@
                   {/each}
                 {/if}
 
+                {#if p.maps && p.maps.length}
+                  {#each p.maps as map, mapIdx}
+                    <div class="dashboard-item dashboard-item--map" in:fly={{ y: 30, duration: 500, delay: 600 + (idx * 3 + mapIdx) * 150, easing: quartOut }}>
+                      <InteractiveMap 
+                        title={map.title}
+                        src={map.src}
+                        height="450px"
+                      />
+                    </div>
+                  {/each}
+                {/if}
+
                 {#if p.tables && p.tables.length}
                   {#each p.tables as t, tableIdx}
                     {@const filteredTableData = filterData(parseMaybeJson(t.data), p)}
                     {#if filteredTableData.length > 0}
-                      <div class="dashboard-item dashboard-item--table" in:fly={{ y: 30, duration: 500, delay: 600 + (idx * 2 + tableIdx) * 150, easing: quartOut }}>
+                      <div class="dashboard-item dashboard-item--table" in:fly={{ y: 30, duration: 500, delay: 700 + (idx * 3 + tableIdx) * 150, easing: quartOut }}>
                         <div class="table-container">
                           <h4 class="table-title">{t.title}</h4>
                           <Table title="" rows={filteredTableData} />
@@ -339,6 +356,9 @@
       <div class="footer-stats">
         <span class="footer-stat">
           <strong>{sections.reduce((acc, s) => acc + s.doc.paragraphs.reduce((pacc, p) => pacc + (p.charts?.length || 0), 0), 0)}</strong> interaktywnych wykresów
+        </span>
+        <span class="footer-stat">
+          <strong>{sections.reduce((acc, s) => acc + s.doc.paragraphs.reduce((pacc, p) => pacc + (p.maps?.length || 0), 0), 0)}</strong> interaktywnych map
         </span>
         <span class="footer-stat">
           <strong>{sections.reduce((acc, s) => acc + s.doc.paragraphs.reduce((pacc, p) => pacc + (p.tables?.length || 0), 0), 0)}</strong> tabel danych
