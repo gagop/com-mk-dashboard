@@ -20,6 +20,10 @@
     isError = true;
   }
 
+  function fullscreenUrl() {
+    return `/map.html?title=${encodeURIComponent(title || 'Mapa')}&src=${encodeURIComponent(src || '')}`;
+  }
+
   onMount(() => {
     // Add a small delay to ensure smooth animations
     setTimeout(() => {
@@ -47,7 +51,7 @@
           <span class="map-icon">🗺️</span>
           Mapa interaktywna
         </div>
-        <a class="fullscreen-trigger" href={`/map.html?title=${encodeURIComponent(title)}&src=${encodeURIComponent(src)}`} target="_blank" rel="noopener" aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
+          <a class="fullscreen-trigger" href={fullscreenUrl()} on:click|preventDefault={() => { if (typeof window !== 'undefined') window.location.assign(fullscreenUrl()); }} aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
           ⤢
         </a>
       </div>
