@@ -440,6 +440,7 @@
                       <InteractiveMap 
                         title={map.title}
                         src={map.src}
+                        srcFullscreen={map.srcFullscreen || map.src}
                         height="450px"
                       />
                     </div>

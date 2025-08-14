@@ -5,6 +5,7 @@
 
   export let title = '';
   export let src = '';
+  export let srcFullscreen = '';
   export let height = '400px';
   export let showTitle = true;
   
@@ -25,9 +26,8 @@
  function fullscreenUrl() {
   return `${window.location.origin}/map.html?title=${encodeURIComponent(title || 'Mapa')}&src=${encodeURIComponent(src || '')}`;
 }
-
   function openInlineFullscreen() {
-    if (!src) return;
+    if (!srcFullscreen && !src) return;
     if (typeof document !== 'undefined') {
       previousBodyOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
@@ -69,7 +69,7 @@
           <span class="map-icon">🗺️</span>
           Mapa interaktywna
           </button>
-          <a class="fullscreen-trigger" href={fullscreenUrl()} on:click|preventDefault={() => { if (typeof window !== 'undefined') window.location.assign(fullscreenUrl()); }} aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
+          <a class="fullscreen-trigger" href={srcFullscreen || fullscreenUrl()} target="_blank" aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
           ⤢
         </a>
       </div>
@@ -119,27 +119,6 @@
 
   <!-- Fullscreen now handled by dedicated page, nothing rendered here. -->
 </div>
-
-{#if isFullscreen}
-  <div id="map-fullscreen-overlay" class="fs-overlay" role="dialog" aria-modal="true" aria-label={title} in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
-    <div class="fs-toolbar">
-      <div class="fs-title">{title}</div>
-      <div class="fs-actions">
-        <a class="fs-btn" href={fullscreenUrl()} target="_blank" rel="noopener" title="Otwórz w nowej karcie">↗</a>
-        <button class="fs-btn" on:click={closeInlineFullscreen} aria-label="Zamknij">✕</button>
-      </div>
-    </div>
-    <div class="fs-frame">
-      <iframe title={title} src={src} allowfullscreen class="fs-iframe" on:load={handleLoad} on:error={handleError}></iframe>
-      {#if !isLoaded}
-        <div class="fs-loading">
-          <div class="loading-spinner"></div>
-          <p>Ładowanie mapy…</p>
-        </div>
-      {/if}
-    </div>
-  </div>
-{/if}
 
 <style>
   .map-container {
