@@ -425,7 +425,7 @@
           <strong>{sections.length}</strong> modułów analitycznych
         </span>
       </div>
-      <p>Dashboard analityczny Metropolii Krakowskiej - wizualizacja danych w czasie rzeczywistym</p>
+      <p>Dashboard analityczny Metropolii Krakowskiej</p>
     </div>
   </footer>
 </main>
