@@ -20,9 +20,9 @@
     isError = true;
   }
 
-  function fullscreenUrl() {
-    return `/map.html?title=${encodeURIComponent(title || 'Mapa')}&src=${encodeURIComponent(src || '')}`;
-  }
+ function fullscreenUrl() {
+  return `${window.location.origin}/map.html?title=${encodeURIComponent(title || 'Mapa')}&src=${encodeURIComponent(src || '')}`;
+}
 
   onMount(() => {
     // Add a small delay to ensure smooth animations
