@@ -502,6 +502,13 @@ button, select {
   min-height: 450px;
 }
 
+.chart-container,
+.map-container,
+.table-container {
+  /* Ensure consistent spacing between visual blocks in all layouts */
+  margin-bottom: 1rem;
+}
+
 .table-container {
   background: var(--surface);
   border: 1px solid var(--border);

@@ -5,7 +5,7 @@
   import InteractiveMap from './components/InteractiveMap.svelte';
   import { fade, slide, fly } from 'svelte/transition';
   import { quartOut } from 'svelte/easing';
-  import heroLogoDefault from './assets/image.png?url';
+  import heroLogoDefault from './assets/image.png';
   let heroLogo = heroLogoDefault;
 
   const modules = import.meta.glob('../data/*.json', { eager: true, import: 'default' });
@@ -351,11 +351,9 @@
 <main class="container">
   <header class="section hero">
     <div class="hero-inner">
-      <img class="hero-logo" src="image.png" alt="Metropolia Krakowska" />
       <div class="hero-content">
         <h1>Dashboard: Metropolia Krakowska</h1>
-        <p class="hero-sub" style="color: var(--muted-text)">Interaktywne wizualizacje danych - {sections.length} modułów analitycznych</p>
-        
+        <p class="hero-sub" style="color: var(--muted-text)">Interaktywne wizualizacje danych - {sections.length} modułów analitycznych</p> 
       </div>
     </div>
   </header>
