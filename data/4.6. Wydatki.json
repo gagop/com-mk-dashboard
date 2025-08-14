@@ -1,0 +1,219 @@
+{
+  "paragraphs": [
+    {
+      "title": "4.6.1. Dynamika i struktura wydatków ogółem",
+      "content": "W 2024 roku łączne wydatki gmin Metropolii Krakowskiej osiągnęły poziom 12,40 mld zł. Stanowi to znaczący wzrost w porównaniu z rokiem poprzednim, kiedy to suma wydatków wynosiła 11,26 mld zł. Oznacza to, że w ciągu roku wydatki te zwiększyły się o 1,14 mld zł, co przekłada się na dynamikę wzrostu na poziomie 10,13%. Analiza danych z ostatnich lat wskazuje na konsekwentny trend wzrostowy w zakresie wydatków ogółem. Od 2019 roku wydatki te wzrosły o 5,35 mld zł, co świadczy o rosnącej skali realizowanych zadań i inwestycji na obszarze metropolii.",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.1. Całkowite wydatki gmin Metropolii Krakowskiej w latach 2019-2024 (w mld zł). Źródło: Bank Danych Lokalnych GUS",
+          "type": "line chart",
+          "data": "[{\"rok\":2019,\"wydatki\":7048838938.52},{\"rok\":2020,\"wydatki\":7650594478.66},{\"rok\":2021,\"wydatki\":8508532051.98},{\"rok\":2022,\"wydatki\":9284968456.79},{\"rok\":2023,\"wydatki\":11258198609.11},{\"rok\":2024,\"wydatki\":12398937875.74}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Tab. 4.6.1. Wydatki ogółem w gminach Metropolii Krakowskiej w latach 2023-2024 (w zł). Źródło: Bank Danych Lokalnych GUS",
+          "data": "[{\"Gmina\":\"Kraków\",\"2023\":\"8 980 590 759,38\",\"2024\":\"9 856 885 128,58\"},{\"Gmina\":\"Wieliczka\",\"2023\":\"484 347 672,30\",\"2024\":\"510 343 383,87\"},{\"Gmina\":\"Niepołomice\",\"2023\":\"255 984 251,31\",\"2024\":\"313 697 526,86\"},{\"Gmina\":\"Skawina\",\"2023\":\"302 586 123,56\",\"2024\":\"343 701 808,02\"},{\"Gmina\":\"Zabierzów\",\"2023\":\"224 452 411,65\",\"2024\":\"258 322 573,30\"},{\"Gmina\":\"Zielonki\",\"2023\":\"151 136 223,34\",\"2024\":\"189 570 626,52\"},{\"Gmina\":\"Liszki\",\"2023\":\"131 599 209,18\",\"2024\":\"148 429 562,50\"},{\"Gmina\":\"Wielka Wieś\",\"2023\":\"121 132 046,96\",\"2024\":\"141 272 149,39\"},{\"Gmina\":\"Mogilany\",\"2023\":\"108 590 781,06\",\"2024\":\"132 956 650,54\"},{\"Gmina\":\"Kocmyrzów-Luborzyca\",\"2023\":\"109 332 608,20\",\"2024\":\"129 790 573,85\"},{\"Gmina\":\"Świątniki Górne\",\"2023\":\"92 398 730,63\",\"2024\":\"103 379 471,14\"},{\"Gmina\":\"Czernichów\",\"2023\":\"98 836 228,90\",\"2024\":\"97 761 279,34\"},{\"Gmina\":\"Michałowice\",\"2023\":\"72 875 280,79\",\"2024\":\"84 053 156,46\"},{\"Gmina\":\"Biskupice\",\"2023\":\"72 134 141,55\",\"2024\":\"83 923 332,81\"},{\"Gmina\":\"Igołomia-Wawrzeńczyce\",\"2023\":\"52 202 140,21\",\"2024\":\"44 850 652,56\"}]"
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.2. Zróżnicowanie zmian w wydatkach gmin",
+      "content": "Wzrost wydatków ogółem w 2024 roku był zjawiskiem powszechnym w większości gmin Metropolii Krakowskiej, jednak jego skala była zróżnicowana. Największą dynamikę odnotowano w gminie Zielonki, gdzie wydatki wzrosły o 25,4%. Istotne wzrosty miały miejsce również w gminach Mogilany (22,4%) oraz Niepołomice (22,6%). Znaczący wzrost odnotowano także w Krakowie, największej gminie metropolitalnej pod względem budżetu, gdzie wydatki wzrosły o 9,8%, co w wartościach bezwzględnych oznaczało wzrost o 876,3 mln zł. \n\nAnaliza wszystkich gmin wskazuje na średnią dynamikę wzrostu wydatków na poziomie około 11,9%, przy czym większość gmin (13 z 15) odnotowała wzrost wydatków. Z drugiej strony, dwie gminy odnotowały spadek wydatków w porównaniu z rokiem poprzednim. Największa redukcja nastąpiła w gminie Igołomia-Wawrzeńczyce, gdzie wydatki zmalały o 14,1%. Niewielki spadek odnotowano także w gminie Czernichów (-1,1%).",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.2. Zmiana procentowa wydatków ogółem w gminach między 2023 a 2024 rokiem. Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"Gmina\":\"Zielonki\",\"Zmiana (%)\":25.43},{\"Gmina\":\"Mogilany\",\"Zmiana (%)\":22.44},{\"Gmina\":\"Niepołomice\",\"Zmiana (%)\":22.55},{\"Gmina\":\"Kocmyrzów-Luborzyca\",\"Zmiana (%)\":18.71},{\"Gmina\":\"Wielka Wieś\",\"Zmiana (%)\":16.63},{\"Gmina\":\"Biskupice\",\"Zmiana (%)\":16.34},{\"Gmina\":\"Michałowice\",\"Zmiana (%)\":15.34},{\"Gmina\":\"Zabierzów\",\"Zmiana (%)\":15.09},{\"Gmina\":\"Skawina\",\"Zmiana (%)\":13.59},{\"Gmina\":\"Liszki\",\"Zmiana (%)\":12.79},{\"Gmina\":\"Świątniki Górne\",\"Zmiana (%)\":11.88},{\"Gmina\":\"Kraków\",\"Zmiana (%)\":9.76},{\"Gmina\":\"Wieliczka\",\"Zmiana (%)\":5.37},{\"Gmina\":\"Czernichów\",\"Zmiana (%)\":-1.09},{\"Gmina\":\"Igołomia-Wawrzeńczyce\",\"Zmiana (%)\":-14.08}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.3. Wydatki w podziale na typy gmin",
+      "content": "Analizując wydatki gmin Metropolii Krakowskiej w podziale na typy administracyjne, należy odnotować, że dostępne dane z Bank Danych Lokalnych GUS zawierają informacje o poszczególnych gminach z oznaczeniami: (1) - gmina miejska (Kraków), (2) - gminy wiejskie, (3) - gminy miejsko-wiejskie. \n\nW 2024 roku łączne wydatki ogółem wszystkich gmin Metropolii Krakowskiej wyniosły 12,24 mld zł. Kraków jako największy ośrodek miejski odpowiadał za 9,86 mld zł tych wydatków, co stanowi około 80,5% całkowitych wydatków metropolii. Gminy wiejskie (oznaczone numerem 2) łącznie wydatkowały 1,17 mld zł, natomiast gminy miejsko-wiejskie (oznaczone numerem 3) - 1,27 mld zł.\n\nPorównując rok 2024 do 2023, Kraków zwiększył swoje wydatki z 8,98 mld zł do 9,86 mld zł, co oznacza wzrost o 9,8%. Gminy wiejskie odnotowały wzrost z 1,05 mld zł w 2023 roku do 1,17 mld zł w 2024 roku (wzrost o 11,4%). Gminy miejsko-wiejskie zwiększyły wydatki z 1,13 mld zł do 1,27 mld zł (wzrost o 12,4%). \n\nWarto zauważyć, że gminy wiejskie po spadku wydatków w 2023 roku w stosunku do 2022 roku (z 1,13 mld zł do 1,05 mld zł), w 2024 roku odnotowały znaczący wzrost. Taka struktura zmian pokazuje, że presja na zwiększanie wydatków publicznych, związana z realizacją zadań własnych i inwestycji, jest obecna na całym obszarze Metropolii Krakowskiej, niezależnie od charakteru gminy.",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.3. Wydatki ogółem w podziale na typy gmin w latach 2019-2024 (w mld zł). Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"rok\":2019,\"typ\":\"miejska\",\"wydatki\":6.21},{\"rok\":2020,\"typ\":\"miejska\",\"wydatki\":6.67},{\"rok\":2021,\"typ\":\"miejska\",\"wydatki\":7.45},{\"rok\":2022,\"typ\":\"miejska\",\"wydatki\":8.05},{\"rok\":2023,\"typ\":\"miejska\",\"wydatki\":8.98},{\"rok\":2024,\"typ\":\"miejska\",\"wydatki\":9.86},{\"rok\":2019,\"typ\":\"miejsko-wiejska\",\"wydatki\":0.86},{\"rok\":2020,\"typ\":\"miejsko-wiejska\",\"wydatki\":0.92},{\"rok\":2021,\"typ\":\"miejsko-wiejska\",\"wydatki\":1.09},{\"rok\":2022,\"typ\":\"miejsko-wiejska\",\"wydatki\":1.10},{\"rok\":2023,\"typ\":\"miejsko-wiejska\",\"wydatki\":1.13},{\"rok\":2024,\"typ\":\"miejsko-wiejska\",\"wydatki\":1.27},{\"rok\":2019,\"typ\":\"wiejska\",\"wydatki\":0.91},{\"rok\":2020,\"typ\":\"wiejska\",\"wydatki\":1.03},{\"rok\":2021,\"typ\":\"wiejska\",\"wydatki\":1.11},{\"rok\":2022,\"typ\":\"wiejska\",\"wydatki\":1.13},{\"rok\":2023,\"typ\":\"wiejska\",\"wydatki\":1.05},{\"rok\":2024,\"typ\":\"wiejska\",\"wydatki\":1.17}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.4. Wydatki majątkowe a wydatki inwestycyjne – definicja i relacja",
+      "content": "Wydatki majątkowe stanowią kategorię w budżetach gmin przeznaczoną na tworzenie i powiększanie majątku jednostki, w tym na inwestycje i zakupy inwestycyjne, ale także na zakup i objęcie akcji oraz wniesienie wkładów do spółek prawa handlowego. Kluczową ich częścią są wydatki majątkowe inwestycyjne, które bezpośrednio przekładają się na rozwój infrastruktury.\n\nAnaliza danych z 2024 roku dla wszystkich 15 gmin Metropolii Krakowskiej pokazuje, że łączne wydatki inwestycyjne wyniosły 1 240 947 201,71 zł, podczas gdy całkowite wydatki majątkowe osiągnęły poziom 1 408 938 328,58 zł. Oznacza to, że wydatki inwestycyjne stanowiły 88,1% wszystkich wydatków majątkowych w regionie, co podkreśla ich dominującą rolę w strukturze wydatków o charakterze rozwojowym.\n\nNajwiększy udział w wydatkach inwestycyjnych miał Kraków z kwotą 794 032 896,88 zł (64,0% całości), następnie Niepołomice z 56 388 812,81 zł (4,5%) oraz Wieliczka z 43 628 523,64 zł (3,5%). Różnica między wydatkami majątkowymi a inwestycyjnymi, wynosząca 167 991 126,87 zł, obejmuje głównie zakupy akcji, udziałów oraz inne formy inwestycji kapitałowych.\n\nNależy zwrócić uwagę na występujące różnice w danych między plikami źródłowymi dotyczącymi wydatków inwestycyjnych i majątkowych. Przykładowo, dla gminy Liszki wydatki inwestycyjne wynoszą 45 093 743,53 zł, podczas gdy wydatki majątkowe 46 093 743,53 zł, co wskazuje na różnicę w wysokości 1 000 000,00 zł. Podobne rozbieżności występują w przypadku innych gmin, co może wynikać z różnych metodologii klasyfikacji wydatków lub aktualizacji danych w różnych okresach sprawozdawczych. Zrozumienie tej relacji jest istotne dla pełnej oceny polityki finansowej gmin.",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.4. Relacja wydatków inwestycyjnych do całości wydatków majątkowych w Metropolii Krakowskiej w 2024 r.",
+          "type": "donut chart",
+          "data": "[{\"kategoria\":\"Wydatki inwestycyjne\",\"wartosc\":1240947201.71},{\"kategoria\":\"Pozostałe wydatki majątkowe\",\"wartosc\":167991126.87}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.5. Wzrost wydatków inwestycyjnych w 2024 roku",
+      "content": "Wydatki inwestycyjne gmin Metropolii Krakowskiej w 2024 roku wyniosły łącznie około 1,41 mld zł. Jest to kwota wyższa niż w roku 2023, kiedy to na ten cel przeznaczono około 1,37 mld zł. Oznacza to wzrost o około 39,6 mln zł, czyli o 2,9%. Ten umiarkowany wzrost wydatków o charakterze inwestycyjnym może sygnalizować kontynuację realizacji projektów rozwojowych lub stabilną politykę inwestycyjną gmin. Poziom wydatków inwestycyjnych w 2024 roku był wyższy niż w latach 2019-2020, ale niższy niż w latach 2021-2022, przy czym rekordowym rokiem pod względem wydatków inwestycyjnych był 2022 rok.",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.5. Łączne wydatki inwestycyjne gmin Metropolii Krakowskiej w latach 2019-2024 (w mld zł). Źródło: Bank Danych Lokalnych GUS",
+          "type": "line chart",
+          "data": "[{\"rok\":2019,\"wydatki\":1199146819.29},{\"rok\":2020,\"wydatki\":1242055865.99},{\"rok\":2021,\"wydatki\":1459418257.74},{\"rok\":2022,\"wydatki\":1485291575.24},{\"rok\":2023,\"wydatki\":1368368646.18},{\"rok\":2024,\"wydatki\":1407938328.58}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.6. Zmiany w wydatkach majątkowych inwestycyjnych na poziomie gmin",
+      "content": "Analiza wydatków majątkowych inwestycyjnych w 2024 roku w porównaniu do 2023 roku wykazała ogólny spadek łącznych wydatków w tej kategorii w Metropolii Krakowskiej z 1 693 446 696,90 zł do 1 239 947 201,71 zł, co oznacza redukcję o 26,8%. Mimo tego ogólnego trendu, sytuacja w poszczególnych gminach była bardzo zróżnicowana. Wszystkie 15 gmin Metropolii zostało uwzględnionych w analizie, pokazując pełny obraz zmian w regionie.\n\nKilka gmin odnotowało znaczące wzrosty w wydatkach majątkowych inwestycyjnych. Liderami wzrostu były gminy Mogilany oraz Zielonki, gdzie wydatki zwiększyły się odpowiednio o 48,1% i 42,8%. Znaczący wzrost odnotowano również w Niepołomicach (26,0%) oraz Michałowicach (9,1%). Wzrosty wystąpiły także w Kocmyrzowie-Luborzycy (8,1%), Zabierzowie (7,2%), Biskupicach (3,8%), Skawinie (1,4%) oraz Wielkiej Wsi (1,4%). Niewielki wzrost odnotowano w Liszkach (0,6%).\n\nZ drugiej strony, wiele gmin, w tym największe ośrodki, doświadczyło głębokich spadków. Największą redukcję, aż o 78,2%, odnotowała gmina Igołomia-Wawrzeńczyce. Duże spadki miały miejsce również w Wieliczce (-53,7%), Czernichowie (-40,7%) oraz w Krakowie (-39,5%). Spadek wystąpił także w Świątnikach Górnych (-14,9%).",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.6. Zmiana procentowa wydatków majątkowych inwestycyjnych w gminach między 2023 a 2024 rokiem. Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"Gmina\":\"Mogilany\",\"Zmiana (%)\":48.1},{\"Gmina\":\"Zielonki\",\"Zmiana (%)\":42.8},{\"Gmina\":\"Niepołomice\",\"Zmiana (%)\":26.0},{\"Gmina\":\"Michałowice\",\"Zmiana (%)\":9.1},{\"Gmina\":\"Kocmyrzów-Luborzyca\",\"Zmiana (%)\":8.1},{\"Gmina\":\"Zabierzów\",\"Zmiana (%)\":7.2},{\"Gmina\":\"Biskupice\",\"Zmiana (%)\":3.8},{\"Gmina\":\"Wielka Wieś\",\"Zmiana (%)\":1.4},{\"Gmina\":\"Skawina\",\"Zmiana (%)\":1.4},{\"Gmina\":\"Liszki\",\"Zmiana (%)\":0.6},{\"Gmina\":\"Świątniki Górne\",\"Zmiana (%)\": -14.9},{\"Gmina\":\"Kraków\",\"Zmiana (%)\": -39.5},{\"Gmina\":\"Czernichów\",\"Zmiana (%)\": -40.7},{\"Gmina\":\"Wieliczka\",\"Zmiana (%)\": -53.7},{\"Gmina\":\"Igołomia-Wawrzeńczyce\",\"Zmiana (%)\": -78.2}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.7. Wieloletnie trendy w wydatkach inwestycyjnych",
+      "content": "Inwestycyjne wydatki majątkowe, stanowiące kluczowy element rozwoju gmin, podlegały w ostatnich latach znacznym wahaniom. Po okresie wzrostu, który osiągnął szczyt w 2023 roku z kwotą około 1,79 mld zł, w 2024 roku nastąpił wyraźny spadek do poziomu 1,24 mld zł. Jest to kwota porównywalna z poziomem wydatków inwestycyjnych z 2019 roku (1,20 mld zł) i nieco wyższa niż w 2020 roku (1,20 mld zł). Taka dynamika może odzwierciedlać cykliczność procesów inwestycyjnych, gdzie po okresie intensywnej realizacji projektów następuje faza stabilizacji lub przygotowań do nowych przedsięwzięć. Skumulowana wartość inwestycji w latach 2019-2024 wyniosła łącznie około 8,51 mld zł, co świadczy o znacznym zaangażowaniu gmin Metropolii Krakowskiej w rozwój infrastruktury.",
+      "charts": [
+        {
+          "title": "Ryc. 4.6.7. Inwestycyjne wydatki majątkowe w Metropolii Krakowskiej w latach 2019–2024 (w mld zł). Źródło: Bank Danych Lokalnych GUS",
+          "type": "line chart",
+          "data": "[{\"rok\":2019,\"wydatki\":1200145769.29},{\"rok\":2020,\"wydatki\":1201643860.00},{\"rok\":2021,\"wydatki\":1536417357.74},{\"rok\":2022,\"wydatki\":1540290405.52},{\"rok\":2023,\"wydatki\":1793446696.91},{\"rok\":2024,\"wydatki\":1239947201.71}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    },
+    {
+      "title": "4.6.8. Długoterminowe zmiany w potencjale inwestycyjnym gmin",
+      "content": "Długoterminowa analiza zmian w wydatkach majątkowych inwestycyjnych, porównująca rok 2024 do roku 2019, ukazuje interesujące trendy rozwojowe w poszczególnych gminach. Analiza opiera się na danych dotyczących wydatków majątkowych inwestycyjnych z Banku Danych Lokalnych GUS. Niektóre z gmin odnotowały w tym okresie spektakularny wzrost nakładów inwestycyjnych. Absolutnym liderem jest gmina Liszki, gdzie wydatki te wzrosły o 361,0%. Imponujące wzrosty odnotowały również gminy Wielka Wieś (142,0%) oraz Świątniki Górne (120,2%). Z drugiej strony, kilka gmin zanotowało spadek wydatków inwestycyjnych w analizowanym okresie. Największa redukcja miała miejsce w gminie Igołomia-Wawrzeńczyce, gdzie spadek wyniósł 66,1%. Pokazuje to, że tempo i kierunki rozwoju inwestycyjnego w Metropolii są silnie zróżnicowane na poziomie lokalnym.",
+      "charts": [],
+      "tables": [
+        {
+          "title": "Tab. 4.6.2. Zmiana wydatków majątkowych inwestycyjnych w latach 2019–2024. Źródło: Bank Danych Lokalnych GUS",
+          "data": [
+            {
+              "Gmina": "Liszki",
+              "2019": "9 781 736,53",
+              "2024": "45 093 743,53",
+              "Zmiana (%)": "361,00%"
+            },
+            {
+              "Gmina": "Wielka Wieś",
+              "2019": "15 706 958,57",
+              "2024": "38 013 272,00",
+              "Zmiana (%)": "142,02%"
+            },
+            {
+              "Gmina": "Świątniki Górne",
+              "2019": "8 765 072,01",
+              "2024": "19 303 140,25",
+              "Zmiana (%)": "120,23%"
+            },
+            {
+              "Gmina": "Kocmyrzów-Luborzyca",
+              "2019": "16 069 253,96",
+              "2024": "31 715 247,21",
+              "Zmiana (%)": "97,37%"
+            },
+            {
+              "Gmina": "Michałowice",
+              "2019": "6 971 855,53",
+              "2024": "13 298 483,38",
+              "Zmiana (%)": "90,74%"
+            },
+            {
+              "Gmina": "Zabierzów",
+              "2019": "27 613 459,05",
+              "2024": "45 023 966,20",
+              "Zmiana (%)": "63,05%"
+            },
+            {
+              "Gmina": "Mogilany",
+              "2019": "23 565 130,25",
+              "2024": "35 671 687,94",
+              "Zmiana (%)": "51,38%"
+            },
+            {
+              "Gmina": "Biskupice",
+              "2019": "12 841 153,08",
+              "2024": "17 889 765,94",
+              "Zmiana (%)": "39,32%"
+            },
+            {
+              "Gmina": "Czernichów",
+              "2019": "16 224 036,51",
+              "2024": "18 463 692,72",
+              "Zmiana (%)": "13,80%"
+            },
+            {
+              "Gmina": "Skawina",
+              "2019": "46 047 525,59",
+              "2024": "47 404 545,37",
+              "Zmiana (%)": "2,95%"
+            },
+            {
+              "Gmina": "Kraków",
+              "2019": "845 854 186,19",
+              "2024": "794 032 896,88",
+              "Zmiana (%)": "-6,13%"
+            },
+            {
+              "Gmina": "Niepołomice",
+              "2019": "68 268 458,97",
+              "2024": "56 388 812,81",
+              "Zmiana (%)": "-17,40%"
+            },
+            {
+              "Gmina": "Zielonki",
+              "2019": "39 172 154,26",
+              "2024": "31 458 954,29",
+              "Zmiana (%)": "-19,69%"
+            },
+            {
+              "Gmina": "Wieliczka",
+              "2019": "55 703 252,40",
+              "2024": "43 628 523,64",
+              "Zmiana (%)": "-21,68%"
+            },
+            {
+              "Gmina": "Igołomia-Wawrzeńczyce",
+              "2019": "7 561 536,39",
+              "2024": "2 560 469,55",
+              "Zmiana (%)": "-66,14%"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS"
+      ]
+    }
+  ]
+}

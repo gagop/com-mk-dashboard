@@ -1,0 +1,67 @@
+{
+  "paragraphs": [
+    {
+      "title": "4.7. Zadłużenie",
+      "content": "Poziom zadłużenia gmin Metropolii Krakowskiej, mierzony jako relacja zobowiązań do dochodów ogółem, wykazywał zróżnicowane tendencje w latach 2019–2024. Mimo tych różnic, w analizowanym okresie w większości gmin (9 z 15) nastąpił wzrost zadłużenia, co może wskazywać na ogólną tendencję do zwiększania inwestycji finansowanych ze źródeł zewnętrznych.\n\nW 2024 roku najwyższy poziom zadłużenia odnotowano w Krakowie (75,90%), Wieliczce (63,20%) oraz Niepołomicach (57,90%). Z kolei najniższe wskaźniki zadłużenia wystąpiły w Igołomi-Wawrzeńczycach (7,50%), Wielkiej Wsi (8,30%) oraz Zielonkach (13,80%). Analiza zmian między 2023 a 2024 rokiem pokazuje istotne tendencje: największy spadek zadłużenia odnotowano w Świątnikach Górnych (z 59,93% do 46,00%, spadek o 13,93 p.p.) oraz w Krakowie (z 82,58% do 75,90%, spadek o 6,68 p.p.). Znaczący spadek wystąpił również w Wielkiej Wsi (z 15,79% do 8,30%, spadek o 7,49 p.p.). Jednocześnie w niektórych gminach nastąpił wzrost zadłużenia, szczególnie w Liszkach (z 30,95% do 37,80%, wzrost o 6,85 p.p.).\n\nW części gmin, takich jak Kraków, Niepołomice czy Wieliczka, obserwowano utrzymywanie się relatywnie wysokiego poziomu zadłużenia przez większość analizowanego okresu. Z kolei w innych samorządach, na przykład w Igołomi-Wawrzeńczycach czy Wielkiej Wsi, wskaźnik ten utrzymywał się na znacznie niższym poziomie, a nawet uległ zmniejszeniu. Wahania w poziomie długu w poszczególnych gminach odzwierciedlają prowadzone przez nie polityki finansowe oraz realizowane inwestycje.",
+      "charts": [
+        {
+          "title": "Ryc. 4.7.1. Zmiana poziomu zadłużenia gmin Metropolii Krakowskiej w latach 2019–2024 (%). Źródło: Ministerstwo Finansów",
+          "type": "line chart",
+          "data": "[{\"JST\": \"BISKUPICE\", \"2019\": 37.75, \"2020\": 29.59, \"2021\": 28.3, \"2022\": 29.8, \"2023\": 28.59, \"2024\": 31.0}, {\"JST\": \"CZERNICHÓW\", \"2019\": 53.44, \"2020\": 47.92, \"2021\": 42.2, \"2022\": 41.9, \"2023\": 43.83, \"2024\": 35.7}, {\"JST\": \"IGOŁOMIA-WAWRZEŃCZ\", \"2019\": 18.2, \"2020\": 15.59, \"2021\": 9.5, \"2022\": 9.1, \"2023\": 9.17, \"2024\": 7.5}, {\"JST\": \"KOCMYRZÓW-LUBORZYC\", \"2019\": 5.88, \"2020\": 11.54, \"2021\": 10.6, \"2022\": 13.6, \"2023\": 25.62, \"2024\": 26.3}, {\"JST\": \"LISZKI\", \"2019\": 36.74, \"2020\": 26.85, \"2021\": 23.5, \"2022\": 19.3, \"2023\": 30.95, \"2024\": 37.8}, {\"JST\": \"MICHAŁOWICE\", \"2019\": 22.93, \"2020\": 18.98, \"2021\": 12.5, \"2022\": 15.7, \"2023\": 15.51, \"2024\": 14.0}, {\"JST\": \"MOGILANY\", \"2019\": 33.63, \"2020\": 31.75, \"2021\": 25.5, \"2022\": 22.4, \"2023\": 38.09, \"2024\": 29.8}, {\"JST\": \"NIEPOŁOMICE\", \"2019\": 53.67, \"2020\": 55.14, \"2021\": 52.5, \"2022\": 63.51, \"2023\": 65.99, \"2024\": 57.9}, {\"JST\": \"SKAWINA\", \"2019\": 25.35, \"2020\": 26.92, \"2021\": 29.3, \"2022\": 32.41, \"2023\": 34.44, \"2024\": 33.1}, {\"JST\": \"ŚWIĄTNIKI GÓRNE\", \"2019\": 20.85, \"2020\": 26.29, \"2021\": 29.7, \"2022\": 31.44, \"2023\": 59.93, \"2024\": 46.0}, {\"JST\": \"WIELICZKA\", \"2019\": 46.27, \"2020\": 46.25, \"2021\": 45.8, \"2022\": 53.86, \"2023\": 68.9, \"2024\": 63.2}, {\"JST\": \"WIELKA WIEŚ\", \"2019\": 17.86, \"2020\": 12.58, \"2021\": 10.4, \"2022\": 11.5, \"2023\": 15.79, \"2024\": 8.3}, {\"JST\": \"ZABIERZÓW\", \"2019\": 30.21, \"2020\": 33.76, \"2021\": 32.5, \"2022\": 38.7, \"2023\": 52.69, \"2024\": 49.7}, {\"JST\": \"ZIELONKI\", \"2019\": 12.07, \"2020\": 17.23, \"2021\": 22.5, \"2022\": 21.6, \"2023\": 20.65, \"2024\": 13.8}, {\"JST\": \"KRAKÓW\", \"2019\": 51.94, \"2020\": 56.1, \"2021\": 58.3, \"2022\": 65.0, \"2023\": 82.58, \"2024\": 75.9}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Ministerstwo Finansów"
+      ]
+    },
+    {
+      "title": "4.7. Zadłużenie",
+      "content": "W 2024 roku zaobserwowano znaczne zróżnicowanie w poziomie zadłużenia poszczególnych gmin Metropolii Krakowskiej. Gminą o zdecydowanie najwyższym wskaźniku relacji zobowiązań do dochodów był Kraków, gdzie zadłużenie osiągnęło poziom 75,90%. Na drugim biegunie znalazła się gmina Igołomia-Wawrzeńczyce z najniższym wskaźnikiem wynoszącym zaledwie 7,50%. Wysokim poziomem zadłużenia, przekraczającym 50%, charakteryzowały się również gminy Wieliczka (63,20%) oraz Niepołomice (57,90%). W grupie gmin o relatywnie niskim zadłużeniu, oprócz Igołomi-Wawrzeńczyc, znalazły się także Wielka Wieś (8,30%) i Zielonki (13,80%), co świadczy o ich stabilnej sytuacji finansowej w analizowanym roku.\n\nPorównując dane z 2024 roku z poprzednim rokiem, można zaobserwować pozytywne tendencje w większości gmin. Kraków odnotował spadek zadłużenia z 82,58% w 2023 roku do 75,90% w 2024 roku, co stanowi poprawę o 6,68 punktów procentowych. Podobnie Wieliczka zmniejszyła swoje zadłużenie z 68,90% do 63,20% (spadek o 5,70 p.p.), a Niepołomice z 65,99% do 57,90% (spadek o 8,09 p.p.). Znaczącą poprawę odnotowały również Świątniki Górne, gdzie zadłużenie spadło z 59,93% do 46,00%. Wśród gmin, które zwiększyły swoje zadłużenie, wyróżniają się Liszki (wzrost z 30,95% do 37,80%) oraz Biskupice (wzrost z 28,59% do 31,00%).",
+      "charts": [
+        {
+          "title": "Ryc. 4.7.2. Poziom zadłużenia gmin Metropolii Krakowskiej w 2024 r. (%). Źródło: Ministerstwo Finansów",
+          "type": "bar chart",
+          "data": "[{\"JST\": \"KRAKÓW\", \"Zadłużenie 2024 (%)\": 75.90}, {\"JST\": \"WIELICZKA\", \"Zadłużenie 2024 (%)\": 63.20}, {\"JST\": \"NIEPOŁOMICE\", \"Zadłużenie 2024 (%)\": 57.90}, {\"JST\": \"ZABIERZÓW\", \"Zadłużenie 2024 (%)\": 49.70}, {\"JST\": \"ŚWIĄTNIKI GÓRNE\", \"Zadłużenie 2024 (%)\": 46.00}, {\"JST\": \"LISZKI\", \"Zadłużenie 2024 (%)\": 37.80}, {\"JST\": \"CZERNICHÓW\", \"Zadłużenie 2024 (%)\": 35.70}, {\"JST\": \"SKAWINA\", \"Zadłużenie 2024 (%)\": 33.10}, {\"JST\": \"BISKUPICE\", \"Zadłużenie 2024 (%)\": 31.00}, {\"JST\": \"MOGILANY\", \"Zadłużenie 2024 (%)\": 29.80}, {\"JST\": \"KOCMYRZÓW-LUBORZYC\", \"Zadłużenie 2024 (%)\": 26.30}, {\"JST\": \"MICHAŁOWICE\", \"Zadłużenie 2024 (%)\": 14.00}, {\"JST\": \"ZIELONKI\", \"Zadłużenie 2024 (%)\": 13.80}, {\"JST\": \"WIELKA WIEŚ\", \"Zadłużenie 2024 (%)\": 8.30}, {\"JST\": \"IGOŁOMIA-WAWRZEŃCZ\", \"Zadłużenie 2024 (%)\": 7.50}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Ministerstwo Finansów"
+      ]
+    },
+    {
+      "title": "4.7. Zadłużenie",
+      "content": "Analiza dynamiki zadłużenia w latach 2019–2024 wskazuje na istotne zmiany w sytuacji finansowej gmin Metropolii Krakowskiej. Największy wzrost wskaźnika zadłużenia odnotowano w gminie Świątniki Górne, gdzie zwiększył się on o 25,15 punktu procentowego. Znaczące wzrosty wystąpiły również w Krakowie (o 23,96 p.p.), Kocmyrzowie-Luborzycach (o 20,42 p.p.) oraz w Zabierzowie (o 19,49 p.p.), co może być związane z realizacją dużych projektów inwestycyjnych. Z drugiej strony, kilka gmin zdołało znacząco zredukować swoje zadłużenie. Rekordzistą pod tym względem jest gmina Czernichów, gdzie wskaźnik ten spadł aż o 17,74 punktu procentowego. Wyraźną poprawę odnotowano także w gminach Igołomia-Wawrzeńczyce (spadek o 10,70 p.p.) oraz Wielka Wieś (spadek o 9,56 p.p.).",
+      "charts": [
+        {
+          "title": "Ryc. 4.7.3. Zmiana zadłużenia gmin w latach 2019–2024 (w punktach procentowych). Źródło: Ministerstwo Finansów",
+          "type": "bar chart",
+          "data": "[{\"JST\": \"ŚWIĄTNIKI GÓRNE\", \"Zmiana w p.p.\": 25.15}, {\"JST\": \"KRAKÓW\", \"Zmiana w p.p.\": 23.96}, {\"JST\": \"KOCMYRZÓW-LUBORZYC\", \"Zmiana w p.p.\": 20.42}, {\"JST\": \"ZABIERZÓW\", \"Zmiana w p.p.\": 19.49}, {\"JST\": \"WIELICZKA\", \"Zmiana w p.p.\": 16.93}, {\"JST\": \"SKAWINA\", \"Zmiana w p.p.\": 7.75}, {\"JST\": \"NIEPOŁOMICE\", \"Zmiana w p.p.\": 4.23}, {\"JST\": \"ZIELONKI\", \"Zmiana w p.p.\": 1.73}, {\"JST\": \"LISZKI\", \"Zmiana w p.p.\": 1.06}, {\"JST\": \"MOGILANY\", \"Zmiana w p.p.\": -3.83}, {\"JST\": \"BISKUPICE\", \"Zmiana w p.p.\": -6.75}, {\"JST\": \"MICHAŁOWICE\", \"Zmiana w p.p.\": -8.93}, {\"JST\": \"WIELKA WIEŚ\", \"Zmiana w p.p.\": -9.56}, {\"JST\": \"IGOŁOMIA-WAWRZEŃCZ\", \"Zmiana w p.p.\": -10.7}, {\"JST\": \"CZERNICHÓW\", \"Zmiana w p.p.\": -17.74}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Tab. 4.7.1. Gminy o największej zmianie poziomu zadłużenia w latach 2019–2024. Źródło: Ministerstwo Finansów",
+          "data": "[{\"JST\": \"ŚWIĄTNIKI GÓRNE\", \"2019\": \"20,85%\", \"2024\": \"46,00%\", \"Zmiana (p.p.)\": \"+25,15\"}, {\"JST\": \"KRAKÓW\", \"2019\": \"51,94%\", \"2024\": \"75,90%\", \"Zmiana (p.p.)\": \"+23,96\"}, {\"JST\": \"KOCMYRZÓW-LUBORZYC\", \"2019\": \"5,88%\", \"2024\": \"26,30%\", \"Zmiana (p.p.)\": \"+20,42\"}, {\"JST\": \"ZABIERZÓW\", \"2019\": \"30,21%\", \"2024\": \"49,70%\", \"Zmiana (p.p.)\": \"+19,49\"}, {\"JST\": \"WIELICZKA\", \"2019\": \"46,27%\", \"2024\": \"63,20%\", \"Zmiana (p.p.)\": \"+16,93\"}, {\"JST\": \"CZERNICHÓW\", \"2019\": \"53,44%\", \"2024\": \"35,70%\", \"Zmiana (p.p.)\": \"-17,74\"}, {\"JST\": \"IGOŁOMIA-WAWRZEŃCZ\", \"2019\": \"18,20%\", \"2024\": \"7,50%\", \"Zmiana (p.p.)\": \"-10,70\"}, {\"JST\": \"WIELKA WIEŚ\", \"2019\": \"17,86%\", \"2024\": \"8,30%\", \"Zmiana (p.p.)\": \"-9,56\"}]"
+        }
+      ],
+      "sources": []
+    },
+    {
+      "title": "4.7. Zadłużenie",
+      "content": "Porównanie danych z lat 2023 i 2024 pokazuje, że większość gmin Metropolii Krakowskiej (12 z 15) odnotowała spadek poziomu zadłużenia. Największą redukcję wskaźnika odnotowano w gminie Świątniki Górne, gdzie zadłużenie spadło o 13,93 punktu procentowego z 59,93% do 46,00%. Istotne spadki miały miejsce również w Mogilanach (o 8,29 p.p.) oraz Czernichowie (o 8,13 p.p.). Z drugiej strony, tylko trzy gminy zanotowały wzrost zadłużenia. Największy przyrost wystąpił w gminie Liszki, gdzie wskaźnik zwiększył się o 6,85 punktu procentowego, z 30,95% w 2023 r. do 37,80% w 2024 r. Warto odnotować, że miasto Kraków, pomimo posiadania jednego z najwyższych poziomów zadłużenia w 2024 r. (75,90%), również odnotowało znaczący spadek o 6,68 punktu procentowego w porównaniu z rokiem poprzednim.",
+      "charts": [
+        {
+          "title": "Ryc. 4.7.4. Zmiana zadłużenia gmin w latach 2023–2024 (w punktach procentowych). Źródło: Ministerstwo Finansów",
+          "type": "bar chart",
+          "data": "[{\"JST\": \"LISZKI\", \"Zmiana w p.p.\": 6.85}, {\"JST\": \"BISKUPICE\", \"Zmiana w p.p.\": 2.41}, {\"JST\": \"KOCMYRZÓW-LUBORZYC\", \"Zmiana w p.p.\": 0.68}, {\"JST\": \"SKAWINA\", \"Zmiana w p.p.\": -1.34}, {\"JST\": \"MICHAŁOWICE\", \"Zmiana w p.p.\": -1.51}, {\"JST\": \"IGOŁOMIA-WAWRZEŃCZ\", \"Zmiana w p.p.\": -1.67}, {\"JST\": \"ZABIERZÓW\", \"Zmiana w p.p.\": -2.99}, {\"JST\": \"WIELICZKA\", \"Zmiana w p.p.\": -5.70}, {\"JST\": \"KRAKÓW\", \"Zmiana w p.p.\": -6.68}, {\"JST\": \"ZIELONKI\", \"Zmiana w p.p.\": -6.85}, {\"JST\": \"WIELKA WIEŚ\", \"Zmiana w p.p.\": -7.49}, {\"JST\": \"NIEPOŁOMICE\", \"Zmiana w p.p.\": -8.09}, {\"JST\": \"CZERNICHÓW\", \"Zmiana w p.p.\": -8.13}, {\"JST\": \"MOGILANY\", \"Zmiana w p.p.\": -8.29}, {\"JST\": \"ŚWIĄTNIKI GÓRNE\", \"Zmiana w p.p.\": -13.93}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "Ministerstwo Finansów"
+      ]
+    }
+  ]
+}

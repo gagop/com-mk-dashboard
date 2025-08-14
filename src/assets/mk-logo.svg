@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="46" viewBox="0 0 216 46" role="img" aria-labelledby="title desc">
+  <title id="title">Metropolia Krakowska — znak</title>
+  <desc id="desc">Abstrakcyjny znak z geometrycznych kształtów składających się na literę M w kolorach czerwieni i granatu</desc>
+  <defs>
+    <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#b5002a"/>
+      <stop offset="1" stop-color="#d21f3c"/>
+    </linearGradient>
+  </defs>
+  <!-- znak -->
+  <g transform="translate(0,3)">
+    <!-- lewa ćwiartka -->
+    <path d="M0,20 a20,20 0 0 1 20,-20 v12 a8,8 0 0 0 -8,8 z" fill="url(#g)"/>
+    <!-- prawa ćwiartka -->
+    <path d="M40,20 a20,20 0 0 0 -20,-20 v12 a8,8 0 0 1 8,8 z" fill="url(#g)"/>
+    <!-- dolne koło lewe -->
+    <path d="M0,20 a20,20 0 0 0 20,20 v-12 a8,8 0 0 1 -8,-8 z" fill="#0f254a"/>
+    <!-- dolne koło prawe -->
+    <path d="M40,20 a20,20 0 0 1 -20,20 v-12 a8,8 0 0 0 8,-8 z" fill="#0f254a"/>
+    <!-- środkowy prostokąt -->
+    <rect x="18" y="12" width="4" height="16" fill="#0f254a"/>
+  </g>
+  <!-- logotyp (tekst jako kształt prosty dla niezależności od fontu) -->
+  <g fill="#0f254a" transform="translate(56,13)">
+    <text x="0" y="12" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-weight="700" font-size="16">Metropolia</text>
+    <text x="0" y="30" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" font-weight="700" font-size="16">Krakowska</text>
+  </g>
+</svg>
+
+

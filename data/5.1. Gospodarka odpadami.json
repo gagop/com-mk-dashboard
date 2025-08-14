@@ -1,0 +1,233 @@
+{
+  "paragraphs": [
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "W 2024 roku w Metropolii Krakowskiej zaobserwowano kontynuację trendu wzrostowego w ilości wytwarzanych odpadów komunalnych. Łączna masa zebranych odpadów wyniosła 553,1 tys. ton, co stanowi wzrost w stosunku do 524,9 tys. ton w 2023 roku. Ilość odpadów zebranych selektywnie wzrosła z 251,6 tys. ton do 267,4 tys. ton, natomiast ilość odpadów zmieszanych zwiększyła się z 273,3 tys. ton do 285,8 tys. ton. Mimo nominalnego wzrostu obu frakcji, kluczowe jest, że udział odpadów segregowanych w ogólnej masie odpadów utrzymuje się na wysokim poziomie, co świadczy o rosnącej świadomości ekologicznej mieszkańców. Analiza danych z ostatnich pięciu lat pokazuje, że ilość odpadów zbieranych selektywnie wzrosła o ponad 72% od 2019 roku, co jest znaczącym osiągnięciem w kontekście dążenia do gospodarki o obiegu zamkniętym.\n\nW 2024 roku poziom recyklingu i przygotowania do ponownego użycia odpadów wykazywał znaczące zróżnicowanie między gminami Metropolii Krakowskiej. Najwyższe wskaźniki recyklingu osiągnęły Igołomia-Wawrzeńczyce (67,52%), Liszki (66,14%) oraz Wielka Wieś (56,90%). Najniższy poziom recyklingu odnotowano w Wieliczce (25,00%), co wskazuje na potrzebę intensyfikacji działań edukacyjnych i organizacyjnych w tej gminie. Średni poziom recyklingu w całej Metropolii znacząco wzrósł w porównaniu do lat poprzednich, co świadczy o skuteczności wdrażanych programów gospodarki odpadami.\n\nAnaliza efektywności kosztowej usług odbioru odpadów komunalnych w 2024 roku pokazuje znaczące różnice między gminami. Najniższe koszty jednostkowe odnotowano w Michałowicach (842,67 zł/t) oraz Kocmyrzowie-Luborzycy (896,25 zł/t), podczas gdy najwyższe w Skawinie (1 180,73 zł/t) i Wieliczce (1 064,55 zł/t). Średni koszt w Krakowie wyniósł 911,65 zł/t, co plasuje miasto w środkowej części rankingu efektywności kosztowej.\n\nIlość odpadów komunalnych przypadająca na jednego mieszkańca w 2024 roku wykazywała znaczne zróżnicowanie terytorialne. Najwyższą produkcję odpadów na mieszkańca odnotowano w Zabierzowie (614,90 kg/mieszkańca) oraz Niepołomicach (605,99 kg/mieszkańca), podczas gdy najniższą w Igołomi-Wawrzeńczycach (338,37 kg/mieszkańca) i Czernichowie (364,41 kg/mieszkańca). Średnia dla całej Metropolii Krakowskiej wyniosła 522,96 kg/mieszkańca, przy czym dla gmin bez Krakowa wskaźnik ten był niższy i wyniósł 493,33 kg/mieszkańca.\n\nBadania społeczne przeprowadzone w ramach monitorowania wskaźników Strategii Metropolia Krakowska 2030 wykazały wysokie zadowolenie mieszkańców z organizacji wywozu śmieci. W jednym z badań 83% respondentów wyraziło pozytywną ocenę usług odbioru odpadów, podczas gdy w drugim badaniu odsetek ten wzrósł do 93%. Analiza w podziale na gminy ujawnia znaczące różnice w poziomie satysfakcji mieszkańców. W pierwszym badaniu najniższe zadowolenie odnotowano w Czernichowie (73% pozytywnych ocen), podczas gdy w drugim badaniu ta sama gmina osiągnęła jeden z najwyższych wskaźników satysfakcji (98%). Najstabilnie wysokie oceny w obu badaniach otrzymały gminy Biskupice (91% i 97%) oraz Niepołomice (93% i 98%), co świadczy o konsekwentnie dobrej jakości świadczonych usług w tych jednostkach.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.1. Ilość zebranych odpadów zmieszanych i segregowanych w Metropolii Krakowskiej w latach 2019–2024. Źródło: Bank Danych Lokalnych GUS",
+          "type": "line chart",
+          "data": "[{\"Rok\": 2019, \"Odpady zmieszane (t)\": 286116.44, \"Odpady segregowane (t)\": 154967.23}, {\"Rok\": 2020, \"Odpady zmieszane (t)\": 260152.83, \"Odpady segregowane (t)\": 204330.63}, {\"Rok\": 2021, \"Odpady zmieszane (t)\": 262810.73, \"Odpady segregowane (t)\": 221519.31}, {\"Rok\": 2022, \"Odpady zmieszane (t)\": 264242.17, \"Odpady segregowane (t)\": 233420.69}, {\"Rok\": 2023, \"Odpady zmieszane (t)\": 273274.13, \"Odpady segregowane (t)\": 251591.25}, {\"Rok\": 2024, \"Odpady zmieszane (t)\": 285758.64, \"Odpady segregowane (t)\": 267356.65}]"
+        },
+        {
+          "title": "Ryc. 5.1.2. Poziom recyklingu w gminach Metropolii Krakowskiej w 2024 roku. Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Poziom recyklingu (%)\": 67.52}, {\"Gmina\": \"Liszki\", \"Poziom recyklingu (%)\": 66.14}, {\"Gmina\": \"Wielka Wieś\", \"Poziom recyklingu (%)\": 56.90}, {\"Gmina\": \"Czernichów\", \"Poziom recyklingu (%)\": 52.96}, {\"Gmina\": \"Zabierzów\", \"Poziom recyklingu (%)\": 52.86}, {\"Gmina\": \"Kraków\", \"Poziom recyklingu (%)\": 52.33}, {\"Gmina\": \"Zielonki\", \"Poziom recyklingu (%)\": 52.17}, {\"Gmina\": \"Skawina\", \"Poziom recyklingu (%)\": 51.35}, {\"Gmina\": \"Michałowice\", \"Poziom recyklingu (%)\": 49.06}, {\"Gmina\": \"Mogilany\", \"Poziom recyklingu (%)\": 48.21}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Poziom recyklingu (%)\": 46.31}, {\"Gmina\": \"Niepołomice\", \"Poziom recyklingu (%)\": 46.27}, {\"Gmina\": \"Świątniki Górne\", \"Poziom recyklingu (%)\": 45.84}, {\"Gmina\": \"Biskupice\", \"Poziom recyklingu (%)\": 45.77}, {\"Gmina\": \"Wieliczka\", \"Poziom recyklingu (%)\": 25.00}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Tab. 5.1.1. Wskaźniki gospodarki odpadami w gminach Metropolii Krakowskiej w 2024 roku. Źródło: Bank Danych Lokalnych GUS",
+          "data": "[{\"Gmina\": \"Biskupice\", \"Odpady na mieszkańca (kg)\": 455.95, \"Koszt jednostkowy (zł/t)\": 847.67, \"Poziom recyklingu (%)\": 45.77}, {\"Gmina\": \"Czernichów\", \"Odpady na mieszkańca (kg)\": 364.41, \"Koszt jednostkowy (zł/t)\": 933.44, \"Poziom recyklingu (%)\": 52.96}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Odpady na mieszkańca (kg)\": 338.37, \"Koszt jednostkowy (zł/t)\": 953.80, \"Poziom recyklingu (%)\": 67.52}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Odpady na mieszkańca (kg)\": 454.82, \"Koszt jednostkowy (zł/t)\": 896.25, \"Poziom recyklingu (%)\": 46.31}, {\"Gmina\": \"Kraków\", \"Odpady na mieszkańca (kg)\": 534.47, \"Koszt jednostkowy (zł/t)\": 911.65, \"Poziom recyklingu (%)\": 52.33}, {\"Gmina\": \"Liszki\", \"Odpady na mieszkańca (kg)\": 464.98, \"Koszt jednostkowy (zł/t)\": 1095.08, \"Poziom recyklingu (%)\": 66.14}, {\"Gmina\": \"Michałowice\", \"Odpady na mieszkańca (kg)\": 513.03, \"Koszt jednostkowy (zł/t)\": 842.67, \"Poziom recyklingu (%)\": 49.06}, {\"Gmina\": \"Mogilany\", \"Odpady na mieszkańca (kg)\": 436.79, \"Koszt jednostkowy (zł/t)\": 1063.02, \"Poziom recyklingu (%)\": 48.21}, {\"Gmina\": \"Niepołomice\", \"Odpady na mieszkańca (kg)\": 605.99, \"Koszt jednostkowy (zł/t)\": 978.66, \"Poziom recyklingu (%)\": 46.27}, {\"Gmina\": \"Skawina\", \"Odpady na mieszkańca (kg)\": 464.20, \"Koszt jednostkowy (zł/t)\": 1180.73, \"Poziom recyklingu (%)\": 51.35}, {\"Gmina\": \"Świątniki Górne\", \"Odpady na mieszkańca (kg)\": 417.88, \"Koszt jednostkowy (zł/t)\": 1036.03, \"Poziom recyklingu (%)\": 45.84}, {\"Gmina\": \"Wieliczka\", \"Odpady na mieszkańca (kg)\": 440.43, \"Koszt jednostkowy (zł/t)\": 1064.55, \"Poziom recyklingu (%)\": 25.00}, {\"Gmina\": \"Wielka Wieś\", \"Odpady na mieszkańca (kg)\": 588.43, \"Koszt jednostkowy (zł/t)\": 931.93, \"Poziom recyklingu (%)\": 56.90}, {\"Gmina\": \"Zabierzów\", \"Odpady na mieszkańca (kg)\": 614.90, \"Koszt jednostkowy (zł/t)\": 903.76, \"Poziom recyklingu (%)\": 52.86}, {\"Gmina\": \"Zielonki\", \"Odpady na mieszkańca (kg)\": 567.65, \"Koszt jednostkowy (zł/t)\": 1013.39, \"Poziom recyklingu (%)\": 52.17}]"
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS",
+        "gminy Metropolii Krakowskiej",
+        "Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+      ]
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Wszystkie gminy Metropolii Krakowskiej odnotowały w 2024 roku wzrost ilości zbieranych odpadów selektywnych, co potwierdza powszechność pozytywnych tendencji. Największą dynamikę zaobserwowano w gminie Michałowice, gdzie wzrost wyniósł aż 30,71% w porównaniu do roku poprzedniego. Na kolejnych miejscach uplasowały się gminy Zabierzów ze wzrostem o 25,73% oraz Świątniki Górne z wynikiem 21,34%. Tak znaczące zmiany świadczą o skuteczności lokalnych działań edukacyjnych i organizacyjnych. Warto zauważyć, że nawet gminy o największej masie odpadów, jak Kraków, utrzymały trend wzrostowy, notując wzrost o 6,19%. Brak spadków w którejkolwiek z gmin jest istotnym sygnałem o stabilności i rozwoju systemów selektywnej zbiórki.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.2. Dynamika wzrostu ilości odpadów segregowanych w gminach (2024 vs 2023). Źródło: gminy Metropolii Krakowskiej",
+          "type": "bar chart",
+          "data": "[{\"Gmina\": \"Michałowice\", \"Zmiana (%)\": 30.71}, {\"Gmina\": \"Zabierzów\", \"Zmiana (%)\": 25.73}, {\"Gmina\": \"Świątniki Górne\", \"Zmiana (%)\": 21.34}, {\"Gmina\": \"Zielonki\", \"Zmiana (%)\": 20.86}, {\"Gmina\": \"Mogilany\", \"Zmiana (%)\": 19.11}, {\"Gmina\": \"Skawina\", \"Zmiana (%)\": 18.83}, {\"Gmina\": \"Biskupice\", \"Zmiana (%)\": 18.74}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Zmiana (%)\": 17.92}, {\"Gmina\": \"Wielka Wieś\", \"Zmiana (%)\": 16.95}, {\"Gmina\": \"Czernichów\", \"Zmiana (%)\": 15.97}, {\"Gmina\": \"Niepołomice\", \"Zmiana (%)\": 15.75}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Zmiana (%)\": 13.82}, {\"Gmina\": \"Wieliczka\", \"Zmiana (%)\": 9.42}, {\"Gmina\": \"Liszki\", \"Zmiana (%)\": 8.56}, {\"Gmina\": \"Kraków\", \"Zmiana (%)\": 6.19}]"
+        }
+      ],
+      "tables": [],
+      "sources": [
+        "gminy Metropolii Krakowskiej"
+      ]
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Analiza struktury odpadów komunalnych w perspektywie wieloletniej ukazuje systematyczną poprawę w zakresie segregacji. Na podstawie danych z Bank Danych Lokalnych GUS, łączna ilość odpadów segregowanych w Metropolii Krakowskiej wzrosła z 148 966,99 t w 2019 roku do 270 155,65 t w 2024 roku, podczas gdy odpady zmieszane wzrosły z 295 115,42 t do 301 295,25 t. Oznacza to wzrost udziału odpadów segregowanych z 33,5% w 2019 roku do 47,3% w 2024 roku. Ten stały wzrost jest kluczowym wskaźnikiem efektywności systemów gospodarki odpadami.\n\nIlość odpadów zmieszanych wykazuje zmienną dynamikę w wartościach bezwzględnych – wzrosła z 295 115,42 t w 2019 roku do 301 295,25 t w 2024 roku, jednak jej procentowy udział systematycznie maleje, co jest pożądanym zjawiskiem. Utrzymanie tego trendu będzie miało decydujące znaczenie dla osiągnięcia celów recyklingowych narzuconych przez Unię Europejską.\n\nW 2024 roku najwyższe poziomy recyklingu osiągnęły gminy Igołomia-Wawrzeńczyce (67,52%) oraz Liszki (66,14%), co świadczy o skuteczności lokalnych systemów gospodarki odpadami. Szczególnie imponujące są trajektorie poprawy tych gmin – Igołomia-Wawrzeńczyce zwiększyła poziom recyklingu z zaledwie 14% w 2021 roku do 67,52% w 2024 roku, natomiast Liszki z 28% w 2021 roku do 66,14% w 2024 roku. Znaczący postęp w tym zakresie odnotował również Kraków, gdzie poziom recyklingu wzrósł z 27,9% w 2021 roku do 52,33% w 2024 roku.\n\nAnaliza kosztów świadczenia usług odbioru odpadów komunalnych wskazuje na zróżnicowaną efektywność kosztową w poszczególnych gminach. W 2024 roku najniższe koszty jednostkowe odnotowano w gminie Michałowice (842,67 zł/t), podczas gdy najwyższe w Skawinie (1 180,73 zł/t). Średni koszt w Metropolii Krakowskiej wyniósł około 950 zł/t.\n\nZnaczące różnice występują również w ilości odpadów przypadających na jednego mieszkańca. W 2024 roku najniższy wskaźnik odnotowano w gminie Igołomia-Wawrzeńczyce (338 kg/mieszkańca/rok), podczas gdy najwyższy w Zabierzowie (615 kg/mieszkańca/rok). Średnia dla całej Metropolii Krakowskiej wyniosła 523 kg/mieszkańca/rok.\n\nMieszkańcy Metropolii Krakowskiej wyrażają wysokie zadowolenie z organizacji wywozu śmieci – 83% respondentów ocenia pozytywnie funkcjonowanie systemu gospodarki odpadami, podczas gdy jedynie 8% wyraża niezadowolenie. Ten wysoki poziom akceptacji społecznej świadczy o skuteczności wdrażanych rozwiązań organizacyjnych i technicznych w zakresie gospodarki odpadami komunalnymi.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.3. Struktura odpadów komunalnych w Metropolii Krakowskiej (2019–2024). Źródło: Bank Danych Lokalnych GUS",
+          "type": "100% stacked area chart",
+          "data": "[{\"Rok\": 2019, \"Odpady segregowane (%)\": 33.5, \"Odpady zmieszane (%)\": 66.5}, {\"Rok\": 2020, \"Odpady segregowane (%)\": 41.8, \"Odpady zmieszane (%)\": 58.2}, {\"Rok\": 2021, \"Odpady segregowane (%)\": 43.7, \"Odpady zmieszane (%)\": 56.3}, {\"Rok\": 2022, \"Odpady segregowane (%)\": 45.1, \"Odpady zmieszane (%)\": 54.9}, {\"Rok\": 2023, \"Odpady segregowane (%)\": 46.0, \"Odpady zmieszane (%)\": 54.0}, {\"Rok\": 2024, \"Odpady segregowane (%)\": 47.3, \"Odpady zmieszane (%)\": 52.7}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Tab. 5.1.1. Ilość zebranych odpadów zmieszanych i segregowanych w gminach w latach 2023-2024. Źródło: Bank Danych Lokalnych GUS, gminy Metropolii Krakowskiej",
+          "data": "[{\"Gmina\": \"Biskupice\", \"Odpady zmieszane 2023 (t)\": 2158.12, \"Odpady segregowane 2023 (t)\": 1945.49, \"Odpady zmieszane 2024 (t)\": 2665.99, \"Odpady segregowane 2024 (t)\": 2309.98}, {\"Gmina\": \"Czernichów\", \"Odpady zmieszane 2023 (t)\": 3224.72, \"Odpady segregowane 2023 (t)\": 1897.5, \"Odpady zmieszane 2024 (t)\": 2966.38, \"Odpady segregowane 2024 (t)\": 2200.52}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Odpady zmieszane 2023 (t)\": 1259.2, \"Odpady segregowane 2023 (t)\": 807.53, \"Odpady zmieszane 2024 (t)\": 1453.94, \"Odpady segregowane 2024 (t)\": 952.22}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Odpady zmieszane 2023 (t)\": 4140.52, \"Odpady segregowane 2023 (t)\": 3272.82, \"Odpady zmieszane 2024 (t)\": 4359.74, \"Odpady segregowane 2024 (t)\": 3725.1}, {\"Gmina\": \"Kraków\", \"Odpady zmieszane 2023 (t)\": 202083.3, \"Odpady segregowane 2023 (t)\": 192110.84, \"Odpady zmieszane 2024 (t)\": 211714.22, \"Odpady segregowane 2024 (t)\": 203995.87}, {\"Gmina\": \"Liszki\", \"Odpady zmieszane 2023 (t)\": 2795.32, \"Odpady segregowane 2023 (t)\": 4567.56, \"Odpady zmieszane 2024 (t)\": 2989.63, \"Odpady segregowane 2024 (t)\": 4958.65}, {\"Gmina\": \"Michałowice\", \"Odpady zmieszane 2023 (t)\": 2622.2, \"Odpady segregowane 2023 (t)\": 2183.0, \"Odpady zmieszane 2024 (t)\": 2886.76, \"Odpady segregowane 2024 (t)\": 2853.3}, {\"Gmina\": \"Mogilany\", \"Odpady zmieszane 2023 (t)\": 3377.25, \"Odpady segregowane 2023 (t)\": 2844.92, \"Odpady zmieszane 2024 (t)\": 3311.27, \"Odpady segregowane 2024 (t)\": 3388.53}, {\"Gmina\": \"Niepołomice\", \"Odpady zmieszane 2023 (t)\": 9966.81, \"Odpady segregowane 2023 (t)\": 7275.18, \"Odpady zmieszane 2024 (t)\": 10497.92, \"Odpady segregowane 2024 (t)\": 8420.87}, {\"Gmina\": \"Skawina\", \"Odpady zmieszane 2023 (t)\": 11251.76, \"Odpady segregowane 2023 (t)\": 5113.33, \"Odpady zmieszane 2024 (t)\": 10746.42, \"Odpady segregowane 2024 (t)\": 6076.18}, {\"Gmina\": \"Świątniki Górne\", \"Odpady zmieszane 2023 (t)\": 2205.88, \"Odpady segregowane 2023 (t)\": 1616.11, \"Odpady zmieszane 2024 (t)\": 2286.99, \"Odpady segregowane 2024 (t)\": 1960.95}, {\"Gmina\": \"Wieliczka\", \"Odpady zmieszane 2023 (t)\": 17426.29, \"Odpady segregowane 2023 (t)\": 9268.97, \"Odpady zmieszane 2024 (t)\": 19006.52, \"Odpady segregowane 2024 (t)\": 10142.0}, {\"Gmina\": \"Wielka Wieś\", \"Odpady zmieszane 2023 (t)\": 3408.97, \"Odpady segregowane 2023 (t)\": 3345.37, \"Odpady zmieszane 2024 (t)\": 3494.65, \"Odpady segregowane 2024 (t)\": 3912.58}, {\"Gmina\": \"Zabierzów\", \"Odpady zmieszane 2023 (t)\": 6116.39, \"Odpady segregowane 2023 (t)\": 7003.12, \"Odpady zmieszane 2024 (t)\": 6145.57, \"Odpady segregowane 2024 (t)\": 8805.33}, {\"Gmina\": \"Zielonki\", \"Odpady zmieszane 2023 (t)\": 5697.93, \"Odpady segregowane 2023 (t)\": 5340.01, \"Odpady zmieszane 2024 (t)\": 5769.25, \"Odpady segregowane 2024 (t)\": 6454.07}]"
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS",
+        "gminy Metropolii Krakowskiej",
+        "Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+      ]
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Poziomy recyklingu w gminach Metropolii Krakowskiej w 2024 roku były znacznie zróżnicowane. Liderem w tej kategorii została gmina Igołomia-Wawrzeńczyce, która osiągnęła wskaźnik recyklingu na poziomie 67,5%. Tuż za nią uplasowała się gmina Liszki z wynikiem 66,1%. Istotne jest, że aż osiem gmin, w tym Kraków (52,3%), przekroczyło próg 50% recyklingu, co świadczy o dojrzałości i efektywności ich systemów. Na drugim końcu skali znalazła się gmina Wieliczka, gdzie poziom recyklingu wyniósł zaledwie 25%, co znacząco odbiega od średniej i wskazuje na potencjalne obszary do poprawy. Tak duża rozpiętość wyników sugeruje istnienie lokalnych barier lub odmiennych strategii w zarządzaniu odpadami.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.4. Poziomy recyklingu w gminach Metropolii Krakowskiej w 2024 r. Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Poziom recyklingu (%)\": 67.52}, {\"Gmina\": \"Liszki\", \"Poziom recyklingu (%)\": 66.14}, {\"Gmina\": \"Wielka Wieś\", \"Poziom recyklingu (%)\": 56.9}, {\"Gmina\": \"Czernichów\", \"Poziom recyklingu (%)\": 52.96}, {\"Gmina\": \"Zabierzów\", \"Poziom recyklingu (%)\": 52.86}, {\"Gmina\": \"Kraków\", \"Poziom recyklingu (%)\": 52.33}, {\"Gmina\": \"Zielonki\", \"Poziom recyklingu (%)\": 52.17}, {\"Gmina\": \"Skawina\", \"Poziom recyklingu (%)\": 51.35}, {\"Gmina\": \"Michałowice\", \"Poziom recyklingu (%)\": 49.06}, {\"Gmina\": \"Mogilany\", \"Poziom recyklingu (%)\": 48.21}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Poziom recyklingu (%)\": 46.31}, {\"Gmina\": \"Niepołomice\", \"Poziom recyklingu (%)\": 46.27}, {\"Gmina\": \"Świątniki Górne\", \"Poziom recyklingu (%)\": 45.84}, {\"Gmina\": \"Biskupice\", \"Poziom recyklingu (%)\": 45.77}, {\"Gmina\": \"Wieliczka\", \"Poziom recyklingu (%)\": 25.0}]"
+        }
+      ],
+      "tables": [],
+      "sources": []
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Ilość odpadów komunalnych przypadająca na jednego mieszkańca jest kolejnym wskaźnikiem obrazującym zróżnicowanie w Metropolii. W 2024 roku średnia dla całego obszaru wyniosła 523 kg. Najmniej odpadów na osobę wygenerowała gmina Igołomia-Wawrzeńczyce, z wynikiem 338,4 kg, co koreluje z jej wysokim poziomem recyklingu. Z kolei najwięcej odpadów na mieszkańca odnotowano w gminie Zabierzów (614,9 kg), a niewiele mniej w Niepołomicach (606 kg) i Wielkiej Wsi (588,4 kg). Wysokie wartości w tych gminach mogą być związane z ich charakterem (np. rozwinięta działalność gospodarcza) lub stylem życia mieszkańców. Różnica między skrajnymi wartościami wynosi ponad 276 kg, co pokazuje, jak odmienne są wzorce konsumpcji i gospodarki odpadami w poszczególnych częściach Metropolii.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.5. Ilość odpadów komunalnych na mieszkańca w 2024 r. Źródło: gminy Metropolii Krakowskiej",
+          "type": "horizontal bar chart",
+          "data": "[{\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Ilość odpadów (kg/mieszkańca)\": 338.4}, {\"Gmina\": \"Czernichów\", \"Ilość odpadów (kg/mieszkańca)\": 364.4}, {\"Gmina\": \"Świątniki Górne\", \"Ilość odpadów (kg/mieszkańca)\": 417.9}, {\"Gmina\": \"Mogilany\", \"Ilość odpadów (kg/mieszkańca)\": 436.8}, {\"Gmina\": \"Wieliczka\", \"Ilość odpadów (kg/mieszkańca)\": 440.4}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Ilość odpadów (kg/mieszkańca)\": 454.8}, {\"Gmina\": \"Biskupice\", \"Ilość odpadów (kg/mieszkańca)\": 456.0}, {\"Gmina\": \"Skawina\", \"Ilość odpadów (kg/mieszkańca)\": 464.2}, {\"Gmina\": \"Liszki\", \"Ilość odpadów (kg/mieszkańca)\": 465.0}, {\"Gmina\": \"Michałowice\", \"Ilość odpadów (kg/mieszkańca)\": 513.0}, {\"Gmina\": \"Kraków\", \"Ilość odpadów (kg/mieszkańca)\": 534.5}, {\"Gmina\": \"Zielonki\", \"Ilość odpadów (kg/mieszkańca)\": 567.6}, {\"Gmina\": \"Wielka Wieś\", \"Ilość odpadów (kg/mieszkańca)\": 588.4}, {\"Gmina\": \"Niepołomice\", \"Ilość odpadów (kg/mieszkańca)\": 606.0}, {\"Gmina\": \"Zabierzów\", \"Ilość odpadów (kg/mieszkańca)\": 614.9}]"
+        }
+      ],
+      "tables": [],
+      "sources": []
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Analiza porównawcza wskaźników recyklingu i ilości odpadów na mieszkańca dostarcza ciekawych wniosków. Gmina Igołomia-Wawrzeńczyce stanowi wzór efektywności, łącząc najwyższy poziom recyklingu z najniższą produkcją odpadów per capita. Z drugiej strony, gmina Zabierzów, mimo najwyższej ilości odpadów na mieszkańca, osiąga jednocześnie wysoki, przekraczający 50% poziom recyklingu. To sugeruje, że duża ilość generowanych odpadów nie musi automatycznie oznaczać niskiej efektywności ekologicznej, o ile system jest w stanie dużą ich część skierować do ponownego przetworzenia. Gmina Wieliczka stanowi przypadek wymagający uwagi – stosunkowo przeciętna ilość odpadów na mieszkańca idzie w parze z najniższym wskaźnikiem recyklingu w całej Metropolii.",
+      "charts": [],
+      "tables": [
+        {
+          "title": "Tab. 5.1.2. Porównanie poziomu recyklingu i ilości odpadów na mieszkańca we wszystkich gminach Metropolii Krakowskiej (2024). Źródło: Bank Danych Lokalnych GUS, gminy Metropolii Krakowskiej",
+          "data": [
+            {
+              "Gmina": "Igołomia-Wawrzeńczyce",
+              "Poziom recyklingu (%)": 67.52,
+              "Ilość odpadów (kg/mieszkańca)": 338.4
+            },
+            {
+              "Gmina": "Liszki",
+              "Poziom recyklingu (%)": 66.14,
+              "Ilość odpadów (kg/mieszkańca)": 465.0
+            },
+            {
+              "Gmina": "Wielka Wieś",
+              "Poziom recyklingu (%)": 56.9,
+              "Ilość odpadów (kg/mieszkańca)": 588.4
+            },
+            {
+              "Gmina": "Czernichów",
+              "Poziom recyklingu (%)": 52.96,
+              "Ilość odpadów (kg/mieszkańca)": 364.4
+            },
+            {
+              "Gmina": "Zabierzów",
+              "Poziom recyklingu (%)": 52.86,
+              "Ilość odpadów (kg/mieszkańca)": 614.9
+            },
+            {
+              "Gmina": "Kraków",
+              "Poziom recyklingu (%)": 52.33,
+              "Ilość odpadów (kg/mieszkańca)": 534.5
+            },
+            {
+              "Gmina": "Zielonki",
+              "Poziom recyklingu (%)": 52.17,
+              "Ilość odpadów (kg/mieszkańca)": 567.6
+            },
+            {
+              "Gmina": "Skawina",
+              "Poziom recyklingu (%)": 51.35,
+              "Ilość odpadów (kg/mieszkańca)": 464.2
+            },
+            {
+              "Gmina": "Michałowice",
+              "Poziom recyklingu (%)": 49.06,
+              "Ilość odpadów (kg/mieszkańca)": 513.0
+            },
+            {
+              "Gmina": "Mogilany",
+              "Poziom recyklingu (%)": 48.21,
+              "Ilość odpadów (kg/mieszkańca)": 436.8
+            },
+            {
+              "Gmina": "Kocmyrzów-Luborzyca",
+              "Poziom recyklingu (%)": 46.31,
+              "Ilość odpadów (kg/mieszkańca)": 454.8
+            },
+            {
+              "Gmina": "Niepołomice",
+              "Poziom recyklingu (%)": 46.27,
+              "Ilość odpadów (kg/mieszkańca)": 606.0
+            },
+            {
+              "Gmina": "Świątniki Górne",
+              "Poziom recyklingu (%)": 45.84,
+              "Ilość odpadów (kg/mieszkańca)": 417.9
+            },
+            {
+              "Gmina": "Biskupice",
+              "Poziom recyklingu (%)": 45.77,
+              "Ilość odpadów (kg/mieszkańca)": 455.95
+            },
+            {
+              "Gmina": "Wieliczka",
+              "Poziom recyklingu (%)": 25.0,
+              "Ilość odpadów (kg/mieszkańca)": 440.4
+            }
+          ]
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS",
+        "gminy Metropolii Krakowskiej"
+      ]
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Koszty odbioru odpadów komunalnych w Metropolii Krakowskiej wykazują w ostatnich latach wyraźną tendencję wzrostową. Analiza danych dla wybranych gmin, reprezentujących różne profile (Kraków jako miasto centralne, Skawina i Wieliczka jako gminy o wysokich kosztach oraz Michałowice z najniższym kosztem w 2024 r.), potwierdza ten trend. Przykładowo, w Krakowie koszt wzrósł z 494,79 zł/t w 2019 roku do 911,65 zł/t w 2024 roku, co oznacza wzrost o niemal 85%. Podobne, a nawet gwałtowniejsze wzrosty, miały miejsce w innych gminach, co jest zjawiskiem powszechnym, wynikającym m.in. z rosnących opłat środowiskowych, kosztów pracy i paliwa. Ta presja kosztowa stanowi poważne wyzwanie dla budżetów gmin i mieszkańców.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.6. Zmiana kosztu odbioru odpadów w wybranych gminach (2019–2024). Źródło: Bank Danych Lokalnych GUS",
+          "type": "line chart",
+          "data": "[{\"Rok\": 2019, \"Kraków\": 494.79, \"Skawina\": 745.38, \"Michałowice\": 522.91, \"Wieliczka\": 381.62}, {\"Rok\": 2020, \"Kraków\": 637.09, \"Skawina\": 991.89, \"Michałowice\": 1027.77, \"Wieliczka\": 268.71}, {\"Rok\": 2021, \"Kraków\": 717.15, \"Skawina\": 1062.31, \"Michałowice\": 987.23, \"Wieliczka\": 279.35}, {\"Rok\": 2022, \"Kraków\": 744.42, \"Skawina\": 1128.09, \"Michałowice\": 1258.15, \"Wieliczka\": 509.39}, {\"Rok\": 2023, \"Kraków\": 873.73, \"Skawina\": 1323.55, \"Michałowice\": 1023.89, \"Wieliczka\": 1088.7}, {\"Rok\": 2024, \"Kraków\": 911.65, \"Skawina\": 1180.73, \"Michałowice\": 842.67, \"Wieliczka\": 1064.55}]"
+        }
+      ],
+      "tables": [],
+      "sources": []
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "W 2024 roku rozpiętość kosztów odbioru tony odpadów między gminami Metropolii była bardzo duża i wyniosła prawie 340 zł. Najtaniej usługę tę realizowano w gminie Michałowice, gdzie koszt wyniósł 842,67 zł/t. Na drugim biegunie znalazła się gmina Skawina z kosztem na poziomie 1180,73 zł/t. Wysokie stawki odnotowano również w Liszkach (1095,08 zł/t) i Wieliczce (1064,55 zł/t). Takie zróżnicowanie może wynikać z wielu czynników, w tym z odległości od instalacji przetwarzania odpadów, gęstości zaludnienia, specyfiki zawieranych umów z wykonawcami oraz zakresu świadczonych usług (np. częstotliwości odbioru). Dla mieszkańców różnice te przekładają się bezpośrednio na wysokość opłat za gospodarowanie odpadami.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.7. Koszt odbioru 1 tony odpadów komunalnych w gminach w 2024 r. Źródło: Bank Danych Lokalnych GUS",
+          "type": "bar chart",
+          "data": "[{\"Gmina\": \"Michałowice\", \"Koszt (zł/t)\": 842.67}, {\"Gmina\": \"Biskupice\", \"Koszt (zł/t)\": 847.67}, {\"Gmina\": \"Kocmyrzów-Luborzyca\", \"Koszt (zł/t)\": 896.25}, {\"Gmina\": \"Zabierzów\", \"Koszt (zł/t)\": 903.76}, {\"Gmina\": \"Kraków\", \"Koszt (zł/t)\": 911.65}, {\"Gmina\": \"Wielka Wieś\", \"Koszt (zł/t)\": 931.93}, {\"Gmina\": \"Czernichów\", \"Koszt (zł/t)\": 933.44}, {\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Koszt (zł/t)\": 953.8}, {\"Gmina\": \"Niepołomice\", \"Koszt (zł/t)\": 978.66}, {\"Gmina\": \"Zielonki\", \"Koszt (zł/t)\": 1013.39}, {\"Gmina\": \"Świątniki Górne\", \"Koszt (zł/t)\": 1036.03}, {\"Gmina\": \"Wieliczka\", \"Koszt (zł/t)\": 1064.55}, {\"Gmina\": \"Mogilany\", \"Koszt (zł/t)\": 1063.02}, {\"Gmina\": \"Liszki\", \"Koszt (zł/t)\": 1095.08}, {\"Gmina\": \"Skawina\", \"Koszt (zł/t)\": 1180.73}]"
+        }
+      ],
+      "tables": [],
+      "sources": []
+    },
+    {
+      "title": "5.1. Gospodarka odpadami",
+      "content": "Kompleksowa ocena efektywności gospodarki odpadami musi uwzględniać zarówno wskaźniki ilościowe i finansowe, jak i opinie mieszkańców. Zgodnie z drugim badaniem społecznym z 2024 roku, 93% mieszkańców Metropolii Krakowskiej jest zadowolonych z organizacji wywozu śmieci. Biorąc pod uwagę wszystkie analizowane wskaźniki, za gminy o najefektywniejszej gospodarce odpadowej można uznać Igołomię-Wawrzeńczyce (najwyższy recykling na poziomie 67,52%, druga najniższa ilość odpadów per capita spośród analizowanych gmin na poziomie 338,4 kg/mieszkańca, wysokie zadowolenie mieszkańców na poziomie 97%) oraz Michałowice (najniższy koszt odbioru, wysoka dynamika wzrostu segregacji, zadowolenie na poziomie 88%). Z kolei największe wyzwania stoją przed gminą Wieliczka, która przy relatywnie wysokich kosztach notuje najniższy poziom recyklingu na poziomie 25,0%. Mimo to, ogólny poziom satysfakcji mieszkańców w całej Metropolii świadczy o dobrej organizacji systemów na poziomie operacyjnym.",
+      "charts": [
+        {
+          "title": "Ryc. 5.1.8. Zadowolenie mieszkańców z organizacji wywozu śmieci w gminie (2024). Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030",
+          "type": "donut chart",
+          "data": "[{\"Kategoria\": \"Pozytywne\", \"Wartość\": 93}, {\"Kategoria\": \"Neutralne\", \"Wartość\": 6}, {\"Kategoria\": \"Negatywne\", \"Wartość\": 1}]"
+        }
+      ],
+      "tables": [
+        {
+          "title": "Tab. 5.1.3. Syntetyczne porównanie efektywności gospodarki odpadami w wybranych gminach (2024). Źródło: Bank Danych Lokalnych GUS, gminy Metropolii Krakowskiej, Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030",
+          "data": "[{\"Gmina\": \"Igołomia-Wawrzeńczyce\", \"Poziom recyklingu (%)\": 67.52, \"Koszt (zł/t)\": 953.8, \"Ilość odpadów (kg/mieszkańca)\": 338.4, \"Zadowolenie mieszkańców (%)\": 97}, {\"Gmina\": \"Michałowice\", \"Poziom recyklingu (%)\": 49.06, \"Koszt (zł/t)\": 842.67, \"Ilość odpadów (kg/mieszkańca)\": 513.0, \"Zadowolenie mieszkańców (%)\": 88}, {\"Gmina\": \"Wieliczka\", \"Poziom recyklingu (%)\": 25.0, \"Koszt (zł/t)\": 1064.55, \"Ilość odpadów (kg/mieszkańca)\": 440.4, \"Zadowolenie mieszkańców (%)\": 92}, {\"Gmina\": \"Skawina\", \"Poziom recyklingu (%)\": 51.35, \"Koszt (zł/t)\": 1180.73, \"Ilość odpadów (kg/mieszkańca)\": 464.2, \"Zadowolenie mieszkańców (%)\": 90}]"
+        }
+      ],
+      "sources": [
+        "Bank Danych Lokalnych GUS",
+        "gminy Metropolii Krakowskiej",
+        "Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+      ]
+    }
+  ]
+}
