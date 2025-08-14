@@ -26,6 +26,7 @@
       const key = slugify(label);
       return { key, label, href: `#ch-${key}`, doc };
     })
+    .filter((s) => /^(4\.3|4\.4|4\.6)/.test(s.label))
     .sort((a, b) => a.label.localeCompare(b.label, 'pl'));
 
   let selectedKey = sections[0]?.key || '';
@@ -134,7 +135,7 @@
     return text.split('\n\n').map((s) => s.trim()).filter(Boolean);
   }
 
-  // Extract KPI metrics from data
+  // Extract KPI metrics from data with explicit units and titles
   function extractKPIs(doc) {
     const kpis = [];
     
@@ -150,13 +151,12 @@
               const latestData = data[data.length - 1] || data[0];
               numericKeys.forEach(key => {
                 if (latestData[key] != null) {
+                  const { unit, formatted } = detectUnitAndFormat(latestData[key], key, chart.title);
                   kpis.push({
-                    title: key,
+                    title: `${chart.title} — ${key}`,
                     value: latestData[key],
-                    unit: key.includes('%') || key.includes('Frekwencja') ? '%' : 
-                           key.includes('zł') || key.includes('Koszt') ? 'zł' : 
-                           key.includes('kg') ? 'kg' : 
-                           key.includes('t)') ? 't' : '',
+                    unit,
+                    display: formatted,
                     category: paragraph.title,
                     trend: data.length > 1 ? calculateTrend(data, key) : null
                   });
@@ -168,7 +168,7 @@
       }
     });
     
-    return kpis.slice(0, 8); // Limit to most important KPIs
+    return kpis.slice(0, 6); // Limit
   }
 
   function calculateTrend(data, key) {
@@ -182,24 +182,69 @@
     return 'stable';
   }
 
+  function detectUnitAndFormat(value, key, title) {
+    let unit = '';
+    const lower = `${key} ${title}`.toLowerCase();
+    if (/%|\bfrekwencja\b|odsetek|udział/.test(lower)) unit = '%';
+    else if (/zł|pln|kwota|wydatki|koszt/.test(lower)) unit = 'zł';
+    else if (/(kg)\b/.test(lower)) unit = 'kg';
+    else if (/(t\)?|tony|t\.)\b/.test(lower)) unit = 't';
+    else if (/szt\.|liczba|podmioty/.test(lower)) unit = ''; // count
+
+    const formatted = formatKPIValue(value, unit);
+    return { unit, formatted };
+  }
+
   function formatKPIValue(value, unit) {
-    if (typeof value !== 'number') return value;
-    
-    if (unit === '%') {
-      return value.toFixed(1) + '%';
-    } else if (unit === 'zł') {
-      return new Intl.NumberFormat('pl-PL', { 
-        style: 'currency', 
-        currency: 'PLN',
-        maximumFractionDigits: 0
-      }).format(value);
-    } else if (value > 1000000) {
-      return (value / 1000000).toFixed(1) + 'M';
-    } else if (value > 1000) {
-      return (value / 1000).toFixed(1) + 'K';
+    if (typeof value !== 'number') return String(value);
+    if (unit === '%') return value.toFixed(1) + '%';
+    if (unit === 'zł') {
+      if (value > 1_000_000) return (value / 1_000_000).toFixed(1) + ' mln zł';
+      return new Intl.NumberFormat('pl-PL').format(value) + ' zł';
     }
-    
-    return value.toLocaleString('pl-PL');
+    if (unit === 't') return new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 0 }).format(value) + ' t';
+    if (unit === 'kg') return new Intl.NumberFormat('pl-PL', { maximumFractionDigits: 0 }).format(value) + ' kg';
+    return new Intl.NumberFormat('pl-PL', { maximumFractionDigits: value < 10 ? 2 : 0 }).format(value);
+  }
+
+  // Generate chapter summary bullets based on data
+  function generateChapterSummary(doc) {
+    const bullets = [];
+    const add = (t) => { if (bullets.length < 6 && t) bullets.push(t); };
+
+    doc.paragraphs.forEach(p => {
+      (p.charts || []).forEach(chart => {
+        const rows = parseMaybeJson(chart.data);
+        if (!rows.length) return;
+        // Time trend where possible
+        const numericKeys = Object.keys(rows[0]).filter(k => typeof rows[0][k] === 'number');
+        const categoryKey = Object.keys(rows[0]).find(k => typeof rows[0][k] !== 'number') || '';
+        numericKeys.forEach(k => {
+          if (rows.length >= 2) {
+            const first = rows[0][k];
+            const last = rows[rows.length - 1][k];
+            if (typeof first === 'number' && typeof last === 'number' && isFinite(first) && isFinite(last) && first !== 0) {
+              const change = ((last - first) / Math.abs(first)) * 100;
+              const dir = change > 0 ? 'wzrost' : change < 0 ? 'spadek' : 'stabilizacja';
+              add(`${chart.title} — ${k}: ${dir} o ${Math.abs(change).toFixed(1)}% w badanym okresie`);
+            }
+          }
+        });
+
+        // Extremes by category if present
+        if (categoryKey) {
+          numericKeys.forEach(k => {
+            const maxRow = rows.reduce((a, b) => (b[k] > (a?.[k] ?? -Infinity) ? b : a), null);
+            const minRow = rows.reduce((a, b) => (b[k] < (a?.[k] ?? Infinity) ? b : a), null);
+            if (maxRow && minRow) {
+              add(`${chart.title} — najwyższa wartość (${k}) w ${maxRow[categoryKey]} (${formatKPIValue(maxRow[k], '')}), najniższa w ${minRow[categoryKey]} (${formatKPIValue(minRow[k], '')})`);
+            }
+          });
+        }
+      });
+    });
+
+    return bullets.slice(0, 6);
   }
 </script>
 
@@ -278,7 +323,7 @@
                         </span>
                       {/if}
                     </div>
-                    <div class="kpi-value">{formatKPIValue(kpi.value, kpi.unit)}</div>
+                    <div class="kpi-value">{kpi.display}</div>
                     <div class="kpi-category">{kpi.category}</div>
                   </div>
                 {/each}
@@ -332,6 +377,19 @@
                 {/if}
               {/each}
             </div>
+
+            <!-- Summary conclusions -->
+            {#if generateChapterSummary(current.doc).length}
+              {@const summary = generateChapterSummary(current.doc)}
+              <div class="sources-section" in:fade={{ duration: 400, delay: 800 }}>
+                <h4>Kluczowe spostrzeżenia</h4>
+                <ul>
+                  {#each summary as s}
+                    <li>{s}</li>
+                  {/each}
+                </ul>
+              </div>
+            {/if}
 
             <!-- Data Sources -->
             {#if [...new Set(current.doc.paragraphs.flatMap(p => p.sources || []))].length > 0}

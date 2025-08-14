@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapa — pełny ekran</title>
+    <style>
+      :root {
+        --background: #0f172a;
+        --text: #f1f5f9;
+        --border: #334155;
+        --surface: #1e293b;
+        --accent: #3b82f6;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; margin: 0; background: var(--background); color: var(--text); }
+      .header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); background: var(--surface); }
+      .title { margin: 0; font: 600 0.95rem system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+      .actions { display: flex; gap: 0.5rem; }
+      .btn { background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 0.35rem 0.6rem; text-decoration: none; font: 500 0.85rem system-ui; display: inline-flex; align-items: center; gap: 0.35rem; }
+      .btn:hover { background: var(--accent); color: #fff; }
+      .frame { position: absolute; top: 40px; left: 0; right: 0; bottom: 0; }
+      iframe { width: 100%; height: 100%; border: none; }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="title" id="title">Mapa</h1>
+      <div class="actions">
+        <a id="open-native" class="btn" href="#" target="_blank" rel="noopener">↗ Otwórz w nowej karcie</a>
+        <a class="btn" href="/" rel="noopener">← Powrót do dashboardu</a>
+      </div>
+    </div>
+    <div class="frame">
+      <iframe id="map-frame" src="about:blank" title="Mapa — pełny ekran" allowfullscreen></iframe>
+    </div>
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const src = params.get('src');
+        const title = params.get('title');
+        if (title) document.getElementById('title').textContent = title;
+        if (src) {
+          document.getElementById('map-frame').src = src;
+          const open = document.getElementById('open-native');
+          open.href = src;
+        }
+      })();
+    </script>
+  </body>
+  </html>
+
+

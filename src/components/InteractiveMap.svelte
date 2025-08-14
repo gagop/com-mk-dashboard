@@ -32,15 +32,24 @@
       }
     }, 100);
   });
+
+  // Fullscreen handled via separate page (public/map.html)
 </script>
+
+<!-- Fullscreen handled via new tab; no global key handling needed -->
 
 <div class="map-container" style="height: {height};">
   {#if showTitle && title}
     <div class="map-header" in:fly={{ y: -20, duration: 400, delay: 200, easing: quartOut }}>
       <h4 class="map-title">{title}</h4>
-      <div class="map-badge">
-        <span class="map-icon">🗺️</span>
-        Mapa interaktywna
+      <div class="map-actions">
+        <div class="map-badge" aria-hidden="true">
+          <span class="map-icon">🗺️</span>
+          Mapa interaktywna
+        </div>
+        <a class="fullscreen-trigger" href={`/map.html?title=${encodeURIComponent(title)}&src=${encodeURIComponent(src)}`} target="_blank" rel="noopener" aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
+          ⤢
+        </a>
       </div>
     </div>
   {/if}
@@ -85,6 +94,8 @@
       </div>
     {/if}
   </div>
+
+  <!-- Fullscreen now handled by dedicated page, nothing rendered here. -->
 </div>
 
 <style>
@@ -123,6 +134,12 @@
     flex: 1;
   }
 
+  .map-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .map-badge {
     display: flex;
     align-items: center;
@@ -138,6 +155,28 @@
 
   .map-icon {
     font-size: 0.8rem;
+  }
+
+  .fullscreen-trigger {
+    background: linear-gradient(135deg, var(--surface), var(--background));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    width: 36px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    color: var(--text);
+  }
+
+  .fullscreen-trigger:hover {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 91, 187, 0.25);
   }
 
   .map-wrapper {
@@ -251,6 +290,8 @@
     background: var(--accent-light);
     transform: translateY(-1px);
   }
+
+  /* Fullscreen now handled via separate page (map.html) */
 
   /* Responsive adjustments */
   @media (max-width: 768px) {

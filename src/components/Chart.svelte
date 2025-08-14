@@ -10,7 +10,7 @@
   export let title = '';
   export let height = '400px';
   export let interactive = true;
-  export let showInsights = true;
+  export let showInsights = false;
   export let enableExport = true;
 
   let chartElement;
@@ -460,7 +460,7 @@
   }
 </script>
 
-<div class="chart-container" style="height: {height};">
+<div class="chart-container">
   <div class="chart-header">
     {#if title}
       <h4 class="chart-title">{title}</h4>
@@ -472,7 +472,7 @@
     {/if}
   </div>
   
-  <div class="chart-box" bind:this={chartElement} role="img" aria-label="Wykres: {kind}" style="height: calc(100% - 3rem); min-height: 300px;"></div>
+  <div class="chart-box" bind:this={chartElement} role="img" aria-label="Wykres: {kind}" style="height: {height}; min-height: 300px;"></div>
   
   {#if showInsights && data && data.length > 0}
     <DataInsights {data} chartType={kind} />
