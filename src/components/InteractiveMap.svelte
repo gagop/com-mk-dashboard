@@ -11,6 +11,8 @@
   let mapContainer;
   let isLoaded = false;
   let isError = false;
+  let isFullscreen = false;
+  let previousBodyOverflow = '';
 
   function handleLoad() {
     isLoaded = true;
@@ -23,6 +25,22 @@
  function fullscreenUrl() {
   return `${window.location.origin}/map.html?title=${encodeURIComponent(title || 'Mapa')}&src=${encodeURIComponent(src || '')}`;
 }
+
+  function openInlineFullscreen() {
+    if (!src) return;
+    if (typeof document !== 'undefined') {
+      previousBodyOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+    }
+    isFullscreen = true;
+  }
+
+  function closeInlineFullscreen() {
+    isFullscreen = false;
+    if (typeof document !== 'undefined') {
+      document.body.style.overflow = previousBodyOverflow || '';
+    }
+  }
 
   onMount(() => {
     // Add a small delay to ensure smooth animations
@@ -47,10 +65,10 @@
     <div class="map-header" in:fly={{ y: -20, duration: 400, delay: 200, easing: quartOut }}>
       <h4 class="map-title">{title}</h4>
       <div class="map-actions">
-        <div class="map-badge" aria-hidden="true">
+          <button class="map-badge" type="button" on:click={openInlineFullscreen} aria-haspopup="dialog" aria-controls="map-fullscreen-overlay">
           <span class="map-icon">🗺️</span>
           Mapa interaktywna
-        </div>
+          </button>
           <a class="fullscreen-trigger" href={fullscreenUrl()} on:click|preventDefault={() => { if (typeof window !== 'undefined') window.location.assign(fullscreenUrl()); }} aria-label="Pokaż w trybie pełnoekranowym" title="Pełny ekran">
           ⤢
         </a>
@@ -102,6 +120,27 @@
   <!-- Fullscreen now handled by dedicated page, nothing rendered here. -->
 </div>
 
+{#if isFullscreen}
+  <div id="map-fullscreen-overlay" class="fs-overlay" role="dialog" aria-modal="true" aria-label={title} in:fade={{ duration: 150 }} out:fade={{ duration: 150 }}>
+    <div class="fs-toolbar">
+      <div class="fs-title">{title}</div>
+      <div class="fs-actions">
+        <a class="fs-btn" href={fullscreenUrl()} target="_blank" rel="noopener" title="Otwórz w nowej karcie">↗</a>
+        <button class="fs-btn" on:click={closeInlineFullscreen} aria-label="Zamknij">✕</button>
+      </div>
+    </div>
+    <div class="fs-frame">
+      <iframe title={title} src={src} allowfullscreen class="fs-iframe" on:load={handleLoad} on:error={handleError}></iframe>
+      {#if !isLoaded}
+        <div class="fs-loading">
+          <div class="loading-spinner"></div>
+          <p>Ładowanie mapy…</p>
+        </div>
+      {/if}
+    </div>
+  </div>
+{/if}
+
 <style>
   .map-container {
     position: relative;
@@ -145,7 +184,7 @@
   }
 
   .map-badge {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     background: linear-gradient(135deg, var(--accent), var(--accent-light));
@@ -155,11 +194,47 @@
     font-size: 0.75rem;
     font-weight: 500;
     flex-shrink: 0;
+    border: none;
+    cursor: pointer;
   }
 
   .map-icon {
     font-size: 0.8rem;
   }
+
+  /* Inline fullscreen overlay */
+  .fs-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+  }
+  .fs-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .fs-title { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+  .fs-actions { display: flex; gap: 0.5rem; }
+  .fs-btn {
+    background: var(--surface);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .fs-btn:hover { background: var(--accent); color: #fff; }
+  .fs-frame { position: relative; flex: 1; }
+  .fs-iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; background: var(--surface); }
+  .fs-loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--text); }
 
   .fullscreen-trigger {
     background: linear-gradient(135deg, var(--surface), var(--background));
