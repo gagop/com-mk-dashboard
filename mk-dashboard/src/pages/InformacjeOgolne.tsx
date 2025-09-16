@@ -1,9 +1,21 @@
-import { useMemo, useState } from "react";
-import { appStyles, mkColors } from "../theme";
+import { useMemo } from "react";
+import { appStyles, mkColors, chartColors } from "../theme";
 import Card from "../components/Card";
-import type { Gmina, Rok } from "../data/bdl";
-import { computeLudnosc, MK_ludnosc } from "../data/utils";
-import { GMINY } from "../data/bdl";
+import type { Rok } from "../data/bdl";
+import { computeLudnosc, MK_ludnosc, LATA } from "../data/utils";
+import { GMINY, obciazenieDemograficzne, przyrostNaturalny } from "../data/bdl";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 function NumberKPI({
   label,
@@ -41,64 +53,19 @@ function NumberKPI({
 }
 
 const Y: Rok = 2024;
-const METROPOLIA = "Metropolia Krakowska" as const;
-type Selection = typeof METROPOLIA | Gmina;
-
 export default function InformacjeOgolne() {
-  const [selection, setSelection] = useState<Selection>(METROPOLIA);
-
-  const options: Selection[] = useMemo(() => [METROPOLIA, ...GMINY], []);
-
-  const total = useMemo(() => {
-    if (selection === METROPOLIA) return MK_ludnosc[Y];
-    return computeLudnosc(selection as Gmina, Y);
-  }, [selection]);
-
-  const subtitle = useMemo(() => {
-    if (selection === METROPOLIA) return `Suma dla wszystkich gmin (rok ${Y})`;
-    return `Gmina: ${selection} (rok ${Y})`;
-  }, [selection]);
+  const gminaPopData = useMemo(
+    () => GMINY.map((g) => ({ gmina: g, pop: computeLudnosc(g, Y) })),
+    []
+  );
 
   return (
     <div style={appStyles.page}>
       <h2 style={{ margin: "4px 0 8px" }}>Informacje ogólne</h2>
-      <p style={{ marginTop: 0, color: "#4b5563" }}>
-        Wybierz zakres, aby zobaczyć liczbę ludności ogółem. Rozbicie na płeć w
-        podanych źródłach nie jest dostępne – wartości zostaną uzupełnione po
-        dodaniu odpowiednich danych.
-      </p>
-
-      <div
-        style={{
-          display: "flex",
-          gap: 12,
-          alignItems: "center",
-          flexWrap: "wrap",
-          margin: "8px 0 16px",
-        }}
+      <Card
+        title="Ludność gmin (2024)"
+        subtitle="Każda gmina – liczba ludności"
       >
-        <label htmlFor="zakres" style={{ fontWeight: 600 }}>
-          Zakres:
-        </label>
-        <select
-          id="zakres"
-          value={selection}
-          onChange={(e) => setSelection(e.target.value as Selection)}
-          style={{
-            padding: "8px 10px",
-            borderRadius: 8,
-            border: `1px solid ${mkColors.gray300}`,
-          }}
-        >
-          {options.map((opt) => (
-            <option key={opt} value={opt}>
-              {opt}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <Card title="Ludność" subtitle={subtitle}>
         <div
           style={{
             display: "grid",
@@ -106,7 +73,198 @@ export default function InformacjeOgolne() {
             gap: 12,
           }}
         >
-          <NumberKPI label="Liczba ludności ogółem" value={total} />
+          {gminaPopData.map(({ gmina, pop }) => (
+            <NumberKPI key={gmina} label={gmina} value={pop} />
+          ))}
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 24 }} />
+      <Card
+        title="Wskaźnik obciążenia demograficznego (2024)"
+        subtitle="Gminy Metropolii Krakowskiej"
+        height={520}
+      >
+        <p style={{ margin: "0 0 8px", color: "#6b7280", fontSize: 12 }}>
+          Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym) na 100
+          osób w wieku produkcyjnym. Wyższa wartość oznacza większe obciążenie.
+        </p>
+        <div style={{ height: 460 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={useMemo(
+                () =>
+                  GMINY.map((g) => ({
+                    gmina: g,
+                    wsk: obciazenieDemograficzne[g][Y],
+                  })).sort((a, b) => b.wsk - a.wsk),
+                []
+              )}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="" />
+              <Tooltip
+                formatter={(v: number) => [
+                  v.toFixed(1),
+                  "na 100 w wieku prod.",
+                ]}
+              />
+              <Legend
+                verticalAlign="bottom"
+                align="center"
+                wrapperStyle={{ paddingTop: 12 }}
+              />
+              <Bar
+                dataKey="wsk"
+                name="nieprod. na 100 w prod."
+                fill={chartColors[1]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 24 }} />
+      <Card
+        title="Wzrost liczby ludności w gminach SMK [%] w latach 2019–2024"
+        subtitle="Gminy Metropolii Krakowskiej"
+        height={520}
+      >
+        <div style={{ height: 460 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={useMemo(
+                () =>
+                  GMINY.map((g) => {
+                    const p19 = computeLudnosc(g, 2019);
+                    const p24 = computeLudnosc(g, 2024);
+                    const change = p19 ? (p24 / p19 - 1) * 100 : 0;
+                    return { gmina: g, wzrost: Number(change.toFixed(2)) };
+                  }).sort((a, b) => b.wzrost - a.wzrost),
+                []
+              )}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip
+                formatter={(v: number) => [
+                  `${v.toFixed(1)}%`,
+                  "zmiana 2019–2024",
+                ]}
+              />
+              <Legend
+                verticalAlign="bottom"
+                align="center"
+                wrapperStyle={{ paddingTop: 12 }}
+              />
+              <Bar
+                dataKey="wzrost"
+                name="2019–2024 [%]"
+                fill={chartColors[2]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 24 }} />
+      <Card
+        title="Zmiany liczby ludności Metropolii Krakowskiej w latach 2019–2024"
+        subtitle="Cała Metropolia"
+        height={420}
+      >
+        <div style={{ height: 360 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={useMemo(
+                () =>
+                  LATA.map((y) => ({ rok: String(y), ludnosc: MK_ludnosc[y] })),
+                []
+              )}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v),
+                  "ludność",
+                ]}
+              />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="ludnosc"
+                name="ludność"
+                stroke={chartColors[2]}
+                strokeWidth={2}
+                dot={{ r: 2 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 24 }} />
+      <Card
+        title="Przyrost naturalny ludności w gminach Metropolii Krakowskiej w 2024 roku"
+        subtitle="Gminy Metropolii Krakowskiej"
+        height={520}
+      >
+        <div style={{ height: 460 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={useMemo(
+                () =>
+                  GMINY.map((g) => ({
+                    gmina: g,
+                    pn: (przyrostNaturalny as any)[g][Y] as number,
+                  })).sort((a, b) => b.pn - a.pn),
+                []
+              )}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis />
+              <Tooltip
+                formatter={(v: number) => [`${v}`, "osób (przyrost naturalny)"]}
+              />
+              <Legend
+                verticalAlign="bottom"
+                align="center"
+                wrapperStyle={{ paddingTop: 12 }}
+              />
+              <Bar
+                dataKey="pn"
+                name="przyrost naturalny (osoby)"
+                fill={chartColors[0]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </Card>
     </div>
