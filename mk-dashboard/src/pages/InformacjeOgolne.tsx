@@ -63,6 +63,22 @@ export default function InformacjeOgolne() {
     <div style={appStyles.page}>
       <h2 style={{ margin: "4px 0 8px" }}>Informacje ogólne</h2>
       <Card
+        title="Ludność Metropolii (2024)"
+        subtitle="Suma dla wszystkich gmin"
+      >
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(220px,1fr))",
+            gap: 12,
+          }}
+        >
+          <NumberKPI label="Liczba ludności ogółem" value={MK_ludnosc[Y]} />
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 12 }} />
+      <Card
         title="Ludność gmin (2024)"
         subtitle="Każda gmina – liczba ludności"
       >
@@ -100,7 +116,7 @@ export default function InformacjeOgolne() {
                   })).sort((a, b) => b.wsk - a.wsk),
                 []
               )}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+              margin={{ top: 8, right: 8, bottom: 100, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
@@ -120,7 +136,7 @@ export default function InformacjeOgolne() {
               <Legend
                 verticalAlign="bottom"
                 align="center"
-                wrapperStyle={{ paddingTop: 12 }}
+                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
               />
               <Bar
                 dataKey="wsk"
@@ -171,7 +187,7 @@ export default function InformacjeOgolne() {
               <Legend
                 verticalAlign="bottom"
                 align="center"
-                wrapperStyle={{ paddingTop: 12 }}
+                wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
               <Bar
                 dataKey="wzrost"
@@ -256,7 +272,7 @@ export default function InformacjeOgolne() {
               <Legend
                 verticalAlign="bottom"
                 align="center"
-                wrapperStyle={{ paddingTop: 12 }}
+                wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
               <Bar
                 dataKey="pn"
