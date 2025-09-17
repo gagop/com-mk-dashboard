@@ -1,5 +1,5 @@
 export { default as InformacjeOgolne } from './InformacjeOgolne'
-export { default as InteligentneZarzadzanie } from './placeholder/InteligentneZarzadzanie'
+export { default as InteligentneZarzadzanie } from './InteligentneZarzadzanie'
 export { default as SrodowiskoPrzestrzen } from './placeholder/SrodowiskoPrzestrzen'
 export { default as Mobilnosc } from './placeholder/Mobilnosc'
 export { default as KulturaCzasuWolnego } from './placeholder/KulturaCzasuWolnego'
