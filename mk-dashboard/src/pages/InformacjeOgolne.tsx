@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import { appStyles, mkColors, chartColors } from "../theme";
+import { appStyles, mkColors } from "../theme";
 import Card from "../components/Card";
-import type { Rok } from "../data/bdl";
+import type { Rok, Gmina } from "../data/bdl";
 import { computeLudnosc, MK_ludnosc, LATA } from "../data/utils";
 import { GMINY, obciazenieDemograficzne, przyrostNaturalny } from "../data/bdl";
 import {
@@ -53,6 +53,11 @@ function NumberKPI({
 }
 
 const Y: Rok = 2024;
+const IO_CHART_COLORS = [
+  "rgb(146, 23, 45)",
+  "rgb(222, 8, 50)",
+  "rgb(34, 44, 86)",
+];
 export default function InformacjeOgolne() {
   const gminaPopData = useMemo(
     () => GMINY.map((g) => ({ gmina: g, pop: computeLudnosc(g, Y) })),
@@ -79,9 +84,23 @@ export default function InformacjeOgolne() {
 
       <div style={{ marginTop: 12 }} />
       <Card
-        title="Ludność gmin (2024)"
-        subtitle="Każda gmina – liczba ludności"
+        title="Gęstość zaludnienia Metropolii Krakowskiej"
+        subtitle="Źródło: ArcGIS Experience"
+        height={540}
       >
+        <div style={{ height: 460 }}>
+          <iframe
+            title="ArcGIS Experience Map"
+            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286/"
+            style={{ width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </Card>
+
+      <div style={{ marginTop: 12 }} />
+      <Card title="Ludność gmin" subtitle="Każda gmina – liczba ludności">
         <div
           style={{
             display: "grid",
@@ -97,7 +116,7 @@ export default function InformacjeOgolne() {
 
       <div style={{ marginTop: 24 }} />
       <Card
-        title="Wskaźnik obciążenia demograficznego (2024)"
+        title="Wskaźnik obciążenia demograficznego"
         subtitle="Gminy Metropolii Krakowskiej"
         height={520}
       >
@@ -141,7 +160,7 @@ export default function InformacjeOgolne() {
               <Bar
                 dataKey="wsk"
                 name="nieprod. na 100 w prod."
-                fill={chartColors[1]}
+                fill={IO_CHART_COLORS[1]}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -192,7 +211,7 @@ export default function InformacjeOgolne() {
               <Bar
                 dataKey="wzrost"
                 name="2019–2024 [%]"
-                fill={chartColors[2]}
+                fill={IO_CHART_COLORS[2]}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -229,7 +248,7 @@ export default function InformacjeOgolne() {
                 type="monotone"
                 dataKey="ludnosc"
                 name="ludność"
-                stroke={chartColors[2]}
+                stroke={IO_CHART_COLORS[2]}
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
@@ -249,9 +268,9 @@ export default function InformacjeOgolne() {
             <BarChart
               data={useMemo(
                 () =>
-                  GMINY.map((g) => ({
+                  GMINY.map((g: Gmina) => ({
                     gmina: g,
-                    pn: (przyrostNaturalny as any)[g][Y] as number,
+                    pn: przyrostNaturalny[g][Y],
                   })).sort((a, b) => b.pn - a.pn),
                 []
               )}
@@ -277,7 +296,7 @@ export default function InformacjeOgolne() {
               <Bar
                 dataKey="pn"
                 name="przyrost naturalny (osoby)"
-                fill={chartColors[0]}
+                fill={IO_CHART_COLORS[0]}
               />
             </BarChart>
           </ResponsiveContainer>
