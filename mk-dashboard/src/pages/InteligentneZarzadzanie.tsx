@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { appStyles, mkColors } from "../theme";
+import { appStyles } from "../theme";
 import {
   ResponsiveContainer,
   BarChart,
@@ -73,7 +73,7 @@ export default function InteligentneZarzadzanie() {
               <Bar
                 dataKey="odsetek"
                 name="Udział odpowiedzi [%]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(135, 135, 135)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -128,7 +128,7 @@ export default function InteligentneZarzadzanie() {
               <Bar
                 dataKey="wartosc"
                 name="2024 [%]"
-                fill={mkColors.primaryBurgundy}
+                fill="rgb(178, 178, 178)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -196,7 +196,7 @@ export default function InteligentneZarzadzanie() {
               <Bar
                 dataKey="wzrost"
                 name="2023–2024 [%]"
-                fill={mkColors.primaryRed}
+                fill="rgb(135, 135, 135)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -264,7 +264,7 @@ export default function InteligentneZarzadzanie() {
               <Bar
                 dataKey="wzrost"
                 name="2019–2024 [%]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(178, 178, 178)"
               />
             </BarChart>
           </ResponsiveContainer>
