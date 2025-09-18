@@ -191,46 +191,36 @@ export default function UslugiSpoleczne() {
         subtitle="Źródło: Małopolski Urząd Wojewódzki"
         height={420}
       >
-        <div style={{ height: 360 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={[
-                { rok: "2019", wnioski: 0 },
-                { rok: "2020", wnioski: 0 },
-                { rok: "2021", wnioski: 0 },
-                { rok: "2022", wnioski: 0 },
-                { rok: "2023", wnioski: 0 },
-                { rok: "2024", wnioski: 0 },
-              ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+        <div
+          style={{
+            height: 360,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ textAlign: "center" }}>
+            <div
+              style={{
+                fontSize: 72,
+                fontWeight: "bold",
+                color: "rgb(216, 134, 30)",
+                marginBottom: 16,
+              }}
             >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="rok" />
-              <YAxis />
-              <Tooltip
-                formatter={(v: number) => [
-                  new Intl.NumberFormat("pl-PL").format(v),
-                  "wnioski",
-                ]}
-              />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="wnioski"
-                name="liczba wniosków"
-                stroke="rgb(216, 134, 30)"
-                strokeWidth={2}
-                dot={{ r: 2 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+              2207
+            </div>
+            <div style={{ fontSize: 18, color: "#666" }}>
+              Łączna liczba wniosków w latach 2019–2024
+            </div>
+          </div>
         </div>
       </Card>
 
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba złożonych przez imigrantów wniosków o pobyt stały w 2024 r."
-        subtitle="Gminy — Źródło: Małopolski Urząd Wojewódzki (2024)"
+        subtitle="Źródło: Małopolski Urząd Wojewódzki (2024), bez Krakowa"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -256,7 +246,7 @@ export default function UslugiSpoleczne() {
                 };
                 return { gmina, liczba: W2024[gmina] ?? 0 };
               })
-                .slice()
+                .filter((item) => item.liczba > 0 && item.gmina !== "Kraków")
                 .sort((a, b) => b.liczba - a.liczba)}
               margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
