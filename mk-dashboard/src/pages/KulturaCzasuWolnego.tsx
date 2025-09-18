@@ -165,9 +165,9 @@ export default function KulturaCzasuWolnego() {
       <Card
         title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z oferty czasu wolnego [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z oferty czasu wolnego [%]"
             src="https://experience.arcgis.com/experience/35fe8984c18a4a0bb3237fbd13eeaf99/"
@@ -182,9 +182,9 @@ export default function KulturaCzasuWolnego() {
       <Card
         title="Wysokość wydatków bieżących z budżetu na kulturę i sport na 1 mieszkańca [zł]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="Wysokość wydatków bieżących z budżetu na kulturę i sport na 1 mieszkańca [zł]"
             src="https://experience.arcgis.com/experience/e3e555c99ff14d489a8336573bad3166/"
@@ -198,7 +198,7 @@ export default function KulturaCzasuWolnego() {
       <div style={{ marginTop: 12 }} />
       <Card
         title="Łączna liczba czytelników w bibliotekach publicznych Metropolii Krakowskiej (2019–2024)"
-        subtitle="Cała Metropolia — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -216,7 +216,16 @@ export default function KulturaCzasuWolnego() {
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis dataKey="rok" />
-              <YAxis />
+              <YAxis
+                domain={["dataMin - 10000", "dataMax + 10000"]}
+                tickFormatter={(value) =>
+                  new Intl.NumberFormat("pl-PL", {
+                    notation: "compact",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  }).format(value)
+                }
+              />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
@@ -227,10 +236,10 @@ export default function KulturaCzasuWolnego() {
               <Line
                 type="monotone"
                 dataKey="czytelnicy"
-                name="czytelnicy"
+                name="Czytelnicy"
                 stroke="rgb(144, 12, 0)"
                 strokeWidth={2}
-                dot={{ r: 2 }}
+                dot={{ r: 4 }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -240,7 +249,7 @@ export default function KulturaCzasuWolnego() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba czytelników na 1 tys. mieszkańców w 2024 r."
-        subtitle="Gminy — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -278,7 +287,7 @@ export default function KulturaCzasuWolnego() {
               />
               <Bar
                 dataKey="wartosc"
-                name="2024 (na 1 tys.)"
+                name="Liczba czytelników na 1 tys. mieszkańców w 2024 r."
                 fill="rgb(205, 25, 0)"
               />
             </BarChart>
@@ -288,39 +297,22 @@ export default function KulturaCzasuWolnego() {
 
       <div style={{ marginTop: 24 }} />
       <Card
-        title="Biblioteki publiczne na 10 tys. ludności (2019–2024)"
-        subtitle="Cała Metropolia — Źródło: BDL GUS"
-        height={420}
+        title="Biblioteki publiczne na 10 tys. ludności w 2024 roku"
+        subtitle="Źródło: BDL GUS"
+        height={200}
       >
-        <div style={{ height: 360 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <LineChart
-              data={LATA.map((y) => ({
-                rok: String(y),
-                wartosc: MK_biblioteki_na10k[y],
-              }))}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="rok" />
-              <YAxis />
-              <Tooltip
-                formatter={(v: number) => [
-                  (v as number).toFixed(2),
-                  "na 10 tys. ludności",
-                ]}
-              />
-              <Legend />
-              <Line
-                type="monotone"
-                dataKey="wartosc"
-                name="na 10 tys. ludności"
-                stroke="rgb(144, 12, 0)"
-                strokeWidth={2}
-                dot={{ r: 2 }}
-              />
-            </LineChart>
-          </ResponsiveContainer>
+        <div
+          style={{
+            height: 140,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontSize: "24px",
+            fontWeight: "bold",
+            color: "rgb(144, 12, 0)",
+          }}
+        >
+          0.95 bibliotek na 10 tys. mieszkańców
         </div>
       </Card>
     </div>
