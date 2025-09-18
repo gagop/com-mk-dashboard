@@ -19,9 +19,9 @@ export default function SrodowiskoPrzestrzen() {
       <Card
         title="Ilość odebranych odpadów komunalnych przypadająca na 1 mieszkańca [kg]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="Ilość odebranych odpadów komunalnych przypadająca na 1 mieszkańca [kg]"
             src="https://experience.arcgis.com/experience/7d0ef674f28046cc96aeb83fa7a89b0c/"
@@ -36,9 +36,9 @@ export default function SrodowiskoPrzestrzen() {
       <Card
         title="Redukcja emisji pyłu PM2,5 [Mg] 2024"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="Redukcja emisji pyłu PM2,5 [Mg] 2024"
             src="https://experience.arcgis.com/experience/2cd7bc91e15148b59c6f5342b24e7f00/"
@@ -52,8 +52,8 @@ export default function SrodowiskoPrzestrzen() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Poziom recyklingu i przygotowania do ponownego użycia odpadów w gminach w 2024 roku [%]"
-        subtitle="Gminy — Źródło: BDL GUS"
-        height={520}
+        subtitle="Źródło: BDL GUS"
+        height={560}
       >
         <div style={{ height: 460 }}>
           <ResponsiveContainer width="100%" height="100%">
@@ -82,7 +82,7 @@ export default function SrodowiskoPrzestrzen() {
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
                 dataKey="gmina"
-                angle={-35}
+                angle={-60}
                 textAnchor="end"
                 interval={0}
                 height={60}
@@ -92,9 +92,13 @@ export default function SrodowiskoPrzestrzen() {
               <Legend
                 verticalAlign="bottom"
                 align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 20 }}
+                wrapperStyle={{ paddingTop: 0, bottom: -15 }}
               />
-              <Bar dataKey="poziom" name="2024 [%]" fill="rgb(149, 193, 31)" />
+              <Bar
+                dataKey="poziom"
+                name="Poziom recyklingu i przygotowania do ponownego użycia odpadów [%]"
+                fill="rgb(149, 193, 31)"
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -103,7 +107,7 @@ export default function SrodowiskoPrzestrzen() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Redukcja emisji pyłu PM10 w 2024 r. [Mg]"
-        subtitle="Gminy — Źródło: Program ochrony powietrza (raport 2024)"
+        subtitle="Źródło: Program ochrony powietrza (raport 2024)"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -147,7 +151,11 @@ export default function SrodowiskoPrzestrzen() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar dataKey="pm10" name="2024 [Mg]" fill="rgb(58, 142, 20)" />
+              <Bar
+                dataKey="pm10"
+                name="Redukcja emisji pyłu PM10 w 2024 r. [Mg]"
+                fill="rgb(58, 142, 20)"
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -156,7 +164,7 @@ export default function SrodowiskoPrzestrzen() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba mieszkań oddanych do użytkowania na 10 tys. mieszkańców w 2024 r."
-        subtitle="Gminy — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -204,7 +212,11 @@ export default function SrodowiskoPrzestrzen() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar dataKey="wartosc" name="2024" fill="rgb(149, 193, 31)" />
+              <Bar
+                dataKey="wartosc"
+                name="Liczba mieszkań oddanych do użytkowania na 10 tys. mieszkańców (2024)"
+                fill="rgb(149, 193, 31)"
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -212,8 +224,8 @@ export default function SrodowiskoPrzestrzen() {
 
       <div style={{ marginTop: 24 }} />
       <Card
-        title="% udział energii wyprodukowanej z OZE w ogólnej ilości energii zużytej (2024)"
-        subtitle="Gminy — Źródło: Opracowanie własne"
+        title="Udział energii wyprodukowanej z OZE w ogólnej ilości energii zużytej (2024)"
+        subtitle="Źródło: Opracowanie własne"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -225,12 +237,6 @@ export default function SrodowiskoPrzestrzen() {
                 { gmina: "Mogilany", oze: 10.0 },
                 { gmina: "Igołomia-Wawrzeńczyce", oze: 5.0 },
                 { gmina: "Kraków", oze: 4.83 },
-                { gmina: "Michałowice", oze: 0.0 },
-                { gmina: "Świątniki Górne", oze: 0.0 },
-                { gmina: "Wieliczka", oze: 0.0 },
-                { gmina: "Wielka Wieś", oze: 0.0 },
-                { gmina: "Zabierzów", oze: 0.0 },
-                { gmina: "Zielonki", oze: 0.0 },
               ]
                 .slice()
                 .sort((a, b) => b.oze - a.oze)}
@@ -256,7 +262,11 @@ export default function SrodowiskoPrzestrzen() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar dataKey="oze" name="2024 [%]" fill="rgb(58, 142, 20)" />
+              <Bar
+                dataKey="oze"
+                name="Udział energii z OZE (2024) [%]"
+                fill="rgb(58, 142, 20)"
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
