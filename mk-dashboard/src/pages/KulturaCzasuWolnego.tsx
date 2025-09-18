@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { appStyles, mkColors } from "../theme";
+import { appStyles } from "../theme";
 import type { Rok, Gmina } from "../data/bdl";
 import { GMINY } from "../data/bdl";
 import { computeLudnosc, weightedAverage, LATA } from "../data/utils";
@@ -228,7 +228,7 @@ export default function KulturaCzasuWolnego() {
                 type="monotone"
                 dataKey="czytelnicy"
                 name="czytelnicy"
-                stroke={mkColors.primaryNavy}
+                stroke="rgb(144, 12, 0)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
@@ -279,7 +279,7 @@ export default function KulturaCzasuWolnego() {
               <Bar
                 dataKey="wartosc"
                 name="2024 (na 1 tys.)"
-                fill="rgb(149, 193, 31)"
+                fill="rgb(205, 25, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -315,7 +315,7 @@ export default function KulturaCzasuWolnego() {
                 type="monotone"
                 dataKey="wartosc"
                 name="na 10 tys. ludności"
-                stroke={mkColors.primaryBurgundy}
+                stroke="rgb(144, 12, 0)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
