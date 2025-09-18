@@ -83,7 +83,7 @@ export default function InteligentneZarzadzanie() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Zadłużenie Gminy [%] – relacja zobowiązań do dochodów ogółem"
-        subtitle="Gminy (2024) — Źródło: Ministerstwo Finansów"
+        subtitle="Źródło: Ministerstwo Finansów"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -127,7 +127,7 @@ export default function InteligentneZarzadzanie() {
               />
               <Bar
                 dataKey="wartosc"
-                name="2024 [%]"
+                name="Zadłużenie gminy (2024) [%]"
                 fill="rgb(178, 178, 178)"
               />
             </BarChart>
@@ -138,7 +138,7 @@ export default function InteligentneZarzadzanie() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Procentowy wzrost wpływów z PIT w gminach (2023–2024)"
-        subtitle="Gminy — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -206,7 +206,7 @@ export default function InteligentneZarzadzanie() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Procentowy wzrost wpływów z CIT w gminach (2019–2024)"
-        subtitle="Gminy — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -242,7 +242,7 @@ export default function InteligentneZarzadzanie() {
                   wzrost: Number(((r.v2024 / r.v2019 - 1) * 100).toFixed(2)),
                 }))
                 .sort((a, b) => b.wzrost - a.wzrost)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+              margin={{ top: 8, right: 8, bottom: 84, left: 16 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
