@@ -38,62 +38,47 @@ export default function UslugiSpoleczne() {
       <Card
         title="Liczba osób objętych świadczeniami w ramach programów polityki zdrowotnej [os.]"
         subtitle="Gminy — Źródło: Opracowanie własne (2024)"
-        height={520}
+        height={420}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 360 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={GMINY.map((gmina) => {
-                const M2024: Record<string, number> = {
-                  // Uzupełnij wartości na podstawie opracowania własnego
-                  Biskupice: 0,
-                  Czernichów: 0,
-                  "Igołomia-Wawrzeńczyce": 0,
-                  "Kocmyrzów-Luborzyca": 0,
-                  Liszki: 0,
-                  Michałowice: 0,
-                  Mogilany: 0,
-                  Niepołomice: 0,
-                  Skawina: 0,
-                  "Świątniki Górne": 0,
-                  Wieliczka: 0,
-                  "Wielka Wieś": 0,
-                  Zabierzów: 0,
-                  Zielonki: 0,
-                  Kraków: 0,
-                };
-                return { gmina, liczba: M2024[gmina] ?? 0 };
-              })
-                .slice()
-                .sort((a, b) => b.liczba - a.liczba)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            <LineChart
+              data={[
+                { rok: "2019", liczba: 1 },
+                { rok: "2020", liczba: 2 },
+                { rok: "2021", liczba: 2 },
+                { rok: "2022", liczba: 2 },
+                { rok: "2023", liczba: 4 },
+                { rok: "2024", liczba: 6 },
+              ]}
+              margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="gmina"
-                angle={-35}
-                textAnchor="end"
-                interval={0}
-                height={60}
-              />
-              <YAxis />
+              <XAxis dataKey="rok" />
+              <YAxis domain={["dataMin - 1", "dataMax + 1"]} />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
                   "osoby",
                 ]}
               />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 20 }}
-              />
-              <Bar
+              <Legend />
+              <Line
+                type="monotone"
                 dataKey="liczba"
-                name="2024 [os.]"
-                fill="rgb(247, 183, 29)"
+                name="Liczba osób objętych świadczeniami w ramach programów polityki zdrowotnej"
+                stroke="rgb(247, 183, 29)"
+                strokeWidth={2}
+                dot={{ r: 2 }}
+                label={{
+                  position: "top",
+                  fontSize: 12,
+                  fill: "#333",
+                  formatter: (v: number) =>
+                    new Intl.NumberFormat("pl-PL").format(v),
+                }}
               />
-            </BarChart>
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </Card>
@@ -130,19 +115,19 @@ export default function UslugiSpoleczne() {
               <Legend />
               <Bar
                 dataKey="negatywne"
-                name="negatywne"
+                name="negatywna"
                 stackId="a"
                 fill="rgb(216, 134, 30)"
               />
               <Bar
                 dataKey="neutralne"
-                name="neutralne"
+                name="neutralna"
                 stackId="a"
                 fill="#9ca3af"
               />
               <Bar
                 dataKey="pozytywne"
-                name="pozytywne"
+                name="pozytywna"
                 stackId="a"
                 fill="rgb(247, 183, 29)"
               />
@@ -154,7 +139,7 @@ export default function UslugiSpoleczne() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba przychodni działających na terenie Metropolii Krakowskiej w latach 2019–2024"
-        subtitle="Cała Metropolia — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -168,11 +153,11 @@ export default function UslugiSpoleczne() {
                 { rok: "2023", przychodnie: 978 },
                 { rok: "2024", przychodnie: 1002 },
               ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+              margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis dataKey="rok" />
-              <YAxis />
+              <YAxis domain={["dataMin - 50", "dataMax + 50"]} />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
@@ -187,6 +172,13 @@ export default function UslugiSpoleczne() {
                 stroke="rgb(216, 134, 30)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
+                label={{
+                  position: "top",
+                  fontSize: 12,
+                  fill: "#333",
+                  formatter: (v: number) =>
+                    new Intl.NumberFormat("pl-PL").format(v),
+                }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -196,7 +188,7 @@ export default function UslugiSpoleczne() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba złożonych przez imigrantów wniosków o pobyt stały w Metropolii Krakowskiej w latach 2019–2024"
-        subtitle="Cała Metropolia — Źródło: Małopolski Urząd Wojewódzki"
+        subtitle="Źródło: Małopolski Urząd Wojewódzki"
         height={420}
       >
         <div style={{ height: 360 }}>
