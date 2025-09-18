@@ -86,12 +86,15 @@ export default function InformacjeOgolne() {
       <Card
         title="Gęstość zaludnienia Metropolii Krakowskiej"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="ArcGIS Experience Map"
-            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286/"
+            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true
+       &active_panel=legend
+       &zoom=true
+       &scale=true"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
             allowFullScreen
