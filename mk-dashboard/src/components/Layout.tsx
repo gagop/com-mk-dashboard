@@ -36,15 +36,8 @@ export default function Layout() {
         >
           <Link to="/" style={{ textDecoration: "none", color: mkColors.text }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <div
-                style={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 6,
-                  background: `linear-gradient(135deg, ${mkColors.primaryRed}, ${mkColors.primaryBurgundy})`,
-                }}
-              />
-              <strong style={{ fontWeight: 700 }}>Metropolia Krakowska – Dashboard 2024</strong>
+              <img src="/src/assets/logo.png" alt="Metropolia Krakowska" />
+              <strong style={{ fontWeight: 700 }}>dashboard 2024</strong>
             </div>
           </Link>
         </div>
