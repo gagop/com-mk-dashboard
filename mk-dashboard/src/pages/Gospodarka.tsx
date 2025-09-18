@@ -22,9 +22,9 @@ export default function Gospodarka() {
       <Card
         title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
             title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym [%]"
             src="https://experience.arcgis.com/experience/ccafc27dc27749b2a88317b0e7ff0907/"
@@ -37,13 +37,13 @@ export default function Gospodarka() {
 
       <div style={{ marginTop: 12 }} />
       <Card
-        title="% wpływu z podatku CIT w budżecie gminy ogółem [%]"
+        title="Udział wpływu z podatku CIT w budżecie gminy ogółem [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
-            title="% wpływu z podatku CIT w budżecie gminy ogółem [%]"
+            title="Udział wpływu z podatku CIT w budżecie gminy ogółem [%]"
             src="https://experience.arcgis.com/experience/8979bbcd027542bdad25b09329ab5bbb/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -55,7 +55,7 @@ export default function Gospodarka() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba nowo zarejestrowanych podmiotów gospodarczych w Metropolii Krakowskiej (2019–2024)"
-        subtitle="Cała Metropolia — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -73,7 +73,16 @@ export default function Gospodarka() {
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis dataKey="rok" />
-              <YAxis />
+              <YAxis
+                domain={["dataMin - 1000", "dataMax + 1000"]}
+                tickFormatter={(value) =>
+                  new Intl.NumberFormat("pl-PL", {
+                    notation: "compact",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  }).format(value)
+                }
+              />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
@@ -84,7 +93,7 @@ export default function Gospodarka() {
               <Line
                 type="monotone"
                 dataKey="podmioty"
-                name="liczba podmiotów"
+                name="Liczba podmiotów"
                 stroke="rgb(116, 27, 105)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
@@ -97,7 +106,7 @@ export default function Gospodarka() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym (2024)"
-        subtitle="Gminy — Źródło: BDL GUS"
+        subtitle="Źródło: BDL GUS"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -139,7 +148,11 @@ export default function Gospodarka() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar dataKey="wartosc" name="2024 [%]" fill="rgb(157, 28, 124)" />
+              <Bar
+                dataKey="wartosc"
+                name="Udział bezrobotnych zarejestrowanych w liczbie ludności w wieku produkcyjnym (2024) [%]"
+                fill="rgb(157, 28, 124)"
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -148,7 +161,7 @@ export default function Gospodarka() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba obiektów noclegowych w gminach Metropolii Krakowskiej (2019–2024)"
-        subtitle="Gminy — Źródło: BDL GUS (obiekty ogółem, stan na lipiec)"
+        subtitle="Źródło: BDL GUS (obiekty ogółem)"
       >
         <div style={{ overflowX: "auto" }}>
           {(() => {
@@ -308,7 +321,7 @@ export default function Gospodarka() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba miejsc noclegowych w gminach Metropolii Krakowskiej w 2024 r."
-        subtitle="Gminy — Źródło: BDL GUS (miejsca noclegowe ogółem, lipiec)"
+        subtitle="Źródło: BDL GUS (miejsca noclegowe ogółem, z pominięciem Krakowa)"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -334,7 +347,7 @@ export default function Gospodarka() {
                 };
                 return { gmina, miejsca: M2024[gmina] ?? 0 };
               })
-                .slice()
+                .filter((item) => item.miejsca > 0 && item.gmina !== "Kraków")
                 .sort((a, b) => b.miejsca - a.miejsca)}
               margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
@@ -360,7 +373,7 @@ export default function Gospodarka() {
               />
               <Bar
                 dataKey="miejsca"
-                name="2024 [msc.]"
+                name="Liczba miejsc noclegowych w 2024 roku [liczba miejsc]"
                 fill="rgb(157, 28, 124)"
               />
             </BarChart>
