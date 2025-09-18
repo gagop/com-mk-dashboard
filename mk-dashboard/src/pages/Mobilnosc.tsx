@@ -18,13 +18,13 @@ export default function Mobilnosc() {
       <h2 style={{ margin: "4px 0 8px" }}>Mobilność</h2>
 
       <Card
-        title="% mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym [%]"
+        title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
-            title="% mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym [%]"
+            title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym [%]"
             src="https://experience.arcgis.com/experience/26dbf3298caf4f4ea6a0a3e0cfb7f1bf/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -35,13 +35,13 @@ export default function Mobilnosc() {
 
       <div style={{ marginTop: 12 }} />
       <Card
-        title="% mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym [%]"
+        title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
-            title="% mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym [%]"
+            title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym [%]"
             src="https://experience.arcgis.com/experience/d995260ef5bb475488dd2275d6587bf2/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -52,13 +52,13 @@ export default function Mobilnosc() {
 
       <div style={{ marginTop: 12 }} />
       <Card
-        title="% mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym [%]"
+        title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym [%]"
         subtitle="Źródło: ArcGIS Experience"
-        height={540}
+        height={840}
       >
-        <div style={{ height: 460 }}>
+        <div style={{ height: 760 }}>
           <iframe
-            title="% mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym [%]"
+            title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym [%]"
             src="https://experience.arcgis.com/experience/673ecf1542034ebeab47c6e7fa6a781b/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -70,7 +70,7 @@ export default function Mobilnosc() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Najważniejszy czynnik decydujący o wyborze głównego środka codziennego transportu (2024)"
-        subtitle="Cała Metropolia — Źródło: Raport z badań społecznych 2024"
+        subtitle="Źródło: Raport z badań społecznych 2024"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -110,7 +110,7 @@ export default function Mobilnosc() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Podział modalny podróży w dniu roboczym (2024)"
-        subtitle="Cała Metropolia — Źródło: Raport z badań społecznych 2024"
+        subtitle="Źródło: Raport z badań społecznych 2024"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -155,16 +155,15 @@ export default function Mobilnosc() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Czynne stacje i przystanki kolejowe w 2024 roku"
-        subtitle="Miejsko-wiejskie / Kraków / wiejskie — Źródło: Opracowanie własne"
+        subtitle="Źródło: Opracowanie własne"
         height={420}
       >
         <div style={{ height: 360 }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={[
-                { kategoria: "Miejsko-wiejskie", liczba: 0 },
-                { kategoria: "Kraków", liczba: 0 },
-                { kategoria: "Wiejskie", liczba: 0 },
+                { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
+                { kategoria: "Kraków (miejskie)", liczba: 31.0 },
               ]}
               margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
@@ -186,22 +185,32 @@ export default function Mobilnosc() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Liczba miejsc postojowych w działających parkingach P&R (szt.) w 2024 r."
-        subtitle="Gminy — Źródło: Opracowanie własne"
-        height={520}
+        subtitle="Źródło: Opracowanie własne"
+        height={570}
       >
         <div style={{ height: 460 }}>
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
-              data={GMINY.map((gmina) => {
-                if (gmina === "Biskupice") return { gmina, miejsca: 12 + 20 };
-                return { gmina, miejsca: 0 };
-              })}
+              data={[
+                { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
+                { kategoria: "P+R Swoszowice", miejsca: 154.0 },
+                { kategoria: "P+R Krowodrza Górka", miejsca: 109.0 },
+                { kategoria: "w Łuczycach", miejsca: 106.0 },
+                { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
+                { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
+                { kategoria: "w centrum gminy (Kocmyrzów)", miejsca: 72.0 },
+                { kategoria: "w Baranówce", miejsca: 53.0 },
+                { kategoria: "w Zastowie", miejsca: 51.0 },
+                { kategoria: "w Goszczy", miejsca: 47.0 },
+              ]
+                .slice()
+                .sort((a, b) => b.miejsca - a.miejsca)}
               margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
-                dataKey="gmina"
-                angle={-35}
+                dataKey="kategoria"
+                angle={-45}
                 textAnchor="end"
                 interval={0}
                 height={60}
@@ -211,11 +220,11 @@ export default function Mobilnosc() {
               <Legend
                 verticalAlign="bottom"
                 align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 20 }}
+                wrapperStyle={{ paddingTop: 12, bottom: -30 }}
               />
               <Bar
                 dataKey="miejsca"
-                name="2024 [szt.]"
+                name="Liczba miejsc postojowych w działających parkingach P&R (szt.) w 2024 r."
                 fill="rgb(54, 169, 225)"
               />
             </BarChart>
