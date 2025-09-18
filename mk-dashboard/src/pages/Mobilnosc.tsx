@@ -101,7 +101,7 @@ export default function Mobilnosc() {
               <Bar
                 dataKey="odsetek"
                 name="Udział odpowiedzi [%]"
-                fill="rgb(135, 135, 135)"
+                fill="rgb(29, 113, 184)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -145,7 +145,7 @@ export default function Mobilnosc() {
               <Bar
                 dataKey="udzial"
                 name="Udział podróży [%]"
-                fill="rgb(135, 135, 135)"
+                fill="rgb(54, 169, 225)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -176,7 +176,7 @@ export default function Mobilnosc() {
               <Bar
                 dataKey="liczba"
                 name="Liczba czynnych stacji/przystanków"
-                fill="rgb(135, 135, 135)"
+                fill="rgb(29, 113, 184)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -216,7 +216,7 @@ export default function Mobilnosc() {
               <Bar
                 dataKey="miejsca"
                 name="2024 [szt.]"
-                fill="rgb(135, 135, 135)"
+                fill="rgb(54, 169, 225)"
               />
             </BarChart>
           </ResponsiveContainer>
