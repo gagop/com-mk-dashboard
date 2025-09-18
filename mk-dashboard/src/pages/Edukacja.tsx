@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { appStyles, mkColors } from "../theme";
+import { appStyles } from "../theme";
 import { GMINY } from "../data/bdl";
 import {
   budzetInfrastrukturaOswiatyPerUczen2024,
@@ -71,7 +71,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="wynik"
                 name="MK — matematyka [%]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(197, 59, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -103,7 +103,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="wynik"
                 name="MK — język polski [%]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(244, 76, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -138,7 +138,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="kwota"
                 name="MK — środki [zł]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(197, 59, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -183,7 +183,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="kwota"
                 name="2024 [zł / uczeń]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(244, 76, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -221,7 +221,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="liczba"
                 name="MK — dzieci 3–5 lat [osoba]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(197, 59, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -263,7 +263,7 @@ export default function Edukacja() {
               <Bar
                 dataKey="liczba"
                 name="2024 [liczba szkół]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(244, 76, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -300,11 +300,7 @@ export default function Edukacja() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar
-                dataKey="wynik"
-                name="2024 [%]"
-                fill={mkColors.primaryNavy}
-              />
+              <Bar dataKey="wynik" name="2024 [%]" fill="rgb(197, 59, 0)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -340,11 +336,7 @@ export default function Edukacja() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar
-                dataKey="wynik"
-                name="2024 [%]"
-                fill={mkColors.primaryNavy}
-              />
+              <Bar dataKey="wynik" name="2024 [%]" fill="rgb(244, 76, 0)" />
             </BarChart>
           </ResponsiveContainer>
         </div>

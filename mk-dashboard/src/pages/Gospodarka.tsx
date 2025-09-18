@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { appStyles, mkColors } from "../theme";
+import { appStyles } from "../theme";
 import { GMINY } from "../data/bdl";
 import {
   ResponsiveContainer,
@@ -85,7 +85,7 @@ export default function Gospodarka() {
                 type="monotone"
                 dataKey="podmioty"
                 name="liczba podmiotów"
-                stroke={mkColors.primaryNavy}
+                stroke="rgb(116, 27, 105)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
@@ -139,11 +139,7 @@ export default function Gospodarka() {
                 align="center"
                 wrapperStyle={{ paddingTop: 12, bottom: 20 }}
               />
-              <Bar
-                dataKey="wartosc"
-                name="2024 [%]"
-                fill="rgb(135, 135, 135)"
-              />
+              <Bar dataKey="wartosc" name="2024 [%]" fill="rgb(157, 28, 124)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -365,7 +361,7 @@ export default function Gospodarka() {
               <Bar
                 dataKey="miejsca"
                 name="2024 [msc.]"
-                fill="rgb(135, 135, 135)"
+                fill="rgb(157, 28, 124)"
               />
             </BarChart>
           </ResponsiveContainer>

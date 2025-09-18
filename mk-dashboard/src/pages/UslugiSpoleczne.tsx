@@ -1,5 +1,5 @@
 import Card from "../components/Card";
-import { appStyles, mkColors } from "../theme";
+import { appStyles } from "../theme";
 import { GMINY } from "../data/bdl";
 import {
   ResponsiveContainer,
@@ -91,7 +91,7 @@ export default function UslugiSpoleczne() {
               <Bar
                 dataKey="liczba"
                 name="2024 [os.]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(247, 183, 29)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -132,7 +132,7 @@ export default function UslugiSpoleczne() {
                 dataKey="negatywne"
                 name="negatywne"
                 stackId="a"
-                fill={mkColors.primaryRed}
+                fill="rgb(216, 134, 30)"
               />
               <Bar
                 dataKey="neutralne"
@@ -144,7 +144,7 @@ export default function UslugiSpoleczne() {
                 dataKey="pozytywne"
                 name="pozytywne"
                 stackId="a"
-                fill="#27AE60"
+                fill="rgb(247, 183, 29)"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -184,7 +184,7 @@ export default function UslugiSpoleczne() {
                 type="monotone"
                 dataKey="przychodnie"
                 name="liczba przychodni"
-                stroke={mkColors.primaryNavy}
+                stroke="rgb(216, 134, 30)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
@@ -226,7 +226,7 @@ export default function UslugiSpoleczne() {
                 type="monotone"
                 dataKey="wnioski"
                 name="liczba wniosków"
-                stroke={mkColors.primaryNavy}
+                stroke="rgb(216, 134, 30)"
                 strokeWidth={2}
                 dot={{ r: 2 }}
               />
@@ -291,7 +291,7 @@ export default function UslugiSpoleczne() {
               <Bar
                 dataKey="liczba"
                 name="2024 [wnioski]"
-                fill={mkColors.primaryNavy}
+                fill="rgb(247, 183, 29)"
               />
             </BarChart>
           </ResponsiveContainer>
