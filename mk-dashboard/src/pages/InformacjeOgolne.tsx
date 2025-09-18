@@ -60,17 +60,17 @@ const IO_CHART_COLORS = [
 ];
 export default function InformacjeOgolne() {
   const gminaPopData = useMemo(
-    () => GMINY.map((g) => ({ gmina: g, pop: computeLudnosc(g, Y) })),
+    () =>
+      GMINY.map((g) => ({ gmina: g, pop: computeLudnosc(g, Y) })).sort(
+        (a, b) => b.pop - a.pop
+      ),
     []
   );
 
   return (
     <div style={appStyles.page}>
       <h2 style={{ margin: "4px 0 8px" }}>Informacje ogólne</h2>
-      <Card
-        title="Ludność Metropolii (2024)"
-        subtitle="Suma dla wszystkich gmin"
-      >
+      <Card title="Ludność Metropolii (2024)">
         <div
           style={{
             display: "grid",
@@ -103,7 +103,7 @@ export default function InformacjeOgolne() {
       </Card>
 
       <div style={{ marginTop: 12 }} />
-      <Card title="Ludność gmin" subtitle="Każda gmina – liczba ludności">
+      <Card title="Ludność gmin">
         <div
           style={{
             display: "grid",
@@ -125,7 +125,7 @@ export default function InformacjeOgolne() {
       >
         <p style={{ margin: "0 0 8px", color: "#6b7280", fontSize: 12 }}>
           Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym) na 100
-          osób w wieku produkcyjnym. Wyższa wartość oznacza większe obciążenie.
+          osób w wieku produkcyjnym.
         </p>
         <div style={{ height: 460 }}>
           <ResponsiveContainer width="100%" height="100%">
@@ -162,7 +162,7 @@ export default function InformacjeOgolne() {
               />
               <Bar
                 dataKey="wsk"
-                name="nieprod. na 100 w prod."
+                name="Liczba osób w wieku nieprodukcyjnym na 100 osób w wieku produkcyjnym"
                 fill={IO_CHART_COLORS[1]}
               />
             </BarChart>
@@ -172,8 +172,7 @@ export default function InformacjeOgolne() {
 
       <div style={{ marginTop: 24 }} />
       <Card
-        title="Wzrost liczby ludności w gminach SMK [%] w latach 2019–2024"
-        subtitle="Gminy Metropolii Krakowskiej"
+        title="Zmiana liczby ludności w gminach Stowarzyszenia Metropolii Krakowskiej [%] w latach 2019–2024"
         height={520}
       >
         <div style={{ height: 460 }}>
@@ -224,7 +223,6 @@ export default function InformacjeOgolne() {
       <div style={{ marginTop: 24 }} />
       <Card
         title="Zmiany liczby ludności Metropolii Krakowskiej w latach 2019–2024"
-        subtitle="Cała Metropolia"
         height={420}
       >
         <div style={{ height: 360 }}>
@@ -239,7 +237,16 @@ export default function InformacjeOgolne() {
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis dataKey="rok" />
-              <YAxis />
+              <YAxis
+                domain={["dataMin - 5000", "dataMax + 5000"]}
+                tickFormatter={(value) =>
+                  new Intl.NumberFormat("pl-PL", {
+                    notation: "compact",
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  }).format(value)
+                }
+              />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
