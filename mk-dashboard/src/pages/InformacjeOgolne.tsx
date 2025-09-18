@@ -269,8 +269,7 @@ export default function InformacjeOgolne() {
 
       <div style={{ marginTop: 24 }} />
       <Card
-        title="Przyrost naturalny ludności w gminach Metropolii Krakowskiej w 2024 roku"
-        subtitle="Gminy Metropolii Krakowskiej"
+        title="Zmiany liczby ludności w gminach Metropolii Krakowskiej w 2024 roku"
         height={520}
       >
         <div style={{ height: 460 }}>
