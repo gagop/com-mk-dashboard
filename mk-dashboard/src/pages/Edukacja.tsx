@@ -4,15 +4,11 @@ import { GMINY } from "../data/bdl";
 import {
   budzetInfrastrukturaOswiatyPerUczen2024,
   dzieciPrzedszkolne3_5Lat,
-  liczbaSzkolPodstawowych2024,
 } from "../data/edukacja";
 import {
   wynikiOsmoklasPolski2024,
   wynikiOsmoklasMatematyka2024,
-  MK_wynikMaturaMatematyka,
-  MK_wynikMaturaPolski,
 } from "../data/edukacja";
-import { MK_budzetInwestycjeOswiata } from "../data/edukacja";
 import { LATA } from "../data/utils";
 import {
   ResponsiveContainer,

@@ -2,7 +2,7 @@ import Card from "../components/Card";
 import { appStyles } from "../theme";
 import type { Rok, Gmina } from "../data/bdl";
 import { GMINY } from "../data/bdl";
-import { computeLudnosc, weightedAverage, LATA } from "../data/utils";
+import { computeLudnosc } from "../data/utils";
 import {
   ResponsiveContainer,
   LineChart,
@@ -35,129 +35,6 @@ export default function KulturaCzasuWolnego() {
     Wieliczka: 10854,
     Kraków: 251483,
   };
-  const BIBLIOTEKI_NA_10K: Record<Gmina, Record<Rok, number>> = {
-    Czernichów: {
-      2019: 3.4,
-      2020: 3.3,
-      2021: 3.3,
-      2022: 3.3,
-      2023: 3.2,
-      2024: 3.2,
-    },
-    "Igołomia-Wawrzeńczyce": {
-      2019: 3.9,
-      2020: 3.8,
-      2021: 3.8,
-      2022: 3.8,
-      2023: 3.8,
-      2024: 2.5,
-    },
-    "Kocmyrzów-Luborzyca": {
-      2019: 1.9,
-      2020: 1.7,
-      2021: 1.7,
-      2022: 1.7,
-      2023: 1.6,
-      2024: 1.6,
-    },
-    Liszki: {
-      2019: 1.7,
-      2020: 1.7,
-      2021: 1.6,
-      2022: 1.6,
-      2023: 1.6,
-      2024: 1.6,
-    },
-    Michałowice: {
-      2019: 2.8,
-      2020: 2.4,
-      2021: 2.3,
-      2022: 2.3,
-      2023: 2.2,
-      2024: 2.2,
-    },
-    Mogilany: {
-      2019: 1.4,
-      2020: 1.3,
-      2021: 1.3,
-      2022: 1.2,
-      2023: 1.2,
-      2024: 1.2,
-    },
-    Skawina: {
-      2019: 2.1,
-      2020: 2.0,
-      2021: 2.0,
-      2022: 2.0,
-      2023: 2.0,
-      2024: 2.0,
-    },
-    "Świątniki Górne": {
-      2019: 2.0,
-      2020: 1.8,
-      2021: 1.8,
-      2022: 1.8,
-      2023: 1.8,
-      2024: 1.8,
-    },
-    "Wielka Wieś": {
-      2019: 1.6,
-      2020: 1.3,
-      2021: 1.3,
-      2022: 1.2,
-      2023: 1.2,
-      2024: 1.2,
-    },
-    Zabierzów: {
-      2019: 1.5,
-      2020: 1.4,
-      2021: 1.4,
-      2022: 1.4,
-      2023: 1.4,
-      2024: 1.3,
-    },
-    Zielonki: {
-      2019: 1.7,
-      2020: 1.5,
-      2021: 1.5,
-      2022: 1.5,
-      2023: 1.4,
-      2024: 1.4,
-    },
-    Biskupice: {
-      2019: 1.0,
-      2020: 0.9,
-      2021: 0.9,
-      2022: 0.9,
-      2023: 0.9,
-      2024: 0.8,
-    },
-    Niepołomice: {
-      2019: 1.7,
-      2020: 1.6,
-      2021: 1.5,
-      2022: 1.5,
-      2023: 1.5,
-      2024: 1.5,
-    },
-    Wieliczka: {
-      2019: 1.5,
-      2020: 1.4,
-      2021: 1.3,
-      2022: 1.3,
-      2023: 1.3,
-      2024: 1.3,
-    },
-    Kraków: {
-      2019: 0.8,
-      2020: 0.8,
-      2021: 0.8,
-      2022: 0.8,
-      2023: 0.8,
-      2024: 0.8,
-    },
-  };
-  const MK_biblioteki_na10k = weightedAverage(BIBLIOTEKI_NA_10K);
   return (
     <div style={appStyles.page}>
       <h2 style={{ margin: "4px 0 8px" }}>Kultura czasu wolnego</h2>

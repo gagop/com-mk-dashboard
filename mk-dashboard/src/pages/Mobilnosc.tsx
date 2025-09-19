@@ -1,6 +1,5 @@
 import Card from "../components/Card";
 import { appStyles } from "../theme";
-import { GMINY } from "../data/bdl";
 import {
   ResponsiveContainer,
   BarChart,
