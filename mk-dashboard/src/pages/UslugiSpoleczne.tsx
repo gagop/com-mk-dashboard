@@ -74,8 +74,12 @@ export default function UslugiSpoleczne() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (v: number) =>
-                    new Intl.NumberFormat("pl-PL").format(v),
+                  formatter: (v: React.ReactNode): React.ReactNode => {
+                    if (typeof v === "number") {
+                      return new Intl.NumberFormat("pl-PL").format(v);
+                    }
+                    return v; // if it's already a string or JSX
+                  },
                 }}
               />
             </LineChart>
@@ -176,8 +180,10 @@ export default function UslugiSpoleczne() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (v: number) =>
-                    new Intl.NumberFormat("pl-PL").format(v),
+                  formatter: (v: React.ReactNode): React.ReactNode =>
+                    typeof v === "number"
+                      ? new Intl.NumberFormat("pl-PL").format(v)
+                      : v,
                 }}
               />
             </LineChart>

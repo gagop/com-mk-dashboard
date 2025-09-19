@@ -220,8 +220,10 @@ export default function Edukacja() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (value: number) =>
-                    `${(value / 1000000).toFixed(1)}M`,
+                  formatter: (label: React.ReactNode): React.ReactNode => {
+                    const value = Number(label);
+                    return `${(value / 1_000_000).toFixed(1)}M`;
+                  },
                 }}
               />
             </BarChart>
@@ -310,8 +312,12 @@ export default function Edukacja() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (v: number) =>
-                    new Intl.NumberFormat("pl-PL").format(v),
+                  formatter: (v: React.ReactNode): React.ReactNode => {
+                    if (typeof v === "number") {
+                      return new Intl.NumberFormat("pl-PL").format(v);
+                    }
+                    return v; // fallback if it's not a number
+                  },
                 }}
               />
             </BarChart>
