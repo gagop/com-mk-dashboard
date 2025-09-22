@@ -58,7 +58,7 @@ export default function Modal({
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {(title || onClose) && (
+        {title && (
           <div
             style={{
               display: "flex",
