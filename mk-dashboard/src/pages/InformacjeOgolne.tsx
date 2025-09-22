@@ -99,10 +99,10 @@ export default function InformacjeOgolne() {
           <Card
             title="Gęstość zaludnienia Metropolii Krakowskiej"
             subtitle="Źródło: ArcGIS Experience"
-            height={620}
+            height={420}
             onOpen={() => setOpenCard("densityMap")}
           >
-            <div style={{ height: 540 }}>
+            <div style={{ height: 340 }}>
               <iframe
                 title="ArcGIS Experience Map"
                 src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true
