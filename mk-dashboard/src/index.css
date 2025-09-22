@@ -39,3 +39,31 @@ h3 { font-size: 16px; }
   border-radius: 12px;
   box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
 }
+
+/* Masonry layout using CSS columns */
+.masonry {
+  column-gap: 12px;
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 1024px) {
+  .masonry {
+    column-count: 3;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023.98px) {
+  .masonry {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .masonry {
+    column-count: 1;
+  }
+}
