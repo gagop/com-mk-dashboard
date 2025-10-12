@@ -14,14 +14,19 @@ const navItems = [
 
 export default function Layout() {
   return (
-    <div style={{ minHeight: "100dvh", background: "var(--mk-bg)" }}>
+    <div
+      style={{
+        height: "100dvh",
+        background: "var(--mk-bg)",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       <header
         style={{
           borderBottom: `1px solid #e6e8ef`,
           background: mkColors.white,
-          position: "sticky",
-          top: 0,
-          zIndex: 10,
+          flexShrink: 0,
         }}
       >
         <div
@@ -29,6 +34,7 @@ export default function Layout() {
             padding: "12px 32px",
             display: "flex",
             alignItems: "center",
+            justifyContent: "space-between",
             gap: 16,
           }}
         >
@@ -38,16 +44,12 @@ export default function Layout() {
               <strong style={{ fontWeight: 700 }}>dashboard 2024</strong>
             </div>
           </Link>
-        </div>
-        <nav
-          style={{ borderTop: `1px solid #e6e8ef`, background: mkColors.white }}
-        >
-          <div
+          <nav
             style={{
-              padding: "6px 32px",
               display: "flex",
               flexWrap: "wrap",
               gap: 8,
+              alignItems: "center",
             }}
           >
             {navItems.map((n) => (
@@ -60,23 +62,32 @@ export default function Layout() {
                   color: isActive ? mkColors.white : mkColors.text,
                   textDecoration: "none",
                   background: isActive ? mkColors.primaryNavy : "#F1F3F8",
+                  fontSize: "14px",
+                  whiteSpace: "nowrap",
                 })}
                 end={n.to === "/"}
               >
                 {n.label}
               </NavLink>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
       </header>
-      <main style={{ padding: "16px 32px" }}>
+      <main
+        style={{
+          padding: "16px 32px",
+          flex: 1,
+          minHeight: 0,
+          overflow: "hidden",
+        }}
+      >
         <Outlet />
       </main>
       <footer
         style={{
           borderTop: "1px solid #e6e8ef",
-          marginTop: 24,
           background: mkColors.white,
+          flexShrink: 0,
         }}
       >
         <div
