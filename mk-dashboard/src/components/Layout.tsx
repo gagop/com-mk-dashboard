@@ -26,9 +26,7 @@ export default function Layout() {
       >
         <div
           style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            padding: "12px 16px",
+            padding: "12px 32px",
             display: "flex",
             alignItems: "center",
             gap: 16,
@@ -46,9 +44,7 @@ export default function Layout() {
         >
           <div
             style={{
-              maxWidth: 1200,
-              margin: "0 auto",
-              padding: "6px 8px",
+              padding: "6px 32px",
               display: "flex",
               flexWrap: "wrap",
               gap: 8,
@@ -73,7 +69,7 @@ export default function Layout() {
           </div>
         </nav>
       </header>
-      <main style={{ maxWidth: 1200, margin: "0 auto", padding: "16px" }}>
+      <main style={{ padding: "16px 32px" }}>
         <Outlet />
       </main>
       <footer
@@ -85,9 +81,7 @@ export default function Layout() {
       >
         <div
           style={{
-            maxWidth: 1200,
-            margin: "0 auto",
-            padding: "12px 16px",
+            padding: "12px 32px",
             color: "#6b7280",
           }}
         >
