@@ -83,9 +83,23 @@ export default function Layout() {
           style={{
             padding: "12px 32px",
             color: "#6b7280",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 16,
           }}
         >
-          © 2024 Metropolia Krakowska
+          <div>
+            <div>© 2024 Metropolia Krakowska</div>
+            <div style={{ fontSize: "14px", marginTop: 4 }}>
+              Raport został wygenerowany z pomocą AI
+            </div>
+          </div>
+          <img
+            src="/src/assets/BTTR logo claim - Black.svg"
+            alt="BTTR"
+            style={{ height: 40 }}
+          />
         </div>
       </footer>
     </div>
