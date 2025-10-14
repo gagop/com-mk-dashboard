@@ -1,5 +1,7 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { mkColors } from "../theme";
+import logoImage from "../assets/logo.png";
+import bttrLogo from "../assets/BTTR logo claim - Black.svg";
 
 const navItems = [
   { to: "/", label: "Informacje ogólne" },
@@ -40,7 +42,7 @@ export default function Layout() {
         >
           <Link to="/" style={{ textDecoration: "none", color: mkColors.text }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-              <img src="/src/assets/logo.png" alt="Metropolia Krakowska" />
+              <img src={logoImage} alt="Metropolia Krakowska" />
               <strong style={{ fontWeight: 700 }}>dashboard 2024</strong>
             </div>
           </Link>
@@ -106,11 +108,7 @@ export default function Layout() {
               Raport został wygenerowany z pomocą AI
             </div>
           </div>
-          <img
-            src="/src/assets/BTTR logo claim - Black.svg"
-            alt="BTTR"
-            style={{ height: 40 }}
-          />
+          <img src={bttrLogo} alt="BTTR" style={{ height: 40 }} />
         </div>
       </footer>
     </div>
