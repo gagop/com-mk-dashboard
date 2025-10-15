@@ -91,14 +91,14 @@ export default function Gospodarka() {
           >
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Zadowolenie przedsiębiorców"
+                title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
-                    title="Zadowolenie przedsiębiorców"
+                    title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
                     src="https://experience.arcgis.com/experience/dc389c17988543428b3190c8317a49fe"
                     style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
@@ -311,7 +311,7 @@ export default function Gospodarka() {
       <Modal
         open={openCard === "zadowoleniePrzedsiebiorcow"}
         onClose={() => setOpenCard(null)}
-        title="Zadowolenie przedsiębiorców"
+        title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
         width={1100}
         maxWidth="95vw"
       >
