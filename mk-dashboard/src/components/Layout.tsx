@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import { mkColors } from "../theme";
 import logoImage from "../assets/logo.png";
 import bttrLogo from "../assets/BTTR logo claim - Black.svg";
+import irmirLogo from "../assets/IRMIR.png";
 
 const navItems = [
   { to: "/", label: "Informacje ogólne" },
@@ -108,7 +109,10 @@ export default function Layout() {
               Raport został wygenerowany z pomocą AI
             </div>
           </div>
-          <img src={bttrLogo} alt="BTTR" style={{ height: 40 }} />
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            <img src={irmirLogo} alt="IRMIR" style={{ height: 48 }} />
+            <img src={bttrLogo} alt="BTTR" style={{ height: 40 }} />
+          </div>
         </div>
       </footer>
     </div>
