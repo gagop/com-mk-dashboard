@@ -102,49 +102,36 @@ export default function InformacjeOgolne() {
             overflow: "hidden",
             display: "flex",
             justifyContent: "center",
-            alignItems: "flex-start",
+            padding: "0 32px",
           }}
         >
           <div
             style={{
-              columnCount: 3,
-              columnGap: 12,
               transformOrigin: "top center",
               transform: `scale(${scale})`,
               width: "100%",
+              maxWidth: "1800px",
             }}
             ref={(el) => {
               if (el && el.parentElement?.parentElement) {
                 const container = el.parentElement.parentElement;
                 const updateScale = () => {
                   const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
 
-                  // Reset scale temporarily to get true dimensions
                   el.style.transform = "scale(1)";
                   const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
                   el.style.transform = `scale(${scale})`;
 
-                  // Calculate scale based on both height and width
                   const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  // Use the smaller scale to ensure everything fits
-                  let newScale = Math.min(heightScale, widthScale, 1);
-
-                  // Apply minimum scale of 0.5 (50%) for readability
-                  // and maximum of 1 (100%) to avoid upscaling
-                  newScale = Math.max(0.5, Math.min(1, newScale));
+                  let newScale = Math.min(heightScale, 1);
+                  newScale = Math.max(0.4, Math.min(1, newScale));
 
                   setScale(newScale);
                 };
 
-                // Initial calculation with delay to ensure content is rendered
                 setTimeout(updateScale, 100);
                 setTimeout(updateScale, 500);
 
-                // Update on resize
                 const resizeObserver = new ResizeObserver(() => {
                   setTimeout(updateScale, 50);
                 });
@@ -154,10 +141,18 @@ export default function InformacjeOgolne() {
               }
             }}
           >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 12,
+              }}
+            >
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <Card
                 title="Ludność Metropolii"
                 onOpen={() => setOpenCard("popSummary")}
+                height={160}
               >
                 <div
                   style={{
@@ -172,157 +167,13 @@ export default function InformacjeOgolne() {
                   />
                 </div>
               </Card>
-            </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Gęstość zaludnienia Metropolii Krakowskiej"
-                subtitle="Źródło: ArcGIS Experience"
-                height={320}
-                onOpen={() => setOpenCard("densityMap")}
-              >
-                <div style={{ height: 240 }}>
-                  <iframe
-                    title="ArcGIS Experience Map"
-                    src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Zmiany liczby ludności Metropolii Krakowskiej w latach 2019–2024"
-                height={340}
-                onOpen={() => setOpenCard("mkTrend")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      data={useMemo(
-                        () =>
-                          LATA.map((y) => ({
-                            rok: String(y),
-                            ludnosc: MK_ludnosc[y],
-                          })),
-                        []
-                      )}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                      <YAxis
-                        domain={["dataMin - 5000", "dataMax + 5000"]}
-                        tickFormatter={(value) =>
-                          new Intl.NumberFormat("pl-PL", {
-                            notation: "compact",
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2,
-                          }).format(value)
-                        }
-                        tick={{ fontSize: 11 }}
-                      />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          new Intl.NumberFormat("pl-PL").format(v),
-                          "ludność",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="ludnosc"
-                        name="ludność"
-                        stroke={IO_CHART_COLORS[2]}
-                        strokeWidth={2}
-                        dot={{ r: 2 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card title="Ludność gmin" onOpen={() => setOpenCard("gminyPop")}>
-                <div style={{ maxHeight: 280, overflowY: "auto" }}>
-                  <div className="masonry">
-                    {gminaPopData.map(({ gmina, pop }) => (
-                      <div key={gmina} className="masonry-item">
-                        <NumberKPI label={gmina} value={pop} size="sm" />
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Wskaźnik obciążenia demograficznego"
-                subtitle="Gminy Metropolii Krakowskiej"
-                height={380}
-                onOpen={() => setOpenCard("obciazenie")}
-              >
-                <p
-                  style={{ margin: "0 0 6px", color: "#6b7280", fontSize: 11 }}
-                >
-                  Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym)
-                  na 100 osób w wieku produkcyjnym.
-                </p>
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={useMemo(
-                        () =>
-                          GMINY.map((g) => ({
-                            gmina: g,
-                            wsk: obciazenieDemograficzne[g][Y],
-                          })).sort((a, b) => b.wsk - a.wsk),
-                        []
-                      )}
-                      margin={{ top: 8, right: 8, bottom: 100, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          v.toFixed(1),
-                          "na 100 w wieku prod.",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="wsk"
-                        name="Liczba osób w wieku nieprodukcyjnym na 100 osób w wieku produkcyjnym"
-                        fill={IO_CHART_COLORS[1]}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
                 title="Zmiana liczby ludności w gminach Stowarzyszenia Metropolii Krakowskiej [%] w latach 2019–2024"
-                height={380}
+                height={248}
                 onOpen={() => setOpenCard("zmianaGmin")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: 188 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={useMemo(
@@ -338,7 +189,7 @@ export default function InformacjeOgolne() {
                           }).sort((a, b) => b.wzrost - a.wzrost),
                         []
                       )}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                      margin={{ top: 8, right: 8, bottom: 64, left: 8 }}
                     >
                       <CartesianGrid vertical={false} stroke="#eee" />
                       <XAxis
@@ -346,17 +197,17 @@ export default function InformacjeOgolne() {
                         angle={-35}
                         textAnchor="end"
                         interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
+                        height={50}
+                        tick={{ fontSize: 9 }}
                       />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
+                      <YAxis unit="%" tick={{ fontSize: 10 }} />
                       <Tooltip
                         formatter={(v: number) => [
                           `${v.toFixed(1)}%`,
                           "zmiana 2019–2024",
                         ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: 10 }}
+                        itemStyle={{ fontSize: 10 }}
                       />
                       <Bar
                         dataKey="wzrost"
@@ -369,52 +220,187 @@ export default function InformacjeOgolne() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 12, gridColumn: "span 2" }}>
               <Card
-                title="Zmiany liczby ludności w gminach Metropolii Krakowskiej w 2024 roku"
-                height={380}
-                onOpen={() => setOpenCard("przyrost2024")}
+                title="Gęstość zaludnienia Metropolii Krakowskiej"
+                subtitle="Źródło: ArcGIS Experience"
+                height={280}
+                onOpen={() => setOpenCard("densityMap")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: 200 }}>
+                  <iframe
+                    title="ArcGIS Experience Map"
+                    src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d"
+                    style={{ width: "100%", height: "100%", border: 0 }}
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+              </Card>
+
+              <Card
+                title="Zmiany liczby ludności Metropolii Krakowskiej w latach 2019–2024"
+                height={128}
+                onOpen={() => setOpenCard("mkTrend")}
+              >
+                <div style={{ height: 68 }}>
                   <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
+                    <LineChart
                       data={useMemo(
                         () =>
-                          GMINY.map((g: Gmina) => ({
-                            gmina: g,
-                            pn: przyrostNaturalny[g][Y],
-                          })).sort((a, b) => b.pn - a.pn),
+                          LATA.map((y) => ({
+                            rok: String(y),
+                            ludnosc: MK_ludnosc[y],
+                          })),
                         []
                       )}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                      margin={{ top: 4, right: 8, bottom: 4, left: 8 }}
                     >
                       <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
+                      <XAxis dataKey="rok" tick={{ fontSize: 9 }} />
+                      <YAxis
+                        domain={["dataMin - 5000", "dataMax + 5000"]}
+                        tickFormatter={(value) =>
+                          new Intl.NumberFormat("pl-PL", {
+                            notation: "compact",
+                            minimumFractionDigits: 0,
+                            maximumFractionDigits: 0,
+                          }).format(value)
+                        }
+                        tick={{ fontSize: 9 }}
                       />
-                      <YAxis tick={{ fontSize: 11 }} />
                       <Tooltip
                         formatter={(v: number) => [
-                          `${v}`,
-                          "osób (przyrost naturalny)",
+                          new Intl.NumberFormat("pl-PL").format(v),
+                          "ludność",
                         ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: 10 }}
+                        itemStyle={{ fontSize: 10 }}
                       />
-                      <Bar
-                        dataKey="pn"
-                        name="przyrost naturalny (osoby)"
-                        fill={IO_CHART_COLORS[0]}
+                      <Line
+                        type="monotone"
+                        dataKey="ludnosc"
+                        name="ludność"
+                        stroke={IO_CHART_COLORS[2]}
+                        strokeWidth={2}
+                        dot={{ r: 2 }}
                       />
-                    </BarChart>
+                    </LineChart>
                   </ResponsiveContainer>
                 </div>
               </Card>
+            </div>
+
+            <Card title="Ludność gmin" onOpen={() => setOpenCard("gminyPop")}>
+              <div style={{ padding: "8px 0" }}>
+                <div className="masonry">
+                  {gminaPopData.map(({ gmina, pop }) => (
+                    <div key={gmina} className="masonry-item">
+                      <NumberKPI label={gmina} value={pop} size="sm" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+
+            <Card
+              title="Zmiany liczby ludności w gminach Metropolii Krakowskiej w 2024 roku"
+              height={420}
+              onOpen={() => setOpenCard("przyrost2024")}
+              style={{ gridColumn: "span 2" }}
+            >
+              <div style={{ height: 360 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={useMemo(
+                      () =>
+                        GMINY.map((g: Gmina) => ({
+                          gmina: g,
+                          pn: przyrostNaturalny[g][Y],
+                        })).sort((a, b) => b.pn - a.pn),
+                      []
+                    )}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        `${v}`,
+                        "osób (przyrost naturalny)",
+                      ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="pn"
+                      name="przyrost naturalny (osoby)"
+                      fill={IO_CHART_COLORS[0]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+            <Card
+              title="Wskaźnik obciążenia demograficznego"
+              subtitle="Gminy Metropolii Krakowskiej"
+              height={300}
+              onOpen={() => setOpenCard("obciazenie")}
+            >
+              <p
+                style={{ margin: "0 0 6px", color: "#6b7280", fontSize: 11 }}
+              >
+                Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym)
+                na 100 osób w wieku produkcyjnym.
+              </p>
+              <div style={{ height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={useMemo(
+                      () =>
+                        GMINY.map((g) => ({
+                          gmina: g,
+                          wsk: obciazenieDemograficzne[g][Y],
+                        })).sort((a, b) => b.wsk - a.wsk),
+                      []
+                    )}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        v.toFixed(1),
+                        "na 100 w wieku prod.",
+                      ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="wsk"
+                      name="Liczba osób w wieku nieprodukcyjnym na 100 osób w wieku produkcyjnym"
+                      fill={IO_CHART_COLORS[1]}
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
             </div>
           </div>
         </div>

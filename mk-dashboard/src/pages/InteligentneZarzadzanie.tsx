@@ -12,8 +12,8 @@ import {
 } from "recharts";
 
 export default function InteligentneZarzadzanie() {
-  const [scale, setScale] = useState(1);
   const [openCard, setOpenCard] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
 
   return (
     <div
@@ -27,317 +27,276 @@ export default function InteligentneZarzadzanie() {
       <h2 style={{ margin: "2px 0 6px", flexShrink: 0, fontSize: "20px" }}>
         Inteligentne zarządzanie
       </h2>
-      <div
-        style={{
-          flex: 1,
-          minHeight: 0,
-          overflow: "hidden",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-start",
-          }}
-        >
+      <div style={{ flex: 1, minHeight: 0, overflow: "hidden", position: "relative" }}>
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", display: "flex", justifyContent: "center", padding: "0 32px" }}>
           <div
-            style={{
-              columnCount: 3,
-              columnGap: 12,
-              transformOrigin: "top center",
-              transform: `scale(${scale})`,
-              width: "100%",
-            }}
+            style={{ transformOrigin: "top center", transform: `scale(${scale})`, width: "100%", maxWidth: "1800px" }}
             ref={(el) => {
               if (el && el.parentElement?.parentElement) {
                 const container = el.parentElement.parentElement;
                 const updateScale = () => {
                   const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
-
-                  // Reset scale temporarily to get true dimensions
                   el.style.transform = "scale(1)";
                   const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
                   el.style.transform = `scale(${scale})`;
-
-                  // Calculate scale based on both height and width
                   const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  // Use the smaller scale to ensure everything fits
-                  let newScale = Math.min(heightScale, widthScale, 1);
-
-                  // Apply minimum scale of 0.5 (50%) for readability
-                  newScale = Math.max(0.5, Math.min(1, newScale));
-
+                  let newScale = Math.min(heightScale, 1);
+                  newScale = Math.max(0.4, Math.min(1, newScale));
                   setScale(newScale);
                 };
-
-                // Initial calculation with delay
                 setTimeout(updateScale, 100);
                 setTimeout(updateScale, 500);
-
-                // Update on resize
                 const resizeObserver = new ResizeObserver(() => {
                   setTimeout(updateScale, 50);
                 });
                 resizeObserver.observe(container);
-
                 return () => resizeObserver.disconnect();
               }
             }}
           >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
               <Card
-                title="Poziom zadowolenia mieszkańców"
-                subtitle="Źródło: ArcGIS Experience"
-                height={380}
-                onOpen={() => setOpenCard("zadowolenie")}
-              >
-                <div style={{ height: 320 }}>
-                  <iframe
-                    title="Poziom zadowolenia mieszkańców"
-                    src="https://experience.arcgis.com/experience/51fd6fd2e6514e5ea7b17d5a60163f14/"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-              </Card>
-            </div>
+              title="Poziom zadowolenia mieszkańców z jakości funkcjonowania administracji w gminie"
+              subtitle="Źródło: Raport z badań społecznych 2024"
+              height={420}
+              onOpen={() => setOpenCard("zadowolenie")}
+              style={{ gridColumn: "span 2" }}
+            >
+              <p style={{ margin: "0 0 6px", color: "#6b7280", fontSize: 11 }}>
+                Dane pochodzą z badań społecznych przeprowadzonych w 2024 roku wśród mieszkańców gmin Metropolii Krakowskiej.
+              </p>
+              <div style={{ height: 320 }}>
+                <iframe
+                  title="Poziom zadowolenia mieszkańców"
+                  src="https://experience.arcgis.com/experience/51fd6fd2e6514e5ea7b17d5a60163f14/"
+                  style={{ width: "100%", height: "100%", border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
+            </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Dochody ogółem na 1 mieszkańca"
-                subtitle="Źródło: ArcGIS Experience"
-                height={380}
-                onOpen={() => setOpenCard("dochody")}
-              >
-                <div style={{ height: 320 }}>
-                  <iframe
-                    title="Dochody ogółem na 1 mieszkańca"
-                    src="https://experience.arcgis.com/experience/24d07761e5e743b6a072e04bbbf8d4b4/"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-              </Card>
-            </div>
+            <Card
+              title="Poziom zadowolenia — Metropolia"
+              subtitle="Źródło: Raport z badań społecznych 2024"
+              height={420}
+              onOpen={() => setOpenCard("poziom")}
+            >
+              <p style={{ margin: "0 0 6px", color: "#6b7280", fontSize: 11 }}>
+                Dane pochodzą z badań społecznych przeprowadzonych w 2024 roku wśród mieszkańców gmin Metropolii Krakowskiej.
+              </p>
+              <div style={{ height: 320 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { kategoria: "Pozytywne", odsetek: 66 },
+                      { kategoria: "Neutralne", odsetek: 31 },
+                      { kategoria: "Negatywne", odsetek: 3 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "odsetek"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="odsetek"
+                      name="Poziom zadowolenia [%]"
+                      fill="rgb(135, 135, 135)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Poziom zadowolenia — Metropolia"
-                subtitle="Opracowanie własne"
-                height={340}
-                onOpen={() => setOpenCard("poziom")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { kategoria: "Pozytywne", odsetek: 66 },
-                        { kategoria: "Neutralne", odsetek: 31 },
-                        { kategoria: "Negatywne", odsetek: 3 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "odsetek"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="odsetek"
-                        name="Poziom zadowolenia [%]"
-                        fill="rgb(135, 135, 135)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+            <Card
+              title="Dochody ogółem na 1 mieszkańca"
+              subtitle="Źródło: ArcGIS Experience"
+              height={300}
+              onOpen={() => setOpenCard("dochody")}
+              style={{ gridColumn: "span 2" }}
+            >
+              <div style={{ height: 240 }}>
+                <iframe
+                  title="Dochody ogółem na 1 mieszkańca"
+                  src="https://experience.arcgis.com/experience/24d07761e5e743b6a072e04bbbf8d4b4/"
+                  style={{ width: "100%", height: "100%", border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+              </div>
+            </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Zadłużenie Gminy [%]"
-                subtitle="Źródło: Ministerstwo Finansów"
-                height={380}
-                onOpen={() => setOpenCard("zadluzenie")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Kraków", wartosc: 75.9 },
-                        { gmina: "Wieliczka", wartosc: 63.2 },
-                        { gmina: "Niepołomice", wartosc: 57.9 },
-                        { gmina: "Zabierzów", wartosc: 49.7 },
-                        { gmina: "Świątniki Górne", wartosc: 46.0 },
-                        { gmina: "Czernichów", wartosc: 35.7 },
-                        { gmina: "Liszki", wartosc: 37.8 },
-                        { gmina: "Skawina", wartosc: 33.1 },
-                        { gmina: "Biskupice", wartosc: 31.0 },
-                        { gmina: "Mogilany", wartosc: 29.8 },
-                        { gmina: "Kocmyrzów-Luborzyca", wartosc: 26.3 },
-                        { gmina: "Michałowice", wartosc: 14.0 },
-                        { gmina: "Zielonki", wartosc: 13.8 },
-                        { gmina: "Wielka Wieś", wartosc: 8.3 },
-                        { gmina: "Igołomia-Wawrzeńczyce", wartosc: 7.5 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.wartosc - a.wartosc)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "zadłużenie"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="wartosc"
-                        name="Zadłużenie gminy [%]"
-                        fill="rgb(178, 178, 178)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+            <Card
+              title="Zadłużenie Gminy [%]"
+              subtitle="Źródło: Ministerstwo Finansów"
+              height={300}
+              onOpen={() => setOpenCard("zadluzenie")}
+            >
+              <div style={{ height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { gmina: "Kraków", wartosc: 75.9 },
+                      { gmina: "Wieliczka", wartosc: 63.2 },
+                      { gmina: "Niepołomice", wartosc: 57.9 },
+                      { gmina: "Zabierzów", wartosc: 49.7 },
+                      { gmina: "Świątniki Górne", wartosc: 46.0 },
+                      { gmina: "Czernichów", wartosc: 35.7 },
+                      { gmina: "Liszki", wartosc: 37.8 },
+                      { gmina: "Skawina", wartosc: 33.1 },
+                      { gmina: "Biskupice", wartosc: 31.0 },
+                      { gmina: "Mogilany", wartosc: 29.8 },
+                      { gmina: "Kocmyrzów-Luborzyca", wartosc: 26.3 },
+                      { gmina: "Michałowice", wartosc: 14.0 },
+                      { gmina: "Zielonki", wartosc: 13.8 },
+                      { gmina: "Wielka Wieś", wartosc: 8.3 },
+                      { gmina: "Igołomia-Wawrzeńczyce", wartosc: 7.5 },
+                    ]
+                      .slice()
+                      .sort((a, b) => b.wartosc - a.wartosc)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "zadłużenie"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="wartosc"
+                      name="Zadłużenie gminy [%]"
+                      fill="rgb(178, 178, 178)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Wzrost wpływów z PIT (2023–2024)"
-                subtitle="Źródło: BDL GUS"
-                height={380}
-                onOpen={() => setOpenCard("pit")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        {
-                          gmina: "Czernichów",
-                          v2023: 16717378,
-                          v2024: 26955832,
-                        },
-                        {
-                          gmina: "Igołomia-Wawrzeńczyce",
-                          v2023: 4833642,
-                          v2024: 8404042,
-                        },
-                        {
-                          gmina: "Kocmyrzów-Luborzyca",
-                          v2023: 23726968,
-                          v2024: 33275448,
-                        },
-                        { gmina: "Liszki", v2023: 19296648, v2024: 31817505 },
-                        {
-                          gmina: "Michałowice",
-                          v2023: 19421383,
-                          v2024: 32443084,
-                        },
-                        { gmina: "Mogilany", v2023: 27641595, v2024: 47957513 },
-                        { gmina: "Skawina", v2023: 46053181, v2024: 72403208 },
-                        {
-                          gmina: "Świątniki Górne",
-                          v2023: 18885311,
-                          v2024: 29586555,
-                        },
-                        {
-                          gmina: "Wielka Wieś",
-                          v2023: 24216556,
-                          v2024: 43581177,
-                        },
-                        {
-                          gmina: "Zabierzów",
-                          v2023: 44758719,
-                          v2024: 75616706,
-                        },
-                        { gmina: "Zielonki", v2023: 49584707, v2024: 85914146 },
-                        {
-                          gmina: "Biskupice",
-                          v2023: 10102509,
-                          v2024: 16340114,
-                        },
-                        {
-                          gmina: "Niepołomice",
-                          v2023: 35760781,
-                          v2024: 59543802,
-                        },
-                        {
-                          gmina: "Wieliczka",
-                          v2023: 82118011,
-                          v2024: 134722367,
-                        },
-                        {
-                          gmina: "Kraków",
-                          v2023: 1710047660,
-                          v2024: 2803318933,
-                        },
-                      ]
-                        .map((r) => ({
-                          gmina: r.gmina,
-                          wzrost: Number(
-                            ((r.v2024 / r.v2023 - 1) * 100).toFixed(2)
-                          ),
-                        }))
-                        .sort((a, b) => b.wzrost - a.wzrost)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "zmiana 2023–2024"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="wzrost"
-                        name="2023–2024 [%]"
-                        fill="rgb(135, 135, 135)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+            <Card
+              title="Wzrost wpływów z PIT (2023–2024)"
+              subtitle="Źródło: BDL GUS"
+              height={300}
+              onOpen={() => setOpenCard("pit")}
+            >
+              <div style={{ height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      {
+                        gmina: "Czernichów",
+                        v2023: 16717378,
+                        v2024: 26955832,
+                      },
+                      {
+                        gmina: "Igołomia-Wawrzeńczyce",
+                        v2023: 4833642,
+                        v2024: 8404042,
+                      },
+                      {
+                        gmina: "Kocmyrzów-Luborzyca",
+                        v2023: 23726968,
+                        v2024: 33275448,
+                      },
+                      { gmina: "Liszki", v2023: 19296648, v2024: 31817505 },
+                      {
+                        gmina: "Michałowice",
+                        v2023: 19421383,
+                        v2024: 32443084,
+                      },
+                      { gmina: "Mogilany", v2023: 27641595, v2024: 47957513 },
+                      { gmina: "Skawina", v2023: 46053181, v2024: 72403208 },
+                      {
+                        gmina: "Świątniki Górne",
+                        v2023: 18885311,
+                        v2024: 29586555,
+                      },
+                      {
+                        gmina: "Wielka Wieś",
+                        v2023: 24216556,
+                        v2024: 43581177,
+                      },
+                      {
+                        gmina: "Zabierzów",
+                        v2023: 44758719,
+                        v2024: 75616706,
+                      },
+                      { gmina: "Zielonki", v2023: 49584707, v2024: 85914146 },
+                      {
+                        gmina: "Biskupice",
+                        v2023: 10102509,
+                        v2024: 16340114,
+                      },
+                      {
+                        gmina: "Niepołomice",
+                        v2023: 35760781,
+                        v2024: 59543802,
+                      },
+                      {
+                        gmina: "Wieliczka",
+                        v2023: 82118011,
+                        v2024: 134722367,
+                      },
+                      {
+                        gmina: "Kraków",
+                        v2023: 1710047660,
+                        v2024: 2803318933,
+                      },
+                    ]
+                      .map((r) => ({
+                        gmina: r.gmina,
+                        wzrost: Number(
+                          ((r.v2024 / r.v2023 - 1) * 100).toFixed(2)
+                        ),
+                      }))
+                      .sort((a, b) => b.wzrost - a.wzrost)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "zmiana 2023–2024"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="wzrost"
+                      name="2023–2024 [%]"
+                      fill="rgb(135, 135, 135)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Wzrost wpływów z CIT (2019–2024)"
-                subtitle="Źródło: BDL GUS"
-                height={380}
-                onOpen={() => setOpenCard("cit")}
-              >
-                <div style={{ height: 320 }}>
+            <Card
+              title="Wzrost wpływów z CIT (2019–2024)"
+              subtitle="Źródło: BDL GUS"
+              height={300}
+              onOpen={() => setOpenCard("cit")}
+            >
+              <div style={{ height: 240 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
