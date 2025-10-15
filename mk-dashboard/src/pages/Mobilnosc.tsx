@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import {
@@ -12,8 +12,28 @@ import {
 } from "recharts";
 
 export default function Mobilnosc() {
-  const [scale, setScale] = useState(1);
   const [openCard, setOpenCard] = useState<string | null>(null);
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const content = contentRef.current;
+    if (!container || !content) return;
+
+    const observer = new ResizeObserver(() => {
+      const containerHeight = container.clientHeight;
+      const contentHeight = content.scrollHeight;
+      if (contentHeight > 0) {
+        const newScale = Math.min(1, containerHeight / contentHeight);
+        setScale(newScale);
+      }
+    });
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div
@@ -28,6 +48,7 @@ export default function Mobilnosc() {
         Mobilność
       </h2>
       <div
+        ref={containerRef}
         style={{
           flex: 1,
           minHeight: 0,
@@ -39,293 +60,223 @@ export default function Mobilnosc() {
           style={{
             position: "absolute",
             inset: 0,
-            overflow: "hidden",
             display: "flex",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             alignItems: "flex-start",
-            padding: "0 12px",
+            padding: "0 32px",
           }}
         >
           <div
+            ref={contentRef}
             style={{
-              columnCount: 3,
-              columnGap: 12,
-              transformOrigin: "top left",
               transform: `scale(${scale})`,
+              transformOrigin: "top center",
               width: "100%",
-              maxWidth: "100%",
-            }}
-            ref={(el) => {
-              if (el && el.parentElement?.parentElement) {
-                const container = el.parentElement.parentElement;
-                const updateScale = () => {
-                  const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
-
-                  el.style.transform = "scale(1)";
-                  const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
-                  el.style.transform = `scale(${scale})`;
-
-                  const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  let newScale = Math.min(heightScale, widthScale, 1);
-                  newScale = Math.max(0.5, Math.min(1, newScale));
-
-                  setScale(newScale);
-                };
-
-                setTimeout(updateScale, 100);
-                setTimeout(updateScale, 500);
-
-                const resizeObserver = new ResizeObserver(() => {
-                  setTimeout(updateScale, 50);
-                });
-                resizeObserver.observe(container);
-
-                return () => resizeObserver.disconnect();
-              }
+              maxWidth: "1800px",
             }}
           >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(3, 1fr)",
+                gap: 12,
+              }}
+            >
+          <Card
+            title="Transport publiczny"
+            subtitle="Źródło: ArcGIS Experience"
+            height={400}
+            style={{ gridColumn: "span 2" }}
+          >
+            <div style={{ height: 340 }}>
+              <iframe
                 title="Transport publiczny"
-                subtitle="Źródło: ArcGIS Experience"
-                height={380}
-              >
-                <div style={{ height: 320 }}>
-                  <iframe
-                    title="Transport publiczny"
-                    src="https://experience.arcgis.com/experience/26dbf3298caf4f4ea6a0a3e0cfb7f1bf/"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-              </Card>
+                src="https://experience.arcgis.com/experience/26dbf3298caf4f4ea6a0a3e0cfb7f1bf/"
+                style={{ width: "100%", height: "100%", border: 0 }}
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
+          </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
+          <Card
+            title="Czynniki wyboru środka transportu"
+            subtitle="Źródło: Raport z badań społecznych 2024"
+            height={340}
+            onOpen={() => setOpenCard("czynniki")}
+          >
+            <div style={{ height: 280 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={[
+                    { czynnik: "Komfort podróży", odsetek: 59 },
+                    {
+                      czynnik: "Brak alternatywy",
+                      odsetek: 15,
+                    },
+                    { czynnik: "Czas przejazdu", odsetek: 13 },
+                    { czynnik: "Koszty", odsetek: 5 },
+                    { czynnik: "Bezpieczeństwo", odsetek: 4 },
+                    { czynnik: "Inne", odsetek: 3 },
+                    { czynnik: "Środowisko", odsetek: 1 },
+                  ]}
+                  margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                >
+                  <CartesianGrid vertical={false} stroke="#eee" />
+                  <XAxis
+                    dataKey="czynnik"
+                    interval={0}
+                    angle={-15}
+                    textAnchor="end"
+                    height={60}
+                    tick={{ fontSize: 11 }}
+                  />
+                  <YAxis unit="%" tick={{ fontSize: 11 }} />
+                  <Tooltip
+                    formatter={(v: number) => [`${v}%`, "odsetek"]}
+                    labelStyle={{ fontSize: 11 }}
+                    itemStyle={{ fontSize: 11 }}
+                  />
+                  <Bar
+                    dataKey="odsetek"
+                    name="Udział odpowiedzi [%]"
+                    fill="rgb(29, 113, 184)"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+
+          <Card
+            title="Transport samochodowy"
+            subtitle="Źródło: ArcGIS Experience"
+            height={420}
+            style={{ gridColumn: "span 2" }}
+          >
+            <div style={{ height: 360 }}>
+              <iframe
                 title="Transport samochodowy"
-                subtitle="Źródło: ArcGIS Experience"
-                height={380}
-              >
-                <div style={{ height: 320 }}>
-                  <iframe
-                    title="Transport samochodowy"
-                    src="https://experience.arcgis.com/experience/d995260ef5bb475488dd2275d6587bf2/"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
-                </div>
-              </Card>
+                src="https://experience.arcgis.com/experience/d995260ef5bb475488dd2275d6587bf2/"
+                style={{ width: "100%", height: "100%", border: 0 }}
+                loading="lazy"
+                allowFullScreen
+              />
             </div>
+          </Card>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
+          <Card
+            title="Podział modalny podróży"
+            subtitle="Źródło: Raport z badań społecznych 2024"
+            height={340}
+            onOpen={() => setOpenCard("podzial")}
+          >
+            <div style={{ height: 280 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={[
+                    { srodek: "Samochód", udzial: 63 },
+                    { srodek: "Komunikacja", udzial: 22 },
+                    { srodek: "Pieszo", udzial: 10 },
+                    { srodek: "Rower", udzial: 3 },
+                    { srodek: "Pociąg", udzial: 0.8 },
+                    { srodek: "Hulajnoga", udzial: 0.4 },
+                  ]}
+                  margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                >
+                  <CartesianGrid vertical={false} stroke="#eee" />
+                  <XAxis
+                    dataKey="srodek"
+                    interval={0}
+                    angle={-15}
+                    textAnchor="end"
+                    height={60}
+                    tick={{ fontSize: 11 }}
+                  />
+                  <YAxis unit="%" tick={{ fontSize: 11 }} />
+                  <Tooltip
+                    formatter={(v: number) => [
+                      `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
+                      "udział",
+                    ]}
+                    labelStyle={{ fontSize: 11 }}
+                    itemStyle={{ fontSize: 11 }}
+                  />
+                  <Bar
+                    dataKey="udzial"
+                    name="Udział podróży [%]"
+                    fill="rgb(54, 169, 225)"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
+
+          <Card
+            title="Transport rowerowy"
+            subtitle="Źródło: ArcGIS Experience"
+            height={400}
+            style={{ gridColumn: "span 2" }}
+          >
+            <div style={{ height: 340 }}>
+              <iframe
                 title="Transport rowerowy"
-                subtitle="Źródło: ArcGIS Experience"
-                height={380}
-              >
-                <div style={{ height: 320 }}>
-                  <iframe
-                    title="Transport rowerowy"
-                    src="https://experience.arcgis.com/experience/673ecf1542034ebeab47c6e7fa6a781b/"
-                    style={{ width: "100%", height: "100%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
+                src="https://experience.arcgis.com/experience/673ecf1542034ebeab47c6e7fa6a781b/"
+                style={{ width: "100%", height: "100%", border: 0 }}
+                loading="lazy"
+                allowFullScreen
+              />
+            </div>
+          </Card>
+
+          <Card
+            title="Miejsca P&R"
+            subtitle="Źródło: Opracowanie własne"
+            height={380}
+            onOpen={() => setOpenCard("miejsca")}
+          >
+            <div style={{ height: 320 }}>
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={[
+                    { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
+                    { kategoria: "P+R Swoszowice", miejsca: 154.0 },
+                    { kategoria: "P+R Krowodrza", miejsca: 109.0 },
+                    { kategoria: "Łuczyce", miejsca: 106.0 },
+                    { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
+                    { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
+                    { kategoria: "Kocmyrzów", miejsca: 72.0 },
+                    { kategoria: "Baranówka", miejsca: 53.0 },
+                    { kategoria: "Zastów", miejsca: 51.0 },
+                    { kategoria: "Goszcza", miejsca: 47.0 },
+                  ]
+                    .slice()
+                    .sort((a, b) => b.miejsca - a.miejsca)}
+                  margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                >
+                  <CartesianGrid vertical={false} stroke="#eee" />
+                  <XAxis
+                    dataKey="kategoria"
+                    angle={-45}
+                    textAnchor="end"
+                    interval={0}
+                    height={60}
+                    tick={{ fontSize: 11 }}
                   />
-                </div>
-              </Card>
+                  <YAxis tick={{ fontSize: 11 }} />
+                  <Tooltip
+                    formatter={(v: number) => [String(v), "miejsca P&R"]}
+                    labelStyle={{ fontSize: 11 }}
+                    itemStyle={{ fontSize: 11 }}
+                  />
+                  <Bar
+                    dataKey="miejsca"
+                    name="Liczba miejsc P&R"
+                    fill="rgb(54, 169, 225)"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
             </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Czynniki wyboru środka transportu"
-                subtitle="Źródło: Raport z badań społecznych 2024"
-                height={340}
-                onOpen={() => setOpenCard("czynniki")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { czynnik: "Komfort podróży", odsetek: 59 },
-                        {
-                          czynnik: "Brak alternatywy",
-                          odsetek: 15,
-                        },
-                        { czynnik: "Czas przejazdu", odsetek: 13 },
-                        { czynnik: "Koszty", odsetek: 5 },
-                        { czynnik: "Bezpieczeństwo", odsetek: 4 },
-                        { czynnik: "Inne", odsetek: 3 },
-                        { czynnik: "Środowisko", odsetek: 1 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="czynnik"
-                        interval={0}
-                        angle={-15}
-                        textAnchor="end"
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "odsetek"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="odsetek"
-                        name="Udział odpowiedzi [%]"
-                        fill="rgb(29, 113, 184)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Podział modalny podróży"
-                subtitle="Źródło: Raport z badań społecznych 2024"
-                height={340}
-                onOpen={() => setOpenCard("podzial")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { srodek: "Samochód", udzial: 63 },
-                        { srodek: "Komunikacja", udzial: 22 },
-                        { srodek: "Pieszo", udzial: 10 },
-                        { srodek: "Rower", udzial: 3 },
-                        { srodek: "Pociąg", udzial: 0.8 },
-                        { srodek: "Hulajnoga", udzial: 0.4 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="srodek"
-                        interval={0}
-                        angle={-15}
-                        textAnchor="end"
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
-                          "udział",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="udzial"
-                        name="Udział podróży [%]"
-                        fill="rgb(54, 169, 225)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Stacje kolejowe"
-                subtitle="Źródło: Opracowanie własne"
-                height={340}
-                onOpen={() => setOpenCard("stacje")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
-                        { kategoria: "Kraków (miejskie)", liczba: 31.0 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [String(v), "liczba"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="liczba"
-                        name="Liczba stacji/przystanków"
-                        fill="rgb(29, 113, 184)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Miejsca P&R"
-                subtitle="Źródło: Opracowanie własne"
-                height={380}
-                onOpen={() => setOpenCard("miejsca")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
-                        { kategoria: "P+R Swoszowice", miejsca: 154.0 },
-                        { kategoria: "P+R Krowodrza", miejsca: 109.0 },
-                        { kategoria: "Łuczyce", miejsca: 106.0 },
-                        { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
-                        { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
-                        { kategoria: "Kocmyrzów", miejsca: 72.0 },
-                        { kategoria: "Baranówka", miejsca: 53.0 },
-                        { kategoria: "Zastów", miejsca: 51.0 },
-                        { kategoria: "Goszcza", miejsca: 47.0 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.miejsca - a.miejsca)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="kategoria"
-                        angle={-45}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [String(v), "miejsca P&R"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="miejsca"
-                        name="Liczba miejsc P&R"
-                        fill="rgb(54, 169, 225)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
+          </Card>
             </div>
           </div>
         </div>
@@ -415,36 +366,6 @@ export default function Mobilnosc() {
                 dataKey="udzial"
                 name="Udział podróży [%]"
                 fill="rgb(54, 169, 225)"
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </Modal>
-
-      <Modal
-        open={openCard === "stacje"}
-        onClose={() => setOpenCard(null)}
-        title="Stacje kolejowe"
-        width={1100}
-        maxWidth="95vw"
-      >
-        <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={[
-                { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
-                { kategoria: "Kraków (miejskie)", liczba: 31.0 },
-              ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="kategoria" />
-              <YAxis />
-              <Tooltip formatter={(v: number) => [String(v), "liczba"]} />
-              <Bar
-                dataKey="liczba"
-                name="Liczba stacji/przystanków"
-                fill="rgb(29, 113, 184)"
               />
             </BarChart>
           </ResponsiveContainer>

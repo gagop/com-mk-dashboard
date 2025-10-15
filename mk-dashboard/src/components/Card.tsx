@@ -5,6 +5,7 @@ export default function Card({
   children,
   height,
   onOpen,
+  style,
 }: {
   title?: string;
   subtitle?: string;
@@ -12,9 +13,10 @@ export default function Card({
   children?: React.ReactNode;
   height?: number;
   onOpen?: () => void;
+  style?: React.CSSProperties;
 }) {
   return (
-    <div className="card" style={{ padding: 12, height }}>
+    <div className="card" style={{ padding: 12, height, ...style }}>
       {(title || subtitle || right) && (
         <div
           style={{
