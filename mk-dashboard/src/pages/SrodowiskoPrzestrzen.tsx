@@ -171,15 +171,6 @@ export default function SrodowiskoPrzestrzen() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 0,
-                          bottom: -15,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="poziom"
                         name="Poziom recyklingu [%]"
@@ -239,15 +230,6 @@ export default function SrodowiskoPrzestrzen() {
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="pm10"
@@ -314,15 +296,6 @@ export default function SrodowiskoPrzestrzen() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wartosc"
                         name="Mieszkania na 10 tys. mieszkańców"
@@ -372,15 +345,6 @@ export default function SrodowiskoPrzestrzen() {
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="oze"
@@ -474,11 +438,6 @@ export default function SrodowiskoPrzestrzen() {
               />
               <YAxis unit="%" />
               <Tooltip formatter={(v: number) => [`${v}%`, "poziom"]} />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
-              />
               <Bar
                 dataKey="poziom"
                 name="Poziom recyklingu odpadów [%]"
@@ -531,11 +490,6 @@ export default function SrodowiskoPrzestrzen() {
               <YAxis unit=" Mg" />
               <Tooltip
                 formatter={(v: number) => [v.toString(), "redukcja PM10"]}
-              />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
               />
               <Bar
                 dataKey="pm10"
@@ -593,11 +547,6 @@ export default function SrodowiskoPrzestrzen() {
               <Tooltip
                 formatter={(v: number) => [v.toString(), "na 10 tys. ludności"]}
               />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
-              />
               <Bar
                 dataKey="wartosc"
                 name="Mieszkania na 10 tys. mieszkańców"
@@ -643,11 +592,6 @@ export default function SrodowiskoPrzestrzen() {
                   `${(v as number).toFixed(2)}%`,
                   "udział OZE",
                 ]}
-              />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
               />
               <Bar
                 dataKey="oze"

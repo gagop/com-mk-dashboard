@@ -157,7 +157,6 @@ export default function InteligentneZarzadzanie() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
                         dataKey="odsetek"
                         name="Poziom zadowolenia [%]"
@@ -214,15 +213,6 @@ export default function InteligentneZarzadzanie() {
                         formatter={(v: number) => [`${v}%`, "zadłużenie"]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="wartosc"
@@ -330,15 +320,6 @@ export default function InteligentneZarzadzanie() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wzrost"
                         name="2023–2024 [%]"
@@ -441,15 +422,6 @@ export default function InteligentneZarzadzanie() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wzrost"
                         name="2019–2024 [%]"
@@ -522,7 +494,6 @@ export default function InteligentneZarzadzanie() {
               <XAxis dataKey="kategoria" />
               <YAxis unit="%" />
               <Tooltip formatter={(v: number) => [`${v}%`, "odsetek"]} />
-              <Legend />
               <Bar
                 dataKey="odsetek"
                 name="Poziom zadowolenia [%]"
@@ -574,11 +545,6 @@ export default function InteligentneZarzadzanie() {
               />
               <YAxis unit="%" />
               <Tooltip formatter={(v: number) => [`${v}%`, "zadłużenie"]} />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
-              />
               <Bar
                 dataKey="wartosc"
                 name="Zadłużenie gminy (2024) [%]"
@@ -679,11 +645,6 @@ export default function InteligentneZarzadzanie() {
               <Tooltip
                 formatter={(v: number) => [`${v}%`, "zmiana 2023–2024"]}
               />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
-              />
               <Bar
                 dataKey="wzrost"
                 name="Wzrost wpływów z PIT 2023–2024 [%]"
@@ -779,11 +740,6 @@ export default function InteligentneZarzadzanie() {
               <YAxis unit="%" />
               <Tooltip
                 formatter={(v: number) => [`${v}%`, "zmiana 2019–2024"]}
-              />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
               />
               <Bar
                 dataKey="wzrost"

@@ -12,7 +12,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   BarChart,
   Bar,
 } from "recharts";
@@ -189,7 +188,6 @@ export default function KulturaCzasuWolnego() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Line
                         type="monotone"
                         dataKey="czytelnicy"
@@ -244,15 +242,6 @@ export default function KulturaCzasuWolnego() {
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="wartosc"
@@ -366,7 +355,6 @@ export default function KulturaCzasuWolnego() {
                   "czytelnicy",
                 ]}
               />
-              <Legend />
               <Line
                 type="monotone"
                 dataKey="czytelnicy"
@@ -414,11 +402,6 @@ export default function KulturaCzasuWolnego() {
                   `${(v as number).toFixed(1)}`,
                   "na 1 tys. mieszk.",
                 ]}
-              />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50 }}
               />
               <Bar
                 dataKey="wartosc"

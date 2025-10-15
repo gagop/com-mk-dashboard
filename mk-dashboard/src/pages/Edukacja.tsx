@@ -18,7 +18,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 export default function Edukacja() {
@@ -158,15 +157,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wynik"
                         name="Matury matematyka [%]"
@@ -223,15 +213,6 @@ export default function Edukacja() {
                         formatter={(v: number) => [`${v}%`, "średni wynik"]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="wynik"
@@ -302,15 +283,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="kwota"
                         name="Środki [zł]"
@@ -366,15 +338,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="kwota"
                         name="2024 [zł / uczeń]"
@@ -419,7 +382,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
                         dataKey="liczba"
                         name="Dzieci 3–5 lat"
@@ -492,15 +454,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="liczba"
                         name="Szkoły podstawowe"
@@ -543,15 +496,6 @@ export default function Edukacja() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wynik"
                         name="Wynik polski [%]"
@@ -593,15 +537,6 @@ export default function Edukacja() {
                         formatter={(v: number) => [`${v}%`, "średni wynik"]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="wynik"

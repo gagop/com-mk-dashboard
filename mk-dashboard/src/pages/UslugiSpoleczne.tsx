@@ -138,7 +138,6 @@ export default function UslugiSpoleczne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Line
                         type="monotone"
                         dataKey="liczba"
@@ -255,7 +254,6 @@ export default function UslugiSpoleczne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Line
                         type="monotone"
                         dataKey="przychodnie"
@@ -364,15 +362,6 @@ export default function UslugiSpoleczne() {
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 20,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="liczba"

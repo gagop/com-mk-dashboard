@@ -8,7 +8,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 export default function Mobilnosc() {
@@ -177,7 +176,6 @@ export default function Mobilnosc() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
                         dataKey="odsetek"
                         name="Udział odpowiedzi [%]"
@@ -226,7 +224,6 @@ export default function Mobilnosc() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
                         dataKey="udzial"
                         name="Udział podróży [%]"
@@ -261,7 +258,6 @@ export default function Mobilnosc() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
                         dataKey="liczba"
                         name="Liczba stacji/przystanków"
@@ -312,15 +308,6 @@ export default function Mobilnosc() {
                         formatter={(v: number) => [String(v), "miejsca P&R"]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
-                      />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: -30,
-                          fontSize: 11,
-                        }}
                       />
                       <Bar
                         dataKey="miejsca"

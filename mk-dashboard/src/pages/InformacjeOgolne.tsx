@@ -15,7 +15,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 
 function NumberKPI({
@@ -185,10 +184,7 @@ export default function InformacjeOgolne() {
                 <div style={{ height: 240 }}>
                   <iframe
                     title="ArcGIS Experience Map"
-                    src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true
-       &active_panel=legend
-       &zoom=true
-       &scale=true"
+                    src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?viewpoint=embed"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -237,7 +233,6 @@ export default function InformacjeOgolne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Line
                         type="monotone"
                         dataKey="ludnosc"
@@ -310,15 +305,6 @@ export default function InformacjeOgolne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 50,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wsk"
                         name="Liczba osób w wieku nieprodukcyjnym na 100 osób w wieku produkcyjnym"
@@ -372,15 +358,6 @@ export default function InformacjeOgolne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 0,
-                          bottom: 50,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="wzrost"
                         name="2019–2024 [%]"
@@ -429,15 +406,6 @@ export default function InformacjeOgolne() {
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
-                      <Legend
-                        verticalAlign="bottom"
-                        align="center"
-                        wrapperStyle={{
-                          paddingTop: 12,
-                          bottom: 30,
-                          fontSize: 11,
-                        }}
-                      />
                       <Bar
                         dataKey="pn"
                         name="przyrost naturalny (osoby)"
@@ -463,9 +431,8 @@ export default function InformacjeOgolne() {
         <div style={{ height: 780 }}>
           <iframe
             title="ArcGIS Experience Map"
-            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true&active_panel=legend&zoom=true&scale=true"
-            style={{ width: "100%", height: "100%", border: 0 }}
-            loading="lazy"
+            src="https://experience.arcgis.com/experience/e396e74170364caba36bacf9c7ddd105"
+            style={{ width: "100%", height: "780px", border: 0 }}
             allowFullScreen
           />
         </div>
@@ -527,11 +494,6 @@ export default function InformacjeOgolne() {
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
               />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 50, fontSize: 11 }}
-              />
               <Bar
                 dataKey="wsk"
                 name="Liczba osób w wieku nieprodukcyjnym na 100 osób w wieku produkcyjnym"
@@ -582,11 +544,6 @@ export default function InformacjeOgolne() {
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
               />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 0, bottom: 50, fontSize: 11 }}
-              />
               <Bar
                 dataKey="wzrost"
                 name="2019–2024 [%]"
@@ -635,7 +592,6 @@ export default function InformacjeOgolne() {
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
               />
-              <Legend wrapperStyle={{ fontSize: 11 }} />
               <Line
                 type="monotone"
                 dataKey="ludnosc"
@@ -683,11 +639,6 @@ export default function InformacjeOgolne() {
                 formatter={(v: number) => [`${v}`, "osób (przyrost naturalny)"]}
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
-              />
-              <Legend
-                verticalAlign="bottom"
-                align="center"
-                wrapperStyle={{ paddingTop: 12, bottom: 30, fontSize: 11 }}
               />
               <Bar
                 dataKey="pn"
