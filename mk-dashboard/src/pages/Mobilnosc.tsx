@@ -41,19 +41,17 @@ export default function Mobilnosc() {
             inset: 0,
             overflow: "hidden",
             display: "flex",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             alignItems: "flex-start",
-            padding: "0 12px",
           }}
         >
           <div
             style={{
               columnCount: 3,
               columnGap: 12,
-              transformOrigin: "top left",
+              transformOrigin: "top center",
               transform: `scale(${scale})`,
               width: "100%",
-              maxWidth: "100%",
             }}
             ref={(el) => {
               if (el && el.parentElement?.parentElement) {
