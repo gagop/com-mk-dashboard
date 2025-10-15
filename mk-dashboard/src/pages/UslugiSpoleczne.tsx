@@ -94,11 +94,12 @@ export default function UslugiSpoleczne() {
                 title="Lokalizacja żłobków"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
+                onOpen={() => setOpenCard("lokalizacjaZlobkow")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Lokalizacja żłobków"
-                    src="https://experience.arcgis.com/experience/6e225950c7b84b23a403dce49f5c4e5f/"
+                    src="https://experience.arcgis.com/experience/86668e37526d484cb7bf2393b77fb68b"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -384,6 +385,24 @@ export default function UslugiSpoleczne() {
       </div>
 
       {/* Modals */}
+      <Modal
+        open={openCard === "lokalizacjaZlobkow"}
+        onClose={() => setOpenCard(null)}
+        title="Lokalizacja żłobków"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 780 }}>
+          <iframe
+            title="Lokalizacja żłobków"
+            src="https://experience.arcgis.com/experience/6e225950c7b84b23a403dce49f5c4e5f/"
+            style={{ width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </Modal>
+
       <Modal
         open={openCard === "programy"}
         onClose={() => setOpenCard(null)}
