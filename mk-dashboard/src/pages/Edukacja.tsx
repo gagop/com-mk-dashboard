@@ -2,10 +2,7 @@ import { useState } from "react";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import { GMINY } from "../data/bdl";
-import {
-  budzetInfrastrukturaOswiatyPerUczen2024,
-  dzieciPrzedszkolne3_5Lat,
-} from "../data/edukacja";
+import { dzieciPrzedszkolne3_5Lat } from "../data/edukacja";
 import {
   wynikiOsmoklasPolski2024,
   wynikiOsmoklasMatematyka2024,
@@ -303,51 +300,6 @@ export default function Edukacja() {
                             return `${(value / 1_000_000).toFixed(1)}M`;
                           },
                         }}
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Budżet oświaty na ucznia"
-                subtitle="Źródło: Załączone dane"
-                height={380}
-                onOpen={() => setOpenCard("budzet")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={GMINY.map((gmina) => ({
-                        gmina,
-                        kwota: budzetInfrastrukturaOswiatyPerUczen2024[gmina],
-                      })).sort((a, b) => b.kwota - a.kwota)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit=" zł" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          new Intl.NumberFormat("pl-PL").format(v),
-                          "zł / uczeń",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="kwota"
-                        name="2024 [zł / uczeń]"
-                        fill="rgb(244, 76, 0)"
                       />
                     </BarChart>
                   </ResponsiveContainer>
@@ -735,47 +687,6 @@ export default function Edukacja() {
                     return `${(value / 1_000_000).toFixed(1)}M`;
                   },
                 }}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </Modal>
-
-      <Modal
-        open={openCard === "budzet"}
-        onClose={() => setOpenCard(null)}
-        title="Budżet oświaty na ucznia"
-        width={1100}
-        maxWidth="95vw"
-      >
-        <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={GMINY.map((gmina) => ({
-                gmina,
-                kwota: budzetInfrastrukturaOswiatyPerUczen2024[gmina],
-              })).sort((a, b) => b.kwota - a.kwota)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="gmina"
-                angle={-35}
-                textAnchor="end"
-                interval={0}
-                height={60}
-              />
-              <YAxis unit=" zł" />
-              <Tooltip
-                formatter={(v: number) => [
-                  new Intl.NumberFormat("pl-PL").format(v),
-                  "zł / uczeń",
-                ]}
-              />
-              <Bar
-                dataKey="kwota"
-                name="2024 [zł / uczeń]"
-                fill="rgb(244, 76, 0)"
               />
             </BarChart>
           </ResponsiveContainer>
