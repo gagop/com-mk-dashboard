@@ -103,7 +103,7 @@ export default function InteligentneZarzadzanie() {
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Poziom zadowolenia mieszkańców"
-                    src="https://experience.arcgis.com/experience/51fd6fd2e6514e5ea7b17d5a60163f14/"
+                    src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d/"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -122,7 +122,7 @@ export default function InteligentneZarzadzanie() {
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Dochody ogółem na 1 mieszkańca"
-                    src="https://experience.arcgis.com/experience/24d07761e5e743b6a072e04bbbf8d4b4/"
+                    src="https://experience.arcgis.com/experience/5fb1d244d10b444b8d5bdbb12d5799fd"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
