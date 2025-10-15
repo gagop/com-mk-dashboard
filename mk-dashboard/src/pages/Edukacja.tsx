@@ -106,7 +106,7 @@ export default function Edukacja() {
                   <iframe
                     title="Zadowolenie z jakości edukacji"
                     src="https://experience.arcgis.com/experience/904d0a31db174c5aa48391b939ee7c63"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />

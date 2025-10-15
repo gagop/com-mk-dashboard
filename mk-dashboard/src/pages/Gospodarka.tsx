@@ -100,7 +100,7 @@ export default function Gospodarka() {
                   <iframe
                     title="Zadowolenie przedsiębiorców"
                     src="https://experience.arcgis.com/experience/dc389c17988543428b3190c8317a49fe"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
@@ -119,7 +119,7 @@ export default function Gospodarka() {
                   <iframe
                     title="Udział podatku CIT"
                     src="https://experience.arcgis.com/experience/0c6ce3cadf95473cb27c2cacfa3265cc"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />

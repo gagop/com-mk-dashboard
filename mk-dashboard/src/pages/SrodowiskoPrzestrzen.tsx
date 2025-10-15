@@ -97,7 +97,7 @@ export default function SrodowiskoPrzestrzen() {
                   <iframe
                     title="Ilość odebranych odpadów komunalnych"
                     src="https://experience.arcgis.com/experience/068180947b2d450e91789b37954b9594"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
@@ -116,7 +116,7 @@ export default function SrodowiskoPrzestrzen() {
                   <iframe
                     title="Redukcja emisji pyłu PM2,5"
                     src="https://experience.arcgis.com/experience/586f6ce08ae8417193336ccd75ccfc61"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />

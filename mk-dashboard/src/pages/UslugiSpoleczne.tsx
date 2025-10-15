@@ -100,7 +100,7 @@ export default function UslugiSpoleczne() {
                   <iframe
                     title="Lokalizacja żłobków"
                     src="https://experience.arcgis.com/experience/86668e37526d484cb7bf2393b77fb68b"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />

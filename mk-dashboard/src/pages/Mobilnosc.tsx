@@ -99,7 +99,7 @@ export default function Mobilnosc() {
                   <iframe
                     title="Transport publiczny"
                     src="https://experience.arcgis.com/experience/6618110be2944b9e8bc73a977250abf2"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
@@ -118,7 +118,7 @@ export default function Mobilnosc() {
                   <iframe
                     title="Transport samochodowy"
                     src="https://experience.arcgis.com/experience/13d1956b64454effa64ea0ce9e689ee3"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
@@ -137,7 +137,7 @@ export default function Mobilnosc() {
                   <iframe
                     title="Transport rowerowy"
                     src="https://experience.arcgis.com/experience/9b0d62ed06f84201bee87edcb41c86fb"
-                    style={{ width: "100%", height: "100%", border: 0 }}
+                    style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
