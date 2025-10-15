@@ -184,7 +184,7 @@ export default function InformacjeOgolne() {
                 <div style={{ height: 240 }}>
                   <iframe
                     title="ArcGIS Experience Map"
-                    src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?viewpoint=embed"
+                    src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
