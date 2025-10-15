@@ -119,7 +119,7 @@ export default function KulturaCzasuWolnego() {
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Zadowolenie z oferty czasu wolnego"
-                    src="https://experience.arcgis.com/experience/35fe8984c18a4a0bb3237fbd13eeaf99/"
+                    src="https://experience.arcgis.com/experience/944323efe1584f8e8063879ba745040f"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -138,7 +138,7 @@ export default function KulturaCzasuWolnego() {
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Wydatki na kulturę i sport"
-                    src="https://experience.arcgis.com/experience/e3e555c99ff14d489a8336573bad3166/"
+                    src="https://experience.arcgis.com/experience/de98fbf8d7804898a20cf1d78ac0140a"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
