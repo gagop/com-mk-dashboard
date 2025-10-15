@@ -100,11 +100,12 @@ export default function Edukacja() {
                 title="Zadowolenie z jakości edukacji"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
+                onOpen={() => setOpenCard("zadowolenieEdukacja")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Zadowolenie z jakości edukacji"
-                    src="https://experience.arcgis.com/experience/d174d0e98bae40039c667978707468ac/"
+                    src="https://experience.arcgis.com/experience/904d0a31db174c5aa48391b939ee7c63"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -518,6 +519,24 @@ export default function Edukacja() {
       </div>
 
       {/* Modals */}
+      <Modal
+        open={openCard === "zadowolenieEdukacja"}
+        onClose={() => setOpenCard(null)}
+        title="Zadowolenie z jakości edukacji"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 780 }}>
+          <iframe
+            title="Zadowolenie z jakości edukacji"
+            src="https://experience.arcgis.com/experience/d174d0e98bae40039c667978707468ac/"
+            style={{ width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </Modal>
+
       <Modal
         open={openCard === "matematyka"}
         onClose={() => setOpenCard(null)}
