@@ -95,7 +95,7 @@ export default function InteligentneZarzadzanie() {
           >
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Poziom zadowolenia mieszkańców"
+                title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z jakości funkcjonowania administracji w gminie"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("zadowolenie")}
