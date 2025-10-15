@@ -156,7 +156,7 @@ export default function InformacjeOgolne() {
           >
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Ludność Metropolii (2024)"
+                title="Ludność Metropolii"
                 onOpen={() => setOpenCard("popSummary")}
               >
                 <div

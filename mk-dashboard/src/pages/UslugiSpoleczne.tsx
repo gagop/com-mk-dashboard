@@ -108,7 +108,7 @@ export default function UslugiSpoleczne() {
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
                 title="Osoby objęte programami zdrowotnymi"
-                subtitle="Źródło: Opracowanie własne (2024)"
+                subtitle="Źródło: Opracowanie własne"
                 height={340}
               >
                 <div style={{ height: 280 }}>
@@ -312,7 +312,7 @@ export default function UslugiSpoleczne() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Wnioski o pobyt stały (2024)"
+                title="Wnioski o pobyt stały"
                 subtitle="Źródło: MUW (bez Krakowa)"
                 height={380}
               >

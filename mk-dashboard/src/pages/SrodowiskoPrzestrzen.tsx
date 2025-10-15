@@ -108,7 +108,7 @@ export default function SrodowiskoPrzestrzen() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Redukcja emisji pyłu PM2,5 (2024)"
+                title="Redukcja emisji pyłu PM2,5"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("pm25")}
@@ -127,7 +127,7 @@ export default function SrodowiskoPrzestrzen() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Poziom recyklingu odpadów (2024)"
+                title="Poziom recyklingu odpadów"
                 subtitle="Źródło: BDL GUS"
                 height={380}
                 onOpen={() => setOpenCard("recykling")}
@@ -184,7 +184,7 @@ export default function SrodowiskoPrzestrzen() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Redukcja emisji pyłu PM10 (2024)"
+                title="Redukcja emisji pyłu PM10"
                 subtitle="Źródło: Program ochrony powietrza"
                 height={380}
                 onOpen={() => setOpenCard("pm10")}
@@ -244,7 +244,7 @@ export default function SrodowiskoPrzestrzen() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Mieszkania oddane do użytkowania (2024)"
+                title="Mieszkania oddane do użytkowania"
                 subtitle="Źródło: BDL GUS"
                 height={380}
                 onOpen={() => setOpenCard("mieszkania")}
@@ -309,7 +309,7 @@ export default function SrodowiskoPrzestrzen() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Udział energii z OZE (2024)"
+                title="Udział energii z OZE"
                 subtitle="Źródło: Opracowanie własne"
                 height={380}
                 onOpen={() => setOpenCard("oze")}
@@ -382,7 +382,7 @@ export default function SrodowiskoPrzestrzen() {
       <Modal
         open={openCard === "pm25"}
         onClose={() => setOpenCard(null)}
-        title="Redukcja emisji pyłu PM2,5 (2024)"
+        title="Redukcja emisji pyłu PM2,5"
         width={1100}
         maxWidth="95vw"
       >
@@ -400,7 +400,7 @@ export default function SrodowiskoPrzestrzen() {
       <Modal
         open={openCard === "recykling"}
         onClose={() => setOpenCard(null)}
-        title="Poziom recyklingu odpadów (2024)"
+        title="Poziom recyklingu odpadów"
         width={1100}
         maxWidth="95vw"
       >
@@ -451,7 +451,7 @@ export default function SrodowiskoPrzestrzen() {
       <Modal
         open={openCard === "pm10"}
         onClose={() => setOpenCard(null)}
-        title="Redukcja emisji pyłu PM10 (2024)"
+        title="Redukcja emisji pyłu PM10"
         width={1100}
         maxWidth="95vw"
       >
@@ -504,7 +504,7 @@ export default function SrodowiskoPrzestrzen() {
       <Modal
         open={openCard === "mieszkania"}
         onClose={() => setOpenCard(null)}
-        title="Mieszkania oddane do użytkowania na 10 tys. ludności (2024)"
+        title="Mieszkania oddane do użytkowania na 10 tys. ludności"
         width={1100}
         maxWidth="95vw"
       >
@@ -560,7 +560,7 @@ export default function SrodowiskoPrzestrzen() {
       <Modal
         open={openCard === "oze"}
         onClose={() => setOpenCard(null)}
-        title="Udział energii z OZE (2024)"
+        title="Udział energii z OZE"
         width={1100}
         maxWidth="95vw"
       >

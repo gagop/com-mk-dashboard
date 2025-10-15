@@ -134,7 +134,7 @@ export default function InteligentneZarzadzanie() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Poziom zadowolenia — Metropolia (2024)"
+                title="Poziom zadowolenia — Metropolia"
                 subtitle="Opracowanie własne"
                 height={340}
                 onOpen={() => setOpenCard("poziom")}
@@ -216,7 +216,7 @@ export default function InteligentneZarzadzanie() {
                       />
                       <Bar
                         dataKey="wartosc"
-                        name="Zadłużenie gminy (2024) [%]"
+                        name="Zadłużenie gminy [%]"
                         fill="rgb(178, 178, 178)"
                       />
                     </BarChart>
@@ -476,7 +476,7 @@ export default function InteligentneZarzadzanie() {
       <Modal
         open={openCard === "poziom"}
         onClose={() => setOpenCard(null)}
-        title="Poziom zadowolenia mieszkańców — Metropolia Krakowska (2024)"
+        title="Poziom zadowolenia mieszkańców — Metropolia Krakowska"
         width={1100}
         maxWidth="95vw"
       >
@@ -547,7 +547,7 @@ export default function InteligentneZarzadzanie() {
               <Tooltip formatter={(v: number) => [`${v}%`, "zadłużenie"]} />
               <Bar
                 dataKey="wartosc"
-                name="Zadłużenie gminy (2024) [%]"
+                name="Zadłużenie gminy [%]"
                 fill="rgb(178, 178, 178)"
               />
             </BarChart>

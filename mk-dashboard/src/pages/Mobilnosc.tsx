@@ -140,7 +140,7 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Czynniki wyboru środka transportu (2024)"
+                title="Czynniki wyboru środka transportu"
                 subtitle="Źródło: Raport z badań społecznych 2024"
                 height={340}
               >
@@ -189,7 +189,7 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Podział modalny podróży (2024)"
+                title="Podział modalny podróży"
                 subtitle="Źródło: Raport z badań społecznych 2024"
                 height={340}
               >
@@ -237,7 +237,7 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Stacje kolejowe (2024)"
+                title="Stacje kolejowe"
                 subtitle="Źródło: Opracowanie własne"
                 height={340}
               >
@@ -271,7 +271,7 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Miejsca P&R (2024)"
+                title="Miejsca P&R"
                 subtitle="Źródło: Opracowanie własne"
                 height={380}
               >

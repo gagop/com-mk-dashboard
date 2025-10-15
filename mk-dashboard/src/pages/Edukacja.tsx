@@ -114,7 +114,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Matury - matematyka (2024)"
+                title="Matury - matematyka"
                 subtitle="Źródło: CKE"
                 height={380}
               >
@@ -171,7 +171,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Matury - język polski (2024)"
+                title="Matury - język polski"
                 subtitle="Źródło: CKE"
                 height={380}
               >
@@ -228,7 +228,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Środki na infrastrukturę oświaty (2024)"
+                title="Środki na infrastrukturę oświaty"
                 subtitle="Źródło: zestawienie budżetowe"
                 height={380}
               >
@@ -307,7 +307,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Budżet oświaty na ucznia (2024)"
+                title="Budżet oświaty na ucznia"
                 subtitle="Źródło: Załączone dane"
                 height={380}
               >
@@ -406,7 +406,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Szkoły podstawowe (2024)"
+                title="Szkoły podstawowe"
                 subtitle="Źródło: RSiPO"
                 height={380}
               >
@@ -468,7 +468,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Egzamin 8-klasisty - polski (2024)"
+                title="Egzamin 8-klasisty - polski"
                 subtitle="Źródło: OKE Kraków"
                 height={380}
               >
@@ -510,7 +510,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Egzamin 8-klasisty - matematyka (2024)"
+                title="Egzamin 8-klasisty - matematyka"
                 subtitle="Źródło: OKE Kraków"
                 height={380}
               >

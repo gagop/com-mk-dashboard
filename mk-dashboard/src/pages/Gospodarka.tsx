@@ -180,7 +180,7 @@ export default function Gospodarka() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Udział bezrobotnych (2024)"
+                title="Udział bezrobotnych"
                 subtitle="Źródło: BDL GUS"
                 height={380}
               >
@@ -419,7 +419,7 @@ export default function Gospodarka() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Miejsca noclegowe (2024)"
+                title="Miejsca noclegowe"
                 subtitle="Źródło: BDL GUS (bez Krakowa)"
                 height={380}
               >

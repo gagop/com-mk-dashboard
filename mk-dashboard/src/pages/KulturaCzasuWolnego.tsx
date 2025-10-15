@@ -204,7 +204,7 @@ export default function KulturaCzasuWolnego() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Czytelnicy na 1 tys. mieszkańców (2024)"
+                title="Czytelnicy na 1 tys. mieszkańców"
                 subtitle="Źródło: BDL GUS"
                 height={380}
                 onOpen={() => setOpenCard("czytelnicyTys")}
@@ -256,7 +256,7 @@ export default function KulturaCzasuWolnego() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Biblioteki publiczne (2024)"
+                title="Biblioteki publiczne"
                 subtitle="Źródło: BDL GUS"
                 height={200}
                 onOpen={() => setOpenCard("biblioteki")}
