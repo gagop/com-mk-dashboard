@@ -94,11 +94,12 @@ export default function Gospodarka() {
                 title="Zadowolenie przedsiębiorców"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
+                onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Zadowolenie przedsiębiorców"
-                    src="https://experience.arcgis.com/experience/ccafc27dc27749b2a88317b0e7ff0907/"
+                    src="https://experience.arcgis.com/experience/dc389c17988543428b3190c8317a49fe"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -112,11 +113,12 @@ export default function Gospodarka() {
                 title="Udział podatku CIT w budżecie"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
+                onOpen={() => setOpenCard("udzialCIT")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
                     title="Udział podatku CIT"
-                    src="https://experience.arcgis.com/experience/8979bbcd027542bdad25b09329ab5bbb/"
+                    src="https://experience.arcgis.com/experience/0c6ce3cadf95473cb27c2cacfa3265cc"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -489,6 +491,42 @@ export default function Gospodarka() {
       </div>
 
       {/* Modals */}
+      <Modal
+        open={openCard === "zadowoleniePrzedsiebiorcow"}
+        onClose={() => setOpenCard(null)}
+        title="Zadowolenie przedsiębiorców"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 780 }}>
+          <iframe
+            title="Zadowolenie przedsiębiorców"
+            src="https://experience.arcgis.com/experience/ccafc27dc27749b2a88317b0e7ff0907/"
+            style={{ width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "udzialCIT"}
+        onClose={() => setOpenCard(null)}
+        title="Udział podatku CIT w budżecie"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 780 }}>
+          <iframe
+            title="Udział podatku CIT"
+            src="https://experience.arcgis.com/experience/8979bbcd027542bdad25b09329ab5bbb/"
+            style={{ width: "100%", height: "100%", border: 0 }}
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
+      </Modal>
+
       <Modal
         open={openCard === "podmioty"}
         onClose={() => setOpenCard(null)}
