@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
+import Modal from "../components/Modal";
 import { GMINY } from "../data/bdl";
 import {
   ResponsiveContainer,
@@ -16,6 +17,7 @@ import {
 
 export default function Gospodarka() {
   const [scale, setScale] = useState(1);
+  const [openCard, setOpenCard] = useState<string | null>(null);
 
   return (
     <div
@@ -129,6 +131,7 @@ export default function Gospodarka() {
                 title="Nowe podmioty gospodarcze (2019–2024)"
                 subtitle="Źródło: BDL GUS"
                 height={340}
+                onOpen={() => setOpenCard("podmioty")}
               >
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -183,6 +186,7 @@ export default function Gospodarka() {
                 title="Udział bezrobotnych"
                 subtitle="Źródło: BDL GUS"
                 height={380}
+                onOpen={() => setOpenCard("bezrobotni")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -422,6 +426,7 @@ export default function Gospodarka() {
                 title="Miejsca noclegowe"
                 subtitle="Źródło: BDL GUS (bez Krakowa)"
                 height={380}
+                onOpen={() => setOpenCard("noclegowe")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -483,6 +488,168 @@ export default function Gospodarka() {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal
+        open={openCard === "podmioty"}
+        onClose={() => setOpenCard(null)}
+        title="Nowe podmioty gospodarcze (2019–2024)"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={[
+                { rok: "2019", podmioty: 15714 },
+                { rok: "2020", podmioty: 13625 },
+                { rok: "2021", podmioty: 16486 },
+                { rok: "2022", podmioty: 18859 },
+                { rok: "2023", podmioty: 18929 },
+                { rok: "2024", podmioty: 18745 },
+              ]}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis
+                domain={["dataMin - 1000", "dataMax + 1000"]}
+                tickFormatter={(value) =>
+                  new Intl.NumberFormat("pl-PL", {
+                    notation: "compact",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0,
+                  }).format(value)
+                }
+              />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v),
+                  "podmioty",
+                ]}
+              />
+              <Line
+                type="monotone"
+                dataKey="podmioty"
+                name="Liczba podmiotów"
+                stroke="rgb(116, 27, 105)"
+                strokeWidth={2}
+                dot={{ r: 2 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "bezrobotni"}
+        onClose={() => setOpenCard(null)}
+        title="Udział bezrobotnych"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { gmina: "Skawina", wartosc: 2.8 },
+                { gmina: "Czernichów", wartosc: 2.5 },
+                { gmina: "Świątniki Górne", wartosc: 2.5 },
+                { gmina: "Zabierzów", wartosc: 2.5 },
+                { gmina: "Wieliczka", wartosc: 2.5 },
+                { gmina: "Mogilany", wartosc: 2.4 },
+                { gmina: "Kocmyrzów-Luborzyca", wartosc: 2.3 },
+                { gmina: "Liszki", wartosc: 2.2 },
+                { gmina: "Kraków", wartosc: 2.2 },
+                { gmina: "Biskupice", wartosc: 2.1 },
+                { gmina: "Igołomia-Wawrzeńczyce", wartosc: 2.0 },
+                { gmina: "Michałowice", wartosc: 1.9 },
+                { gmina: "Wielka Wieś", wartosc: 1.7 },
+                { gmina: "Zielonki", wartosc: 1.5 },
+                { gmina: "Niepołomice", wartosc: 1.5 },
+              ]
+                .slice()
+                .sort((a, b) => b.wartosc - a.wartosc)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "udział"]} />
+              <Bar
+                dataKey="wartosc"
+                name="Udział bezrobotnych [%]"
+                fill="rgb(157, 28, 124)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "noclegowe"}
+        onClose={() => setOpenCard(null)}
+        title="Miejsca noclegowe"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={GMINY.map((gmina) => {
+                const M2024: Record<string, number> = {
+                  "Kocmyrzów-Luborzyca": 50,
+                  Liszki: 120,
+                  Michałowice: 74,
+                  Skawina: 93,
+                  "Świątniki Górne": 0,
+                  "Wielka Wieś": 470,
+                  Zabierzów: 825,
+                  Zielonki: 150,
+                  Biskupice: 44,
+                  Niepołomice: 213,
+                  Wieliczka: 699,
+                  Kraków: 35805,
+                  Czernichów: 0,
+                  "Igołomia-Wawrzeńczyce": 0,
+                  Mogilany: 0,
+                };
+                return { gmina, miejsca: M2024[gmina] ?? 0 };
+              })
+                .filter((item) => item.miejsca > 0 && item.gmina !== "Kraków")
+                .sort((a, b) => b.miejsca - a.miejsca)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v as number),
+                  "miejsca",
+                ]}
+              />
+              <Bar
+                dataKey="miejsca"
+                name="Miejsca noclegowe"
+                fill="rgb(157, 28, 124)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
     </div>
   );
 }

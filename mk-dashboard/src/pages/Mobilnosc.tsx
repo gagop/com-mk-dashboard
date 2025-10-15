@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
+import Modal from "../components/Modal";
 import {
   ResponsiveContainer,
   BarChart,
@@ -12,6 +13,7 @@ import {
 
 export default function Mobilnosc() {
   const [scale, setScale] = useState(1);
+  const [openCard, setOpenCard] = useState<string | null>(null);
 
   return (
     <div
@@ -143,6 +145,7 @@ export default function Mobilnosc() {
                 title="Czynniki wyboru środka transportu"
                 subtitle="Źródło: Raport z badań społecznych 2024"
                 height={340}
+                onOpen={() => setOpenCard("czynniki")}
               >
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -192,6 +195,7 @@ export default function Mobilnosc() {
                 title="Podział modalny podróży"
                 subtitle="Źródło: Raport z badań społecznych 2024"
                 height={340}
+                onOpen={() => setOpenCard("podzial")}
               >
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -240,6 +244,7 @@ export default function Mobilnosc() {
                 title="Stacje kolejowe"
                 subtitle="Źródło: Opracowanie własne"
                 height={340}
+                onOpen={() => setOpenCard("stacje")}
               >
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -274,6 +279,7 @@ export default function Mobilnosc() {
                 title="Miejsca P&R"
                 subtitle="Źródło: Opracowanie własne"
                 height={380}
+                onOpen={() => setOpenCard("miejsca")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -322,6 +328,172 @@ export default function Mobilnosc() {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal
+        open={openCard === "czynniki"}
+        onClose={() => setOpenCard(null)}
+        title="Czynniki wyboru środka transportu"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { czynnik: "Komfort podróży", odsetek: 59 },
+                {
+                  czynnik: "Brak alternatywy",
+                  odsetek: 15,
+                },
+                { czynnik: "Czas przejazdu", odsetek: 13 },
+                { czynnik: "Koszty", odsetek: 5 },
+                { czynnik: "Bezpieczeństwo", odsetek: 4 },
+                { czynnik: "Inne", odsetek: 3 },
+                { czynnik: "Środowisko", odsetek: 1 },
+              ]}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="czynnik"
+                interval={0}
+                angle={-15}
+                textAnchor="end"
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "odsetek"]} />
+              <Bar
+                dataKey="odsetek"
+                name="Udział odpowiedzi [%]"
+                fill="rgb(29, 113, 184)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "podzial"}
+        onClose={() => setOpenCard(null)}
+        title="Podział modalny podróży"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { srodek: "Samochód", udzial: 63 },
+                { srodek: "Komunikacja", udzial: 22 },
+                { srodek: "Pieszo", udzial: 10 },
+                { srodek: "Rower", udzial: 3 },
+                { srodek: "Pociąg", udzial: 0.8 },
+                { srodek: "Hulajnoga", udzial: 0.4 },
+              ]}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="srodek"
+                interval={0}
+                angle={-15}
+                textAnchor="end"
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip
+                formatter={(v: number) => [
+                  `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
+                  "udział",
+                ]}
+              />
+              <Bar
+                dataKey="udzial"
+                name="Udział podróży [%]"
+                fill="rgb(54, 169, 225)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "stacje"}
+        onClose={() => setOpenCard(null)}
+        title="Stacje kolejowe"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
+                { kategoria: "Kraków (miejskie)", liczba: 31.0 },
+              ]}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="kategoria" />
+              <YAxis />
+              <Tooltip formatter={(v: number) => [String(v), "liczba"]} />
+              <Bar
+                dataKey="liczba"
+                name="Liczba stacji/przystanków"
+                fill="rgb(29, 113, 184)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "miejsca"}
+        onClose={() => setOpenCard(null)}
+        title="Miejsca P&R"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
+                { kategoria: "P+R Swoszowice", miejsca: 154.0 },
+                { kategoria: "P+R Krowodrza", miejsca: 109.0 },
+                { kategoria: "Łuczyce", miejsca: 106.0 },
+                { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
+                { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
+                { kategoria: "Kocmyrzów", miejsca: 72.0 },
+                { kategoria: "Baranówka", miejsca: 53.0 },
+                { kategoria: "Zastów", miejsca: 51.0 },
+                { kategoria: "Goszcza", miejsca: 47.0 },
+              ]
+                .slice()
+                .sort((a, b) => b.miejsca - a.miejsca)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="kategoria"
+                angle={-45}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis />
+              <Tooltip formatter={(v: number) => [String(v), "miejsca P&R"]} />
+              <Bar
+                dataKey="miejsca"
+                name="Liczba miejsc P&R"
+                fill="rgb(54, 169, 225)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
     </div>
   );
 }

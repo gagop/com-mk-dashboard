@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "../components/Card";
+import Modal from "../components/Modal";
 import { GMINY } from "../data/bdl";
 import {
   budzetInfrastrukturaOswiatyPerUczen2024,
@@ -22,6 +23,7 @@ import {
 
 export default function Edukacja() {
   const [scale, setScale] = useState(1);
+  const [openCard, setOpenCard] = useState<string | null>(null);
 
   return (
     <div
@@ -117,6 +119,7 @@ export default function Edukacja() {
                 title="Matury - matematyka"
                 subtitle="Źródło: CKE"
                 height={380}
+                onOpen={() => setOpenCard("matematyka")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -174,6 +177,7 @@ export default function Edukacja() {
                 title="Matury - język polski"
                 subtitle="Źródło: CKE"
                 height={380}
+                onOpen={() => setOpenCard("polski")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -231,6 +235,7 @@ export default function Edukacja() {
                 title="Środki na infrastrukturę oświaty"
                 subtitle="Źródło: zestawienie budżetowe"
                 height={380}
+                onOpen={() => setOpenCard("srodki")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -310,6 +315,7 @@ export default function Edukacja() {
                 title="Budżet oświaty na ucznia"
                 subtitle="Źródło: Załączone dane"
                 height={380}
+                onOpen={() => setOpenCard("budzet")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -354,6 +360,7 @@ export default function Edukacja() {
                 title="Dzieci przedszkolne 3–5 lat (2019–2024)"
                 subtitle="Źródło: BDL GUS"
                 height={340}
+                onOpen={() => setOpenCard("dzieci")}
               >
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -409,6 +416,7 @@ export default function Edukacja() {
                 title="Szkoły podstawowe"
                 subtitle="Źródło: RSiPO"
                 height={380}
+                onOpen={() => setOpenCard("szkoly")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -471,6 +479,7 @@ export default function Edukacja() {
                 title="Egzamin 8-klasisty - polski"
                 subtitle="Źródło: OKE Kraków"
                 height={380}
+                onOpen={() => setOpenCard("egzaminPolski")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -513,6 +522,7 @@ export default function Edukacja() {
                 title="Egzamin 8-klasisty - matematyka"
                 subtitle="Źródło: OKE Kraków"
                 height={380}
+                onOpen={() => setOpenCard("egzaminMatematyka")}
               >
                 <div style={{ height: 320 }}>
                   <ResponsiveContainer width="100%" height="100%">
@@ -552,6 +562,404 @@ export default function Edukacja() {
           </div>
         </div>
       </div>
+
+      {/* Modals */}
+      <Modal
+        open={openCard === "matematyka"}
+        onClose={() => setOpenCard(null)}
+        title="Matury - matematyka"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { gmina: "Kraków", wynik: 70.71 },
+                { gmina: "Zielonki", wynik: 69.85 },
+                { gmina: "Wielka Wieś", wynik: 68.1 },
+                { gmina: "Zabierzów", wynik: 67.77 },
+                { gmina: "Świątniki Górne", wynik: 67.78 },
+                { gmina: "Biskupice", wynik: 67.1 },
+                { gmina: "Mogilany", wynik: 66.9 },
+                { gmina: "Wieliczka", wynik: 65.44 },
+                { gmina: "Czernichów", wynik: 63.7 },
+                { gmina: "Liszki", wynik: 62.58 },
+                { gmina: "Kocmyrzów-Luborzyca", wynik: 60.19 },
+                { gmina: "Skawina", wynik: 59.14 },
+                { gmina: "Michałowice", wynik: 58.7 },
+                { gmina: "Igołomia-Wawrzeńczyce", wynik: 57.31 },
+                { gmina: "Niepołomice", wynik: 55.35 },
+              ]
+                .slice()
+                .sort((a, b) => b.wynik - a.wynik)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
+              <Bar
+                dataKey="wynik"
+                name="Matury matematyka [%]"
+                fill="rgb(197, 59, 0)"
+                label={{ position: "top", fontSize: 10, fill: "#333" }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "polski"}
+        onClose={() => setOpenCard(null)}
+        title="Matury - język polski"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { gmina: "Kraków", wynik: 74.21 },
+                { gmina: "Kocmyrzów-Luborzyca", wynik: 73.5 },
+                { gmina: "Zielonki", wynik: 72.85 },
+                { gmina: "Czernichów", wynik: 70.92 },
+                { gmina: "Świątniki Górne", wynik: 69.93 },
+                { gmina: "Mogilany", wynik: 69.99 },
+                { gmina: "Wielka Wieś", wynik: 69.04 },
+                { gmina: "Liszki", wynik: 68.11 },
+                { gmina: "Biskupice", wynik: 67.31 },
+                { gmina: "Wieliczka", wynik: 67.31 },
+                { gmina: "Zabierzów", wynik: 66.47 },
+                { gmina: "Igołomia-Wawrzeńczyce", wynik: 63.83 },
+                { gmina: "Skawina", wynik: 63.09 },
+                { gmina: "Niepołomice", wynik: 61.15 },
+                { gmina: "Michałowice", wynik: 60.82 },
+              ]
+                .slice()
+                .sort((a, b) => b.wynik - a.wynik)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="%" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
+              <Bar
+                dataKey="wynik"
+                name="Matury polski [%]"
+                fill="rgb(244, 76, 0)"
+                label={{ position: "top", fontSize: 10, fill: "#333" }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "srodki"}
+        onClose={() => setOpenCard(null)}
+        title="Środki na infrastrukturę oświaty"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { gmina: "Kraków", kwota: 54216533.0 },
+                { gmina: "Liszki", kwota: 29044584.46 },
+                { gmina: "Wieliczka", kwota: 19968529.4 },
+                { gmina: "Wielka Wieś", kwota: 8097479.43 },
+                { gmina: "Kocmyrzów-Luborzyca", kwota: 6763383.69 },
+                { gmina: "Biskupice", kwota: 4722501.98 },
+                { gmina: "Świątniki Górne", kwota: 4199803.71 },
+                { gmina: "Czernichów", kwota: 2609291.14 },
+                { gmina: "Skawina", kwota: 2342207.06 },
+                { gmina: "Zielonki", kwota: 1355049.66 },
+                { gmina: "Mogilany", kwota: 959757.23 },
+                { gmina: "Niepołomice", kwota: 683352.27 },
+                { gmina: "Michałowice", kwota: 418611.82 },
+                { gmina: "Igołomia-Wawrzeńczyce", kwota: 114309.33 },
+                { gmina: "Zabierzów", kwota: 3070.54 },
+              ]
+                .slice()
+                .sort((a, b) => b.kwota - a.kwota)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis
+                tickFormatter={(value) =>
+                  new Intl.NumberFormat("pl-PL", {
+                    notation: "compact",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 1,
+                  }).format(value)
+                }
+              />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v),
+                  "środki [zł]",
+                ]}
+              />
+              <Bar
+                dataKey="kwota"
+                name="Środki [zł]"
+                fill="rgb(197, 59, 0)"
+                label={{
+                  position: "top",
+                  fontSize: 10,
+                  fill: "#333",
+                  formatter: (label: React.ReactNode): React.ReactNode => {
+                    const value = Number(label);
+                    return `${(value / 1_000_000).toFixed(1)}M`;
+                  },
+                }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "budzet"}
+        onClose={() => setOpenCard(null)}
+        title="Budżet oświaty na ucznia"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={GMINY.map((gmina) => ({
+                gmina,
+                kwota: budzetInfrastrukturaOswiatyPerUczen2024[gmina],
+              })).sort((a, b) => b.kwota - a.kwota)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit=" zł" />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v),
+                  "zł / uczeń",
+                ]}
+              />
+              <Bar
+                dataKey="kwota"
+                name="2024 [zł / uczeń]"
+                fill="rgb(244, 76, 0)"
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "dzieci"}
+        onClose={() => setOpenCard(null)}
+        title="Dzieci przedszkolne 3–5 lat (2019–2024)"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={LATA.map((rok) => ({
+                rok: String(rok),
+                liczba: GMINY.reduce(
+                  (sum, g) => sum + (dzieciPrzedszkolne3_5Lat[g][rok] || 0),
+                  0
+                ),
+              }))}
+              margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis domain={["dataMin - 5000", "dataMax + 5000"]} />
+              <Tooltip
+                formatter={(v: number) => [
+                  new Intl.NumberFormat("pl-PL").format(v),
+                  "dzieci 3–5 lat",
+                ]}
+              />
+              <Bar
+                dataKey="liczba"
+                name="Dzieci 3–5 lat"
+                fill="rgb(197, 59, 0)"
+                label={{
+                  position: "top",
+                  fontSize: 10,
+                  fill: "#333",
+                  formatter: (v: React.ReactNode): React.ReactNode => {
+                    if (typeof v === "number") {
+                      return new Intl.NumberFormat("pl-PL").format(v);
+                    }
+                    return v;
+                  },
+                }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "szkoly"}
+        onClose={() => setOpenCard(null)}
+        title="Szkoły podstawowe"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { gmina: "Kraków-Podgórze", liczba: 75 },
+                { gmina: "Kraków-Krowodrza", liczba: 47 },
+                { gmina: "Kraków-Śródmieście", liczba: 43 },
+                { gmina: "Kraków-Nowa Huta", liczba: 41 },
+                { gmina: "Wieliczka", liczba: 29 },
+                { gmina: "Skawina", liczba: 21 },
+                { gmina: "Zabierzów", liczba: 12 },
+                { gmina: "Niepołomice", liczba: 12 },
+                { gmina: "Liszki", liczba: 11 },
+                { gmina: "Czernichów", liczba: 9 },
+                { gmina: "Kocmyrzów-Luborzyca", liczba: 9 },
+                { gmina: "Mogilany", liczba: 7 },
+                { gmina: "Biskupice", liczba: 6 },
+                { gmina: "Słomniki", liczba: 6 },
+                { gmina: "Wielka Wieś", liczba: 6 },
+                { gmina: "Zielonki", liczba: 6 },
+                { gmina: "Świątniki Górne", liczba: 6 },
+                { gmina: "Igołomia-Wawrzeńczyce", liczba: 4 },
+                { gmina: "Michałowice", liczba: 3 },
+              ].sort((a, b) => b.liczba - a.liczba)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis />
+              <Tooltip
+                formatter={(v: number) => [String(v), "szkoły podstawowe"]}
+              />
+              <Bar
+                dataKey="liczba"
+                name="Szkoły podstawowe"
+                fill="rgb(244, 76, 0)"
+                label={{ position: "top", fontSize: 10, fill: "#333" }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "egzaminPolski"}
+        onClose={() => setOpenCard(null)}
+        title="Egzamin 8-klasisty - polski"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={GMINY.map((gmina) => ({
+                gmina,
+                wynik: wynikiOsmoklasPolski2024[gmina],
+              })).sort((a, b) => b.wynik - a.wynik)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit=" %" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
+              <Bar
+                dataKey="wynik"
+                name="Wynik polski [%]"
+                fill="rgb(197, 59, 0)"
+                label={{ position: "top", fontSize: 10, fill: "#333" }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "egzaminMatematyka"}
+        onClose={() => setOpenCard(null)}
+        title="Egzamin 8-klasisty - matematyka"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={GMINY.map((gmina) => ({
+                gmina,
+                wynik: wynikiOsmoklasMatematyka2024[gmina],
+              })).sort((a, b) => b.wynik - a.wynik)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit=" %" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
+              <Bar
+                dataKey="wynik"
+                name="Wynik matematyka [%]"
+                fill="rgb(244, 76, 0)"
+                label={{ position: "top", fontSize: 10, fill: "#333" }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
     </div>
   );
 }
