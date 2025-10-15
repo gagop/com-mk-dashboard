@@ -48,19 +48,17 @@ export default function Edukacja() {
             inset: 0,
             overflow: "hidden",
             display: "flex",
-            justifyContent: "flex-start",
+            justifyContent: "center",
             alignItems: "flex-start",
-            padding: "0 12px",
           }}
         >
           <div
             style={{
               columnCount: 3,
               columnGap: 12,
-              transformOrigin: "top left",
+              transformOrigin: "top center",
               transform: `scale(${scale})`,
               width: "100%",
-              maxWidth: "100%",
             }}
             ref={(el) => {
               if (el && el.parentElement?.parentElement) {
@@ -418,110 +416,6 @@ export default function Edukacja() {
             loading="lazy"
             allowFullScreen
           />
-        </div>
-      </Modal>
-
-      <Modal
-        open={openCard === "matematyka"}
-        onClose={() => setOpenCard(null)}
-        title="Matury - matematyka"
-        width={1100}
-        maxWidth="95vw"
-      >
-        <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={[
-                { gmina: "Kraków", wynik: 70.71 },
-                { gmina: "Zielonki", wynik: 69.85 },
-                { gmina: "Wielka Wieś", wynik: 68.1 },
-                { gmina: "Zabierzów", wynik: 67.77 },
-                { gmina: "Świątniki Górne", wynik: 67.78 },
-                { gmina: "Biskupice", wynik: 67.1 },
-                { gmina: "Mogilany", wynik: 66.9 },
-                { gmina: "Wieliczka", wynik: 65.44 },
-                { gmina: "Czernichów", wynik: 63.7 },
-                { gmina: "Liszki", wynik: 62.58 },
-                { gmina: "Kocmyrzów-Luborzyca", wynik: 60.19 },
-                { gmina: "Skawina", wynik: 59.14 },
-                { gmina: "Michałowice", wynik: 58.7 },
-                { gmina: "Igołomia-Wawrzeńczyce", wynik: 57.31 },
-                { gmina: "Niepołomice", wynik: 55.35 },
-              ]
-                .slice()
-                .sort((a, b) => b.wynik - a.wynik)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="gmina"
-                angle={-35}
-                textAnchor="end"
-                interval={0}
-                height={60}
-              />
-              <YAxis unit="%" />
-              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
-              <Bar
-                dataKey="wynik"
-                name="Matury matematyka [%]"
-                fill="rgb(197, 59, 0)"
-                label={{ position: "top", fontSize: 10, fill: "#333" }}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </Modal>
-
-      <Modal
-        open={openCard === "polski"}
-        onClose={() => setOpenCard(null)}
-        title="Matury - język polski"
-        width={1100}
-        maxWidth="95vw"
-      >
-        <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={[
-                { gmina: "Kraków", wynik: 74.21 },
-                { gmina: "Kocmyrzów-Luborzyca", wynik: 73.5 },
-                { gmina: "Zielonki", wynik: 72.85 },
-                { gmina: "Czernichów", wynik: 70.92 },
-                { gmina: "Świątniki Górne", wynik: 69.93 },
-                { gmina: "Mogilany", wynik: 69.99 },
-                { gmina: "Wielka Wieś", wynik: 69.04 },
-                { gmina: "Liszki", wynik: 68.11 },
-                { gmina: "Biskupice", wynik: 67.31 },
-                { gmina: "Wieliczka", wynik: 67.31 },
-                { gmina: "Zabierzów", wynik: 66.47 },
-                { gmina: "Igołomia-Wawrzeńczyce", wynik: 63.83 },
-                { gmina: "Skawina", wynik: 63.09 },
-                { gmina: "Niepołomice", wynik: 61.15 },
-                { gmina: "Michałowice", wynik: 60.82 },
-              ]
-                .slice()
-                .sort((a, b) => b.wynik - a.wynik)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="gmina"
-                angle={-35}
-                textAnchor="end"
-                interval={0}
-                height={60}
-              />
-              <YAxis unit="%" />
-              <Tooltip formatter={(v: number) => [`${v}%`, "średni wynik"]} />
-              <Bar
-                dataKey="wynik"
-                name="Matury polski [%]"
-                fill="rgb(244, 76, 0)"
-                label={{ position: "top", fontSize: 10, fill: "#333" }}
-              />
-            </BarChart>
-          </ResponsiveContainer>
         </div>
       </Modal>
 
