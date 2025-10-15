@@ -184,7 +184,7 @@ export default function InformacjeOgolne() {
                 <div style={{ height: 240 }}>
                   <iframe
                     title="ArcGIS Experience Map"
-                    src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d"
+                    src="https://experience.arcgis.com/experience/1b4cd2dd47364324908a05fc2cf2f4a5"
                     style={{ width: "100%", height: "100%", border: 0 }}
                     loading="lazy"
                     allowFullScreen
@@ -431,7 +431,7 @@ export default function InformacjeOgolne() {
         <div style={{ height: 780 }}>
           <iframe
             title="ArcGIS Experience Map"
-            src="https://experience.arcgis.com/experience/e396e74170364caba36bacf9c7ddd105"
+            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true&active_panel=legend&zoom=true&scale=true"
             style={{ width: "100%", height: "780px", border: 0 }}
             allowFullScreen
           />
