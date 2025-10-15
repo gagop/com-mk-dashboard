@@ -249,11 +249,33 @@ export default function InformacjeOgolne() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card title="Ludność gmin" onOpen={() => setOpenCard("gminyPop")}>
-                <div style={{ maxHeight: 280, overflowY: "auto" }}>
+                <div>
                   <div className="masonry">
                     {gminaPopData.map(({ gmina, pop }) => (
                       <div key={gmina} className="masonry-item">
-                        <NumberKPI label={gmina} value={pop} size="sm" />
+                        <div
+                          style={{
+                            background: mkColors.white,
+                            border: `1px solid ${mkColors.gray300}`,
+                            borderRadius: 8,
+                            padding: "8px 10px",
+                            boxShadow: "0 1px 2px rgba(0,0,0,0.04)",
+                          }}
+                        >
+                          <div style={{ fontSize: 9, color: "#6b7280" }}>
+                            {gmina}
+                          </div>
+                          <div
+                            style={{
+                              marginTop: 3,
+                              fontSize: 16,
+                              fontWeight: 700,
+                              color: mkColors.primaryNavy,
+                            }}
+                          >
+                            {new Intl.NumberFormat("pl-PL").format(pop)}
+                          </div>
+                        </div>
                       </div>
                     ))}
                   </div>
