@@ -10,7 +10,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   BarChart,
   Bar,
 } from "recharts";
