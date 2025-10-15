@@ -244,41 +244,6 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Stacje kolejowe"
-                subtitle="Źródło: Opracowanie własne"
-                height={340}
-                onOpen={() => setOpenCard("stacje")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
-                        { kategoria: "Kraków (miejskie)", liczba: 31.0 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [String(v), "liczba"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="liczba"
-                        name="Liczba stacji/przystanków"
-                        fill="rgb(29, 113, 184)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
                 title="Miejsca P&R"
                 subtitle="Źródło: Opracowanie własne"
                 height={380}
@@ -470,36 +435,6 @@ export default function Mobilnosc() {
                 dataKey="udzial"
                 name="Udział podróży [%]"
                 fill="rgb(54, 169, 225)"
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </Modal>
-
-      <Modal
-        open={openCard === "stacje"}
-        onClose={() => setOpenCard(null)}
-        title="Stacje kolejowe"
-        width={1100}
-        maxWidth="95vw"
-      >
-        <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={[
-                { kategoria: "Kocmyrzów-Luborzyca", liczba: 4.0 },
-                { kategoria: "Kraków (miejskie)", liczba: 31.0 },
-              ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-            >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="kategoria" />
-              <YAxis />
-              <Tooltip formatter={(v: number) => [String(v), "liczba"]} />
-              <Bar
-                dataKey="liczba"
-                name="Liczba stacji/przystanków"
-                fill="rgb(29, 113, 184)"
               />
             </BarChart>
           </ResponsiveContainer>
