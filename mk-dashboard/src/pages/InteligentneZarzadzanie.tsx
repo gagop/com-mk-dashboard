@@ -97,17 +97,106 @@ export default function InteligentneZarzadzanie() {
               <Card
                 title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z jakości funkcjonowania administracji w gminie"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={410}
                 onOpen={() => setOpenCard("zadowolenie")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 320,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Poziom zadowolenia mieszkańców"
                     src="https://experience.arcgis.com/experience/cccd4cb137164897b676c97eee0c393d/"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}
+                    >
+                      Poziom zadowolenia z jakości funkcjonowania administracji
+                      w gminie [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(60, 60, 60)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 84</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(100, 100, 100)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>77 - 84</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(140, 140, 140)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>72 - 77</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(180, 180, 180)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>64 - 72</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(220, 220, 220)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 64</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
