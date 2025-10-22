@@ -2,9 +2,9 @@ import { useMemo, useState } from "react";
 import { appStyles, mkColors } from "../theme";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
-import type { Rok, Gmina } from "../data/bdl";
+import type { Rok } from "../data/bdl";
 import { computeLudnosc, MK_ludnosc, LATA } from "../data/utils";
-import { GMINY, obciazenieDemograficzne, przyrostNaturalny } from "../data/bdl";
+import { GMINY, obciazenieDemograficzne } from "../data/bdl";
 import {
   ResponsiveContainer,
   BarChart,
@@ -85,6 +85,28 @@ export default function InformacjeOgolne() {
       { gmina: "Biskupice", pop: 11929 },
       { gmina: "Świątniki Górne", pop: 11091 },
       { gmina: "Igołomia-Wawrzeńcz", pop: 7878 },
+    ],
+    []
+  );
+
+  // Hardcoded population change data for 2024 (Zmiana bezwzględna)
+  const gminaChangeData = useMemo(
+    () => [
+      { gmina: "Wielka Wieś", zmiana: 426 },
+      { gmina: "Michałowice", zmiana: 213 },
+      { gmina: "Niepołomice", zmiana: 429 },
+      { gmina: "Wieliczka", zmiana: 887 },
+      { gmina: "Liszki", zmiana: 160 },
+      { gmina: "Biskupice", zmiana: 194 },
+      { gmina: "Mogilany", zmiana: 173 },
+      { gmina: "Kocmyrzów-Luborzyc", zmiana: 380 },
+      { gmina: "Zielonki", zmiana: 328 },
+      { gmina: "Zabierzów", zmiana: 235 },
+      { gmina: "Świątniki Górne", zmiana: 146 },
+      { gmina: "Czernichów", zmiana: 38 },
+      { gmina: "Igołomia-Wawrzeńcz", zmiana: 15 },
+      { gmina: "Skawina", zmiana: 57 },
+      { gmina: "Kraków", zmiana: 2967 },
     ],
     []
   );
@@ -428,11 +450,8 @@ export default function InformacjeOgolne() {
                     <BarChart
                       data={useMemo(
                         () =>
-                          GMINY.map((g: Gmina) => ({
-                            gmina: g,
-                            pn: przyrostNaturalny[g][Y],
-                          })).sort((a, b) => b.pn - a.pn),
-                        []
+                          gminaChangeData.sort((a, b) => b.zmiana - a.zmiana),
+                        [gminaChangeData]
                       )}
                       margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
                     >
@@ -449,14 +468,14 @@ export default function InformacjeOgolne() {
                       <Tooltip
                         formatter={(v: number) => [
                           `${v}`,
-                          "osób (przyrost naturalny)",
+                          "osób (zmiana bezwzględna)",
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
                       <Bar
-                        dataKey="pn"
-                        name="przyrost naturalny (osoby)"
+                        dataKey="zmiana"
+                        name="zmiana bezwzględna (osoby)"
                         fill={IO_CHART_COLORS[0]}
                       />
                     </BarChart>
@@ -667,12 +686,8 @@ export default function InformacjeOgolne() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={useMemo(
-                () =>
-                  GMINY.map((g: Gmina) => ({
-                    gmina: g,
-                    pn: przyrostNaturalny[g][Y],
-                  })).sort((a, b) => b.pn - a.pn),
-                []
+                () => gminaChangeData.sort((a, b) => b.zmiana - a.zmiana),
+                [gminaChangeData]
               )}
               margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
@@ -687,13 +702,13 @@ export default function InformacjeOgolne() {
               />
               <YAxis tick={{ fontSize: 11 }} />
               <Tooltip
-                formatter={(v: number) => [`${v}`, "osób (przyrost naturalny)"]}
+                formatter={(v: number) => [`${v}`, "osób (zmiana bezwzględna)"]}
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
               />
               <Bar
-                dataKey="pn"
-                name="przyrost naturalny (osoby)"
+                dataKey="zmiana"
+                name="zmiana bezwzględna (osoby)"
                 fill={IO_CHART_COLORS[0]}
               />
             </BarChart>
