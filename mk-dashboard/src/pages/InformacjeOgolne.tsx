@@ -3,7 +3,7 @@ import { appStyles, mkColors } from "../theme";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import type { Rok } from "../data/bdl";
-import { computeLudnosc, MK_ludnosc, LATA } from "../data/utils";
+import { computeLudnosc } from "../data/utils";
 import { GMINY, obciazenieDemograficzne } from "../data/bdl";
 import {
   ResponsiveContainer,
@@ -111,6 +111,19 @@ export default function InformacjeOgolne() {
     []
   );
 
+  // Hardcoded Metropolia Krakowska population data 2019-2024
+  const mkTrendData = useMemo(
+    () => [
+      { rok: "2019", ludnosc: 1076117 },
+      { rok: "2020", ludnosc: 1121525 },
+      { rok: "2021", ludnosc: 1127896 },
+      { rok: "2022", ludnosc: 1132625 },
+      { rok: "2023", ludnosc: 1139182 },
+      { rok: "2024", ludnosc: 1145723 },
+    ],
+    []
+  );
+
   return (
     <div
       style={{
@@ -202,10 +215,7 @@ export default function InformacjeOgolne() {
                     gap: 8,
                   }}
                 >
-                  <NumberKPI
-                    label="Liczba ludności ogółem"
-                    value={MK_ludnosc[Y]}
-                  />
+                  <NumberKPI label="Liczba ludności ogółem" value={1145723} />
                 </div>
               </Card>
             </div>
@@ -244,14 +254,7 @@ export default function InformacjeOgolne() {
                 <div style={{ height: 280 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart
-                      data={useMemo(
-                        () =>
-                          LATA.map((y) => ({
-                            rok: String(y),
-                            ludnosc: MK_ludnosc[y],
-                          })),
-                        []
-                      )}
+                      data={mkTrendData}
                       margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                     >
                       <CartesianGrid vertical={false} stroke="#eee" />
@@ -634,11 +637,7 @@ export default function InformacjeOgolne() {
         <div style={{ height: 520 }}>
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
-              data={useMemo(
-                () =>
-                  LATA.map((y) => ({ rok: String(y), ludnosc: MK_ludnosc[y] })),
-                []
-              )}
+              data={mkTrendData}
               margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
