@@ -205,17 +205,105 @@ export default function InteligentneZarzadzanie() {
               <Card
                 title="Dochody ogółem na 1 mieszkańca"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={410}
                 onOpen={() => setOpenCard("dochody")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 320,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Dochody ogółem na 1 mieszkańca"
                     src="https://experience.arcgis.com/experience/5fb1d244d10b444b8d5bdbb12d5799fd"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}
+                    >
+                      Dochody ogółem na 1 mieszkańca (zł/os.)
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(60, 60, 60)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 9000</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(100, 100, 100)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>7501 - 9000</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(140, 140, 140)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>7001 - 7501</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(180, 180, 180)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>6501 - 7001</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(220, 220, 220)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 6501</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
