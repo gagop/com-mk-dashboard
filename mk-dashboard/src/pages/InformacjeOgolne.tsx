@@ -459,17 +459,14 @@ export default function InformacjeOgolne() {
         open={openCard === "densityMap"}
         onClose={() => setOpenCard(null)}
         title="Gęstość zaludnienia Metropolii Krakowskiej"
-        width={1400}
-        maxWidth="98vw"
+        fullscreen
       >
-        <div style={{ height: 900 }}>
-          <iframe
-            title="ArcGIS Experience Map"
-            src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true&active_panel=legend&zoom=true&scale=true"
-            style={{ width: "100%", height: "900px", border: 0 }}
-            allowFullScreen
-          />
-        </div>
+        <iframe
+          title="ArcGIS Experience Map"
+          src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true&active_panel=legend&zoom=true&scale=true"
+          style={{ width: "100%", height: "100%", border: 0 }}
+          allowFullScreen
+        />
       </Modal>
 
       <Modal

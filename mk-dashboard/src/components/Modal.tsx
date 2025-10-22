@@ -6,6 +6,7 @@ export default function Modal({
   title,
   width = 1000,
   maxWidth = "90vw",
+  fullscreen = false,
   children,
 }: {
   open: boolean;
@@ -13,6 +14,7 @@ export default function Modal({
   title?: string;
   width?: number | string;
   maxWidth?: number | string;
+  fullscreen?: boolean;
   children?: React.ReactNode;
 }) {
   useEffect(() => {
@@ -38,20 +40,21 @@ export default function Modal({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        background: "rgba(0,0,0,0.4)",
-        padding: 16,
+        background: fullscreen ? "var(--mk-card)" : "rgba(0,0,0,0.4)",
+        padding: fullscreen ? 0 : 16,
       }}
       onClick={onClose}
     >
       <div
         style={{
-          width,
-          maxWidth,
-          maxHeight: "90vh",
+          width: fullscreen ? "100vw" : width,
+          maxWidth: fullscreen ? "100vw" : maxWidth,
+          height: fullscreen ? "100vh" : "auto",
+          maxHeight: fullscreen ? "100vh" : "90vh",
           background: "var(--mk-card)",
-          border: "1px solid var(--mk-border)",
-          borderRadius: 12,
-          boxShadow: "0 8px 24px rgba(16, 24, 40, 0.2)",
+          border: fullscreen ? 0 : "1px solid var(--mk-border)",
+          borderRadius: fullscreen ? 0 : 12,
+          boxShadow: fullscreen ? "none" : "0 8px 24px rgba(16, 24, 40, 0.2)",
           overflow: "hidden",
           display: "flex",
           flexDirection: "column",
@@ -83,7 +86,15 @@ export default function Modal({
             </button>
           </div>
         )}
-        <div style={{ padding: 12, overflow: "auto" }}>{children}</div>
+        <div
+          style={{
+            padding: fullscreen ? 0 : 12,
+            overflow: "auto",
+            flex: fullscreen ? 1 : "initial",
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );
