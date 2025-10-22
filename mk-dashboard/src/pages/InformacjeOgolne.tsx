@@ -84,7 +84,7 @@ export default function InformacjeOgolne() {
         overflow: "hidden",
       }}
     >
-      <h2 style={{ margin: "2px 0 6px", flexShrink: 0, fontSize: "20px" }}>
+      <h2 style={{ margin: "2px 0 6px 12px", flexShrink: 0, fontSize: "20px" }}>
         Informacje ogólne
       </h2>
       <div
@@ -250,9 +250,15 @@ export default function InformacjeOgolne() {
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card title="Ludność gmin" onOpen={() => setOpenCard("gminyPop")}>
                 <div>
-                  <div className="masonry">
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "repeat(3, 1fr)",
+                      gap: 12,
+                    }}
+                  >
                     {gminaPopData.map(({ gmina, pop }) => (
-                      <div key={gmina} className="masonry-item">
+                      <div key={gmina}>
                         <div
                           style={{
                             background: mkColors.white,
@@ -468,9 +474,15 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div>
-          <div className="masonry">
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+              gap: 12,
+            }}
+          >
             {gminaPopData.map(({ gmina, pop }) => (
-              <div key={gmina} className="masonry-item">
+              <div key={gmina}>
                 <NumberKPI label={gmina} value={pop} size="sm" />
               </div>
             ))}

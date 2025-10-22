@@ -24,7 +24,7 @@ export default function Mobilnosc() {
         overflow: "hidden",
       }}
     >
-      <h2 style={{ margin: "2px 0 6px", flexShrink: 0, fontSize: "20px" }}>
+      <h2 style={{ margin: "2px 0 6px 12px", flexShrink: 0, fontSize: "20px" }}>
         Mobilność
       </h2>
       <div
