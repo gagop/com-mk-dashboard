@@ -67,11 +67,25 @@ export default function InformacjeOgolne() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [scale, setScale] = useState(1);
 
+  // Hardcoded population data for 2024 from the ranking table (sorted from largest to smallest)
   const gminaPopData = useMemo(
-    () =>
-      GMINY.map((g) => ({ gmina: g, pop: computeLudnosc(g, Y) })).sort(
-        (a, b) => b.pop - a.pop
-      ),
+    () => [
+      { gmina: "Kraków", pop: 809168 },
+      { gmina: "Wieliczka", pop: 69791 },
+      { gmina: "Skawina", pop: 44076 },
+      { gmina: "Niepołomice", pop: 33602 },
+      { gmina: "Zabierzów", pop: 29837 },
+      { gmina: "Zielonki", pop: 28079 },
+      { gmina: "Kocmyrzów-Luborzyc", pop: 18673 },
+      { gmina: "Liszki", pop: 18726 },
+      { gmina: "Wielka Wieś", pop: 17342 },
+      { gmina: "Mogilany", pop: 16247 },
+      { gmina: "Czernichów", pop: 15433 },
+      { gmina: "Michałowice", pop: 13505 },
+      { gmina: "Biskupice", pop: 11929 },
+      { gmina: "Świątniki Górne", pop: 11091 },
+      { gmina: "Igołomia-Wawrzeńcz", pop: 7878 },
+    ],
     []
   );
 
