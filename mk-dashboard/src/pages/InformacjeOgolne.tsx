@@ -174,14 +174,20 @@ export default function InformacjeOgolne() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div
+              style={{
+                breakInside: "avoid",
+                marginBottom: 12,
+                gridColumn: "span 2",
+              }}
+            >
               <Card
                 title="Gęstość zaludnienia Metropolii Krakowskiej"
                 subtitle="Źródło: ArcGIS Experience"
-                height={320}
+                height={520}
                 onOpen={() => setOpenCard("densityMap")}
               >
-                <div style={{ height: 240 }}>
+                <div style={{ height: 440 }}>
                   <iframe
                     title="ArcGIS Experience Map"
                     src="https://experience.arcgis.com/experience/1b4cd2dd47364324908a05fc2cf2f4a5"
@@ -453,14 +459,14 @@ export default function InformacjeOgolne() {
         open={openCard === "densityMap"}
         onClose={() => setOpenCard(null)}
         title="Gęstość zaludnienia Metropolii Krakowskiej"
-        width={1100}
-        maxWidth="95vw"
+        width={1400}
+        maxWidth="98vw"
       >
-        <div style={{ height: 780 }}>
+        <div style={{ height: 900 }}>
           <iframe
             title="ArcGIS Experience Map"
             src="https://experience.arcgis.com/experience/9972adb1957046eb98cfac412816e286?&legend=true&active_panel=legend&zoom=true&scale=true"
-            style={{ width: "100%", height: "780px", border: 0 }}
+            style={{ width: "100%", height: "900px", border: 0 }}
             allowFullScreen
           />
         </div>
