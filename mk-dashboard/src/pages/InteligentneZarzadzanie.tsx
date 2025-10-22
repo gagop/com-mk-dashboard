@@ -133,7 +133,7 @@ export default function InteligentneZarzadzanie() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Poziom zadowolenia — Metropolia"
+                title="Poziom zadowolenia z poinformowania o działaniach władz gminnych"
                 subtitle="Opracowanie własne"
                 height={340}
                 onOpen={() => setOpenCard("poziom")}
@@ -475,7 +475,7 @@ export default function InteligentneZarzadzanie() {
       <Modal
         open={openCard === "poziom"}
         onClose={() => setOpenCard(null)}
-        title="Poziom zadowolenia mieszkańców — Metropolia Krakowska"
+        title="Poziom zadowolenia z poinformowania o działaniach władz gminnych"
         width={1100}
         maxWidth="95vw"
       >
