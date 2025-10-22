@@ -233,14 +233,100 @@ export default function InformacjeOgolne() {
                 height={520}
                 onOpen={() => setOpenCard("densityMap")}
               >
-                <div style={{ height: 440 }}>
+                <div
+                  style={{
+                    height: 440,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="ArcGIS Experience Map"
                     src="https://experience.arcgis.com/experience/1b4cd2dd47364324908a05fc2cf2f4a5"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div style={{ fontWeight: 600, marginRight: 4 }}>
+                      Gęstość zaludnienia (os./km2)
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(139, 0, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 700</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(220, 20, 60)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>450 - 700</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 99, 71)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>310 - 450</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 160, 122)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>200 - 310</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 218, 185)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 200</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
