@@ -89,24 +89,24 @@ export default function InformacjeOgolne() {
     []
   );
 
-  // Hardcoded population change data for 2024 (Zmiana bezwzględna)
-  const gminaChangeData = useMemo(
+  // Hardcoded przyrost naturalny data for 2024
+  const przyrostNaturalnyData = useMemo(
     () => [
-      { gmina: "Wielka Wieś", zmiana: 426 },
-      { gmina: "Michałowice", zmiana: 213 },
-      { gmina: "Niepołomice", zmiana: 429 },
-      { gmina: "Wieliczka", zmiana: 887 },
-      { gmina: "Liszki", zmiana: 160 },
-      { gmina: "Biskupice", zmiana: 194 },
-      { gmina: "Mogilany", zmiana: 173 },
-      { gmina: "Kocmyrzów-Luborzyc", zmiana: 380 },
-      { gmina: "Zielonki", zmiana: 328 },
-      { gmina: "Zabierzów", zmiana: 235 },
-      { gmina: "Świątniki Górne", zmiana: 146 },
-      { gmina: "Czernichów", zmiana: 38 },
-      { gmina: "Igołomia-Wawrzeńcz", zmiana: 15 },
-      { gmina: "Skawina", zmiana: 57 },
-      { gmina: "Kraków", zmiana: 2967 },
+      { gmina: "Wielka Wieś", przyrost: 57 },
+      { gmina: "Wieliczka", przyrost: 41 },
+      { gmina: "Niepołomice", przyrost: 25 },
+      { gmina: "Zielonki", przyrost: 34 },
+      { gmina: "Kocmyrzów-Luborzyc", przyrost: 9 },
+      { gmina: "Mogilany", przyrost: 7 },
+      { gmina: "Michałowice", przyrost: 1 },
+      { gmina: "Liszki", przyrost: -3 },
+      { gmina: "Biskupice", przyrost: -3 },
+      { gmina: "Igołomia-Wawrzeńcz", przyrost: -6 },
+      { gmina: "Czernichów", przyrost: -40 },
+      { gmina: "Świątniki Górne", przyrost: -42 },
+      { gmina: "Skawina", przyrost: -83 },
+      { gmina: "Zabierzów", przyrost: -91 },
+      { gmina: "Kraków", przyrost: -502 },
     ],
     []
   );
@@ -530,7 +530,7 @@ export default function InformacjeOgolne() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Zmiany liczby ludności w gminach Metropolii Krakowskiej w 2024 roku"
+                title="Przyrost naturalny w gminach Metropolii Krakowskiej w 2024 roku"
                 height={380}
                 onOpen={() => setOpenCard("przyrost2024")}
               >
@@ -539,8 +539,10 @@ export default function InformacjeOgolne() {
                     <BarChart
                       data={useMemo(
                         () =>
-                          gminaChangeData.sort((a, b) => b.zmiana - a.zmiana),
-                        [gminaChangeData]
+                          przyrostNaturalnyData.sort(
+                            (a, b) => b.przyrost - a.przyrost
+                          ),
+                        [przyrostNaturalnyData]
                       )}
                       margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
                     >
@@ -557,14 +559,14 @@ export default function InformacjeOgolne() {
                       <Tooltip
                         formatter={(v: number) => [
                           `${v}`,
-                          "osób (zmiana bezwzględna)",
+                          "osób (przyrost naturalny)",
                         ]}
                         labelStyle={{ fontSize: 11 }}
                         itemStyle={{ fontSize: 11 }}
                       />
                       <Bar
-                        dataKey="zmiana"
-                        name="zmiana bezwzględna (osoby)"
+                        dataKey="przyrost"
+                        name="przyrost naturalny (osoby)"
                         fill={IO_CHART_COLORS[0]}
                       />
                     </BarChart>
@@ -763,7 +765,7 @@ export default function InformacjeOgolne() {
       <Modal
         open={openCard === "przyrost2024"}
         onClose={() => setOpenCard(null)}
-        title="Zmiany liczby ludności w gminach MK w 2024"
+        title="Przyrost naturalny w gminach Metropolii Krakowskiej w 2024"
         width={1100}
         maxWidth="95vw"
       >
@@ -771,8 +773,9 @@ export default function InformacjeOgolne() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={useMemo(
-                () => gminaChangeData.sort((a, b) => b.zmiana - a.zmiana),
-                [gminaChangeData]
+                () =>
+                  przyrostNaturalnyData.sort((a, b) => b.przyrost - a.przyrost),
+                [przyrostNaturalnyData]
               )}
               margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
@@ -787,13 +790,13 @@ export default function InformacjeOgolne() {
               />
               <YAxis tick={{ fontSize: 11 }} />
               <Tooltip
-                formatter={(v: number) => [`${v}`, "osób (zmiana bezwzględna)"]}
+                formatter={(v: number) => [`${v}`, "osób (przyrost naturalny)"]}
                 labelStyle={{ fontSize: 11 }}
                 itemStyle={{ fontSize: 11 }}
               />
               <Bar
-                dataKey="zmiana"
-                name="zmiana bezwzględna (osoby)"
+                dataKey="przyrost"
+                name="przyrost naturalny (osoby)"
                 fill={IO_CHART_COLORS[0]}
               />
             </BarChart>
