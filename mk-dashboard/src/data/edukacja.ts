@@ -104,6 +104,27 @@ export const wynikiOsmoklasMatematyka2024: Record<Gmina, number> = {
   'Zielonki': 70,
 }
 
+// Średni wynik egzaminu ósmoklasisty z języka angielskiego w 2024 r. [%]
+// Źródło: OKE Kraków — średnie wyniki (j. angielski)
+// Dla gmin miejsko-wiejskich zastosowano średnią ważoną liczbą zdających
+export const wynikiOsmoklasAngielski2024: Record<Gmina, number> = {
+  'Biskupice': 75,
+  'Czernichów': 76,
+  'Igołomia-Wawrzeńczyce': 70,
+  'Kocmyrzów-Luborzyca': 77,
+  'Kraków': 79,
+  'Liszki': 73,
+  'Michałowice': 74,
+  'Mogilany': 76,
+  'Niepołomice': 68,
+  'Skawina': 70,
+  'Świątniki Górne': 76,
+  'Wielka Wieś': 75,
+  'Wieliczka': 73,
+  'Zabierzów': 76,
+  'Zielonki': 78,
+}
+
 // Średni wynik egzaminów maturalnych w stopniu podstawowym z matematyki [%]
 // Cała Metropolia (MK) — 2019–2024. Obecnie uzupełnione dla 2024 (średnia ważona liczbą zdających).
 export const MK_wynikMaturaMatematyka: Record<Rok, number> = {

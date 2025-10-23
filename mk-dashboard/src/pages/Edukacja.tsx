@@ -6,6 +6,7 @@ import { dzieciPrzedszkolne3_5Lat } from "../data/edukacja";
 import {
   wynikiOsmoklasPolski2024,
   wynikiOsmoklasMatematyka2024,
+  wynikiOsmoklasAngielski2024,
 } from "../data/edukacja";
 import { LATA } from "../data/utils";
 import {
@@ -16,6 +17,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  ReferenceLine,
 } from "recharts";
 
 export default function Edukacja() {
@@ -477,6 +479,19 @@ export default function Edukacja() {
                         fill="rgb(197, 59, 0)"
                         label={{ position: "top", fontSize: 10, fill: "#333" }}
                       />
+                      <ReferenceLine
+                        y={61}
+                        stroke="#000000"
+                        strokeWidth={3}
+                        strokeDasharray="5 5"
+                        label={{
+                          value: "Średnia dla Polski: 61%",
+                          position: "top",
+                          fill: "#000000",
+                          fontSize: 11,
+                          fontWeight: 600,
+                        }}
+                      />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
@@ -520,8 +535,116 @@ export default function Edukacja() {
                         fill="rgb(244, 76, 0)"
                         label={{ position: "top", fontSize: 10, fill: "#333" }}
                       />
+                      <ReferenceLine
+                        y={52}
+                        stroke="#000000"
+                        strokeWidth={3}
+                        strokeDasharray="5 5"
+                        label={{
+                          value: "Średnia dla Polski: 52%",
+                          position: "top",
+                          fill: "#000000",
+                          fontSize: 11,
+                          fontWeight: 600,
+                        }}
+                      />
                     </BarChart>
                   </ResponsiveContainer>
+                </div>
+              </Card>
+            </div>
+
+            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+              <Card
+                title="Porównanie wyników egzaminu 8-klasisty Metropolii Krakowskiej ze średnią krajową"
+                subtitle="Źródło: CKE, OKE Kraków"
+                height={380}
+                onOpen={() => setOpenCard("porownanieWynikow")}
+              >
+                <div style={{ height: 320 }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={[
+                        {
+                          przedmiot: "Język polski",
+                          MK: 68.4,
+                          Polska: 61,
+                          roznica: 7.4,
+                        },
+                        {
+                          przedmiot: "Matematyka",
+                          MK: 65.3,
+                          Polska: 52,
+                          roznica: 13.3,
+                        },
+                        {
+                          przedmiot: "Język angielski",
+                          MK: 74.4,
+                          Polska: 66,
+                          roznica: 8.4,
+                        },
+                      ]}
+                      margin={{ top: 24, right: 8, bottom: 48, left: 8 }}
+                    >
+                      <CartesianGrid vertical={false} stroke="#eee" />
+                      <XAxis
+                        dataKey="przedmiot"
+                        tick={{ fontSize: 11 }}
+                        angle={0}
+                        textAnchor="middle"
+                      />
+                      <YAxis
+                        domain={[0, 100]}
+                        unit=" %"
+                        tick={{ fontSize: 11 }}
+                      />
+                      <Tooltip
+                        formatter={(v: number, name: string) => {
+                          if (name === "MK")
+                            return [`${v}%`, "Metropolia Krakowska"];
+                          if (name === "Polska")
+                            return [`${v}%`, "Średnia polska"];
+                          return [v, name];
+                        }}
+                        labelStyle={{ fontSize: 11 }}
+                        itemStyle={{ fontSize: 11 }}
+                      />
+                      <Bar
+                        dataKey="MK"
+                        name="Metropolia Krakowska"
+                        fill="rgb(197, 59, 0)"
+                        label={{
+                          position: "top",
+                          fontSize: 10,
+                          fill: "#333",
+                          formatter: (v: number) => `${v}%`,
+                        }}
+                      />
+                      <Bar
+                        dataKey="Polska"
+                        name="Średnia polska"
+                        fill="rgb(180, 180, 180)"
+                        label={{
+                          position: "top",
+                          fontSize: 10,
+                          fill: "#333",
+                          formatter: (v: number) => `${v}%`,
+                        }}
+                      />
+                    </BarChart>
+                  </ResponsiveContainer>
+                  <div
+                    style={{
+                      fontSize: 10,
+                      color: "#666",
+                      textAlign: "center",
+                      marginTop: 8,
+                      padding: "0 8px",
+                    }}
+                  >
+                    MK wyżej: Polski +7,4 p.p., Matematyka +13,3 p.p.
+                    (największa przewaga!), Angielski +8,5 p.p.
+                  </div>
                 </div>
               </Card>
             </div>
@@ -758,6 +881,19 @@ export default function Edukacja() {
                 fill="rgb(197, 59, 0)"
                 label={{ position: "top", fontSize: 10, fill: "#333" }}
               />
+              <ReferenceLine
+                y={61}
+                stroke="#000000"
+                strokeWidth={3}
+                strokeDasharray="5 5"
+                label={{
+                  value: "Średnia dla Polski: 61%",
+                  position: "top",
+                  fill: "#000000",
+                  fontSize: 12,
+                  fontWeight: 600,
+                }}
+              />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -795,8 +931,135 @@ export default function Edukacja() {
                 fill="rgb(244, 76, 0)"
                 label={{ position: "top", fontSize: 10, fill: "#333" }}
               />
+              <ReferenceLine
+                y={52}
+                stroke="#000000"
+                strokeWidth={3}
+                strokeDasharray="5 5"
+                label={{
+                  value: "Średnia dla Polski: 52%",
+                  position: "top",
+                  fill: "#000000",
+                  fontSize: 12,
+                  fontWeight: 600,
+                }}
+              />
             </BarChart>
           </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "porownanieWynikow"}
+        onClose={() => setOpenCard(null)}
+        title="Porównanie wyników egzaminu 8-klasisty Metropolii Krakowskiej ze średnią krajową"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                {
+                  przedmiot: "Język polski",
+                  MK: Number(
+                    (
+                      GMINY.reduce(
+                        (sum, g) => sum + wynikiOsmoklasPolski2024[g],
+                        0
+                      ) / GMINY.length
+                    ).toFixed(1)
+                  ),
+                  Polska: 61,
+                  roznica: 7.4,
+                },
+                {
+                  przedmiot: "Matematyka",
+                  MK: Number(
+                    (
+                      GMINY.reduce(
+                        (sum, g) => sum + wynikiOsmoklasMatematyka2024[g],
+                        0
+                      ) / GMINY.length
+                    ).toFixed(1)
+                  ),
+                  Polska: 52,
+                  roznica: 13.3,
+                },
+                {
+                  przedmiot: "Język angielski",
+                  MK: Number(
+                    (
+                      GMINY.reduce(
+                        (sum, g) => sum + wynikiOsmoklasAngielski2024[g],
+                        0
+                      ) / GMINY.length
+                    ).toFixed(1)
+                  ),
+                  Polska: 66,
+                  roznica: 8.5,
+                },
+              ]}
+              margin={{ top: 24, right: 8, bottom: 48, left: 8 }}
+            >
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis
+                dataKey="przedmiot"
+                tick={{ fontSize: 14 }}
+                angle={0}
+                textAnchor="middle"
+              />
+              <YAxis domain={[0, 100]} unit=" %" />
+              <Tooltip
+                formatter={(v: number, name: string) => {
+                  if (name === "MK") return [`${v}%`, "Metropolia Krakowska"];
+                  if (name === "Polska") return [`${v}%`, "Średnia polska"];
+                  return [v, name];
+                }}
+              />
+              <Bar
+                dataKey="MK"
+                name="Metropolia Krakowska"
+                fill="rgb(197, 59, 0)"
+                label={{
+                  position: "top",
+                  fontSize: 12,
+                  fill: "#333",
+                  formatter: (v: number) => `${v}%`,
+                }}
+              />
+              <Bar
+                dataKey="Polska"
+                name="Średnia polska"
+                fill="rgb(180, 180, 180)"
+                label={{
+                  position: "top",
+                  fontSize: 12,
+                  fill: "#333",
+                  formatter: (v: number) => `${v}%`,
+                }}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+          <div
+            style={{
+              fontSize: 14,
+              color: "#666",
+              textAlign: "center",
+              marginTop: 16,
+              padding: "0 16px",
+            }}
+          >
+            <strong>
+              Metropolia Krakowska wypada lepiej niż średnia krajowa:
+            </strong>
+            <br />
+            Język polski: +7,4 punktu procentowego
+            <br />
+            Matematyka: +13,3 punktu procentowego (największa przewaga!)
+            <br />
+            Język angielski: +8,5 punktu procentowego
+          </div>
         </div>
       </Modal>
     </div>
