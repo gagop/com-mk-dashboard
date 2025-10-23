@@ -643,7 +643,7 @@ export default function Edukacja() {
                     }}
                   >
                     MK wyżej: Polski +7,4 p.p., Matematyka +13,3 p.p.
-                    (największa przewaga!), Angielski +8,5 p.p.
+                    (największa przewaga!), Angielski +8,4 p.p.
                   </div>
                 </div>
               </Card>
@@ -962,42 +962,21 @@ export default function Edukacja() {
               data={[
                 {
                   przedmiot: "Język polski",
-                  MK: Number(
-                    (
-                      GMINY.reduce(
-                        (sum, g) => sum + wynikiOsmoklasPolski2024[g],
-                        0
-                      ) / GMINY.length
-                    ).toFixed(1)
-                  ),
+                  MK: 68.4,
                   Polska: 61,
                   roznica: 7.4,
                 },
                 {
                   przedmiot: "Matematyka",
-                  MK: Number(
-                    (
-                      GMINY.reduce(
-                        (sum, g) => sum + wynikiOsmoklasMatematyka2024[g],
-                        0
-                      ) / GMINY.length
-                    ).toFixed(1)
-                  ),
+                  MK: 65.3,
                   Polska: 52,
                   roznica: 13.3,
                 },
                 {
                   przedmiot: "Język angielski",
-                  MK: Number(
-                    (
-                      GMINY.reduce(
-                        (sum, g) => sum + wynikiOsmoklasAngielski2024[g],
-                        0
-                      ) / GMINY.length
-                    ).toFixed(1)
-                  ),
+                  MK: 74.4,
                   Polska: 66,
-                  roznica: 8.5,
+                  roznica: 8.4,
                 },
               ]}
               margin={{ top: 24, right: 8, bottom: 48, left: 8 }}
@@ -1058,7 +1037,7 @@ export default function Edukacja() {
             <br />
             Matematyka: +13,3 punktu procentowego (największa przewaga!)
             <br />
-            Język angielski: +8,5 punktu procentowego
+            Język angielski: +8,4 punktu procentowego
           </div>
         </div>
       </Modal>
