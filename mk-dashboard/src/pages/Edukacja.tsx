@@ -6,7 +6,6 @@ import { dzieciPrzedszkolne3_5Lat } from "../data/edukacja";
 import {
   wynikiOsmoklasPolski2024,
   wynikiOsmoklasMatematyka2024,
-  wynikiOsmoklasAngielski2024,
 } from "../data/edukacja";
 import { LATA } from "../data/utils";
 import {
@@ -617,7 +616,10 @@ export default function Edukacja() {
                           position: "top",
                           fontSize: 10,
                           fill: "#333",
-                          formatter: (v: number) => `${v}%`,
+                          formatter: (v: React.ReactNode) => {
+                            if (typeof v === "number") return `${v}%`;
+                            return v;
+                          },
                         }}
                       />
                       <Bar
@@ -628,7 +630,10 @@ export default function Edukacja() {
                           position: "top",
                           fontSize: 10,
                           fill: "#333",
-                          formatter: (v: number) => `${v}%`,
+                          formatter: (v: React.ReactNode) => {
+                            if (typeof v === "number") return `${v}%`;
+                            return v;
+                          },
                         }}
                       />
                     </BarChart>
@@ -1004,7 +1009,10 @@ export default function Edukacja() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (v: number) => `${v}%`,
+                  formatter: (v: React.ReactNode) => {
+                    if (typeof v === "number") return `${v}%`;
+                    return v;
+                  },
                 }}
               />
               <Bar
@@ -1015,7 +1023,10 @@ export default function Edukacja() {
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
-                  formatter: (v: number) => `${v}%`,
+                  formatter: (v: React.ReactNode) => {
+                    if (typeof v === "number") return `${v}%`;
+                    return v;
+                  },
                 }}
               />
             </BarChart>
