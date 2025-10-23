@@ -62,442 +62,442 @@ export default function Mobilnosc() {
             width: "100%",
           }}
         >
-            <div>
-              <Card
-                title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
-                subtitle="Źródło: ArcGIS Experience"
-                height={cardHeight}
-                onOpen={() => setOpenCard("transportPubliczny")}
+          <div>
+            <Card
+              title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("transportPubliczny")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
+                <iframe
+                  title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
+                  src="https://experience.arcgis.com/experience/6618110be2944b9e8bc73a977250abf2"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
                 <div
                   style={{
-                    height: cardHeight - 90,
                     display: "flex",
-                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
                   }}
                 >
-                  <iframe
-                    title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
-                    src="https://experience.arcgis.com/experience/6618110be2944b9e8bc73a977250abf2"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
                     }}
+                  >
+                    Udział mieszkańców deklarujących transport publiczny jako
+                    główny środek transportu w dniu roboczym [%]
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(0, 51, 153)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Udział mieszkańców deklarujących transport publiczny jako
-                      główny środek transportu w dniu roboczym [%]
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(0, 51, 153)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 40</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(51, 102, 204)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>31 - 40</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(102, 153, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>27 - 30</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(153, 204, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>21 - 26</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(230, 242, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 21</span>
-                    </div>
+                    />
+                    <span>&gt; 40</span>
                   </div>
-                </div>
-              </Card>
-            </div>
-
-            <div>
-              <Card
-                title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
-                subtitle="Źródło: ArcGIS Experience"
-                height={cardHeight}
-                onOpen={() => setOpenCard("transportSamochodowy")}
-              >
-                <div
-                  style={{
-                    height: cardHeight - 90,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <iframe
-                    title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
-                    src="https://experience.arcgis.com/experience/13d1956b64454effa64ea0ce9e689ee3"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
-                    }}
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(51, 102, 204)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Udział mieszkańców deklarujących samochód jako główny
-                      środek transportu w dniu roboczym [%]
-                    </div>
+                    />
+                    <span>31 - 40</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(0, 51, 153)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 70</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(102, 153, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>27 - 30</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(51, 102, 204)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>67 - 70</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(153, 204, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>21 - 26</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(102, 153, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>60 - 66</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(153, 204, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>32 - 59</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(230, 242, 255)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 32</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(230, 242, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 21</span>
                   </div>
                 </div>
-              </Card>
-            </div>
+              </div>
+            </Card>
+          </div>
 
-            <div>
-              <Card
-                title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
-                subtitle="Łączna długość infrastruktury (skumulowana)"
-                height={cardHeight}
-                onOpen={() => setOpenCard("transportRowerowy")}
+          <div>
+            <Card
+              title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("transportSamochodowy")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
-                <div style={{ height: cardHeight - 60 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      data={[
-                        { rok: "2019", dlugosc: 6.1 },
-                        { rok: "2020", dlugosc: 6.1 },
-                        { rok: "2021", dlugosc: 7.6 },
-                        { rok: "2022", dlugosc: 10.58 },
-                        { rok: "2023", dlugosc: 11.73 },
-                        { rok: "2024", dlugosc: 20.53 },
+                <iframe
+                  title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
+                  src="https://experience.arcgis.com/experience/13d1956b64454effa64ea0ce9e689ee3"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Udział mieszkańców deklarujących samochód jako główny środek
+                    transportu w dniu roboczym [%]
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(0, 51, 153)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&gt; 70</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(51, 102, 204)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>67 - 70</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(102, 153, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>60 - 66</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(153, 204, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>32 - 59</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(230, 242, 255)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 32</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div>
+            <Card
+              title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
+              subtitle="Łączna długość infrastruktury (skumulowana)"
+              height={cardHeight}
+              onOpen={() => setOpenCard("transportRowerowy")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={[
+                      { rok: "2019", dlugosc: 6.1 },
+                      { rok: "2020", dlugosc: 6.1 },
+                      { rok: "2021", dlugosc: 7.6 },
+                      { rok: "2022", dlugosc: 10.58 },
+                      { rok: "2023", dlugosc: 11.73 },
+                      { rok: "2024", dlugosc: 20.53 },
+                    ]}
+                    margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis
+                      dataKey="rok"
+                      label={{
+                        value: "Rok",
+                        position: "insideBottom",
+                        offset: -10,
+                      }}
+                    />
+                    <YAxis
+                      label={{
+                        value: "Długość [km]",
+                        angle: -90,
+                        position: "insideLeft",
+                      }}
+                    />
+                    <Tooltip
+                      formatter={(value: number) => [
+                        `${value.toFixed(2)} km`,
+                        "Długość infrastruktury",
                       ]}
-                      margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis
-                        dataKey="rok"
-                        label={{
-                          value: "Rok",
-                          position: "insideBottom",
-                          offset: -10,
-                        }}
-                      />
-                      <YAxis
-                        label={{
-                          value: "Długość [km]",
-                          angle: -90,
-                          position: "insideLeft",
-                        }}
-                      />
-                      <Tooltip
-                        formatter={(value: number) => [
-                          `${value.toFixed(2)} km`,
-                          "Długość infrastruktury",
-                        ]}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="dlugosc"
-                        stroke="#8884d8"
-                        strokeWidth={2}
-                        dot={{ r: 4 }}
-                        activeDot={{ r: 6 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="dlugosc"
+                      stroke="#8884d8"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                      activeDot={{ r: 6 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
 
-            <div>
-              <Card
-                title="Czynniki wyboru środka transportu"
-                subtitle="Źródło: Raport z badań społecznych 2024"
-                height={340}
-                onOpen={() => setOpenCard("czynniki")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { czynnik: "Komfort podróży", odsetek: 59 },
-                        {
-                          czynnik: "Brak alternatywy",
-                          odsetek: 15,
-                        },
-                        { czynnik: "Czas przejazdu", odsetek: 13 },
-                        { czynnik: "Koszty", odsetek: 5 },
-                        { czynnik: "Bezpieczeństwo", odsetek: 4 },
-                        { czynnik: "Inne", odsetek: 3 },
-                        { czynnik: "Środowisko", odsetek: 1 },
+          <div>
+            <Card
+              title="Czynniki wyboru środka transportu"
+              subtitle="Źródło: Raport z badań społecznych 2024"
+              height={340}
+              onOpen={() => setOpenCard("czynniki")}
+            >
+              <div style={{ height: 280 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { czynnik: "Komfort podróży", odsetek: 59 },
+                      {
+                        czynnik: "Brak alternatywy",
+                        odsetek: 15,
+                      },
+                      { czynnik: "Czas przejazdu", odsetek: 13 },
+                      { czynnik: "Koszty", odsetek: 5 },
+                      { czynnik: "Bezpieczeństwo", odsetek: 4 },
+                      { czynnik: "Inne", odsetek: 3 },
+                      { czynnik: "Środowisko", odsetek: 1 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="czynnik"
+                      interval={0}
+                      angle={-15}
+                      textAnchor="end"
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "odsetek"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="odsetek"
+                      name="Udział odpowiedzi [%]"
+                      fill="rgb(29, 113, 184)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
+
+          <div>
+            <Card
+              title="Podział modalny podróży"
+              subtitle="Źródło: Raport z badań społecznych 2024"
+              height={340}
+              onOpen={() => setOpenCard("podzial")}
+            >
+              <div style={{ height: 280 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { srodek: "Samochód", udzial: 63 },
+                      { srodek: "Komunikacja", udzial: 22 },
+                      { srodek: "Pieszo", udzial: 10 },
+                      { srodek: "Rower", udzial: 3 },
+                      { srodek: "Pociąg", udzial: 0.8 },
+                      { srodek: "Hulajnoga", udzial: 0.4 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="srodek"
+                      interval={0}
+                      angle={-15}
+                      textAnchor="end"
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
+                        "udział",
                       ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="czynnik"
-                        interval={0}
-                        angle={-15}
-                        textAnchor="end"
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "odsetek"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="odsetek"
-                        name="Udział odpowiedzi [%]"
-                        fill="rgb(29, 113, 184)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="udzial"
+                      name="Udział podróży [%]"
+                      fill="rgb(54, 169, 225)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
 
-            <div>
-              <Card
-                title="Podział modalny podróży"
-                subtitle="Źródło: Raport z badań społecznych 2024"
-                height={340}
-                onOpen={() => setOpenCard("podzial")}
-              >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { srodek: "Samochód", udzial: 63 },
-                        { srodek: "Komunikacja", udzial: 22 },
-                        { srodek: "Pieszo", udzial: 10 },
-                        { srodek: "Rower", udzial: 3 },
-                        { srodek: "Pociąg", udzial: 0.8 },
-                        { srodek: "Hulajnoga", udzial: 0.4 },
-                      ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="srodek"
-                        interval={0}
-                        angle={-15}
-                        textAnchor="end"
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
-                          "udział",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="udzial"
-                        name="Udział podróży [%]"
-                        fill="rgb(54, 169, 225)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div>
-              <Card
-                title="Miejsca P&R"
-                subtitle="Źródło: Opracowanie własne"
-                height={cardHeight}
-                onOpen={() => setOpenCard("miejsca")}
-              >
-                <div style={{ height: cardHeight - 60 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
-                        { kategoria: "P+R Swoszowice", miejsca: 154.0 },
-                        { kategoria: "P+R Krowodrza", miejsca: 109.0 },
-                        { kategoria: "Łuczyce", miejsca: 106.0 },
-                        { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
-                        { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
-                        { kategoria: "Kocmyrzów", miejsca: 72.0 },
-                        { kategoria: "Baranówka", miejsca: 53.0 },
-                        { kategoria: "Zastów", miejsca: 51.0 },
-                        { kategoria: "Goszcza", miejsca: 47.0 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.miejsca - a.miejsca)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="kategoria"
-                        angle={-45}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [String(v), "miejsca P&R"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="miejsca"
-                        name="Liczba miejsc P&R"
-                        fill="rgb(54, 169, 225)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+          <div>
+            <Card
+              title="Miejsca P&R"
+              subtitle="Źródło: Opracowanie własne"
+              height={cardHeight}
+              onOpen={() => setOpenCard("miejsca")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
+                      { kategoria: "P+R Swoszowice", miejsca: 154.0 },
+                      { kategoria: "P+R Krowodrza", miejsca: 109.0 },
+                      { kategoria: "Łuczyce", miejsca: 106.0 },
+                      { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
+                      { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
+                      { kategoria: "Kocmyrzów", miejsca: 72.0 },
+                      { kategoria: "Baranówka", miejsca: 53.0 },
+                      { kategoria: "Zastów", miejsca: 51.0 },
+                      { kategoria: "Goszcza", miejsca: 47.0 },
+                    ]
+                      .slice()
+                      .sort((a, b) => b.miejsca - a.miejsca)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="kategoria"
+                      angle={-45}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [String(v), "miejsca P&R"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="miejsca"
+                      name="Liczba miejsc P&R"
+                      fill="rgb(54, 169, 225)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
           </div>
         </div>
+      </div>
 
       {/* Modals */}
       <Modal
