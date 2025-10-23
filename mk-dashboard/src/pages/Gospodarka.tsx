@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import { GMINY } from "../data/bdl";
@@ -15,8 +15,22 @@ import {
 } from "recharts";
 
 export default function Gospodarka() {
-  const [scale, setScale] = useState(1);
   const [openCard, setOpenCard] = useState<string | null>(null);
+  const [cardHeight, setCardHeight] = useState(380);
+
+  useEffect(() => {
+    const calculateCardHeight = () => {
+      const viewportHeight = window.innerHeight;
+      const availableHeight = viewportHeight - 180;
+      const calculatedHeight = (availableHeight - 12) / 2;
+      const finalHeight = Math.max(280, calculatedHeight);
+      setCardHeight(finalHeight);
+    };
+
+    calculateCardHeight();
+    window.addEventListener("resize", calculateCardHeight);
+    return () => window.removeEventListener("resize", calculateCardHeight);
+  }, []);
 
   return (
     <div
@@ -34,71 +48,31 @@ export default function Gospodarka() {
         style={{
           flex: 1,
           minHeight: 0,
-          overflow: "hidden",
-          position: "relative",
+          overflow: "auto",
+          padding: "0 12px",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
+        className="hide-scrollbar"
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-start",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 12,
+            width: "100%",
           }}
         >
-          <div
-            style={{
-              columnCount: 3,
-              columnGap: 12,
-              transformOrigin: "top center",
-              transform: `scale(${scale})`,
-              width: "100%",
-            }}
-            ref={(el) => {
-              if (el && el.parentElement?.parentElement) {
-                const container = el.parentElement.parentElement;
-                const updateScale = () => {
-                  const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
-
-                  el.style.transform = "scale(1)";
-                  const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
-                  el.style.transform = `scale(${scale})`;
-
-                  const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  let newScale = Math.min(heightScale, widthScale, 1);
-                  newScale = Math.max(0.5, Math.min(1, newScale));
-
-                  setScale(newScale);
-                };
-
-                setTimeout(updateScale, 100);
-                setTimeout(updateScale, 500);
-
-                const resizeObserver = new ResizeObserver(() => {
-                  setTimeout(updateScale, 50);
-                });
-                resizeObserver.observe(container);
-
-                return () => resizeObserver.disconnect();
-              }
-            }}
-          >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={510}
+                height={cardHeight}
                 onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
               >
                 <div
                   style={{
-                    height: 420,
+                    height: cardHeight - 90,
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -210,16 +184,16 @@ export default function Gospodarka() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Udział podatku CIT w budżecie"
                 subtitle="Źródło: ArcGIS Experience"
-                height={510}
+                height={cardHeight}
                 onOpen={() => setOpenCard("udzialCIT")}
               >
                 <div
                   style={{
-                    height: 420,
+                    height: cardHeight - 90,
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -318,7 +292,7 @@ export default function Gospodarka() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Nowe podmioty gospodarcze (2019–2024)"
                 subtitle="Źródło: BDL GUS"
@@ -373,14 +347,14 @@ export default function Gospodarka() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Udział bezrobotnych w liczbie ludności w wieku produkcyjnym"
                 subtitle="Źródło: BDL GUS"
-                height={380}
+                height={cardHeight}
                 onOpen={() => setOpenCard("bezrobotni")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: cardHeight - 60 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
@@ -430,14 +404,14 @@ export default function Gospodarka() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Miejsca noclegowe"
                 subtitle="Źródło: BDL GUS (bez Krakowa)"
-                height={380}
+                height={cardHeight}
                 onOpen={() => setOpenCard("noclegowe")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: cardHeight - 60 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={GMINY.map((gmina) => {
@@ -495,7 +469,7 @@ export default function Gospodarka() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Miejsca noclegowe - Kraków"
                 subtitle="Źródło: BDL GUS"
@@ -535,7 +509,6 @@ export default function Gospodarka() {
             </div>
           </div>
         </div>
-      </div>
 
       {/* Modals */}
       <Modal
