@@ -97,17 +97,106 @@ export default function Edukacja() {
               <Card
                 title="Zadowolenie z jakości edukacji"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("zadowolenieEdukacja")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Zadowolenie z jakości edukacji"
                     src="https://experience.arcgis.com/experience/904d0a31db174c5aa48391b939ee7c63"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}
+                    >
+                      Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej
+                      z jakości edukacji [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(178, 34, 34)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 88</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(205, 92, 92)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>85 - 88</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(233, 150, 122)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>78 - 84</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(250, 200, 180)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>66 - 77</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 228, 220)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 66</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
