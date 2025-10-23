@@ -5,6 +5,8 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -126,19 +128,56 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
-                subtitle="Źródło: ArcGIS Experience"
+                title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
+                subtitle="Łączna długość infrastruktury (skumulowana)"
                 height={380}
                 onOpen={() => setOpenCard("transportRowerowy")}
               >
                 <div style={{ height: 320 }}>
-                  <iframe
-                    title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
-                    src="https://experience.arcgis.com/experience/9b0d62ed06f84201bee87edcb41c86fb"
-                    style={{ width: "100%", height: "95%", border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
+                  <ResponsiveContainer width="100%" height="100%">
+                    <LineChart
+                      data={[
+                        { rok: "2019", dlugosc: 6.1 },
+                        { rok: "2020", dlugosc: 6.1 },
+                        { rok: "2021", dlugosc: 7.6 },
+                        { rok: "2022", dlugosc: 10.58 },
+                        { rok: "2023", dlugosc: 11.73 },
+                        { rok: "2024", dlugosc: 20.53 },
+                      ]}
+                      margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis
+                        dataKey="rok"
+                        label={{
+                          value: "Rok",
+                          position: "insideBottom",
+                          offset: -10,
+                        }}
+                      />
+                      <YAxis
+                        label={{
+                          value: "Długość [km]",
+                          angle: -90,
+                          position: "insideLeft",
+                        }}
+                      />
+                      <Tooltip
+                        formatter={(value: number) => [
+                          `${value.toFixed(2)} km`,
+                          "Długość infrastruktury",
+                        ]}
+                      />
+                      <Line
+                        type="monotone"
+                        dataKey="dlugosc"
+                        stroke="#8884d8"
+                        strokeWidth={2}
+                        dot={{ r: 4 }}
+                        activeDot={{ r: 6 }}
+                      />
+                    </LineChart>
+                  </ResponsiveContainer>
                 </div>
               </Card>
             </div>
@@ -337,18 +376,62 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "transportRowerowy"}
         onClose={() => setOpenCard(null)}
-        title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
+        title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
         width={1100}
         maxWidth="95vw"
       >
-        <div style={{ height: 780 }}>
-          <iframe
-            title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
-            src="https://experience.arcgis.com/experience/673ecf1542034ebeab47c6e7fa6a781b/"
-            style={{ width: "100%", height: "100%", border: 0 }}
-            loading="lazy"
-            allowFullScreen
-          />
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              data={[
+                { rok: "2019", dlugosc: 6.1 },
+                { rok: "2020", dlugosc: 6.1 },
+                { rok: "2021", dlugosc: 7.6 },
+                { rok: "2022", dlugosc: 10.58 },
+                { rok: "2023", dlugosc: 11.73 },
+                { rok: "2024", dlugosc: 20.53 },
+              ]}
+              margin={{ top: 20, right: 30, bottom: 40, left: 60 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="rok"
+                label={{
+                  value: "Rok",
+                  position: "insideBottom",
+                  offset: -20,
+                  fontSize: 14,
+                }}
+                tick={{ fontSize: 12 }}
+              />
+              <YAxis
+                label={{
+                  value: "Długość infrastruktury [km]",
+                  angle: -90,
+                  position: "insideLeft",
+                  fontSize: 14,
+                }}
+                tick={{ fontSize: 12 }}
+              />
+              <Tooltip
+                formatter={(value: number) => [
+                  `${value.toFixed(2)} km`,
+                  "Długość infrastruktury",
+                ]}
+                labelStyle={{ fontSize: 12 }}
+                itemStyle={{ fontSize: 12 }}
+              />
+              <Line
+                type="monotone"
+                dataKey="dlugosc"
+                stroke="#8884d8"
+                strokeWidth={3}
+                dot={{ r: 6 }}
+                activeDot={{ r: 8 }}
+                name="Infrastruktura rowerowa"
+              />
+            </LineChart>
+          </ResponsiveContainer>
         </div>
       </Modal>
 
