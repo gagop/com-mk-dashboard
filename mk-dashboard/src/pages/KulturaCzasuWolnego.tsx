@@ -256,23 +256,47 @@ export default function KulturaCzasuWolnego() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Biblioteki publiczne"
-                subtitle="Źródło: BDL GUS"
-                height={200}
+                title="Zestawienie placówek kulturalnych według typu"
+                subtitle="Placówki kulturalne w Metropolii Krakowskiej w 2023 r."
+                height={380}
                 onOpen={() => setOpenCard("biblioteki")}
               >
-                <div
-                  style={{
-                    height: 140,
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "24px",
-                    fontWeight: "bold",
-                    color: "rgb(144, 12, 0)",
-                  }}
-                >
-                  0.95 bibliotek na 10 tys. mieszkańców
+                <div style={{ height: 320 }}>
+                  <ResponsiveContainer width="100%" height="100%">
+                    <BarChart
+                      data={[
+                        { typ: "biblioteki publiczne i filie", liczba: 116 },
+                        {
+                          typ: "ośrodki kultury, kluby i świetlice",
+                          liczba: 85,
+                        },
+                        { typ: "muzea z oddziałami", liczba: 53 },
+                        { typ: "galerie i salony sztuki", liczba: 41 },
+                        { typ: "kina stałe", liczba: 13 },
+                        { typ: "teatry dramatyczne", liczba: 9 },
+                      ]}
+                      layout="vertical"
+                      margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis type="number" />
+                      <YAxis
+                        type="category"
+                        dataKey="typ"
+                        tick={{ fontSize: 11 }}
+                        width={170}
+                      />
+                      <Tooltip
+                        formatter={(value: number) => [
+                          value,
+                          "Liczba placówek",
+                        ]}
+                        labelStyle={{ fontSize: 11 }}
+                        itemStyle={{ fontSize: 11 }}
+                      />
+                      <Bar dataKey="liczba" fill="rgb(144, 12, 0)" />
+                    </BarChart>
+                  </ResponsiveContainer>
                 </div>
               </Card>
             </div>
@@ -416,33 +440,43 @@ export default function KulturaCzasuWolnego() {
       <Modal
         open={openCard === "biblioteki"}
         onClose={() => setOpenCard(null)}
-        title="Biblioteki publiczne na 10 tys. ludności w 2024 roku"
+        title="Zestawienie placówek kulturalnych według typu"
         width={1100}
         maxWidth="95vw"
       >
-        <div
-          style={{
-            height: 300,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <div style={{ textAlign: "center" }}>
-            <div
-              style={{
-                fontSize: 72,
-                fontWeight: "bold",
-                color: "rgb(144, 12, 0)",
-                marginBottom: 16,
-              }}
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { typ: "biblioteki publiczne i filie", liczba: 116 },
+                {
+                  typ: "ośrodki kultury, kluby i świetlice",
+                  liczba: 85,
+                },
+                { typ: "muzea z oddziałami", liczba: 53 },
+                { typ: "galerie i salony sztuki", liczba: 41 },
+                { typ: "kina stałe", liczba: 13 },
+                { typ: "teatry dramatyczne", liczba: 9 },
+              ]}
+              layout="vertical"
+              margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
             >
-              0.95
-            </div>
-            <div style={{ fontSize: 24, color: "#666" }}>
-              bibliotek na 10 tys. mieszkańców
-            </div>
-          </div>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis type="number" tick={{ fontSize: 14 }} />
+              <YAxis
+                type="category"
+                dataKey="typ"
+                tick={{ fontSize: 14 }}
+                width={240}
+              />
+              <Tooltip
+                formatter={(value: number) => [value, "Liczba placówek"]}
+                labelStyle={{ fontSize: 13 }}
+                itemStyle={{ fontSize: 13 }}
+              />
+              <Bar dataKey="liczba" fill="rgb(144, 12, 0)" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
       </Modal>
     </div>
