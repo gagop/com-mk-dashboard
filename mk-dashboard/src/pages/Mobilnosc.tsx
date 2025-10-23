@@ -447,7 +447,7 @@ export default function Mobilnosc() {
 
           <div>
             <Card
-              title="Miejsca P&R"
+              title="Liczba miejsc na największych parkingach P&R"
               subtitle="Źródło: Opracowanie własne"
               height={cardHeight}
               onOpen={() => setOpenCard("miejsca")}
@@ -690,7 +690,7 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "miejsca"}
         onClose={() => setOpenCard(null)}
-        title="Miejsca P&R"
+        title="Liczba miejsc na największych parkingach P&R"
         width={1100}
         maxWidth="95vw"
       >
