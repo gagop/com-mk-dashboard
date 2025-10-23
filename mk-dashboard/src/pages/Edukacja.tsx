@@ -339,6 +339,46 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
+                title="Miejsca w przedszkolach"
+                subtitle="Źródło: BDL GUS"
+                height={200}
+              >
+                <div
+                  style={{
+                    height: 140,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 48,
+                      fontWeight: 700,
+                      color: "rgb(197, 59, 0)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    1,34
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      color: "#6b7280",
+                      textAlign: "center",
+                      maxWidth: 280,
+                    }}
+                  >
+                    Na każde dziecko 3–5 lat przypada 1,34 miejsca w przedszkolu
+                  </div>
+                </div>
+              </Card>
+            </div>
+
+            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+              <Card
                 title="Szkoły podstawowe"
                 subtitle="Źródło: RSiPO"
                 height={380}
