@@ -113,17 +113,112 @@ export default function KulturaCzasuWolnego() {
               <Card
                 title="Zadowolenie z oferty czasu wolnego"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("zadowolenie")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Zadowolenie z oferty czasu wolnego"
                     src="https://experience.arcgis.com/experience/944323efe1584f8e8063879ba745040f"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej
+                      z oferty czasu wolnego [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(139, 0, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 71</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(205, 25, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>68 - 71</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(220, 60, 60)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>55 - 67</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(240, 128, 128)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>50 - 54</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 218, 218)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 50</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -132,17 +227,112 @@ export default function KulturaCzasuWolnego() {
               <Card
                 title="Wydatki na kulturę i sport"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("wydatki")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Wydatki na kulturę i sport"
                     src="https://experience.arcgis.com/experience/de98fbf8d7804898a20cf1d78ac0140a"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Wysokość wydatków bieżących z budżetu na kulturę i sport
+                      na 1 mieszkańca [zł]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(139, 0, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 250</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(205, 25, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>201 - 250</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(220, 60, 60)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>151 - 200</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(240, 128, 128)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>75 - 150</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(255, 218, 218)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 75</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
