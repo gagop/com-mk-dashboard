@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import {
@@ -14,8 +14,22 @@ import {
 } from "recharts";
 
 export default function Mobilnosc() {
-  const [scale, setScale] = useState(1);
   const [openCard, setOpenCard] = useState<string | null>(null);
+  const [cardHeight, setCardHeight] = useState(380);
+
+  useEffect(() => {
+    const calculateCardHeight = () => {
+      const viewportHeight = window.innerHeight;
+      const availableHeight = viewportHeight - 180;
+      const calculatedHeight = (availableHeight - 12) / 2;
+      const finalHeight = Math.max(280, calculatedHeight);
+      setCardHeight(finalHeight);
+    };
+
+    calculateCardHeight();
+    window.addEventListener("resize", calculateCardHeight);
+    return () => window.removeEventListener("resize", calculateCardHeight);
+  }, []);
 
   return (
     <div
@@ -33,71 +47,31 @@ export default function Mobilnosc() {
         style={{
           flex: 1,
           minHeight: 0,
-          overflow: "hidden",
-          position: "relative",
+          overflow: "auto",
+          padding: "0 12px",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
+        className="hide-scrollbar"
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-start",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 12,
+            width: "100%",
           }}
         >
-          <div
-            style={{
-              columnCount: 3,
-              columnGap: 12,
-              transformOrigin: "top center",
-              transform: `scale(${scale})`,
-              width: "100%",
-            }}
-            ref={(el) => {
-              if (el && el.parentElement?.parentElement) {
-                const container = el.parentElement.parentElement;
-                const updateScale = () => {
-                  const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
-
-                  el.style.transform = "scale(1)";
-                  const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
-                  el.style.transform = `scale(${scale})`;
-
-                  const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  let newScale = Math.min(heightScale, widthScale, 1);
-                  newScale = Math.max(0.5, Math.min(1, newScale));
-
-                  setScale(newScale);
-                };
-
-                setTimeout(updateScale, 100);
-                setTimeout(updateScale, 500);
-
-                const resizeObserver = new ResizeObserver(() => {
-                  setTimeout(updateScale, 50);
-                });
-                resizeObserver.observe(container);
-
-                return () => resizeObserver.disconnect();
-              }
-            }}
-          >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={510}
+                height={cardHeight}
                 onOpen={() => setOpenCard("transportPubliczny")}
               >
                 <div
                   style={{
-                    height: 420,
+                    height: cardHeight - 90,
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -202,16 +176,16 @@ export default function Mobilnosc() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={510}
+                height={cardHeight}
                 onOpen={() => setOpenCard("transportSamochodowy")}
               >
                 <div
                   style={{
-                    height: 420,
+                    height: cardHeight - 90,
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -316,14 +290,14 @@ export default function Mobilnosc() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
                 subtitle="Łączna długość infrastruktury (skumulowana)"
-                height={380}
+                height={cardHeight}
                 onOpen={() => setOpenCard("transportRowerowy")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: cardHeight - 60 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                       data={[
@@ -372,7 +346,7 @@ export default function Mobilnosc() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Czynniki wyboru środka transportu"
                 subtitle="Źródło: Raport z badań społecznych 2024"
@@ -422,7 +396,7 @@ export default function Mobilnosc() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Podział modalny podróży"
                 subtitle="Źródło: Raport z badań społecznych 2024"
@@ -471,14 +445,14 @@ export default function Mobilnosc() {
               </Card>
             </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+            <div>
               <Card
                 title="Miejsca P&R"
                 subtitle="Źródło: Opracowanie własne"
-                height={380}
+                height={cardHeight}
                 onOpen={() => setOpenCard("miejsca")}
               >
-                <div style={{ height: 320 }}>
+                <div style={{ height: cardHeight - 60 }}>
                   <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
@@ -524,7 +498,6 @@ export default function Mobilnosc() {
             </div>
           </div>
         </div>
-      </div>
 
       {/* Modals */}
       <Modal
