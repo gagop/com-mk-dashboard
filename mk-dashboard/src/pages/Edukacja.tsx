@@ -283,7 +283,7 @@ export default function Edukacja() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Dzieci przedszkolne 3–5 lat (2019–2024)"
+                title="Liczba dzieci w wieku przedszkolnym 3–5 lat (2019–2024)"
                 subtitle="Źródło: BDL GUS"
                 height={340}
                 onOpen={() => setOpenCard("dzieci")}
