@@ -92,17 +92,112 @@ export default function Mobilnosc() {
               <Card
                 title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("transportPubliczny")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
                     src="https://experience.arcgis.com/experience/6618110be2944b9e8bc73a977250abf2"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Udział mieszkańców deklarujących transport publiczny jako
+                      główny środek transportu w dniu roboczym [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(0, 51, 153)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 40</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(51, 102, 204)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>31 - 40</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(102, 153, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>27 - 30</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(153, 204, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>21 - 26</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(230, 242, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 21</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -111,17 +206,112 @@ export default function Mobilnosc() {
               <Card
                 title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("transportSamochodowy")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
                     src="https://experience.arcgis.com/experience/13d1956b64454effa64ea0ce9e689ee3"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Udział mieszkańców deklarujących samochód jako główny
+                      środek transportu w dniu roboczym [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(0, 51, 153)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 70</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(51, 102, 204)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>67 - 70</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(102, 153, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>60 - 66</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(153, 204, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>32 - 59</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(230, 242, 255)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 32</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
