@@ -84,389 +84,386 @@ export default function KulturaCzasuWolnego() {
             width: "100%",
           }}
         >
-            <div>
-              <Card
-                title="Zadowolenie z oferty czasu wolnego"
-                subtitle="Źródło: ArcGIS Experience"
-                height={cardHeight}
-                onOpen={() => setOpenCard("zadowolenie")}
+          <div>
+            <Card
+              title="Zadowolenie z oferty czasu wolnego"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("zadowolenie")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
+                <iframe
+                  title="Zadowolenie z oferty czasu wolnego"
+                  src="https://experience.arcgis.com/experience/944323efe1584f8e8063879ba745040f"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
                 <div
                   style={{
-                    height: cardHeight - 90,
                     display: "flex",
-                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
                   }}
                 >
-                  <iframe
-                    title="Zadowolenie z oferty czasu wolnego"
-                    src="https://experience.arcgis.com/experience/944323efe1584f8e8063879ba745040f"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
                     }}
+                  >
+                    Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z
+                    oferty czasu wolnego [%]
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(139, 0, 0)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej
-                      z oferty czasu wolnego [%]
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(139, 0, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 71</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(205, 25, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>68 - 71</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(220, 60, 60)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>55 - 67</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(240, 128, 128)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>50 - 54</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(255, 218, 218)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 50</span>
-                    </div>
+                    />
+                    <span>&gt; 71</span>
                   </div>
-                </div>
-              </Card>
-            </div>
-
-            <div>
-              <Card
-                title="Wydatki na kulturę i sport"
-                subtitle="Źródło: ArcGIS Experience"
-                height={cardHeight}
-                onOpen={() => setOpenCard("wydatki")}
-              >
-                <div
-                  style={{
-                    height: cardHeight - 90,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <iframe
-                    title="Wydatki na kulturę i sport"
-                    src="https://experience.arcgis.com/experience/de98fbf8d7804898a20cf1d78ac0140a"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
-                    }}
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(205, 25, 0)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Wysokość wydatków bieżących z budżetu na kulturę i sport
-                      na 1 mieszkańca [zł]
-                    </div>
+                    />
+                    <span>68 - 71</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(139, 0, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 250</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(220, 60, 60)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>55 - 67</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(205, 25, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>201 - 250</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(240, 128, 128)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>50 - 54</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(220, 60, 60)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>151 - 200</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(240, 128, 128)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>75 - 150</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(255, 218, 218)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 75</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(255, 218, 218)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 50</span>
                   </div>
                 </div>
-              </Card>
-            </div>
+              </div>
+            </Card>
+          </div>
 
-            <div>
-              <Card
-                title="Czytelnicy w bibliotekach (2019–2024)"
-                subtitle="Źródło: BDL GUS"
-                height={340}
-                onOpen={() => setOpenCard("czytelnicy")}
+          <div>
+            <Card
+              title="Wydatki na kulturę i sport"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("wydatki")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
-                <div style={{ height: 280 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <LineChart
-                      data={[
-                        { rok: "2019", czytelnicy: 273726 },
-                        { rok: "2020", czytelnicy: 227670 },
-                        { rok: "2021", czytelnicy: 225261 },
-                        { rok: "2022", czytelnicy: 248901 },
-                        { rok: "2023", czytelnicy: 280700 },
-                        { rok: "2024", czytelnicy: 300983 },
+                <iframe
+                  title="Wydatki na kulturę i sport"
+                  src="https://experience.arcgis.com/experience/de98fbf8d7804898a20cf1d78ac0140a"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Wysokość wydatków bieżących z budżetu na kulturę i sport na
+                    1 mieszkańca [zł]
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(139, 0, 0)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&gt; 250</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(205, 25, 0)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>201 - 250</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(220, 60, 60)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>151 - 200</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(240, 128, 128)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>75 - 150</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(255, 218, 218)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 75</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div>
+            <Card
+              title="Czytelnicy w bibliotekach (2019–2024)"
+              subtitle="Źródło: BDL GUS"
+              height={340}
+              onOpen={() => setOpenCard("czytelnicy")}
+            >
+              <div style={{ height: 280 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={[
+                      { rok: "2019", czytelnicy: 273726 },
+                      { rok: "2020", czytelnicy: 227670 },
+                      { rok: "2021", czytelnicy: 225261 },
+                      { rok: "2022", czytelnicy: 248901 },
+                      { rok: "2023", czytelnicy: 280700 },
+                      { rok: "2024", czytelnicy: 300983 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <YAxis
+                      domain={["dataMin - 10000", "dataMax + 10000"]}
+                      tickFormatter={(value) =>
+                        new Intl.NumberFormat("pl-PL", {
+                          notation: "compact",
+                          minimumFractionDigits: 0,
+                          maximumFractionDigits: 0,
+                        }).format(value)
+                      }
+                      tick={{ fontSize: 11 }}
+                    />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        new Intl.NumberFormat("pl-PL").format(v),
+                        "czytelnicy",
                       ]}
-                      margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                      <YAxis
-                        domain={["dataMin - 10000", "dataMax + 10000"]}
-                        tickFormatter={(value) =>
-                          new Intl.NumberFormat("pl-PL", {
-                            notation: "compact",
-                            minimumFractionDigits: 0,
-                            maximumFractionDigits: 0,
-                          }).format(value)
-                        }
-                        tick={{ fontSize: 11 }}
-                      />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          new Intl.NumberFormat("pl-PL").format(v),
-                          "czytelnicy",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Line
-                        type="monotone"
-                        dataKey="czytelnicy"
-                        name="Czytelnicy"
-                        stroke="rgb(144, 12, 0)"
-                        strokeWidth={2}
-                        dot={{ r: 4 }}
-                      />
-                    </LineChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="czytelnicy"
+                      name="Czytelnicy"
+                      stroke="rgb(144, 12, 0)"
+                      strokeWidth={2}
+                      dot={{ r: 4 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
 
-            <div>
-              <Card
-                title="Czytelnicy na 1 tys. mieszkańców"
-                subtitle="Źródło: BDL GUS"
-                height={cardHeight}
-                onOpen={() => setOpenCard("czytelnicyTys")}
-              >
-                <div style={{ height: cardHeight - 60 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={GMINY.map((g) => {
-                        const readers = CZYTELNICY_2024[g as Gmina] || 0;
-                        const pop = computeLudnosc(g as Gmina, Y);
-                        const perThousand = pop ? (readers / pop) * 1000 : 0;
-                        return {
-                          gmina: g,
-                          wartosc: Number(perThousand.toFixed(1)),
-                        };
-                      })
-                        .slice()
-                        .sort((a, b) => b.wartosc - a.wartosc)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          `${(v as number).toFixed(1)}`,
-                          "na 1 tys. mieszk.",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="wartosc"
-                        name="Czytelnicy na 1 tys. mieszkańców"
-                        fill="rgb(205, 25, 0)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
-
-            <div>
-              <Card
-                title="Zestawienie placówek kulturalnych według typu"
-                subtitle="Placówki kulturalne w Metropolii Krakowskiej w 2023 r."
-                height={cardHeight}
-                onOpen={() => setOpenCard("biblioteki")}
-              >
-                <div style={{ height: cardHeight - 60 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { typ: "biblioteki publiczne i filie", liczba: 116 },
-                        {
-                          typ: "ośrodki kultury, kluby i świetlice",
-                          liczba: 85,
-                        },
-                        { typ: "muzea z oddziałami", liczba: 53 },
-                        { typ: "galerie i salony sztuki", liczba: 41 },
-                        { typ: "kina stałe", liczba: 13 },
-                        { typ: "teatry dramatyczne", liczba: 9 },
+          <div>
+            <Card
+              title="Czytelnicy na 1 tys. mieszkańców"
+              subtitle="Źródło: BDL GUS"
+              height={cardHeight}
+              onOpen={() => setOpenCard("czytelnicyTys")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={GMINY.map((g) => {
+                      const readers = CZYTELNICY_2024[g as Gmina] || 0;
+                      const pop = computeLudnosc(g as Gmina, Y);
+                      const perThousand = pop ? (readers / pop) * 1000 : 0;
+                      return {
+                        gmina: g,
+                        wartosc: Number(perThousand.toFixed(1)),
+                      };
+                    })
+                      .slice()
+                      .sort((a, b) => b.wartosc - a.wartosc)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        `${(v as number).toFixed(1)}`,
+                        "na 1 tys. mieszk.",
                       ]}
-                      layout="vertical"
-                      margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis type="number" />
-                      <YAxis
-                        type="category"
-                        dataKey="typ"
-                        tick={{ fontSize: 11 }}
-                        width={170}
-                      />
-                      <Tooltip
-                        formatter={(value: number) => [
-                          value,
-                          "Liczba placówek",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar dataKey="liczba" fill="rgb(144, 12, 0)" />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="wartosc"
+                      name="Czytelnicy na 1 tys. mieszkańców"
+                      fill="rgb(205, 25, 0)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
+
+          <div>
+            <Card
+              title="Zestawienie placówek kulturalnych według typu"
+              subtitle="Placówki kulturalne w Metropolii Krakowskiej w 2023 r."
+              height={cardHeight}
+              onOpen={() => setOpenCard("biblioteki")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { typ: "biblioteki publiczne i filie", liczba: 116 },
+                      {
+                        typ: "ośrodki kultury, kluby i świetlice",
+                        liczba: 85,
+                      },
+                      { typ: "muzea z oddziałami", liczba: 53 },
+                      { typ: "galerie i salony sztuki", liczba: 41 },
+                      { typ: "kina stałe", liczba: 13 },
+                      { typ: "teatry dramatyczne", liczba: 9 },
+                    ]}
+                    layout="vertical"
+                    margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis type="number" />
+                    <YAxis
+                      type="category"
+                      dataKey="typ"
+                      tick={{ fontSize: 11 }}
+                      width={170}
+                    />
+                    <Tooltip
+                      formatter={(value: number) => [value, "Liczba placówek"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar dataKey="liczba" fill="rgb(144, 12, 0)" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
           </div>
         </div>
+      </div>
 
       {/* Modals */}
       <Modal
