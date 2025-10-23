@@ -88,14 +88,14 @@ export default function Mobilnosc() {
           >
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Transport publiczny"
+                title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("transportPubliczny")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
-                    title="Transport publiczny"
+                    title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
                     src="https://experience.arcgis.com/experience/6618110be2944b9e8bc73a977250abf2"
                     style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
@@ -107,14 +107,14 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Transport samochodowy"
+                title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("transportSamochodowy")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
-                    title="Transport samochodowy"
+                    title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
                     src="https://experience.arcgis.com/experience/13d1956b64454effa64ea0ce9e689ee3"
                     style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
@@ -126,14 +126,14 @@ export default function Mobilnosc() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Transport rowerowy"
+                title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
                 subtitle="Źródło: ArcGIS Experience"
                 height={380}
                 onOpen={() => setOpenCard("transportRowerowy")}
               >
                 <div style={{ height: 320 }}>
                   <iframe
-                    title="Transport rowerowy"
+                    title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
                     src="https://experience.arcgis.com/experience/9b0d62ed06f84201bee87edcb41c86fb"
                     style={{ width: "100%", height: "95%", border: 0 }}
                     loading="lazy"
@@ -301,13 +301,13 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "transportPubliczny"}
         onClose={() => setOpenCard(null)}
-        title="Transport publiczny"
+        title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 780 }}>
           <iframe
-            title="Transport publiczny"
+            title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
             src="https://experience.arcgis.com/experience/26dbf3298caf4f4ea6a0a3e0cfb7f1bf/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -319,13 +319,13 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "transportSamochodowy"}
         onClose={() => setOpenCard(null)}
-        title="Transport samochodowy"
+        title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 780 }}>
           <iframe
-            title="Transport samochodowy"
+            title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
             src="https://experience.arcgis.com/experience/d995260ef5bb475488dd2275d6587bf2/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
@@ -337,13 +337,13 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "transportRowerowy"}
         onClose={() => setOpenCard(null)}
-        title="Transport rowerowy"
+        title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 780 }}>
           <iframe
-            title="Transport rowerowy"
+            title="Udział mieszkańców deklarujących rower jako główny środek transportu w dniu roboczym"
             src="https://experience.arcgis.com/experience/673ecf1542034ebeab47c6e7fa6a781b/"
             style={{ width: "100%", height: "100%", border: 0 }}
             loading="lazy"
