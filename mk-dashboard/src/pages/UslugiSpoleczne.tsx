@@ -111,7 +111,7 @@ export default function UslugiSpoleczne() {
               </div>
               <div style={{ breakInside: "avoid" }}>
                 <Card
-                  title="Wnioski o pobyt stały"
+                  title="Liczba złożonych wniosków o pobyt stały w 2024"
                   subtitle="Źródło: MUW (bez Krakowa)"
                   height={340}
                   onOpen={() => setOpenCard("wnioski")}
@@ -177,60 +177,55 @@ export default function UslugiSpoleczne() {
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <div style={{ breakInside: "avoid" }}>
                 <Card
-                  title="Osoby objęte programami zdrowotnymi"
-                  subtitle="Źródło: Opracowanie własne"
+                  title="Zadowolenie z jakości wsparcia"
+                  subtitle="Źródło: Opracowanie własne (Oceny pozytywne)"
                   height={340}
                   onOpen={() => setOpenCard("programy")}
                 >
                   <div style={{ height: 280 }}>
                     <ResponsiveContainer width="100%" height="100%">
-                      <LineChart
+                      <BarChart
                         data={[
-                          { rok: "2019", liczba: 1 },
-                          { rok: "2020", liczba: 2 },
-                          { rok: "2021", liczba: 2 },
-                          { rok: "2022", liczba: 2 },
-                          { rok: "2023", liczba: 4 },
-                          { rok: "2024", liczba: 6 },
-                        ]}
-                        margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
+                          { gmina: "Mogilany", procent: 50 },
+                          { gmina: "Świątniki Górne", procent: 48 },
+                          { gmina: "Igołomia-Wawrzeńczyce", procent: 37 },
+                          { gmina: "Michałowice", procent: 33 },
+                          { gmina: "Liszki", procent: 31 },
+                          { gmina: "Zielonki", procent: 31 },
+                          { gmina: "Kocmyrzów-Luborzyca", procent: 26 },
+                          { gmina: "Skawina", procent: 26 },
+                          { gmina: "Wielka Wieś", procent: 24 },
+                          { gmina: "Czernichów", procent: 22 },
+                          { gmina: "Niepołomice", procent: 17 },
+                          { gmina: "Biskupice", procent: 10 },
+                          { gmina: "Zabierzów", procent: 8 },
+                          { gmina: "Wieliczka", procent: 4 },
+                        ]
+                          .slice()
+                          .sort((a, b) => b.procent - a.procent)}
+                        margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
                       >
                         <CartesianGrid vertical={false} stroke="#eee" />
-                        <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                        <YAxis
-                          domain={["dataMin - 1", "dataMax + 1"]}
+                        <XAxis
+                          dataKey="gmina"
+                          angle={-35}
+                          textAnchor="end"
+                          interval={0}
+                          height={60}
                           tick={{ fontSize: 11 }}
                         />
+                        <YAxis unit="%" tick={{ fontSize: 11 }} />
                         <Tooltip
-                          formatter={(v: number) => [
-                            new Intl.NumberFormat("pl-PL").format(v),
-                            "osoby",
-                          ]}
+                          formatter={(v: number) => [`${v}%`, "zadowolenie"]}
                           labelStyle={{ fontSize: 11 }}
                           itemStyle={{ fontSize: 11 }}
                         />
-                        <Line
-                          type="monotone"
-                          dataKey="liczba"
-                          name="Osoby objęte programami"
-                          stroke="rgb(247, 183, 29)"
-                          strokeWidth={2}
-                          dot={{ r: 2 }}
-                          label={{
-                            position: "top",
-                            fontSize: 10,
-                            fill: "#333",
-                            formatter: (
-                              v: React.ReactNode
-                            ): React.ReactNode => {
-                              if (typeof v === "number") {
-                                return new Intl.NumberFormat("pl-PL").format(v);
-                              }
-                              return v;
-                            },
-                          }}
+                        <Bar
+                          dataKey="procent"
+                          name="Zadowolenie z jakości wsparcia [%]"
+                          fill="rgb(247, 183, 29)"
                         />
-                      </LineChart>
+                      </BarChart>
                     </ResponsiveContainer>
                   </div>
                 </Card>
@@ -410,52 +405,49 @@ export default function UslugiSpoleczne() {
       <Modal
         open={openCard === "programy"}
         onClose={() => setOpenCard(null)}
-        title="Osoby objęte programami zdrowotnymi"
+        title="Zadowolenie z jakości wsparcia (Oceny pozytywne)"
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart
+            <BarChart
               data={[
-                { rok: "2019", liczba: 1 },
-                { rok: "2020", liczba: 2 },
-                { rok: "2021", liczba: 2 },
-                { rok: "2022", liczba: 2 },
-                { rok: "2023", liczba: 4 },
-                { rok: "2024", liczba: 6 },
-              ]}
-              margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
+                { gmina: "Mogilany", procent: 50 },
+                { gmina: "Świątniki Górne", procent: 48 },
+                { gmina: "Igołomia-Wawrzeńczyce", procent: 37 },
+                { gmina: "Michałowice", procent: 33 },
+                { gmina: "Liszki", procent: 31 },
+                { gmina: "Zielonki", procent: 31 },
+                { gmina: "Kocmyrzów-Luborzyca", procent: 26 },
+                { gmina: "Skawina", procent: 26 },
+                { gmina: "Wielka Wieś", procent: 24 },
+                { gmina: "Czernichów", procent: 22 },
+                { gmina: "Niepołomice", procent: 17 },
+                { gmina: "Biskupice", procent: 10 },
+                { gmina: "Zabierzów", procent: 8 },
+                { gmina: "Wieliczka", procent: 4 },
+              ]
+                .slice()
+                .sort((a, b) => b.procent - a.procent)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="rok" />
-              <YAxis domain={["dataMin - 1", "dataMax + 1"]} />
-              <Tooltip
-                formatter={(v: number) => [
-                  new Intl.NumberFormat("pl-PL").format(v),
-                  "osoby",
-                ]}
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
               />
-              <Line
-                type="monotone"
-                dataKey="liczba"
-                name="Osoby objęte programami"
-                stroke="rgb(247, 183, 29)"
-                strokeWidth={2}
-                dot={{ r: 2 }}
-                label={{
-                  position: "top",
-                  fontSize: 10,
-                  fill: "#333",
-                  formatter: (v: React.ReactNode): React.ReactNode => {
-                    if (typeof v === "number") {
-                      return new Intl.NumberFormat("pl-PL").format(v);
-                    }
-                    return v;
-                  },
-                }}
+              <YAxis unit="%" />
+              <Tooltip formatter={(v: number) => [`${v}%`, "zadowolenie"]} />
+              <Bar
+                dataKey="procent"
+                name="Zadowolenie z jakości wsparcia [%]"
+                fill="rgb(247, 183, 29)"
               />
-            </LineChart>
+            </BarChart>
           </ResponsiveContainer>
         </div>
       </Modal>
@@ -567,7 +559,7 @@ export default function UslugiSpoleczne() {
       <Modal
         open={openCard === "wnioski"}
         onClose={() => setOpenCard(null)}
-        title="Wnioski o pobyt stały"
+        title="Liczba złożonych wniosków o pobyt stały w 2024"
         width={1100}
         maxWidth="95vw"
       >
