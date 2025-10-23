@@ -375,7 +375,7 @@ export default function Gospodarka() {
 
             <div style={{ breakInside: "avoid", marginBottom: 12 }}>
               <Card
-                title="Udział bezrobotnych"
+                title="Udział bezrobotnych w liczbie ludności w wieku produkcyjnym"
                 subtitle="Źródło: BDL GUS"
                 height={380}
                 onOpen={() => setOpenCard("bezrobotni")}
