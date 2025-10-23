@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "../components/Card";
 import Modal from "../components/Modal";
 import {
@@ -12,8 +12,26 @@ import {
 } from "recharts";
 
 export default function SrodowiskoPrzestrzen() {
-  const [scale, setScale] = useState(1);
   const [openCard, setOpenCard] = useState<string | null>(null);
+  const [cardHeight, setCardHeight] = useState(380);
+
+  useEffect(() => {
+    const calculateCardHeight = () => {
+      // Get available height
+      const viewportHeight = window.innerHeight;
+      // Subtract header (~60px), page title (~30px), footer (~70px), and margins/gaps
+      const availableHeight = viewportHeight - 180;
+      // We have 2 rows of cards, divide by 2 and subtract gap
+      const calculatedHeight = (availableHeight - 12) / 2;
+      // Set minimum height to prevent cards from being too small, allow larger heights
+      const finalHeight = Math.max(280, calculatedHeight);
+      setCardHeight(finalHeight);
+    };
+
+    calculateCardHeight();
+    window.addEventListener("resize", calculateCardHeight);
+    return () => window.removeEventListener("resize", calculateCardHeight);
+  }, []);
 
   return (
     <div
@@ -31,519 +49,475 @@ export default function SrodowiskoPrzestrzen() {
         style={{
           flex: 1,
           minHeight: 0,
-          overflow: "hidden",
-          position: "relative",
+          overflow: "auto",
+          padding: "0 12px",
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
         }}
+        className="hide-scrollbar"
       >
         <div
           style={{
-            position: "absolute",
-            inset: 0,
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "flex-start",
+            display: "grid",
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 12,
+            width: "100%",
           }}
         >
-          <div
-            style={{
-              columnCount: 3,
-              columnGap: 12,
-              transformOrigin: "top center",
-              transform: `scale(${scale})`,
-              width: "100%",
-            }}
-            ref={(el) => {
-              if (el && el.parentElement?.parentElement) {
-                const container = el.parentElement.parentElement;
-                const updateScale = () => {
-                  const containerHeight = container.clientHeight;
-                  const containerWidth = container.clientWidth;
-
-                  el.style.transform = "scale(1)";
-                  const contentHeight = el.scrollHeight;
-                  const contentWidth = el.scrollWidth;
-                  el.style.transform = `scale(${scale})`;
-
-                  const heightScale = containerHeight / contentHeight;
-                  const widthScale = containerWidth / contentWidth;
-
-                  let newScale = Math.min(heightScale, widthScale, 1);
-                  newScale = Math.max(0.5, Math.min(1, newScale));
-
-                  setScale(newScale);
-                };
-
-                setTimeout(updateScale, 100);
-                setTimeout(updateScale, 500);
-
-                const resizeObserver = new ResizeObserver(() => {
-                  setTimeout(updateScale, 50);
-                });
-                resizeObserver.observe(container);
-
-                return () => resizeObserver.disconnect();
-              }
-            }}
-          >
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Odpady komunalne na mieszkańca"
-                subtitle="Źródło: ArcGIS Experience"
-                height={510}
-                onOpen={() => setOpenCard("odpady")}
+          <div>
+            <Card
+              title="Odpady komunalne na mieszkańca"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("odpady")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
+                <iframe
+                  title="Ilość odebranych odpadów komunalnych"
+                  src="https://experience.arcgis.com/experience/068180947b2d450e91789b37954b9594"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
                 <div
                   style={{
-                    height: 420,
                     display: "flex",
-                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
                   }}
                 >
-                  <iframe
-                    title="Ilość odebranych odpadów komunalnych"
-                    src="https://experience.arcgis.com/experience/068180947b2d450e91789b37954b9594"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
                     style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
                     }}
+                  >
+                    Ilość odebranych odpadów komunalnych przypadająca na 1
+                    mieszkańca (kg/os./rok)
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(0, 100, 0)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Ilość odebranych odpadów komunalnych przypadająca na 1
-                      mieszkańca (kg/os./rok)
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(0, 100, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 550</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(34, 139, 34)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>501 - 550</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(124, 252, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>451 - 500</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(173, 255, 47)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>401 - 450</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(240, 255, 240)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 401</span>
-                    </div>
+                    />
+                    <span>&gt; 550</span>
                   </div>
-                </div>
-              </Card>
-            </div>
-
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Redukcja emisji pyłu PM2,5"
-                subtitle="Źródło: ArcGIS Experience"
-                height={510}
-                onOpen={() => setOpenCard("pm25")}
-              >
-                <div
-                  style={{
-                    height: 420,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <iframe
-                    title="Redukcja emisji pyłu PM2,5"
-                    src="https://experience.arcgis.com/experience/586f6ce08ae8417193336ccd75ccfc61"
-                    style={{ width: "100%", flex: 1, border: 0 }}
-                    loading="lazy"
-                    allowFullScreen
-                  />
                   <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 16,
-                      padding: "12px 8px 4px",
-                      fontSize: 10,
-                      color: "#4b5563",
-                    }}
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
                   >
                     <div
                       style={{
-                        fontWeight: 600,
-                        marginRight: 4,
-                        fontSize: 8,
-                        maxWidth: 240,
-                        lineHeight: 1.2,
+                        width: 20,
+                        height: 12,
+                        background: "rgb(34, 139, 34)",
+                        border: "1px solid #ddd",
                       }}
-                    >
-                      Redukcja emisji pyłu PM2,5 (Mg)
-                    </div>
+                    />
+                    <span>501 - 550</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(0, 100, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&gt; 10</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(124, 252, 0)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>451 - 500</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(34, 139, 34)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>5 - 10</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(173, 255, 47)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>401 - 450</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
                     <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(124, 252, 0)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>3 - 5</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(173, 255, 47)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>2 - 3</span>
-                    </div>
-                    <div
-                      style={{ display: "flex", alignItems: "center", gap: 4 }}
-                    >
-                      <div
-                        style={{
-                          width: 20,
-                          height: 12,
-                          background: "rgb(240, 255, 240)",
-                          border: "1px solid #ddd",
-                        }}
-                      />
-                      <span>&lt; 2</span>
-                    </div>
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(240, 255, 240)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 401</span>
                   </div>
                 </div>
-              </Card>
-            </div>
+              </div>
+            </Card>
+          </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Poziom recyklingu odpadów"
-                subtitle="Źródło: BDL GUS"
-                height={380}
-                onOpen={() => setOpenCard("recykling")}
+          <div>
+            <Card
+              title="Redukcja emisji pyłu PM2,5"
+              subtitle="Źródło: ArcGIS Experience"
+              height={cardHeight}
+              onOpen={() => setOpenCard("pm25")}
+            >
+              <div
+                style={{
+                  height: cardHeight - 90,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
               >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
-                        { gmina: "Liszki", poziom: 66.14 },
-                        { gmina: "Wielka Wieś", poziom: 56.9 },
-                        { gmina: "Czernichów", poziom: 52.96 },
-                        { gmina: "Zabierzów", poziom: 52.86 },
-                        { gmina: "Zielonki", poziom: 52.17 },
-                        { gmina: "Kraków", poziom: 52.33 },
-                        { gmina: "Skawina", poziom: 51.35 },
-                        { gmina: "Mogilany", poziom: 48.21 },
-                        { gmina: "Michałowice", poziom: 49.06 },
-                        { gmina: "Niepołomice", poziom: 46.27 },
-                        { gmina: "Kocmyrzów-Luborzyca", poziom: 46.31 },
-                        { gmina: "Biskupice", poziom: 45.77 },
-                        { gmina: "Świątniki Górne", poziom: 45.84 },
-                        { gmina: "Wieliczka", poziom: 25 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.poziom - a.poziom)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-60}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "poziom"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="poziom"
-                        name="Poziom recyklingu [%]"
-                        fill="rgb(149, 193, 31)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
+                <iframe
+                  title="Redukcja emisji pyłu PM2,5"
+                  src="https://experience.arcgis.com/experience/586f6ce08ae8417193336ccd75ccfc61"
+                  style={{ width: "100%", flex: 1, border: 0 }}
+                  loading="lazy"
+                  allowFullScreen
+                />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 16,
+                    padding: "12px 8px 4px",
+                    fontSize: 10,
+                    color: "#4b5563",
+                  }}
+                >
+                  <div
+                    style={{
+                      fontWeight: 600,
+                      marginRight: 4,
+                      fontSize: 8,
+                      maxWidth: 240,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    Redukcja emisji pyłu PM2,5 (Mg)
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(0, 100, 0)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&gt; 10</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(34, 139, 34)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>5 - 10</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(124, 252, 0)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>3 - 5</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(173, 255, 47)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>2 - 3</span>
+                  </div>
+                  <div
+                    style={{ display: "flex", alignItems: "center", gap: 4 }}
+                  >
+                    <div
+                      style={{
+                        width: 20,
+                        height: 12,
+                        background: "rgb(240, 255, 240)",
+                        border: "1px solid #ddd",
+                      }}
+                    />
+                    <span>&lt; 2</span>
+                  </div>
                 </div>
-              </Card>
-            </div>
+              </div>
+            </Card>
+          </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Redukcja emisji pyłu PM10"
-                subtitle="Źródło: Program ochrony powietrza"
-                height={380}
-                onOpen={() => setOpenCard("pm10")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Czernichów", pm10: 11.07 },
-                        { gmina: "Igołomia-Wawrzeńczyce", pm10: 1.89 },
-                        { gmina: "Kocmyrzów-Luborzyca", pm10: 3.07 },
-                        { gmina: "Liszki", pm10: 2.94 },
-                        { gmina: "Michałowice", pm10: 4.57 },
-                        { gmina: "Mogilany", pm10: 1.34 },
-                        { gmina: "Skawina", pm10: 2.45 },
-                        { gmina: "Świątniki Górne", pm10: 3.45 },
-                        { gmina: "Wielka Wieś", pm10: 3.2 },
-                        { gmina: "Zabierzów", pm10: 5.49 },
-                        { gmina: "Zielonki", pm10: 3.23 },
-                        { gmina: "Biskupice", pm10: 4.14 },
-                        { gmina: "Niepołomice", pm10: 3.52 },
-                        { gmina: "Wieliczka", pm10: 12.87 },
-                        { gmina: "Kraków", pm10: 2.07 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.pm10 - a.pm10)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit=" Mg" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          v.toString(),
-                          "redukcja PM10",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="pm10"
-                        name="Redukcja PM10 [Mg]"
-                        fill="rgb(58, 142, 20)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+          <div>
+            <Card
+              title="Poziom recyklingu odpadów"
+              subtitle="Źródło: BDL GUS"
+              height={cardHeight}
+              onOpen={() => setOpenCard("recykling")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
+                      { gmina: "Liszki", poziom: 66.14 },
+                      { gmina: "Wielka Wieś", poziom: 56.9 },
+                      { gmina: "Czernichów", poziom: 52.96 },
+                      { gmina: "Zabierzów", poziom: 52.86 },
+                      { gmina: "Zielonki", poziom: 52.17 },
+                      { gmina: "Kraków", poziom: 52.33 },
+                      { gmina: "Skawina", poziom: 51.35 },
+                      { gmina: "Mogilany", poziom: 48.21 },
+                      { gmina: "Michałowice", poziom: 49.06 },
+                      { gmina: "Niepołomice", poziom: 46.27 },
+                      { gmina: "Kocmyrzów-Luborzyca", poziom: 46.31 },
+                      { gmina: "Biskupice", poziom: 45.77 },
+                      { gmina: "Świątniki Górne", poziom: 45.84 },
+                      { gmina: "Wieliczka", poziom: 25 },
+                    ]
+                      .slice()
+                      .sort((a, b) => b.poziom - a.poziom)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-60}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "poziom"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="poziom"
+                      name="Poziom recyklingu [%]"
+                      fill="rgb(149, 193, 31)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Mieszkania oddane do użytkowania"
-                subtitle="Źródło: BDL GUS"
-                height={380}
-                onOpen={() => setOpenCard("mieszkania")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Wieliczka", wartosc: 118.4 },
-                        { gmina: "Kraków", wartosc: 107.1 },
-                        { gmina: "Biskupice", wartosc: 93.7 },
-                        { gmina: "Niepołomice", wartosc: 84 },
-                        { gmina: "Kocmyrzów-Luborzyca", wartosc: 75.6 },
-                        { gmina: "Wielka Wieś", wartosc: 54.7 },
-                        { gmina: "Zabierzów", wartosc: 57.2 },
-                        { gmina: "Czernichów", wartosc: 51.8 },
-                        { gmina: "Michałowice", wartosc: 48.9 },
-                        { gmina: "Świątniki Górne", wartosc: 47.4 },
-                        { gmina: "Niepołomice", wartosc: 84 },
-                        { gmina: "Zielonki", wartosc: 43.6 },
-                        { gmina: "Mogilany", wartosc: 41.4 },
-                        { gmina: "Liszki", wartosc: 37.5 },
-                        { gmina: "Skawina", wartosc: 26.4 },
-                        { gmina: "Igołomia-Wawrzeńczyce", wartosc: 20.4 },
-                      ]
-                        .filter(
-                          (v, i, arr) =>
-                            arr.findIndex((x) => x.gmina === v.gmina) === i
-                        )
-                        .slice()
-                        .sort((a, b) => b.wartosc - a.wartosc)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          v.toString(),
-                          "na 10 tys. ludności",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="wartosc"
-                        name="Mieszkania na 10 tys. mieszkańców"
-                        fill="rgb(149, 193, 31)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+          <div>
+            <Card
+              title="Redukcja emisji pyłu PM10"
+              subtitle="Źródło: Program ochrony powietrza"
+              height={cardHeight}
+              onOpen={() => setOpenCard("pm10")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { gmina: "Czernichów", pm10: 11.07 },
+                      { gmina: "Igołomia-Wawrzeńczyce", pm10: 1.89 },
+                      { gmina: "Kocmyrzów-Luborzyca", pm10: 3.07 },
+                      { gmina: "Liszki", pm10: 2.94 },
+                      { gmina: "Michałowice", pm10: 4.57 },
+                      { gmina: "Mogilany", pm10: 1.34 },
+                      { gmina: "Skawina", pm10: 2.45 },
+                      { gmina: "Świątniki Górne", pm10: 3.45 },
+                      { gmina: "Wielka Wieś", pm10: 3.2 },
+                      { gmina: "Zabierzów", pm10: 5.49 },
+                      { gmina: "Zielonki", pm10: 3.23 },
+                      { gmina: "Biskupice", pm10: 4.14 },
+                      { gmina: "Niepołomice", pm10: 3.52 },
+                      { gmina: "Wieliczka", pm10: 12.87 },
+                      { gmina: "Kraków", pm10: 2.07 },
+                    ]
+                      .slice()
+                      .sort((a, b) => b.pm10 - a.pm10)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit=" Mg" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [v.toString(), "redukcja PM10"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="pm10"
+                      name="Redukcja PM10 [Mg]"
+                      fill="rgb(58, 142, 20)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
 
-            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
-              <Card
-                title="Udział energii z OZE"
-                subtitle="Źródło: Opracowanie własne"
-                height={380}
-                onOpen={() => setOpenCard("oze")}
-              >
-                <div style={{ height: 320 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Czernichów", oze: 100.0 },
-                        { gmina: "Biskupice", oze: 26.4 },
-                        { gmina: "Mogilany", oze: 10.0 },
-                        { gmina: "Igołomia-Wawrzeńczyce", oze: 5.0 },
-                        { gmina: "Kraków", oze: 4.83 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.oze - a.oze)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: 11 }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
-                      <Tooltip
-                        formatter={(v: number) => [
-                          `${(v as number).toFixed(2)}%`,
-                          "udział OZE",
-                        ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
-                      />
-                      <Bar
-                        dataKey="oze"
-                        name="Udział energii z OZE [%]"
-                        fill="rgb(58, 142, 20)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </div>
-              </Card>
-            </div>
+          <div>
+            <Card
+              title="Mieszkania oddane do użytkowania"
+              subtitle="Źródło: BDL GUS"
+              height={cardHeight}
+              onOpen={() => setOpenCard("mieszkania")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { gmina: "Wieliczka", wartosc: 118.4 },
+                      { gmina: "Kraków", wartosc: 107.1 },
+                      { gmina: "Biskupice", wartosc: 93.7 },
+                      { gmina: "Niepołomice", wartosc: 84 },
+                      { gmina: "Kocmyrzów-Luborzyca", wartosc: 75.6 },
+                      { gmina: "Wielka Wieś", wartosc: 54.7 },
+                      { gmina: "Zabierzów", wartosc: 57.2 },
+                      { gmina: "Czernichów", wartosc: 51.8 },
+                      { gmina: "Michałowice", wartosc: 48.9 },
+                      { gmina: "Świątniki Górne", wartosc: 47.4 },
+                      { gmina: "Niepołomice", wartosc: 84 },
+                      { gmina: "Zielonki", wartosc: 43.6 },
+                      { gmina: "Mogilany", wartosc: 41.4 },
+                      { gmina: "Liszki", wartosc: 37.5 },
+                      { gmina: "Skawina", wartosc: 26.4 },
+                      { gmina: "Igołomia-Wawrzeńczyce", wartosc: 20.4 },
+                    ]
+                      .filter(
+                        (v, i, arr) =>
+                          arr.findIndex((x) => x.gmina === v.gmina) === i
+                      )
+                      .slice()
+                      .sort((a, b) => b.wartosc - a.wartosc)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        v.toString(),
+                        "na 10 tys. ludności",
+                      ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="wartosc"
+                      name="Mieszkania na 10 tys. mieszkańców"
+                      fill="rgb(149, 193, 31)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+          </div>
+
+          <div>
+            <Card
+              title="Udział energii z OZE"
+              subtitle="Źródło: Opracowanie własne"
+              height={cardHeight}
+              onOpen={() => setOpenCard("oze")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { gmina: "Czernichów", oze: 100.0 },
+                      { gmina: "Biskupice", oze: 26.4 },
+                      { gmina: "Mogilany", oze: 10.0 },
+                      { gmina: "Igołomia-Wawrzeńczyce", oze: 5.0 },
+                      { gmina: "Kraków", oze: 4.83 },
+                    ]
+                      .slice()
+                      .sort((a, b) => b.oze - a.oze)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [
+                        `${(v as number).toFixed(2)}%`,
+                        "udział OZE",
+                      ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="oze"
+                      name="Udział energii z OZE [%]"
+                      fill="rgb(58, 142, 20)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
           </div>
         </div>
       </div>
