@@ -93,17 +93,119 @@ export default function Gospodarka() {
               <Card
                 title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
                     src="https://experience.arcgis.com/experience/dc389c17988543428b3190c8317a49fe"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 12,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}
+                    >
+                      Poziom zadowolenia przedsiębiorców z relacji z samorządem
+                      gminnym [%]
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(116, 27, 105)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 75</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(144, 65, 132)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>59 - 74</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(173, 103, 159)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>53 - 58</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(201, 141, 186)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>43 - 52</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(229, 179, 213)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 45</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(200, 200, 200)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>brak danych</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -112,17 +214,106 @@ export default function Gospodarka() {
               <Card
                 title="Udział podatku CIT w budżecie"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("udzialCIT")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Udział podatku CIT"
                     src="https://experience.arcgis.com/experience/0c6ce3cadf95473cb27c2cacfa3265cc"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 12,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}
+                    >
+                      % wpływu z podatku CIT w budżecie gminy ogółem [%]
+                      proc2024
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(116, 27, 105)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>3,46% - 6,47%</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(144, 65, 132)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>1,1% - 3,45%</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(173, 103, 159)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>0,37% - 1,09%</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(201, 141, 186)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>0,31% - 0,36%</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(229, 179, 213)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>0,08% - 0,3%</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
