@@ -90,17 +90,112 @@ export default function SrodowiskoPrzestrzen() {
               <Card
                 title="Odpady komunalne na mieszkańca"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("odpady")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Ilość odebranych odpadów komunalnych"
                     src="https://experience.arcgis.com/experience/068180947b2d450e91789b37954b9594"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Ilość odebranych odpadów komunalnych przypadająca na 1
+                      mieszkańca (kg/os./rok)
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(0, 100, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 550</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(34, 139, 34)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>501 - 550</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(124, 252, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>451 - 500</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(173, 255, 47)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>401 - 450</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(240, 255, 240)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 401</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -109,17 +204,111 @@ export default function SrodowiskoPrzestrzen() {
               <Card
                 title="Redukcja emisji pyłu PM2,5"
                 subtitle="Źródło: ArcGIS Experience"
-                height={380}
+                height={510}
                 onOpen={() => setOpenCard("pm25")}
               >
-                <div style={{ height: 320 }}>
+                <div
+                  style={{
+                    height: 420,
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <iframe
                     title="Redukcja emisji pyłu PM2,5"
                     src="https://experience.arcgis.com/experience/586f6ce08ae8417193336ccd75ccfc61"
-                    style={{ width: "100%", height: "95%", border: 0 }}
+                    style={{ width: "100%", flex: 1, border: 0 }}
                     loading="lazy"
                     allowFullScreen
                   />
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 16,
+                      padding: "12px 8px 4px",
+                      fontSize: 10,
+                      color: "#4b5563",
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        marginRight: 4,
+                        fontSize: 8,
+                        maxWidth: 240,
+                        lineHeight: 1.2,
+                      }}
+                    >
+                      Redukcja emisji pyłu PM2,5 (Mg)
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(0, 100, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&gt; 10</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(34, 139, 34)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>5 - 10</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(124, 252, 0)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>3 - 5</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(173, 255, 47)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>2 - 3</span>
+                    </div>
+                    <div
+                      style={{ display: "flex", alignItems: "center", gap: 4 }}
+                    >
+                      <div
+                        style={{
+                          width: 20,
+                          height: 12,
+                          background: "rgb(240, 255, 240)",
+                          border: "1px solid #ddd",
+                        }}
+                      />
+                      <span>&lt; 2</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
