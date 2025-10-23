@@ -494,6 +494,45 @@ export default function Gospodarka() {
                 </div>
               </Card>
             </div>
+
+            <div style={{ breakInside: "avoid", marginBottom: 12 }}>
+              <Card
+                title="Miejsca noclegowe - Kraków"
+                subtitle="Źródło: BDL GUS"
+                height={200}
+              >
+                <div
+                  style={{
+                    height: 140,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: 8,
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: 48,
+                      fontWeight: 700,
+                      color: "rgb(116, 27, 105)",
+                      lineHeight: 1,
+                    }}
+                  >
+                    35 805
+                  </div>
+                  <div
+                    style={{
+                      fontSize: 14,
+                      color: "#6b7280",
+                      textAlign: "center",
+                    }}
+                  >
+                    Liczba miejsc noclegowych w Krakowie
+                  </div>
+                </div>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
