@@ -97,12 +97,12 @@ export default function InteligentneZarzadzanie() {
               <Card
                 title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z jakości funkcjonowania administracji w gminie"
                 subtitle="Źródło: ArcGIS Experience"
-                height={410}
+                height={510}
                 onOpen={() => setOpenCard("zadowolenie")}
               >
                 <div
                   style={{
-                    height: 320,
+                    height: 420,
                     display: "flex",
                     flexDirection: "column",
                   }}
@@ -205,12 +205,12 @@ export default function InteligentneZarzadzanie() {
               <Card
                 title="Dochody ogółem na 1 mieszkańca"
                 subtitle="Źródło: ArcGIS Experience"
-                height={410}
+                height={510}
                 onOpen={() => setOpenCard("dochody")}
               >
                 <div
                   style={{
-                    height: 320,
+                    height: 420,
                     display: "flex",
                     flexDirection: "column",
                   }}
