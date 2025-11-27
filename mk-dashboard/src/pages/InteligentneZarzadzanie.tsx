@@ -273,32 +273,51 @@ export default function InteligentneZarzadzanie() {
 
           <div>
             <Card
-              title="Poziom zadowolenia z poinformowania o działaniach władz gminnych"
-              subtitle="Opracowanie własne"
+              title="Frekwencja wyborcza w wyborach samorządowych 2024"
+              subtitle="Źródło: Państwowa Komisja Wyborcza"
               height={cardHeight}
-              onOpen={() => setOpenCard("poziom")}
+              onOpen={() => setOpenCard("frekwencja")}
             >
               <div style={{ height: cardHeight - 60 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
-                      { kategoria: "Pozytywne", odsetek: 66 },
-                      { kategoria: "Neutralne", odsetek: 31 },
-                      { kategoria: "Negatywne", odsetek: 3 },
-                    ]}
-                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                      { gmina: "Zabierzów", frekwencja: 60.49 },
+                      { gmina: "Wielka Wieś", frekwencja: 60.35 },
+                      { gmina: "Michałowice", frekwencja: 59.8 },
+                      { gmina: "Kocmyrzów-Luborzyca", frekwencja: 58.66 },
+                      { gmina: "Świątniki Górne", frekwencja: 57.09 },
+                      { gmina: "Biskupice", frekwencja: 56.58 },
+                      { gmina: "Niepołomice", frekwencja: 55.43 },
+                      { gmina: "Mogilany", frekwencja: 55.41 },
+                      { gmina: "Zielonki", frekwencja: 55.3 },
+                      { gmina: "Wieliczka", frekwencja: 52.1 },
+                      { gmina: "Igołomia-Wawrzeńczyce", frekwencja: 51.99 },
+                      { gmina: "Kraków", frekwencja: 51.8 },
+                      { gmina: "Liszki", frekwencja: 51.5 },
+                      { gmina: "Czernichów", frekwencja: 49.59 },
+                      { gmina: "Skawina", frekwencja: 48.55 },
+                    ].sort((a, b) => b.frekwencja - a.frekwencja)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <XAxis
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 100]} />
                     <Tooltip
-                      formatter={(v: number) => [`${v}%`, "odsetek"]}
+                      formatter={(v: number) => [`${v}%`, "frekwencja"]}
                       labelStyle={{ fontSize: 11 }}
                       itemStyle={{ fontSize: 11 }}
                     />
                     <Bar
-                      dataKey="odsetek"
-                      name="Poziom zadowolenia [%]"
+                      dataKey="frekwencja"
+                      name="Frekwencja [%]"
                       fill="rgb(135, 135, 135)"
                     />
                   </BarChart>
@@ -612,9 +631,9 @@ export default function InteligentneZarzadzanie() {
       </Modal>
 
       <Modal
-        open={openCard === "poziom"}
+        open={openCard === "frekwencja"}
         onClose={() => setOpenCard(null)}
-        title="Poziom zadowolenia z poinformowania o działaniach władz gminnych"
+        title="Frekwencja wyborcza w wyborach samorządowych 2024"
         width={1100}
         maxWidth="95vw"
       >
@@ -622,19 +641,37 @@ export default function InteligentneZarzadzanie() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={[
-                { kategoria: "Pozytywne", odsetek: 66 },
-                { kategoria: "Neutralne", odsetek: 31 },
-                { kategoria: "Negatywne", odsetek: 3 },
-              ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                { gmina: "Zabierzów", frekwencja: 60.49 },
+                { gmina: "Wielka Wieś", frekwencja: 60.35 },
+                { gmina: "Michałowice", frekwencja: 59.8 },
+                { gmina: "Kocmyrzów-Luborzyca", frekwencja: 58.66 },
+                { gmina: "Świątniki Górne", frekwencja: 57.09 },
+                { gmina: "Biskupice", frekwencja: 56.58 },
+                { gmina: "Niepołomice", frekwencja: 55.43 },
+                { gmina: "Mogilany", frekwencja: 55.41 },
+                { gmina: "Zielonki", frekwencja: 55.3 },
+                { gmina: "Wieliczka", frekwencja: 52.1 },
+                { gmina: "Igołomia-Wawrzeńczyce", frekwencja: 51.99 },
+                { gmina: "Kraków", frekwencja: 51.8 },
+                { gmina: "Liszki", frekwencja: 51.5 },
+                { gmina: "Czernichów", frekwencja: 49.59 },
+                { gmina: "Skawina", frekwencja: 48.55 },
+              ].sort((a, b) => b.frekwencja - a.frekwencja)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="kategoria" />
-              <YAxis unit="%" />
-              <Tooltip formatter={(v: number) => [`${v}%`, "odsetek"]} />
+              <XAxis
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
+              />
+              <YAxis unit="%" domain={[0, 100]} />
+              <Tooltip formatter={(v: number) => [`${v}%`, "frekwencja"]} />
               <Bar
-                dataKey="odsetek"
-                name="Poziom zadowolenia [%]"
+                dataKey="frekwencja"
+                name="Frekwencja [%]"
                 fill="rgb(135, 135, 135)"
               />
             </BarChart>
