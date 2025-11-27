@@ -15,6 +15,7 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
+  Legend,
 } from "recharts";
 
 function NumberKPI({
@@ -134,6 +135,103 @@ export default function InformacjeOgolne() {
       { rok: "2022", ludnosc: 1132625 },
       { rok: "2023", ludnosc: 1139182 },
       { rok: "2024", ludnosc: 1145723 },
+    ],
+    []
+  );
+
+  // Age structure data for 2024 (percentage shares by economic age groups)
+  const strukturaWiekuData = useMemo(
+    () => [
+      {
+        gmina: "Wielka Wieś",
+        przedprodukcyjny: 24.4,
+        produkcyjny: 60.1,
+        poprodukcyjny: 15.5,
+      },
+      {
+        gmina: "Zielonki",
+        przedprodukcyjny: 23.9,
+        produkcyjny: 59.8,
+        poprodukcyjny: 16.3,
+      },
+      {
+        gmina: "Niepołomice",
+        przedprodukcyjny: 23.5,
+        produkcyjny: 59.2,
+        poprodukcyjny: 17.3,
+      },
+      {
+        gmina: "Michałowice",
+        przedprodukcyjny: 23.1,
+        produkcyjny: 60.5,
+        poprodukcyjny: 16.5,
+      },
+      {
+        gmina: "Liszki",
+        przedprodukcyjny: 22.9,
+        produkcyjny: 57.7,
+        poprodukcyjny: 19.4,
+      },
+      {
+        gmina: "Biskupice",
+        przedprodukcyjny: 22.9,
+        produkcyjny: 59.5,
+        poprodukcyjny: 17.7,
+      },
+      {
+        gmina: "Mogilany",
+        przedprodukcyjny: 22.6,
+        produkcyjny: 60.4,
+        poprodukcyjny: 17.0,
+      },
+      {
+        gmina: "Wieliczka",
+        przedprodukcyjny: 21.8,
+        produkcyjny: 60.0,
+        poprodukcyjny: 18.2,
+      },
+      {
+        gmina: "Świątniki Górne",
+        przedprodukcyjny: 21.6,
+        produkcyjny: 59.7,
+        poprodukcyjny: 18.7,
+      },
+      {
+        gmina: "Kocmyrzów-Luborzyca",
+        przedprodukcyjny: 21.3,
+        produkcyjny: 60.6,
+        poprodukcyjny: 18.1,
+      },
+      {
+        gmina: "Czernichów",
+        przedprodukcyjny: 21.0,
+        produkcyjny: 59.1,
+        poprodukcyjny: 19.8,
+      },
+      {
+        gmina: "Zabierzów",
+        przedprodukcyjny: 20.6,
+        produkcyjny: 58.2,
+        poprodukcyjny: 21.2,
+      },
+      {
+        gmina: "Igołomia-Wawrzeńczyce",
+        przedprodukcyjny: 19.2,
+        produkcyjny: 58.1,
+        poprodukcyjny: 22.7,
+      },
+      {
+        gmina: "Skawina",
+        przedprodukcyjny: 19.2,
+        produkcyjny: 58.4,
+        poprodukcyjny: 22.4,
+      },
+      {
+        gmina: "Kraków",
+        przedprodukcyjny: 16.5,
+        produkcyjny: 61.0,
+        poprodukcyjny: 22.5,
+      },
     ],
     []
   );
@@ -527,6 +625,78 @@ export default function InformacjeOgolne() {
               </ResponsiveContainer>
             </div>
           </Card>
+
+          <Card
+            title="Struktura wieku mieszkańców w gminach Metropolii Krakowskiej w 2024 roku"
+            height={cardHeight}
+            onOpen={() => setOpenCard("strukturaWieku")}
+          >
+            <div style={{ height: cardHeight - 60 }}>
+              <ResponsiveContainer width="100%" height="90%">
+                <BarChart
+                  data={strukturaWiekuData}
+                  layout="vertical"
+                  margin={{ top: 8, right: 8, bottom: 8, left: 100 }}
+                >
+                  <CartesianGrid horizontal={false} stroke="#eee" />
+                  <XAxis
+                    type="number"
+                    domain={[0, 100]}
+                    ticks={[0, 20, 40, 60, 80, 100]}
+                    tickFormatter={(v) => `${Math.round(v)}%`}
+                    tick={{ fontSize: 10 }}
+                  />
+                  <YAxis
+                    type="category"
+                    dataKey="gmina"
+                    tick={{ fontSize: 10 }}
+                    width={95}
+                  />
+                  <Tooltip
+                    formatter={(v: number, name: string) => {
+                      const labels: Record<string, string> = {
+                        przedprodukcyjny: "przedprodukcyjny (0-17 lat)",
+                        produkcyjny: "produkcyjny (18-59/64)",
+                        poprodukcyjny: "poprodukcyjny (60+/65+)",
+                      };
+                      return [`${v.toFixed(1)}%`, labels[name] || name];
+                    }}
+                    labelStyle={{ fontSize: 11 }}
+                    itemStyle={{ fontSize: 11 }}
+                  />
+                  <Legend
+                    wrapperStyle={{ fontSize: 10, paddingTop: 4 }}
+                    formatter={(value: string) => {
+                      const labels: Record<string, string> = {
+                        przedprodukcyjny: "przedprodukcyjny",
+                        produkcyjny: "produkcyjny",
+                        poprodukcyjny: "poprodukcyjny",
+                      };
+                      return labels[value] || value;
+                    }}
+                  />
+                  <Bar
+                    dataKey="przedprodukcyjny"
+                    stackId="a"
+                    fill={IO_CHART_COLORS[0]}
+                    name="przedprodukcyjny"
+                  />
+                  <Bar
+                    dataKey="produkcyjny"
+                    stackId="a"
+                    fill={IO_CHART_COLORS[2]}
+                    name="produkcyjny"
+                  />
+                  <Bar
+                    dataKey="poprodukcyjny"
+                    stackId="a"
+                    fill={IO_CHART_COLORS[1]}
+                    name="poprodukcyjny"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            </div>
+          </Card>
         </div>
       </div>
 
@@ -750,6 +920,80 @@ export default function InformacjeOgolne() {
                 dataKey="przyrost"
                 name="przyrost naturalny (osoby)"
                 fill={IO_CHART_COLORS[0]}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </Modal>
+
+      <Modal
+        open={openCard === "strukturaWieku"}
+        onClose={() => setOpenCard(null)}
+        title="Struktura wieku mieszkańców w gminach Metropolii Krakowskiej w 2024 roku"
+        width={1100}
+        maxWidth="95vw"
+      >
+        <div style={{ height: 600 }}>
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={strukturaWiekuData}
+              layout="vertical"
+              margin={{ top: 8, right: 30, bottom: 30, left: 130 }}
+            >
+              <CartesianGrid horizontal={false} stroke="#eee" />
+              <XAxis
+                type="number"
+                domain={[0, 100]}
+                ticks={[0, 20, 40, 60, 80, 100]}
+                tickFormatter={(v) => `${Math.round(v)}%`}
+                tick={{ fontSize: 12 }}
+              />
+              <YAxis
+                type="category"
+                dataKey="gmina"
+                tick={{ fontSize: 12 }}
+                width={125}
+              />
+              <Tooltip
+                formatter={(v: number, name: string) => {
+                  const labels: Record<string, string> = {
+                    przedprodukcyjny: "przedprodukcyjny (0-17 lat)",
+                    produkcyjny: "produkcyjny (18-59/64)",
+                    poprodukcyjny: "poprodukcyjny (60+/65+)",
+                  };
+                  return [`${v.toFixed(1)}%`, labels[name] || name];
+                }}
+                labelStyle={{ fontSize: 12 }}
+                itemStyle={{ fontSize: 12 }}
+              />
+              <Legend
+                wrapperStyle={{ fontSize: 12, paddingTop: 8 }}
+                formatter={(value: string) => {
+                  const labels: Record<string, string> = {
+                    przedprodukcyjny: "wiek przedprodukcyjny (0-17 lat)",
+                    produkcyjny: "wiek produkcyjny (18-59/64)",
+                    poprodukcyjny: "wiek poprodukcyjny (60+/65+)",
+                  };
+                  return labels[value] || value;
+                }}
+              />
+              <Bar
+                dataKey="przedprodukcyjny"
+                stackId="a"
+                fill={IO_CHART_COLORS[0]}
+                name="przedprodukcyjny"
+              />
+              <Bar
+                dataKey="produkcyjny"
+                stackId="a"
+                fill={IO_CHART_COLORS[2]}
+                name="produkcyjny"
+              />
+              <Bar
+                dataKey="poprodukcyjny"
+                stackId="a"
+                fill={IO_CHART_COLORS[1]}
+                name="poprodukcyjny"
               />
             </BarChart>
           </ResponsiveContainer>
