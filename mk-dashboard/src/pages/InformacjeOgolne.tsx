@@ -216,7 +216,7 @@ export default function InformacjeOgolne() {
 
           <Card
             title="Gęstość zaludnienia Metropolii Krakowskiej"
-            subtitle="Źródło: ArcGIS Experience"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("densityMap")}
           >

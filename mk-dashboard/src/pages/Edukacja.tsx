@@ -71,7 +71,7 @@ export default function Edukacja() {
           <div>
             <Card
               title="Zadowolenie z jakości edukacji"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: Badania społeczne 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowolenieEdukacja")}
             >

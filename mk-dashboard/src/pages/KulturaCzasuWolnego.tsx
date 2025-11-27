@@ -87,7 +87,7 @@ export default function KulturaCzasuWolnego() {
           <div>
             <Card
               title="Zadowolenie z oferty czasu wolnego"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowolenie")}
             >
@@ -201,7 +201,7 @@ export default function KulturaCzasuWolnego() {
           <div>
             <Card
               title="Wydatki na kulturę i sport"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("wydatki")}
             >

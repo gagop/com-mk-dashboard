@@ -67,7 +67,7 @@ export default function SrodowiskoPrzestrzen() {
           <div>
             <Card
               title="Odpady komunalne na mieszkańca"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("odpady")}
             >
@@ -181,7 +181,7 @@ export default function SrodowiskoPrzestrzen() {
           <div>
             <Card
               title="Redukcja emisji pyłu PM2,5"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("pm25")}
             >

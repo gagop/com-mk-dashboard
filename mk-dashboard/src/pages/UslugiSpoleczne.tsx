@@ -67,7 +67,7 @@ export default function UslugiSpoleczne() {
             <div>
               <Card
                 title="Lokalizacja żłobków"
-                subtitle="Źródło: ArcGIS Experience"
+                subtitle="Źródło: BDL GUS"
                 height={cardHeight}
                 onOpen={() => setOpenCard("lokalizacjaZlobkow")}
               >

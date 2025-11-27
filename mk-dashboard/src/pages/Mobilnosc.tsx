@@ -65,7 +65,7 @@ export default function Mobilnosc() {
           <div>
             <Card
               title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("transportPubliczny")}
             >
@@ -179,7 +179,7 @@ export default function Mobilnosc() {
           <div>
             <Card
               title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
-              subtitle="Źródło: ArcGIS Experience"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("transportSamochodowy")}
             >
