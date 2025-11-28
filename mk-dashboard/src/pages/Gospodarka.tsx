@@ -65,7 +65,7 @@ export default function Gospodarka() {
         >
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
-              title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
+              title="Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego w 2024 r."
               subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
@@ -78,7 +78,7 @@ export default function Gospodarka() {
                 }}
               >
                 <iframe
-                  title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
+                  title="Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego w 2024 r."
                   src="https://experience.arcgis.com/experience/dc389c17988543428b3190c8317a49fe"
                   style={{ width: "100%", flex: 1, border: 0 }}
                   loading="lazy"
@@ -96,8 +96,8 @@ export default function Gospodarka() {
                   }}
                 >
                   <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    Poziom zadowolenia przedsiębiorców z relacji z samorządem
-                    gminnym [%]
+                    Poziom zadowolenia mieszkańców z możliwości rozwoju
+                    zawodowego [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -509,7 +509,7 @@ export default function Gospodarka() {
       <Modal
         open={openCard === "zadowoleniePrzedsiebiorcow"}
         onClose={() => setOpenCard(null)}
-        title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
+        title="Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego w 2024 r."
         width={1100}
         maxWidth="95vw"
       >
