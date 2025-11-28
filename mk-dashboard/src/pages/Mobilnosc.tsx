@@ -71,7 +71,7 @@ export default function Mobilnosc() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: cardHeight - 110,
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -185,7 +185,7 @@ export default function Mobilnosc() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: cardHeight - 110,
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -292,13 +292,13 @@ export default function Mobilnosc() {
 
           <div>
             <Card
-              title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
+              title="Przyrost infrastruktury rowerowej w gminach ościennych (bez Krakowa)"
               subtitle="Łączna długość infrastruktury (skumulowana)"
               height={cardHeight}
               onOpen={() => setOpenCard("transportRowerowy")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2019", dlugosc: 6.1 },
@@ -398,45 +398,47 @@ export default function Mobilnosc() {
 
           <div>
             <Card
-              title="Podział modalny podróży"
-              subtitle="Źródło: Raport z badań społecznych 2024"
+              title="Liczba miejsc P+R w gminach ościennych (2024)"
+              subtitle="Źródło: Gminy SMK (bez Krakowa)"
               height={340}
-              onOpen={() => setOpenCard("podzial")}
+              onOpen={() => setOpenCard("parkingPR")}
             >
               <div style={{ height: 280 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
-                      { srodek: "Samochód", udzial: 63 },
-                      { srodek: "Komunikacja", udzial: 22 },
-                      { srodek: "Pieszo", udzial: 10 },
-                      { srodek: "Rower", udzial: 3 },
-                      { srodek: "Pociąg", udzial: 0.8 },
-                      { srodek: "Hulajnoga", udzial: 0.4 },
+                      { gmina: "Michałowice", miejsca: 104 },
+                      { gmina: "Niepołomice", miejsca: 63 },
+                      { gmina: "Zabierzów", miejsca: 55 },
+                      { gmina: "Świątniki-Górne", miejsca: 50 },
+                      { gmina: "Kocmyrzów-Luborzyca", miejsca: 47 },
+                      { gmina: "Biskupice", miejsca: 32 },
+                      { gmina: "Igołomia-Wawrzeńczyce", miejsca: 30 },
+                      { gmina: "Czernichów", miejsca: 23 },
                     ]}
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
                     <XAxis
-                      dataKey="srodek"
+                      dataKey="gmina"
                       interval={0}
-                      angle={-15}
+                      angle={-25}
                       textAnchor="end"
-                      height={60}
-                      tick={{ fontSize: 11 }}
+                      height={80}
+                      tick={{ fontSize: 9 }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis tick={{ fontSize: 11 }} />
                     <Tooltip
                       formatter={(v: number) => [
-                        `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
-                        "udział",
+                        `${v} miejsc`,
+                        "Liczba miejsc",
                       ]}
                       labelStyle={{ fontSize: 11 }}
                       itemStyle={{ fontSize: 11 }}
                     />
                     <Bar
-                      dataKey="udzial"
-                      name="Udział podróży [%]"
+                      dataKey="miejsca"
+                      name="Liczba miejsc"
                       fill="rgb(54, 169, 225)"
                     />
                   </BarChart>
@@ -447,51 +449,55 @@ export default function Mobilnosc() {
 
           <div>
             <Card
-              title="Liczba miejsc na największych parkingach P&R"
-              subtitle="Źródło: Opracowanie własne"
-              height={cardHeight}
+              title='Liczba parkingów „Parkuj i jedź" w Metropolii Krakowskiej (2019–2024)'
+              subtitle="Źródło: Gminy SMK"
+              height={340}
               onOpen={() => setOpenCard("miejsca")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
+                <ResponsiveContainer width="100%" height="55%">
+                  <LineChart
                     data={[
-                      { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
-                      { kategoria: "P+R Swoszowice", miejsca: 154.0 },
-                      { kategoria: "P+R Krowodrza", miejsca: 109.0 },
-                      { kategoria: "Łuczyce", miejsca: 106.0 },
-                      { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
-                      { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
-                      { kategoria: "Kocmyrzów", miejsca: 72.0 },
-                      { kategoria: "Baranówka", miejsca: 53.0 },
-                      { kategoria: "Zastów", miejsca: 51.0 },
-                      { kategoria: "Goszcza", miejsca: 47.0 },
-                    ]
-                      .slice()
-                      .sort((a, b) => b.miejsca - a.miejsca)}
-                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                      { rok: "2019", liczba: 14 },
+                      { rok: "2020", liczba: 20 },
+                      { rok: "2021", liczba: 23 },
+                      { rok: "2022", liczba: 25 },
+                      { rok: "2023", liczba: 34 },
+                      { rok: "2024", liczba: 42 },
+                    ]}
+                    margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
                   >
-                    <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis
-                      dataKey="kategoria"
-                      angle={-45}
-                      textAnchor="end"
-                      interval={0}
-                      height={60}
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="rok" />
+                    <YAxis
+                      label={{
+                        value: "Liczba parkingów (suma z gmin)",
+                        angle: -90,
+                        position: "insideLeft",
+                        style: { textAnchor: "middle", fontSize: 11 },
+                      }}
+                      domain={[10, 45]}
                       tick={{ fontSize: 11 }}
                     />
-                    <YAxis tick={{ fontSize: 11 }} />
                     <Tooltip
-                      formatter={(v: number) => [String(v), "miejsca P&R"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      formatter={(value: number) => [value, "Liczba parkingów"]}
                     />
-                    <Bar
-                      dataKey="miejsca"
-                      name="Liczba miejsc P&R"
-                      fill="rgb(54, 169, 225)"
+                    <Line
+                      type="monotone"
+                      dataKey="liczba"
+                      stroke="#1d4e89"
+                      strokeWidth={2}
+                      dot={{ r: 5, fill: "#1d4e89" }}
+                      activeDot={{ r: 7 }}
+                      label={{
+                        position: "top",
+                        offset: 10,
+                        fontSize: 12,
+                        fontWeight: "bold",
+                        fill: "#1d4e89",
+                      }}
                     />
-                  </BarChart>
+                  </LineChart>
                 </ResponsiveContainer>
               </div>
             </Card>
@@ -539,7 +545,7 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "transportRowerowy"}
         onClose={() => setOpenCard(null)}
-        title="Przyrost infrastruktury rowerowej w Metropolii Krakowskiej"
+        title="Przyrost infrastruktury rowerowej w gminach ościennych (bez Krakowa)"
         width={1100}
         maxWidth="95vw"
       >
@@ -643,9 +649,9 @@ export default function Mobilnosc() {
       </Modal>
 
       <Modal
-        open={openCard === "podzial"}
+        open={openCard === "parkingPR"}
         onClose={() => setOpenCard(null)}
-        title="Podział modalny podróży"
+        title="Liczba miejsc P+R w gminach ościennych (2024)"
         width={1100}
         maxWidth="95vw"
       >
@@ -653,33 +659,33 @@ export default function Mobilnosc() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={[
-                { srodek: "Samochód", udzial: 63 },
-                { srodek: "Komunikacja", udzial: 22 },
-                { srodek: "Pieszo", udzial: 10 },
-                { srodek: "Rower", udzial: 3 },
-                { srodek: "Pociąg", udzial: 0.8 },
-                { srodek: "Hulajnoga", udzial: 0.4 },
+                { gmina: "Michałowice", miejsca: 104 },
+                { gmina: "Niepołomice", miejsca: 63 },
+                { gmina: "Zabierzów", miejsca: 55 },
+                { gmina: "Świątniki-Górne", miejsca: 50 },
+                { gmina: "Kocmyrzów-Luborzyca", miejsca: 47 },
+                { gmina: "Biskupice", miejsca: 32 },
+                { gmina: "Igołomia-Wawrzeńczyce", miejsca: 30 },
+                { gmina: "Czernichów", miejsca: 23 },
               ]}
-              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+              margin={{ top: 8, right: 30, bottom: 80, left: 40 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
-                dataKey="srodek"
+                dataKey="gmina"
                 interval={0}
-                angle={-15}
+                angle={-25}
                 textAnchor="end"
-                height={60}
+                height={100}
+                tick={{ fontSize: 12 }}
               />
-              <YAxis unit="%" />
+              <YAxis tick={{ fontSize: 12 }} />
               <Tooltip
-                formatter={(v: number) => [
-                  `${Number(v).toFixed(v < 1 ? 1 : 0)}%`,
-                  "udział",
-                ]}
+                formatter={(v: number) => [`${v} miejsc`, "Liczba miejsc"]}
               />
               <Bar
-                dataKey="udzial"
-                name="Udział podróży [%]"
+                dataKey="miejsca"
+                name="Liczba miejsc"
                 fill="rgb(54, 169, 225)"
               />
             </BarChart>
@@ -690,45 +696,54 @@ export default function Mobilnosc() {
       <Modal
         open={openCard === "miejsca"}
         onClose={() => setOpenCard(null)}
-        title="Liczba miejsc na największych parkingach P&R"
+        title='Liczba parkingów „Parkuj i jedź" w Metropolii Krakowskiej (2019–2024)'
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
+            <LineChart
               data={[
-                { kategoria: "P+R Górka Narodowa", miejsca: 465.0 },
-                { kategoria: "P+R Swoszowice", miejsca: 154.0 },
-                { kategoria: "P+R Krowodrza", miejsca: 109.0 },
-                { kategoria: "Łuczyce", miejsca: 106.0 },
-                { kategoria: "P+R Pachońskiego", miejsca: 95.0 },
-                { kategoria: "P+R Prądnik Czerwony", miejsca: 83.0 },
-                { kategoria: "Kocmyrzów", miejsca: 72.0 },
-                { kategoria: "Baranówka", miejsca: 53.0 },
-                { kategoria: "Zastów", miejsca: 51.0 },
-                { kategoria: "Goszcza", miejsca: 47.0 },
-              ]
-                .slice()
-                .sort((a, b) => b.miejsca - a.miejsca)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                { rok: "2019", liczba: 14 },
+                { rok: "2020", liczba: 20 },
+                { rok: "2021", liczba: 23 },
+                { rok: "2022", liczba: 25 },
+                { rok: "2023", liczba: 34 },
+                { rok: "2024", liczba: 42 },
+              ]}
+              margin={{ top: 30, right: 40, bottom: 40, left: 80 }}
             >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="kategoria"
-                angle={-45}
-                textAnchor="end"
-                interval={0}
-                height={60}
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="rok" tick={{ fontSize: 14 }} />
+              <YAxis
+                label={{
+                  value: "Liczba parkingów (suma z gmin)",
+                  angle: -90,
+                  position: "insideLeft",
+                  style: { textAnchor: "middle", fontSize: 14 },
+                }}
+                domain={[10, 45]}
+                tick={{ fontSize: 14 }}
               />
-              <YAxis />
-              <Tooltip formatter={(v: number) => [String(v), "miejsca P&R"]} />
-              <Bar
-                dataKey="miejsca"
-                name="Liczba miejsc P&R"
-                fill="rgb(54, 169, 225)"
+              <Tooltip
+                formatter={(value: number) => [value, "Liczba parkingów"]}
               />
-            </BarChart>
+              <Line
+                type="monotone"
+                dataKey="liczba"
+                stroke="#1d4e89"
+                strokeWidth={3}
+                dot={{ r: 6, fill: "#1d4e89" }}
+                activeDot={{ r: 8 }}
+                label={{
+                  position: "top",
+                  offset: 10,
+                  fontSize: 14,
+                  fontWeight: "bold",
+                  fill: "#1d4e89",
+                }}
+              />
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </Modal>

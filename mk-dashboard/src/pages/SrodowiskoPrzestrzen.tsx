@@ -5,6 +5,8 @@ import {
   ResponsiveContainer,
   BarChart,
   Bar,
+  LineChart,
+  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -472,49 +474,53 @@ export default function SrodowiskoPrzestrzen() {
 
           <div>
             <Card
-              title="Udział energii z OZE"
-              subtitle="Źródło: Opracowanie własne"
+              title="Długość eksploatowanej sieci wodociągowej w Metropolii Krakowskiej w latach 2020–2024 (km)"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
-              onOpen={() => setOpenCard("oze")}
+              onOpen={() => setOpenCard("wodociagi")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
+                <ResponsiveContainer width="100%" height="90%">
+                  <LineChart
                     data={[
-                      { gmina: "Czernichów", oze: 100.0 },
-                      { gmina: "Biskupice", oze: 26.4 },
-                      { gmina: "Mogilany", oze: 10.0 },
-                      { gmina: "Igołomia-Wawrzeńczyce", oze: 5.0 },
-                      { gmina: "Kraków", oze: 4.83 },
-                    ]
-                      .slice()
-                      .sort((a, b) => b.oze - a.oze)}
-                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                      { rok: "2020", dlugosc: 4712.8 },
+                      { rok: "2021", dlugosc: 4784.4 },
+                      { rok: "2022", dlugosc: 4854.9 },
+                      { rok: "2023", dlugosc: 4914.3 },
+                      { rok: "2024", dlugosc: 4977.1 },
+                    ]}
+                    margin={{ top: 8, right: 16, bottom: 8, left: 48 }}
                   >
-                    <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis
-                      dataKey="gmina"
-                      angle={-35}
-                      textAnchor="end"
-                      interval={0}
-                      height={60}
+                    <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <YAxis
                       tick={{ fontSize: 11 }}
+                      domain={[4600, 5100]}
+                      label={{
+                        value: "km",
+                        angle: -90,
+                        position: "insideLeft",
+                        style: { fontSize: 11, textAnchor: "middle" },
+                      }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
                     <Tooltip
                       formatter={(v: number) => [
-                        `${(v as number).toFixed(2)}%`,
-                        "udział OZE",
+                        `${v.toFixed(1)} km`,
+                        "Długość sieci",
                       ]}
                       labelStyle={{ fontSize: 11 }}
                       itemStyle={{ fontSize: 11 }}
                     />
-                    <Bar
-                      dataKey="oze"
-                      name="Udział energii z OZE [%]"
-                      fill="rgb(58, 142, 20)"
+                    <Line
+                      type="monotone"
+                      dataKey="dlugosc"
+                      name="Długość sieci wodociągowej [km]"
+                      stroke="rgb(58, 142, 20)"
+                      strokeWidth={2}
+                      dot={{ fill: "rgb(58, 142, 20)", r: 4 }}
+                      activeDot={{ r: 6 }}
                     />
-                  </BarChart>
+                  </LineChart>
                 </ResponsiveContainer>
               </div>
             </Card>
@@ -720,47 +726,52 @@ export default function SrodowiskoPrzestrzen() {
       </Modal>
 
       <Modal
-        open={openCard === "oze"}
+        open={openCard === "wodociagi"}
         onClose={() => setOpenCard(null)}
-        title="Udział energii z OZE"
+        title="Długość eksploatowanej sieci wodociągowej w Metropolii Krakowskiej w latach 2020–2024 (km)"
         width={1100}
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
           <ResponsiveContainer width="100%" height="100%">
-            <BarChart
+            <LineChart
               data={[
-                { gmina: "Czernichów", oze: 100.0 },
-                { gmina: "Biskupice", oze: 26.4 },
-                { gmina: "Mogilany", oze: 10.0 },
-                { gmina: "Igołomia-Wawrzeńczyce", oze: 5.0 },
-                { gmina: "Kraków", oze: 4.83 },
-              ]
-                .slice()
-                .sort((a, b) => b.oze - a.oze)}
-              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                { rok: "2020", dlugosc: 4712.8 },
+                { rok: "2021", dlugosc: 4784.4 },
+                { rok: "2022", dlugosc: 4854.9 },
+                { rok: "2023", dlugosc: 4914.3 },
+                { rok: "2024", dlugosc: 4977.1 },
+              ]}
+              margin={{ top: 16, right: 32, bottom: 16, left: 48 }}
             >
-              <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis
-                dataKey="gmina"
-                angle={-35}
-                textAnchor="end"
-                interval={0}
-                height={60}
+              <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+              <XAxis dataKey="rok" tick={{ fontSize: 13 }} />
+              <YAxis
+                tick={{ fontSize: 13 }}
+                domain={[4600, 5100]}
+                label={{
+                  value: "km",
+                  angle: -90,
+                  position: "insideLeft",
+                  style: { fontSize: 13, textAnchor: "middle" },
+                }}
               />
-              <YAxis unit="%" />
               <Tooltip
                 formatter={(v: number) => [
-                  `${(v as number).toFixed(2)}%`,
-                  "udział OZE",
+                  `${v.toFixed(1)} km`,
+                  "Długość sieci",
                 ]}
               />
-              <Bar
-                dataKey="oze"
-                name="Udział energii z OZE [%]"
-                fill="rgb(58, 142, 20)"
+              <Line
+                type="monotone"
+                dataKey="dlugosc"
+                name="Długość sieci wodociągowej [km]"
+                stroke="rgb(58, 142, 20)"
+                strokeWidth={3}
+                dot={{ fill: "rgb(58, 142, 20)", r: 6 }}
+                activeDot={{ r: 8 }}
               />
-            </BarChart>
+            </LineChart>
           </ResponsiveContainer>
         </div>
       </Modal>
