@@ -84,7 +84,7 @@ export default function KulturaCzasuWolnego() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zadowolenie z oferty czasu wolnego"
               subtitle="Źródło: BDL GUS"
@@ -198,7 +198,7 @@ export default function KulturaCzasuWolnego() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Wydatki na kulturę i sport"
               subtitle="Źródło: BDL GUS"
@@ -312,7 +312,7 @@ export default function KulturaCzasuWolnego() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Czytelnicy w bibliotekach (2019–2024)"
               subtitle="Źródło: BDL GUS"
@@ -367,7 +367,7 @@ export default function KulturaCzasuWolnego() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Czytelnicy na 1 tys. mieszkańców"
               subtitle="Źródło: BDL GUS"
@@ -419,7 +419,7 @@ export default function KulturaCzasuWolnego() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zestawienie placówek kulturalnych według typu"
               subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
@@ -444,7 +444,7 @@ export default function KulturaCzasuWolnego() {
                     margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="number" />
+                    <XAxis type="number" tick={{ fontSize: 11 }} />
                     <YAxis
                       type="category"
                       dataKey="typ"

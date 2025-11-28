@@ -63,7 +63,7 @@ export default function Gospodarka() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Poziom zadowolenia przedsiębiorców z relacji z samorządem gminnym"
               subtitle="Źródło: BDL GUS"
@@ -182,7 +182,7 @@ export default function Gospodarka() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Udział podatku CIT w budżecie"
               subtitle="Źródło: BDL GUS"
@@ -287,7 +287,7 @@ export default function Gospodarka() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Nowe podmioty gospodarcze (2019–2024)"
               subtitle="Źródło: BDL GUS"
@@ -342,7 +342,7 @@ export default function Gospodarka() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Udział bezrobotnych w liczbie ludności w wieku produkcyjnym"
               subtitle="Źródło: BDL GUS"
@@ -399,7 +399,7 @@ export default function Gospodarka() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Miejsca noclegowe"
               subtitle="Źródło: BDL GUS (bez Krakowa)"
@@ -464,7 +464,7 @@ export default function Gospodarka() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Miejsca noclegowe - Kraków"
               subtitle="Źródło: BDL GUS"

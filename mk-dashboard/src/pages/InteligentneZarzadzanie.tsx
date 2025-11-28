@@ -60,7 +60,7 @@ export default function InteligentneZarzadzanie() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z jakości funkcjonowania administracji w gminie"
               subtitle="Badania społeczne 2024"
@@ -166,7 +166,7 @@ export default function InteligentneZarzadzanie() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Dochody ogółem na 1 mieszkańca"
               subtitle="Badania społeczne 2024"
@@ -271,7 +271,7 @@ export default function InteligentneZarzadzanie() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Frekwencja wyborcza w wyborach samorządowych 2024"
               subtitle="Źródło: Państwowa Komisja Wyborcza"
@@ -326,7 +326,7 @@ export default function InteligentneZarzadzanie() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zadłużenie Gminy [%]"
               subtitle="Źródło: Ministerstwo Finansów"
@@ -383,7 +383,7 @@ export default function InteligentneZarzadzanie() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Wzrost wpływów z PIT (2023–2024)"
               subtitle="Źródło: BDL GUS"
@@ -489,7 +489,7 @@ export default function InteligentneZarzadzanie() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Wzrost wpływów z CIT (2019–2024)"
               subtitle="Źródło: BDL GUS"

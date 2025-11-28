@@ -66,7 +66,7 @@ export default function SrodowiskoPrzestrzen() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Odpady komunalne na mieszkańca"
               subtitle="Źródło: BDL GUS"
@@ -180,7 +180,7 @@ export default function SrodowiskoPrzestrzen() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Redukcja emisji pyłu PM2,5"
               subtitle="Źródło: BDL GUS"
@@ -293,7 +293,7 @@ export default function SrodowiskoPrzestrzen() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Poziom recyklingu odpadów"
               subtitle="Źródło: BDL GUS"
@@ -350,7 +350,7 @@ export default function SrodowiskoPrzestrzen() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Redukcja emisji pyłu PM10"
               subtitle="Źródło: Program ochrony powietrza"
@@ -407,7 +407,7 @@ export default function SrodowiskoPrzestrzen() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Mieszkania oddane do użytkowania"
               subtitle="Źródło: BDL GUS"
@@ -472,7 +472,7 @@ export default function SrodowiskoPrzestrzen() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Długość eksploatowanej sieci wodociągowej w Metropolii Krakowskiej w latach 2020–2024 (km)"
               subtitle="Źródło: BDL GUS"

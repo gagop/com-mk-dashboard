@@ -68,7 +68,7 @@ export default function Edukacja() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zadowolenie z jakości edukacji"
               subtitle="Źródło: Badania społeczne 2024"
@@ -252,7 +252,7 @@ export default function Edukacja() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Liczba dzieci w wieku przedszkolnym 3–5 lat (2019–2024)"
               subtitle="Źródło: BDL GUS"
@@ -403,7 +403,7 @@ export default function Edukacja() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Szkoły podstawowe"
               subtitle="Źródło: RSiPO"
@@ -520,7 +520,7 @@ export default function Edukacja() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Egzamin 8-klasisty - matematyka"
               subtitle="Źródło: OKE Kraków"

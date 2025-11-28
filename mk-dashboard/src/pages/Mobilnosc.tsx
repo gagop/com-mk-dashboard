@@ -62,7 +62,7 @@ export default function Mobilnosc() {
             width: "100%",
           }}
         >
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Udział mieszkańców deklarujących transport publiczny jako główny środek transportu w dniu roboczym"
               subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
@@ -174,9 +174,57 @@ export default function Mobilnosc() {
                 </div>
               </div>
             </Card>
+
+            <Card
+              title="Czynniki wyboru środka transportu"
+              subtitle="Źródło: Raport z badań społecznych 2024"
+              height={cardHeight}
+              onOpen={() => setOpenCard("czynniki")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <BarChart
+                    data={[
+                      { czynnik: "Komfort podróży", odsetek: 59 },
+                      {
+                        czynnik: "Brak alternatywy",
+                        odsetek: 15,
+                      },
+                      { czynnik: "Czas przejazdu", odsetek: 13 },
+                      { czynnik: "Koszty", odsetek: 5 },
+                      { czynnik: "Bezpieczeństwo", odsetek: 4 },
+                      { czynnik: "Inne", odsetek: 3 },
+                      { czynnik: "Środowisko", odsetek: 1 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis
+                      dataKey="czynnik"
+                      interval={0}
+                      angle={-15}
+                      textAnchor="end"
+                      height={60}
+                      tick={{ fontSize: 11 }}
+                    />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(v: number) => [`${v}%`, "odsetek"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Bar
+                      dataKey="odsetek"
+                      name="Udział odpowiedzi [%]"
+                      fill="rgb(29, 113, 184)"
+                    />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Udział mieszkańców deklarujących samochód jako główny środek transportu w dniu roboczym"
               subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
@@ -288,111 +336,14 @@ export default function Mobilnosc() {
                 </div>
               </div>
             </Card>
-          </div>
 
-          <div>
-            <Card
-              title="Przyrost infrastruktury rowerowej w gminach ościennych (bez Krakowa)"
-              subtitle="Łączna długość infrastruktury (skumulowana) | Źródło: BDL GUS"
-              height={cardHeight}
-              onOpen={() => setOpenCard("transportRowerowy")}
-            >
-              <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={[
-                      { rok: "2019", dlugosc: 6.1 },
-                      { rok: "2020", dlugosc: 6.1 },
-                      { rok: "2021", dlugosc: 7.6 },
-                      { rok: "2022", dlugosc: 10.58 },
-                      { rok: "2023", dlugosc: 11.73 },
-                      { rok: "2024", dlugosc: 20.53 },
-                    ]}
-                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                  >
-                    <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                    <YAxis unit=" km" tick={{ fontSize: 11 }} />
-                    <Tooltip
-                      formatter={(value: number) => [
-                        `${value.toFixed(2)} km`,
-                        "Długość infrastruktury",
-                      ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="dlugosc"
-                      name="Długość infrastruktury [km]"
-                      stroke="rgb(29, 113, 184)"
-                      strokeWidth={2}
-                      dot={{ r: 4, fill: "rgb(29, 113, 184)" }}
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              </div>
-            </Card>
-          </div>
-
-          <div>
-            <Card
-              title="Czynniki wyboru środka transportu"
-              subtitle="Źródło: Raport z badań społecznych 2024"
-              height={340}
-              onOpen={() => setOpenCard("czynniki")}
-            >
-              <div style={{ height: 280 }}>
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={[
-                      { czynnik: "Komfort podróży", odsetek: 59 },
-                      {
-                        czynnik: "Brak alternatywy",
-                        odsetek: 15,
-                      },
-                      { czynnik: "Czas przejazdu", odsetek: 13 },
-                      { czynnik: "Koszty", odsetek: 5 },
-                      { czynnik: "Bezpieczeństwo", odsetek: 4 },
-                      { czynnik: "Inne", odsetek: 3 },
-                      { czynnik: "Środowisko", odsetek: 1 },
-                    ]}
-                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
-                  >
-                    <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis
-                      dataKey="czynnik"
-                      interval={0}
-                      angle={-15}
-                      textAnchor="end"
-                      height={60}
-                      tick={{ fontSize: 11 }}
-                    />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
-                    <Tooltip
-                      formatter={(v: number) => [`${v}%`, "odsetek"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
-                    />
-                    <Bar
-                      dataKey="odsetek"
-                      name="Udział odpowiedzi [%]"
-                      fill="rgb(29, 113, 184)"
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
-              </div>
-            </Card>
-          </div>
-
-          <div>
             <Card
               title="Liczba miejsc P+R w gminach ościennych (2024)"
               subtitle="Źródło: Gminy SMK (bez Krakowa)"
-              height={340}
+              height={cardHeight}
               onOpen={() => setOpenCard("parkingPR")}
             >
-              <div style={{ height: 280 }}>
+              <div style={{ height: cardHeight - 60 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
@@ -436,14 +387,57 @@ export default function Mobilnosc() {
             </Card>
           </div>
 
-          <div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+            <Card
+              title="Przyrost infrastruktury rowerowej w gminach ościennych (bez Krakowa)"
+              subtitle="Łączna długość infrastruktury (skumulowana) | Źródło: BDL GUS"
+              height={cardHeight}
+              onOpen={() => setOpenCard("transportRowerowy")}
+            >
+              <div style={{ height: cardHeight - 60 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart
+                    data={[
+                      { rok: "2019", dlugosc: 6.1 },
+                      { rok: "2020", dlugosc: 6.1 },
+                      { rok: "2021", dlugosc: 7.6 },
+                      { rok: "2022", dlugosc: 10.58 },
+                      { rok: "2023", dlugosc: 11.73 },
+                      { rok: "2024", dlugosc: 20.53 },
+                    ]}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
+                  >
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <YAxis unit=" km" tick={{ fontSize: 11 }} />
+                    <Tooltip
+                      formatter={(value: number) => [
+                        `${value.toFixed(2)} km`,
+                        "Długość infrastruktury",
+                      ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
+                    />
+                    <Line
+                      type="monotone"
+                      dataKey="dlugosc"
+                      name="Długość infrastruktury [km]"
+                      stroke="rgb(29, 113, 184)"
+                      strokeWidth={2}
+                      dot={{ r: 4, fill: "rgb(29, 113, 184)" }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </Card>
+
             <Card
               title='Liczba parkingów „Parkuj i jedź" w Metropolii Krakowskiej (2019–2024)'
               subtitle="Źródło: Gminy SMK"
-              height={340}
+              height={cardHeight}
               onOpen={() => setOpenCard("miejsca")}
             >
-              <div style={{ height: 280 }}>
+              <div style={{ height: cardHeight - 60 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
