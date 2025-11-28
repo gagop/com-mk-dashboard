@@ -519,101 +519,70 @@ export default function Edukacja() {
             </Card>
 
             <Card
-              title="Porównanie wyników egzaminu 8-klasisty Metropolii Krakowskiej ze średnią krajową"
-              subtitle="Źródło: CKE, OKE Kraków"
+              title="Nauczyciele z najwyższymi kwalifikacjami"
+              subtitle="Źródło: SIO 2024"
               height={cardHeight}
-              onOpen={() => setOpenCard("porownanieWynikow")}
+              onOpen={() => setOpenCard("nauczycieleKwalifikacje")}
             >
               <div style={{ height: cardHeight - 60 }}>
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
-                      {
-                        przedmiot: "Język polski",
-                        MK: 68.4,
-                        Polska: 61,
-                        roznica: 7.4,
-                      },
-                      {
-                        przedmiot: "Matematyka",
-                        MK: 65.3,
-                        Polska: 52,
-                        roznica: 13.3,
-                      },
-                      {
-                        przedmiot: "Język angielski",
-                        MK: 74.4,
-                        Polska: 66,
-                        roznica: 8.4,
-                      },
-                    ]}
-                    margin={{ top: 24, right: 8, bottom: 48, left: 8 }}
+                      { gmina: "Mogilany", odsetek: 89.6 },
+                      { gmina: "Liszki", odsetek: 88.9 },
+                      { gmina: "Kocmyrzów-Luborzyca", odsetek: 87.3 },
+                      { gmina: "Niepołomice", odsetek: 86.1 },
+                      { gmina: "Wielka Wieś", odsetek: 85.8 },
+                      { gmina: "Czernichów", odsetek: 85.2 },
+                      { gmina: "Skawina", odsetek: 84.7 },
+                      { gmina: "Zielonki", odsetek: 84.0 },
+                      { gmina: "Świątniki Górne", odsetek: 83.5 },
+                      { gmina: "Biskupice", odsetek: 83.4 },
+                      { gmina: "Michałowice", odsetek: 81.5 },
+                      { gmina: "Zabierzów", odsetek: 81.2 },
+                      { gmina: "Wieliczka", odsetek: 80.3 },
+                      { gmina: "Igołomia-Wawrzeńczyce", odsetek: 79.1 },
+                    ].sort((a, b) => b.odsetek - a.odsetek)}
+                    margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
                     <XAxis
-                      dataKey="przedmiot"
+                      dataKey="gmina"
+                      angle={-35}
+                      textAnchor="end"
+                      interval={0}
+                      height={60}
                       tick={{ fontSize: 11 }}
-                      angle={0}
-                      textAnchor="middle"
                     />
                     <YAxis
-                      domain={[0, 100]}
+                      domain={[70, 95]}
                       unit=" %"
                       tick={{ fontSize: 11 }}
                     />
                     <Tooltip
-                      formatter={(v: number, name: string) => {
-                        if (name === "MK")
-                          return [`${v}%`, "Metropolia Krakowska"];
-                        if (name === "Polska")
-                          return [`${v}%`, "Średnia polska"];
-                        return [v, name];
-                      }}
+                      formatter={(v: number) => [
+                        `${v.toFixed(1).replace(".", ",")}%`,
+                        "odsetek nauczycieli",
+                      ]}
                       labelStyle={{ fontSize: 11 }}
                       itemStyle={{ fontSize: 11 }}
                     />
                     <Bar
-                      dataKey="MK"
-                      name="Metropolia Krakowska"
+                      dataKey="odsetek"
+                      name="Odsetek [%]"
                       fill="rgb(197, 59, 0)"
                       label={{
                         position: "top",
-                        fontSize: 10,
+                        fontSize: 9,
                         fill: "#333",
                         formatter: (v: React.ReactNode) => {
-                          if (typeof v === "number") return `${v}%`;
-                          return v;
-                        },
-                      }}
-                    />
-                    <Bar
-                      dataKey="Polska"
-                      name="Średnia polska"
-                      fill="rgb(180, 180, 180)"
-                      label={{
-                        position: "top",
-                        fontSize: 10,
-                        fill: "#333",
-                        formatter: (v: React.ReactNode) => {
-                          if (typeof v === "number") return `${v}%`;
+                          if (typeof v === "number") return Math.round(v);
                           return v;
                         },
                       }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
-                <div
-                  style={{
-                    fontSize: 10,
-                    color: "#666",
-                    textAlign: "center",
-                    marginTop: 8,
-                    padding: "0 8px",
-                  }}
-                >
-                  MK wyżej: Polski +7,4 p.p., Matematyka +13,3 p.p. (największa
-                  przewaga!), Angielski +8,4 p.p.
-                </div>
               </div>
             </Card>
           </div>
@@ -918,9 +887,9 @@ export default function Edukacja() {
       </Modal>
 
       <Modal
-        open={openCard === "porownanieWynikow"}
+        open={openCard === "nauczycieleKwalifikacje"}
         onClose={() => setOpenCard(null)}
-        title="Porównanie wyników egzaminu 8-klasisty Metropolii Krakowskiej ze średnią krajową"
+        title="Odsetek nauczycieli o najwyższych kwalifikacjach w samorządowych szkołach podstawowych w gminach Metropolii Krakowskiej w 2024 roku"
         width={1100}
         maxWidth="95vw"
       >
@@ -928,66 +897,48 @@ export default function Edukacja() {
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={[
-                {
-                  przedmiot: "Język polski",
-                  MK: 68.4,
-                  Polska: 61,
-                  roznica: 7.4,
-                },
-                {
-                  przedmiot: "Matematyka",
-                  MK: 65.3,
-                  Polska: 52,
-                  roznica: 13.3,
-                },
-                {
-                  przedmiot: "Język angielski",
-                  MK: 74.4,
-                  Polska: 66,
-                  roznica: 8.4,
-                },
-              ]}
-              margin={{ top: 24, right: 8, bottom: 48, left: 8 }}
+                { gmina: "Mogilany", odsetek: 89.6 },
+                { gmina: "Liszki", odsetek: 88.9 },
+                { gmina: "Kocmyrzów-Luborzyca", odsetek: 87.3 },
+                { gmina: "Niepołomice", odsetek: 86.1 },
+                { gmina: "Wielka Wieś", odsetek: 85.8 },
+                { gmina: "Czernichów", odsetek: 85.2 },
+                { gmina: "Skawina", odsetek: 84.7 },
+                { gmina: "Zielonki", odsetek: 84.0 },
+                { gmina: "Świątniki Górne", odsetek: 83.5 },
+                { gmina: "Biskupice", odsetek: 83.4 },
+                { gmina: "Michałowice", odsetek: 81.5 },
+                { gmina: "Zabierzów", odsetek: 81.2 },
+                { gmina: "Wieliczka", odsetek: 80.3 },
+                { gmina: "Igołomia-Wawrzeńczyce", odsetek: 79.1 },
+              ].sort((a, b) => b.odsetek - a.odsetek)}
+              margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis
-                dataKey="przedmiot"
-                tick={{ fontSize: 14 }}
-                angle={0}
-                textAnchor="middle"
+                dataKey="gmina"
+                angle={-35}
+                textAnchor="end"
+                interval={0}
+                height={60}
               />
-              <YAxis domain={[0, 100]} unit=" %" />
+              <YAxis domain={[70, 95]} unit=" %" />
               <Tooltip
-                formatter={(v: number, name: string) => {
-                  if (name === "MK") return [`${v}%`, "Metropolia Krakowska"];
-                  if (name === "Polska") return [`${v}%`, "Średnia polska"];
-                  return [v, name];
-                }}
+                formatter={(v: number) => [
+                  `${v.toFixed(1).replace(".", ",")}%`,
+                  "odsetek nauczycieli",
+                ]}
               />
               <Bar
-                dataKey="MK"
-                name="Metropolia Krakowska"
+                dataKey="odsetek"
+                name="Odsetek [%]"
                 fill="rgb(197, 59, 0)"
                 label={{
                   position: "top",
                   fontSize: 12,
                   fill: "#333",
                   formatter: (v: React.ReactNode) => {
-                    if (typeof v === "number") return `${v}%`;
-                    return v;
-                  },
-                }}
-              />
-              <Bar
-                dataKey="Polska"
-                name="Średnia polska"
-                fill="rgb(180, 180, 180)"
-                label={{
-                  position: "top",
-                  fontSize: 12,
-                  fill: "#333",
-                  formatter: (v: React.ReactNode) => {
-                    if (typeof v === "number") return `${v}%`;
+                    if (typeof v === "number") return Math.round(v);
                     return v;
                   },
                 }}
@@ -1003,15 +954,9 @@ export default function Edukacja() {
               padding: "0 16px",
             }}
           >
-            <strong>
-              Metropolia Krakowska wypada lepiej niż średnia krajowa:
-            </strong>
-            <br />
-            Język polski: +7,4 punktu procentowego
-            <br />
-            Matematyka: +13,3 punktu procentowego (największa przewaga!)
-            <br />
-            Język angielski: +8,4 punktu procentowego
+            Odsetek nauczycieli o najwyższych kwalifikacjach (mianowani i
+            dyplomowani) w samorządowych szkołach podstawowych w gminach
+            Metropolii Krakowskiej w 2024 roku. Średnia dla MK: 84,0%.
           </div>
         </div>
       </Modal>
