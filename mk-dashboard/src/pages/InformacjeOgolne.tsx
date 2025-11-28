@@ -656,6 +656,7 @@ export default function InformacjeOgolne() {
                     dataKey="gmina"
                     tick={{ fontSize: 10 }}
                     width={95}
+                    interval={0}
                   />
                   <Tooltip
                     formatter={(v: number, name: string) => {
@@ -958,6 +959,7 @@ export default function InformacjeOgolne() {
                 dataKey="gmina"
                 tick={{ fontSize: 12 }}
                 width={125}
+                interval={0}
               />
               <Tooltip
                 formatter={(v: number, name: string) => {
