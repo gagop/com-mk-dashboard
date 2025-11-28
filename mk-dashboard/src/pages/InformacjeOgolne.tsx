@@ -269,6 +269,7 @@ export default function InformacjeOgolne() {
         >
           <Card
             title="Przyrost naturalny w gminach Metropolii Krakowskiej w 2024 roku"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("przyrost2024")}
           >
@@ -407,6 +408,7 @@ export default function InformacjeOgolne() {
 
           <Card
             title="Zmiany liczby ludności Metropolii Krakowskiej w latach 2019–2024"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("mkTrend")}
           >
@@ -453,6 +455,7 @@ export default function InformacjeOgolne() {
           <div style={{ gridRow: "span 2" }}>
             <Card
               title="Ludność gmin"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight * 2 + 12}
               onOpen={() => setOpenCard("gminyPop")}
             >
@@ -526,7 +529,7 @@ export default function InformacjeOgolne() {
 
           <Card
             title="Wskaźnik obciążenia demograficznego"
-            subtitle="Gminy Metropolii Krakowskiej"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("obciazenie")}
           >
@@ -577,6 +580,7 @@ export default function InformacjeOgolne() {
 
           <Card
             title="Zmiana liczby ludności w gminach Stowarzyszenia Metropolii Krakowskiej [%] w latach 2019–2024"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("zmianaGmin")}
           >
@@ -628,6 +632,7 @@ export default function InformacjeOgolne() {
 
           <Card
             title="Struktura wieku mieszkańców w gminach Metropolii Krakowskiej w 2024 roku"
+            subtitle="Źródło: BDL GUS"
             height={cardHeight}
             onOpen={() => setOpenCard("strukturaWieku")}
           >
