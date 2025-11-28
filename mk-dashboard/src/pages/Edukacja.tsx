@@ -319,9 +319,66 @@ export default function Edukacja() {
                   flexDirection: "column",
                   justifyContent: "center",
                   alignItems: "center",
-                  gap: 8,
+                  gap: 12,
                 }}
               >
+                <svg
+                  width="96"
+                  height="96"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  {/* Backpack body */}
+                  <rect
+                    x="12"
+                    y="20"
+                    width="40"
+                    height="38"
+                    rx="6"
+                    stroke="rgb(197, 59, 0)"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                  {/* Top flap/pocket */}
+                  <path
+                    d="M20 20V14C20 10.6863 22.6863 8 26 8H38C41.3137 8 44 10.6863 44 14V20"
+                    stroke="rgb(197, 59, 0)"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                  {/* Top pocket */}
+                  <rect
+                    x="22"
+                    y="12"
+                    width="20"
+                    height="12"
+                    rx="3"
+                    stroke="rgb(197, 59, 0)"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                  {/* Bottom pocket */}
+                  <rect
+                    x="18"
+                    y="38"
+                    width="28"
+                    height="14"
+                    rx="3"
+                    stroke="rgb(197, 59, 0)"
+                    strokeWidth="2.5"
+                    fill="none"
+                  />
+                  {/* Pocket line */}
+                  <line
+                    x1="18"
+                    y1="44"
+                    x2="46"
+                    y2="44"
+                    stroke="rgb(197, 59, 0)"
+                    strokeWidth="2.5"
+                  />
+                </svg>
                 <div
                   style={{
                     fontSize: 48,
