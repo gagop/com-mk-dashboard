@@ -298,7 +298,7 @@ export default function Mobilnosc() {
               onOpen={() => setOpenCard("transportRowerowy")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="90%">
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2019", dlugosc: 6.1 },
@@ -308,37 +308,26 @@ export default function Mobilnosc() {
                       { rok: "2023", dlugosc: 11.73 },
                       { rok: "2024", dlugosc: 20.53 },
                     ]}
-                    margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis
-                      dataKey="rok"
-                      label={{
-                        value: "Rok",
-                        position: "insideBottom",
-                        offset: -10,
-                      }}
-                    />
-                    <YAxis
-                      label={{
-                        value: "Długość [km]",
-                        angle: -90,
-                        position: "insideLeft",
-                      }}
-                    />
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <YAxis unit=" km" tick={{ fontSize: 11 }} />
                     <Tooltip
                       formatter={(value: number) => [
                         `${value.toFixed(2)} km`,
                         "Długość infrastruktury",
                       ]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
                     />
                     <Line
                       type="monotone"
                       dataKey="dlugosc"
-                      stroke="#8884d8"
+                      name="Długość infrastruktury [km]"
+                      stroke="rgb(29, 113, 184)"
                       strokeWidth={2}
-                      dot={{ r: 4 }}
-                      activeDot={{ r: 6 }}
+                      dot={{ r: 4, fill: "rgb(29, 113, 184)" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -454,8 +443,8 @@ export default function Mobilnosc() {
               height={340}
               onOpen={() => setOpenCard("miejsca")}
             >
-              <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="55%">
+              <div style={{ height: 280 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2019", liczba: 14 },
@@ -465,37 +454,23 @@ export default function Mobilnosc() {
                       { rok: "2023", liczba: 34 },
                       { rok: "2024", liczba: 42 },
                     ]}
-                    margin={{ top: 20, right: 30, bottom: 20, left: 20 }}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="rok" />
-                    <YAxis
-                      label={{
-                        value: "Liczba parkingów (suma z gmin)",
-                        angle: -90,
-                        position: "insideLeft",
-                        style: { textAnchor: "middle", fontSize: 11 },
-                      }}
-                      domain={[10, 45]}
-                      tick={{ fontSize: 11 }}
-                    />
+                    <CartesianGrid vertical={false} stroke="#eee" />
+                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <YAxis domain={[10, 45]} tick={{ fontSize: 11 }} />
                     <Tooltip
                       formatter={(value: number) => [value, "Liczba parkingów"]}
+                      labelStyle={{ fontSize: 11 }}
+                      itemStyle={{ fontSize: 11 }}
                     />
                     <Line
                       type="monotone"
                       dataKey="liczba"
+                      name="Liczba parkingów"
                       stroke="#1d4e89"
                       strokeWidth={2}
-                      dot={{ r: 5, fill: "#1d4e89" }}
-                      activeDot={{ r: 7 }}
-                      label={{
-                        position: "top",
-                        offset: 10,
-                        fontSize: 12,
-                        fontWeight: "bold",
-                        fill: "#1d4e89",
-                      }}
+                      dot={{ r: 4, fill: "#1d4e89" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -560,44 +535,24 @@ export default function Mobilnosc() {
                 { rok: "2023", dlugosc: 11.73 },
                 { rok: "2024", dlugosc: 20.53 },
               ]}
-              margin={{ top: 20, right: 30, bottom: 40, left: 60 }}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis
-                dataKey="rok"
-                label={{
-                  value: "Rok",
-                  position: "insideBottom",
-                  offset: -20,
-                  fontSize: 14,
-                }}
-                tick={{ fontSize: 12 }}
-              />
-              <YAxis
-                label={{
-                  value: "Długość infrastruktury [km]",
-                  angle: -90,
-                  position: "insideLeft",
-                  fontSize: 14,
-                }}
-                tick={{ fontSize: 12 }}
-              />
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis unit=" km" />
               <Tooltip
                 formatter={(value: number) => [
                   `${value.toFixed(2)} km`,
                   "Długość infrastruktury",
                 ]}
-                labelStyle={{ fontSize: 12 }}
-                itemStyle={{ fontSize: 12 }}
               />
               <Line
                 type="monotone"
                 dataKey="dlugosc"
-                stroke="#8884d8"
-                strokeWidth={3}
-                dot={{ r: 6 }}
-                activeDot={{ r: 8 }}
-                name="Infrastruktura rowerowa"
+                name="Długość infrastruktury [km]"
+                stroke="rgb(29, 113, 184)"
+                strokeWidth={2}
+                dot={{ r: 4, fill: "rgb(29, 113, 184)" }}
               />
             </LineChart>
           </ResponsiveContainer>
@@ -711,37 +666,21 @@ export default function Mobilnosc() {
                 { rok: "2023", liczba: 34 },
                 { rok: "2024", liczba: 42 },
               ]}
-              margin={{ top: 30, right: 40, bottom: 40, left: 80 }}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="rok" tick={{ fontSize: 14 }} />
-              <YAxis
-                label={{
-                  value: "Liczba parkingów (suma z gmin)",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: { textAnchor: "middle", fontSize: 14 },
-                }}
-                domain={[10, 45]}
-                tick={{ fontSize: 14 }}
-              />
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis domain={[10, 45]} />
               <Tooltip
                 formatter={(value: number) => [value, "Liczba parkingów"]}
               />
               <Line
                 type="monotone"
                 dataKey="liczba"
+                name="Liczba parkingów"
                 stroke="#1d4e89"
-                strokeWidth={3}
-                dot={{ r: 6, fill: "#1d4e89" }}
-                activeDot={{ r: 8 }}
-                label={{
-                  position: "top",
-                  offset: 10,
-                  fontSize: 14,
-                  fontWeight: "bold",
-                  fill: "#1d4e89",
-                }}
+                strokeWidth={2}
+                dot={{ r: 4, fill: "#1d4e89" }}
               />
             </LineChart>
           </ResponsiveContainer>

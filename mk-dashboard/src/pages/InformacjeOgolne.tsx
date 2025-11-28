@@ -445,7 +445,7 @@ export default function InformacjeOgolne() {
                     name="ludność"
                     stroke={IO_CHART_COLORS[2]}
                     strokeWidth={2}
-                    dot={{ r: 2 }}
+                    dot={{ r: 4, fill: IO_CHART_COLORS[2] }}
                   />
                 </LineChart>
               </ResponsiveContainer>
@@ -882,7 +882,7 @@ export default function InformacjeOgolne() {
                 name="ludność"
                 stroke={IO_CHART_COLORS[2]}
                 strokeWidth={2}
-                dot={{ r: 2 }}
+                dot={{ r: 4, fill: IO_CHART_COLORS[2] }}
               />
             </LineChart>
           </ResponsiveContainer>

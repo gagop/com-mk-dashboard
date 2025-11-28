@@ -359,7 +359,7 @@ export default function KulturaCzasuWolnego() {
                       name="Czytelnicy"
                       stroke="rgb(144, 12, 0)"
                       strokeWidth={2}
-                      dot={{ r: 4 }}
+                      dot={{ r: 4, fill: "rgb(144, 12, 0)" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -546,7 +546,7 @@ export default function KulturaCzasuWolnego() {
                 name="Czytelnicy"
                 stroke="rgb(144, 12, 0)"
                 strokeWidth={2}
-                dot={{ r: 4 }}
+                dot={{ r: 4, fill: "rgb(144, 12, 0)" }}
               />
             </LineChart>
           </ResponsiveContainer>

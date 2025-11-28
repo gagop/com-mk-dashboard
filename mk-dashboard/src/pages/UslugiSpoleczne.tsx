@@ -243,7 +243,7 @@ export default function UslugiSpoleczne() {
                         name="liczba przychodni"
                         stroke="rgb(216, 134, 30)"
                         strokeWidth={2}
-                        dot={{ r: 2 }}
+                        dot={{ r: 4, fill: "rgb(216, 134, 30)" }}
                         label={{
                           position: "top",
                           fontSize: 10,
@@ -580,7 +580,7 @@ export default function UslugiSpoleczne() {
                 name="liczba przychodni"
                 stroke="rgb(216, 134, 30)"
                 strokeWidth={2}
-                dot={{ r: 2 }}
+                dot={{ r: 4, fill: "rgb(216, 134, 30)" }}
                 label={{
                   position: "top",
                   fontSize: 10,

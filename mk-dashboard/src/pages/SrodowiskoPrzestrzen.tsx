@@ -480,7 +480,7 @@ export default function SrodowiskoPrzestrzen() {
               onOpen={() => setOpenCard("wodociagi")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="90%">
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2020", dlugosc: 4712.8 },
@@ -489,19 +489,14 @@ export default function SrodowiskoPrzestrzen() {
                       { rok: "2023", dlugosc: 4914.3 },
                       { rok: "2024", dlugosc: 4977.1 },
                     ]}
-                    margin={{ top: 8, right: 16, bottom: 8, left: 48 }}
+                    margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
+                    <CartesianGrid vertical={false} stroke="#eee" />
                     <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
                     <YAxis
                       tick={{ fontSize: 11 }}
                       domain={[4600, 5000]}
-                      label={{
-                        value: "km",
-                        angle: -90,
-                        position: "insideLeft",
-                        style: { fontSize: 11, textAnchor: "middle" },
-                      }}
+                      unit=" km"
                     />
                     <Tooltip
                       formatter={(v: number) => [
@@ -518,7 +513,6 @@ export default function SrodowiskoPrzestrzen() {
                       stroke="rgb(58, 142, 20)"
                       strokeWidth={2}
                       dot={{ fill: "rgb(58, 142, 20)", r: 4 }}
-                      activeDot={{ r: 6 }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -742,20 +736,11 @@ export default function SrodowiskoPrzestrzen() {
                 { rok: "2023", dlugosc: 4914.3 },
                 { rok: "2024", dlugosc: 4977.1 },
               ]}
-              margin={{ top: 16, right: 32, bottom: 16, left: 48 }}
+              margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
-              <CartesianGrid strokeDasharray="3 3" stroke="#eee" />
-              <XAxis dataKey="rok" tick={{ fontSize: 13 }} />
-              <YAxis
-                tick={{ fontSize: 13 }}
-                domain={[4600, 5000]}
-                label={{
-                  value: "km",
-                  angle: -90,
-                  position: "insideLeft",
-                  style: { fontSize: 13, textAnchor: "middle" },
-                }}
-              />
+              <CartesianGrid vertical={false} stroke="#eee" />
+              <XAxis dataKey="rok" />
+              <YAxis domain={[4600, 5000]} unit=" km" />
               <Tooltip
                 formatter={(v: number) => [
                   `${v.toFixed(1)} km`,
@@ -767,9 +752,8 @@ export default function SrodowiskoPrzestrzen() {
                 dataKey="dlugosc"
                 name="Długość sieci wodociągowej [km]"
                 stroke="rgb(58, 142, 20)"
-                strokeWidth={3}
-                dot={{ fill: "rgb(58, 142, 20)", r: 6 }}
-                activeDot={{ r: 8 }}
+                strokeWidth={2}
+                dot={{ fill: "rgb(58, 142, 20)", r: 4 }}
               />
             </LineChart>
           </ResponsiveContainer>

@@ -334,7 +334,7 @@ export default function Gospodarka() {
                       name="Liczba podmiotów"
                       stroke="rgb(116, 27, 105)"
                       strokeWidth={2}
-                      dot={{ r: 2 }}
+                      dot={{ r: 4, fill: "rgb(116, 27, 105)" }}
                     />
                   </LineChart>
                 </ResponsiveContainer>
@@ -586,7 +586,7 @@ export default function Gospodarka() {
                 name="Liczba podmiotów"
                 stroke="rgb(116, 27, 105)"
                 strokeWidth={2}
-                dot={{ r: 2 }}
+                dot={{ r: 4, fill: "rgb(116, 27, 105)" }}
               />
             </LineChart>
           </ResponsiveContainer>
