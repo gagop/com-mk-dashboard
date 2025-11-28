@@ -495,7 +495,7 @@ export default function SrodowiskoPrzestrzen() {
                     <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
                     <YAxis
                       tick={{ fontSize: 11 }}
-                      domain={[4600, 5100]}
+                      domain={[4600, 5000]}
                       label={{
                         value: "km",
                         angle: -90,
@@ -748,7 +748,7 @@ export default function SrodowiskoPrzestrzen() {
               <XAxis dataKey="rok" tick={{ fontSize: 13 }} />
               <YAxis
                 tick={{ fontSize: 13 }}
-                domain={[4600, 5100]}
+                domain={[4600, 5000]}
                 label={{
                   value: "km",
                   angle: -90,
