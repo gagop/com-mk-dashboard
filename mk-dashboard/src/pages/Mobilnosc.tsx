@@ -293,7 +293,7 @@ export default function Mobilnosc() {
           <div>
             <Card
               title="Przyrost infrastruktury rowerowej w gminach ościennych (bez Krakowa)"
-              subtitle="Łączna długość infrastruktury (skumulowana)"
+              subtitle="Łączna długość infrastruktury (skumulowana) | Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("transportRowerowy")}
             >

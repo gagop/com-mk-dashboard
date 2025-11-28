@@ -422,12 +422,12 @@ export default function KulturaCzasuWolnego() {
           <div>
             <Card
               title="Zestawienie placówek kulturalnych według typu"
-              subtitle="Placówki kulturalne w Metropolii Krakowskiej w 2023 r."
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
               height={cardHeight}
               onOpen={() => setOpenCard("biblioteki")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { typ: "biblioteki publiczne i filie", liczba: 116 },
