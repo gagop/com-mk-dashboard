@@ -612,7 +612,7 @@ export default function Edukacja() {
                       tick={{ fontSize: 11 }}
                     />
                     <YAxis
-                      domain={[70, 95]}
+                      domain={[70, 92]}
                       unit=" %"
                       tick={{ fontSize: 11 }}
                     />
@@ -979,7 +979,7 @@ export default function Edukacja() {
                 interval={0}
                 height={60}
               />
-              <YAxis domain={[70, 95]} unit=" %" />
+              <YAxis domain={[70, 92]} unit=" %" />
               <Tooltip
                 formatter={(v: number) => [
                   `${v.toFixed(1).replace(".", ",")}%`,
