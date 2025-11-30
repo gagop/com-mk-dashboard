@@ -641,7 +641,7 @@ export default function InformacjeOgolne() {
                 <BarChart
                   data={strukturaWiekuData}
                   layout="vertical"
-                  margin={{ top: 8, right: 8, bottom: 8, left: 100 }}
+                  margin={{ top: 8, right: 8, bottom: 8, left: 30 }}
                 >
                   <CartesianGrid horizontal={false} stroke="#eee" />
                   <XAxis
