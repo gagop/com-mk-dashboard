@@ -65,7 +65,7 @@ export default function Gospodarka() {
         >
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
-              title="Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego w 2024 r."
+              title="Poziom zadowolenia mieszkańców z możliwości rozwoju zawodowego"
               subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowoleniePrzedsiebiorcow")}
