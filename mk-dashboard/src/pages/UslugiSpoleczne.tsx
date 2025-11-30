@@ -380,7 +380,7 @@ export default function UslugiSpoleczne() {
               >
                 <div
                   style={{
-                    height: 140,
+                    height: 100,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
