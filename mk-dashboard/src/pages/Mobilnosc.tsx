@@ -347,14 +347,20 @@ export default function Mobilnosc() {
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
+                      { gmina: "Skawina", miejsca: 590 },
+                      { gmina: "Wieliczka", miejsca: 480 },
+                      { gmina: "Niepołomice", miejsca: 472 },
+                      { gmina: "Kocmyrzów-Luborzyca", miejsca: 329 },
                       { gmina: "Michałowice", miejsca: 104 },
-                      { gmina: "Niepołomice", miejsca: 63 },
                       { gmina: "Zabierzów", miejsca: 55 },
                       { gmina: "Świątniki-Górne", miejsca: 50 },
-                      { gmina: "Kocmyrzów-Luborzyca", miejsca: 47 },
                       { gmina: "Biskupice", miejsca: 32 },
                       { gmina: "Igołomia-Wawrzeńczyce", miejsca: 30 },
                       { gmina: "Czernichów", miejsca: 23 },
+                      { gmina: "Liszki", miejsca: 0 },
+                      { gmina: "Mogilany", miejsca: 0 },
+                      { gmina: "Wielka Wieś", miejsca: 0 },
+                      { gmina: "Zielonki", miejsca: 0 },
                     ]}
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
