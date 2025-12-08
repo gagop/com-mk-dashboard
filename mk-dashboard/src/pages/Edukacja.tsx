@@ -234,17 +234,6 @@ export default function Edukacja() {
                       dataKey="kwota"
                       name="Środki [zł]"
                       fill="rgb(197, 59, 0)"
-                      label={{
-                        position: "top",
-                        fontSize: 10,
-                        fill: "#333",
-                        formatter: (
-                          label: React.ReactNode
-                        ): React.ReactNode => {
-                          const value = Number(label);
-                          return `${(value / 1_000_000).toFixed(1)}M`;
-                        },
-                      }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -274,10 +263,7 @@ export default function Edukacja() {
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
                     <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                    <YAxis
-                      domain={["dataMin - 5000", "dataMax + 5000"]}
-                      tick={{ fontSize: 11 }}
-                    />
+                    <YAxis domain={[0, 38000]} tick={{ fontSize: 11 }} />
                     <Tooltip
                       formatter={(v: number) => [
                         new Intl.NumberFormat("pl-PL").format(v),
@@ -719,20 +705,7 @@ export default function Edukacja() {
                   "środki [zł]",
                 ]}
               />
-              <Bar
-                dataKey="kwota"
-                name="Środki [zł]"
-                fill="rgb(197, 59, 0)"
-                label={{
-                  position: "top",
-                  fontSize: 10,
-                  fill: "#333",
-                  formatter: (label: React.ReactNode): React.ReactNode => {
-                    const value = Number(label);
-                    return `${(value / 1_000_000).toFixed(1)}M`;
-                  },
-                }}
-              />
+              <Bar dataKey="kwota" name="Środki [zł]" fill="rgb(197, 59, 0)" />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -759,7 +732,7 @@ export default function Edukacja() {
             >
               <CartesianGrid vertical={false} stroke="#eee" />
               <XAxis dataKey="rok" />
-              <YAxis domain={["dataMin - 5000", "dataMax + 5000"]} />
+              <YAxis domain={[0, 38000]} />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
