@@ -309,7 +309,7 @@ export default function InteligentneZarzadzanie() {
                       height={60}
                       tick={{ fontSize: 11 }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 100]} />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 65]} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "frekwencja"]}
                       labelStyle={{ fontSize: 11 }}
@@ -574,7 +574,7 @@ export default function InteligentneZarzadzanie() {
                       height={60}
                       tick={{ fontSize: 11 }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 620]} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "zmiana 2019–2024"]}
                       labelStyle={{ fontSize: 11 }}
@@ -667,7 +667,7 @@ export default function InteligentneZarzadzanie() {
                 interval={0}
                 height={60}
               />
-              <YAxis unit="%" domain={[0, 100]} />
+              <YAxis unit="%" domain={[0, 65]} />
               <Tooltip formatter={(v: number) => [`${v}%`, "frekwencja"]} />
               <Bar
                 dataKey="frekwencja"
@@ -912,7 +912,7 @@ export default function InteligentneZarzadzanie() {
                 interval={0}
                 height={60}
               />
-              <YAxis unit="%" />
+              <YAxis unit="%" domain={[0, 620]} />
               <Tooltip
                 formatter={(v: number) => [`${v}%`, "zmiana 2019–2024"]}
               />
