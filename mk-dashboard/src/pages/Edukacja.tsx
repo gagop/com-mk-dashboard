@@ -249,7 +249,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("dzieci")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={LATA.map((rok) => ({
                       rok: String(rok),
@@ -300,7 +300,7 @@ export default function Edukacja() {
             >
               <div
                 style={{
-                  height: cardHeight - 60,
+                  height: cardHeight - 120,
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
