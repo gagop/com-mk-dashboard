@@ -14,7 +14,15 @@ export default function Card({
   onOpen?: () => void;
 }) {
   return (
-    <div className="card" style={{ padding: 12, height }}>
+    <div
+      className="card"
+      style={{
+        padding: 12,
+        height,
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
       {(title || subtitle || right) && (
         <div
           style={{
@@ -22,6 +30,7 @@ export default function Card({
             alignItems: "baseline",
             justifyContent: "space-between",
             marginBottom: 8,
+            flexShrink: 0,
           }}
         >
           <div>
@@ -43,7 +52,9 @@ export default function Card({
           {right}
         </div>
       )}
-      {children}
+      <div style={{ flex: 1, minHeight: 0, overflow: "hidden" }}>
+        {children}
+      </div>
     </div>
   );
 }

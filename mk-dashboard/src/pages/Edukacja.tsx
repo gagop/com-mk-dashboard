@@ -22,14 +22,23 @@ import {
 export default function Edukacja() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -77,7 +86,7 @@ export default function Edukacja() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -179,7 +188,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("srodki")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -210,7 +219,7 @@ export default function Edukacja() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
                     <YAxis
                       tickFormatter={(value) =>
@@ -220,15 +229,15 @@ export default function Edukacja() {
                           maximumFractionDigits: 1,
                         }).format(value)
                       }
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
                     <Tooltip
                       formatter={(v: number) => [
                         new Intl.NumberFormat("pl-PL").format(v),
                         "środki [zł]",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="kwota"
@@ -248,7 +257,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("dzieci")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={LATA.map((rok) => ({
@@ -262,31 +271,23 @@ export default function Edukacja() {
                     margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                    <YAxis domain={[0, 38000]} tick={{ fontSize: 11 }} />
+                    <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
+                    <YAxis
+                      domain={[0, 38000]}
+                      tick={{ fontSize: chartFontSize }}
+                    />
                     <Tooltip
                       formatter={(v: number) => [
                         new Intl.NumberFormat("pl-PL").format(v),
                         "dzieci 3–5 lat",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="liczba"
                       name="Dzieci 3–5 lat"
                       fill="rgb(197, 59, 0)"
-                      label={{
-                        position: "top",
-                        fontSize: 10,
-                        fill: "#333",
-                        formatter: (v: React.ReactNode): React.ReactNode => {
-                          if (typeof v === "number") {
-                            return new Intl.NumberFormat("pl-PL").format(v);
-                          }
-                          return v;
-                        },
-                      }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -300,7 +301,7 @@ export default function Edukacja() {
             >
               <div
                 style={{
-                  height: cardHeight - 120,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
@@ -396,7 +397,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("szkoly")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -429,22 +430,21 @@ export default function Edukacja() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis tick={{ fontSize: 11 }} />
+                    <YAxis tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [
                         String(v),
                         "szkoły podstawowe",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="liczba"
                       name="Szkoły podstawowe"
                       fill="rgb(244, 76, 0)"
-                      label={{ position: "top", fontSize: 10, fill: "#333" }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -457,7 +457,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("egzaminPolski")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
@@ -473,19 +473,18 @@ export default function Edukacja() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit=" %" tick={{ fontSize: 11 }} />
+                    <YAxis unit=" %" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "średni wynik"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wynik"
                       name="Wynik polski [%]"
                       fill="rgb(197, 59, 0)"
-                      label={{ position: "top", fontSize: 10, fill: "#333" }}
                     />
                     <ReferenceLine
                       y={61}
@@ -513,7 +512,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("egzaminMatematyka")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
@@ -529,19 +528,18 @@ export default function Edukacja() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit=" %" tick={{ fontSize: 11 }} />
+                    <YAxis unit=" %" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "średni wynik"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wynik"
                       name="Wynik matematyka [%]"
                       fill="rgb(244, 76, 0)"
-                      label={{ position: "top", fontSize: 10, fill: "#333" }}
                     />
                     <ReferenceLine
                       y={52}
@@ -567,7 +565,7 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("nauczycieleKwalifikacje")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -595,34 +593,25 @@ export default function Edukacja() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
                     <YAxis
                       domain={[70, 92]}
                       unit=" %"
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
                     <Tooltip
                       formatter={(v: number) => [
                         `${v.toFixed(1).replace(".", ",")}%`,
                         "odsetek nauczycieli",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="odsetek"
                       name="Odsetek [%]"
                       fill="rgb(197, 59, 0)"
-                      label={{
-                        position: "top",
-                        fontSize: 9,
-                        fill: "#333",
-                        formatter: (v: React.ReactNode) => {
-                          if (typeof v === "number") return Math.round(v);
-                          return v;
-                        },
-                      }}
                     />
                   </BarChart>
                 </ResponsiveContainer>
@@ -743,17 +732,6 @@ export default function Edukacja() {
                 dataKey="liczba"
                 name="Dzieci 3–5 lat"
                 fill="rgb(197, 59, 0)"
-                label={{
-                  position: "top",
-                  fontSize: 10,
-                  fill: "#333",
-                  formatter: (v: React.ReactNode): React.ReactNode => {
-                    if (typeof v === "number") {
-                      return new Intl.NumberFormat("pl-PL").format(v);
-                    }
-                    return v;
-                  },
-                }}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -809,7 +787,6 @@ export default function Edukacja() {
                 dataKey="liczba"
                 name="Szkoły podstawowe"
                 fill="rgb(244, 76, 0)"
-                label={{ position: "top", fontSize: 10, fill: "#333" }}
               />
             </BarChart>
           </ResponsiveContainer>
@@ -846,7 +823,6 @@ export default function Edukacja() {
                 dataKey="wynik"
                 name="Wynik polski [%]"
                 fill="rgb(197, 59, 0)"
-                label={{ position: "top", fontSize: 10, fill: "#333" }}
               />
               <ReferenceLine
                 y={61}
@@ -896,7 +872,6 @@ export default function Edukacja() {
                 dataKey="wynik"
                 name="Wynik matematyka [%]"
                 fill="rgb(244, 76, 0)"
-                label={{ position: "top", fontSize: 10, fill: "#333" }}
               />
               <ReferenceLine
                 y={52}
@@ -963,15 +938,6 @@ export default function Edukacja() {
                 dataKey="odsetek"
                 name="Odsetek [%]"
                 fill="rgb(197, 59, 0)"
-                label={{
-                  position: "top",
-                  fontSize: 12,
-                  fill: "#333",
-                  formatter: (v: React.ReactNode) => {
-                    if (typeof v === "number") return Math.round(v);
-                    return v;
-                  },
-                }}
               />
             </BarChart>
           </ResponsiveContainer>

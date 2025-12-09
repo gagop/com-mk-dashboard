@@ -16,11 +16,13 @@ import {
 export default function SrodowiskoPrzestrzen() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       // Get available height
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       // Subtract header (~60px), page title (~30px), footer (~70px), and margins/gaps
       const availableHeight = viewportHeight - 180;
       // We have 2 rows of cards, divide by 2 and subtract gap
@@ -28,6 +30,13 @@ export default function SrodowiskoPrzestrzen() {
       // Set minimum height to prevent cards from being too small, allow larger heights
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -75,7 +84,7 @@ export default function SrodowiskoPrzestrzen() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -189,7 +198,7 @@ export default function SrodowiskoPrzestrzen() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -300,7 +309,7 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("recykling")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -331,13 +340,13 @@ export default function SrodowiskoPrzestrzen() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "poziom"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="poziom"
@@ -357,7 +366,7 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("pm10")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -388,13 +397,13 @@ export default function SrodowiskoPrzestrzen() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit=" Mg" tick={{ fontSize: 11 }} />
+                    <YAxis unit=" Mg" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [v.toString(), "redukcja PM10"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="pm10"
@@ -414,7 +423,7 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("mieszkania")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -450,16 +459,16 @@ export default function SrodowiskoPrzestrzen() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis tick={{ fontSize: 11 }} />
+                    <YAxis tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [
                         v.toString(),
                         "na 10 tys. ludności",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wartosc"
@@ -479,7 +488,7 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("wodociagi")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
@@ -492,9 +501,9 @@ export default function SrodowiskoPrzestrzen() {
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
                     <YAxis
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                       domain={[4600, 5000]}
                       unit=" km"
                     />
@@ -503,8 +512,8 @@ export default function SrodowiskoPrzestrzen() {
                         `${v.toFixed(1)} km`,
                         "Długość sieci",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Line
                       type="monotone"

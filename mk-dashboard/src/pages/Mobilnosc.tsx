@@ -16,14 +16,23 @@ import {
 export default function Mobilnosc() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -71,7 +80,7 @@ export default function Mobilnosc() {
             >
               <div
                 style={{
-                  height: cardHeight - 110,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -181,7 +190,7 @@ export default function Mobilnosc() {
               height={cardHeight}
               onOpen={() => setOpenCard("czynniki")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -205,13 +214,13 @@ export default function Mobilnosc() {
                       angle={-15}
                       textAnchor="end"
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "odsetek"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="odsetek"
@@ -233,7 +242,7 @@ export default function Mobilnosc() {
             >
               <div
                 style={{
-                  height: cardHeight - 110,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -343,7 +352,7 @@ export default function Mobilnosc() {
               height={cardHeight}
               onOpen={() => setOpenCard("parkingPR")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -373,14 +382,14 @@ export default function Mobilnosc() {
                       height={80}
                       tick={{ fontSize: 9 }}
                     />
-                    <YAxis tick={{ fontSize: 11 }} />
+                    <YAxis tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [
                         `${v} miejsc`,
                         "Liczba miejsc",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="miejsca"
@@ -400,7 +409,7 @@ export default function Mobilnosc() {
               height={cardHeight}
               onOpen={() => setOpenCard("transportRowerowy")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
@@ -414,15 +423,15 @@ export default function Mobilnosc() {
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                    <YAxis unit=" km" tick={{ fontSize: 11 }} />
+                    <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
+                    <YAxis unit=" km" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(value: number) => [
                         `${value.toFixed(2)} km`,
                         "Długość infrastruktury",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Line
                       type="monotone"
@@ -443,7 +452,7 @@ export default function Mobilnosc() {
               height={cardHeight}
               onOpen={() => setOpenCard("miejsca")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
@@ -457,12 +466,15 @@ export default function Mobilnosc() {
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
-                    <YAxis domain={[10, 45]} tick={{ fontSize: 11 }} />
+                    <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
+                    <YAxis
+                      domain={[10, 45]}
+                      tick={{ fontSize: chartFontSize }}
+                    />
                     <Tooltip
                       formatter={(value: number) => [value, "Liczba parkingów"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Line
                       type="monotone"

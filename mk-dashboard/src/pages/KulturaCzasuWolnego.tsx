@@ -19,14 +19,23 @@ import {
 export default function KulturaCzasuWolnego() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -93,7 +102,7 @@ export default function KulturaCzasuWolnego() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -207,7 +216,7 @@ export default function KulturaCzasuWolnego() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -319,7 +328,7 @@ export default function KulturaCzasuWolnego() {
               height={340}
               onOpen={() => setOpenCard("czytelnicy")}
             >
-              <div style={{ height: 280 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
@@ -333,7 +342,7 @@ export default function KulturaCzasuWolnego() {
                     margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                   >
                     <CartesianGrid vertical={false} stroke="#eee" />
-                    <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                    <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
                     <YAxis
                       domain={["dataMin - 10000", "dataMax + 10000"]}
                       tickFormatter={(value) =>
@@ -343,15 +352,15 @@ export default function KulturaCzasuWolnego() {
                           maximumFractionDigits: 0,
                         }).format(value)
                       }
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
                     <Tooltip
                       formatter={(v: number) => [
                         new Intl.NumberFormat("pl-PL").format(v),
                         "czytelnicy",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Line
                       type="monotone"
@@ -374,7 +383,7 @@ export default function KulturaCzasuWolnego() {
               height={cardHeight}
               onOpen={() => setOpenCard("czytelnicyTys")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((g) => {
@@ -397,16 +406,16 @@ export default function KulturaCzasuWolnego() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis tick={{ fontSize: 11 }} />
+                    <YAxis tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [
                         `${(v as number).toFixed(1)}`,
                         "na 1 tys. mieszk.",
                       ]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wartosc"
@@ -426,7 +435,7 @@ export default function KulturaCzasuWolnego() {
               height={cardHeight}
               onOpen={() => setOpenCard("biblioteki")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -444,17 +453,17 @@ export default function KulturaCzasuWolnego() {
                     margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
                   >
                     <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis type="number" tick={{ fontSize: 11 }} />
+                    <XAxis type="number" tick={{ fontSize: chartFontSize }} />
                     <YAxis
                       type="category"
                       dataKey="typ"
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                       width={170}
                     />
                     <Tooltip
                       formatter={(value: number) => [value, "Liczba placówek"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar dataKey="liczba" fill="rgb(144, 12, 0)" />
                   </BarChart>

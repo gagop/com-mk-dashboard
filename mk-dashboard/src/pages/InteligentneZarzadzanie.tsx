@@ -14,14 +14,23 @@ import {
 export default function InteligentneZarzadzanie() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -69,7 +78,7 @@ export default function InteligentneZarzadzanie() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -175,7 +184,7 @@ export default function InteligentneZarzadzanie() {
             >
               <div
                 style={{
-                  height: cardHeight - 90,
+                  height: "100%",
                   display: "flex",
                   flexDirection: "column",
                 }}
@@ -278,7 +287,7 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("frekwencja")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -307,13 +316,17 @@ export default function InteligentneZarzadzanie() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 65]} />
+                    <YAxis
+                      unit="%"
+                      tick={{ fontSize: chartFontSize }}
+                      domain={[0, 65]}
+                    />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "frekwencja"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="frekwencja"
@@ -333,7 +346,7 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("zadluzenie")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -364,13 +377,13 @@ export default function InteligentneZarzadzanie() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "zadłużenie"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wartosc"
@@ -390,7 +403,7 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("pit")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -470,13 +483,13 @@ export default function InteligentneZarzadzanie() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} />
+                    <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "zmiana 2023–2024"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wzrost"
@@ -496,7 +509,7 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("cit")}
             >
-              <div style={{ height: cardHeight - 60 }}>
+              <div style={{ height: "100%" }}>
                 <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
@@ -572,13 +585,17 @@ export default function InteligentneZarzadzanie() {
                       textAnchor="end"
                       interval={0}
                       height={60}
-                      tick={{ fontSize: 11 }}
+                      tick={{ fontSize: chartFontSize }}
                     />
-                    <YAxis unit="%" tick={{ fontSize: 11 }} domain={[0, 620]} />
+                    <YAxis
+                      unit="%"
+                      tick={{ fontSize: chartFontSize }}
+                      domain={[0, 620]}
+                    />
                     <Tooltip
                       formatter={(v: number) => [`${v}%`, "zmiana 2019–2024"]}
-                      labelStyle={{ fontSize: 11 }}
-                      itemStyle={{ fontSize: 11 }}
+                      labelStyle={{ fontSize: chartFontSize }}
+                      itemStyle={{ fontSize: chartFontSize }}
                     />
                     <Bar
                       dataKey="wzrost"

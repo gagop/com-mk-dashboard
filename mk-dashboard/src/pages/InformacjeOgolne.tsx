@@ -67,14 +67,23 @@ const IO_CHART_COLORS = [
 export default function InformacjeOgolne() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -273,7 +282,7 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("przyrost2024")}
           >
-            <div style={{ height: cardHeight - 60 }}>
+            <div style={{ height: "100%" }}>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
                   data={useMemo(
@@ -292,16 +301,16 @@ export default function InformacjeOgolne() {
                     textAnchor="end"
                     interval={0}
                     height={60}
-                    tick={{ fontSize: 11 }}
+                    tick={{ fontSize: chartFontSize }}
                   />
-                  <YAxis tick={{ fontSize: 11 }} />
+                  <YAxis tick={{ fontSize: chartFontSize }} />
                   <Tooltip
                     formatter={(v: number) => [
                       `${v}`,
                       "osób (przyrost naturalny)",
                     ]}
-                    labelStyle={{ fontSize: 11 }}
-                    itemStyle={{ fontSize: 11 }}
+                    labelStyle={{ fontSize: chartFontSize }}
+                    itemStyle={{ fontSize: chartFontSize }}
                   />
                   <Bar
                     dataKey="przyrost"
@@ -321,7 +330,7 @@ export default function InformacjeOgolne() {
           >
             <div
               style={{
-                height: cardHeight - 80,
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
               }}
@@ -412,14 +421,14 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("mkTrend")}
           >
-            <div style={{ height: cardHeight - 60 }}>
+            <div style={{ height: "100%" }}>
               <ResponsiveContainer width="100%" height="90%">
                 <LineChart
                   data={mkTrendData}
                   margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
                 >
                   <CartesianGrid vertical={false} stroke="#eee" />
-                  <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                  <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
                   <YAxis
                     domain={["dataMin - 5000", "dataMax + 5000"]}
                     tickFormatter={(value) =>
@@ -429,15 +438,15 @@ export default function InformacjeOgolne() {
                         maximumFractionDigits: 2,
                       }).format(value)
                     }
-                    tick={{ fontSize: 11 }}
+                    tick={{ fontSize: chartFontSize }}
                   />
                   <Tooltip
                     formatter={(v: number) => [
                       new Intl.NumberFormat("pl-PL").format(v),
                       "ludność",
                     ]}
-                    labelStyle={{ fontSize: 11 }}
-                    itemStyle={{ fontSize: 11 }}
+                    labelStyle={{ fontSize: chartFontSize }}
+                    itemStyle={{ fontSize: chartFontSize }}
                   />
                   <Line
                     type="monotone"
@@ -537,7 +546,7 @@ export default function InformacjeOgolne() {
               Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym) na
               100 osób w wieku produkcyjnym.
             </p>
-            <div style={{ height: cardHeight - 90 }}>
+            <div style={{ height: "100%" }}>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
                   data={useMemo(
@@ -557,16 +566,16 @@ export default function InformacjeOgolne() {
                     textAnchor="end"
                     interval={0}
                     height={60}
-                    tick={{ fontSize: 11 }}
+                    tick={{ fontSize: chartFontSize }}
                   />
-                  <YAxis unit="" tick={{ fontSize: 11 }} />
+                  <YAxis unit="" tick={{ fontSize: chartFontSize }} />
                   <Tooltip
                     formatter={(v: number) => [
                       v.toFixed(1),
                       "na 100 w wieku prod.",
                     ]}
-                    labelStyle={{ fontSize: 11 }}
-                    itemStyle={{ fontSize: 11 }}
+                    labelStyle={{ fontSize: chartFontSize }}
+                    itemStyle={{ fontSize: chartFontSize }}
                   />
                   <Bar
                     dataKey="wsk"
@@ -584,7 +593,7 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("zmianaGmin")}
           >
-            <div style={{ height: cardHeight - 60 }}>
+            <div style={{ height: "100%" }}>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
                   data={useMemo(
@@ -609,16 +618,16 @@ export default function InformacjeOgolne() {
                     textAnchor="end"
                     interval={0}
                     height={60}
-                    tick={{ fontSize: 11 }}
+                    tick={{ fontSize: chartFontSize }}
                   />
-                  <YAxis unit="%" tick={{ fontSize: 11 }} />
+                  <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                   <Tooltip
                     formatter={(v: number) => [
                       `${v.toFixed(1)}%`,
                       "zmiana 2019–2024",
                     ]}
-                    labelStyle={{ fontSize: 11 }}
-                    itemStyle={{ fontSize: 11 }}
+                    labelStyle={{ fontSize: chartFontSize }}
+                    itemStyle={{ fontSize: chartFontSize }}
                   />
                   <Bar
                     dataKey="wzrost"
@@ -636,7 +645,7 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("strukturaWieku")}
           >
-            <div style={{ height: cardHeight - 60 }}>
+            <div style={{ height: "100%" }}>
               <ResponsiveContainer width="100%" height="90%">
                 <BarChart
                   data={strukturaWiekuData}
@@ -667,8 +676,8 @@ export default function InformacjeOgolne() {
                       };
                       return [`${v.toFixed(1)}%`, labels[name] || name];
                     }}
-                    labelStyle={{ fontSize: 11 }}
-                    itemStyle={{ fontSize: 11 }}
+                    labelStyle={{ fontSize: chartFontSize }}
+                    itemStyle={{ fontSize: chartFontSize }}
                   />
                   <Legend
                     wrapperStyle={{ fontSize: 10, paddingTop: 4 }}
@@ -772,16 +781,16 @@ export default function InformacjeOgolne() {
                 textAnchor="end"
                 interval={0}
                 height={60}
-                tick={{ fontSize: 11 }}
+                tick={{ fontSize: chartFontSize }}
               />
-              <YAxis unit="" tick={{ fontSize: 11 }} />
+              <YAxis unit="" tick={{ fontSize: chartFontSize }} />
               <Tooltip
                 formatter={(v: number) => [
                   v.toFixed(1),
                   "na 100 w wieku prod.",
                 ]}
-                labelStyle={{ fontSize: 11 }}
-                itemStyle={{ fontSize: 11 }}
+                labelStyle={{ fontSize: chartFontSize }}
+                itemStyle={{ fontSize: chartFontSize }}
               />
               <Bar
                 dataKey="wsk"
@@ -822,16 +831,16 @@ export default function InformacjeOgolne() {
                 textAnchor="end"
                 interval={0}
                 height={60}
-                tick={{ fontSize: 11 }}
+                tick={{ fontSize: chartFontSize }}
               />
-              <YAxis unit="%" tick={{ fontSize: 11 }} />
+              <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
               <Tooltip
                 formatter={(v: number) => [
                   `${v.toFixed(1)}%`,
                   "zmiana 2019–2024",
                 ]}
-                labelStyle={{ fontSize: 11 }}
-                itemStyle={{ fontSize: 11 }}
+                labelStyle={{ fontSize: chartFontSize }}
+                itemStyle={{ fontSize: chartFontSize }}
               />
               <Bar
                 dataKey="wzrost"
@@ -857,7 +866,7 @@ export default function InformacjeOgolne() {
               margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
             >
               <CartesianGrid vertical={false} stroke="#eee" />
-              <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+              <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
               <YAxis
                 domain={["dataMin - 5000", "dataMax + 5000"]}
                 tickFormatter={(value) =>
@@ -867,15 +876,15 @@ export default function InformacjeOgolne() {
                     maximumFractionDigits: 2,
                   }).format(value)
                 }
-                tick={{ fontSize: 11 }}
+                tick={{ fontSize: chartFontSize }}
               />
               <Tooltip
                 formatter={(v: number) => [
                   new Intl.NumberFormat("pl-PL").format(v),
                   "ludność",
                 ]}
-                labelStyle={{ fontSize: 11 }}
-                itemStyle={{ fontSize: 11 }}
+                labelStyle={{ fontSize: chartFontSize }}
+                itemStyle={{ fontSize: chartFontSize }}
               />
               <Line
                 type="monotone"
@@ -914,13 +923,13 @@ export default function InformacjeOgolne() {
                 textAnchor="end"
                 interval={0}
                 height={60}
-                tick={{ fontSize: 11 }}
+                tick={{ fontSize: chartFontSize }}
               />
-              <YAxis tick={{ fontSize: 11 }} />
+              <YAxis tick={{ fontSize: chartFontSize }} />
               <Tooltip
                 formatter={(v: number) => [`${v}`, "osób (przyrost naturalny)"]}
-                labelStyle={{ fontSize: 11 }}
-                itemStyle={{ fontSize: 11 }}
+                labelStyle={{ fontSize: chartFontSize }}
+                itemStyle={{ fontSize: chartFontSize }}
               />
               <Bar
                 dataKey="przyrost"

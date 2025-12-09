@@ -17,14 +17,23 @@ import { LineChart, Line } from "recharts";
 export default function UslugiSpoleczne() {
   const [openCard, setOpenCard] = useState<string | null>(null);
   const [cardHeight, setCardHeight] = useState(380);
+  const [chartFontSize, setChartFontSize] = useState(11);
 
   useEffect(() => {
     const calculateCardHeight = () => {
       const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
       const availableHeight = viewportHeight - 180;
       const calculatedHeight = (availableHeight - 12) / 2;
       const finalHeight = Math.max(280, calculatedHeight);
       setCardHeight(finalHeight);
+
+      // Calculate responsive font size based on viewport dimensions
+      const heightRatio = Math.min(1, finalHeight / 380);
+      const widthRatio = Math.min(1, viewportWidth / 1400);
+      const scaleFactor = Math.min(heightRatio, widthRatio);
+      const fontSize = Math.max(7, Math.round(11 * scaleFactor));
+      setChartFontSize(fontSize);
     };
 
     calculateCardHeight();
@@ -71,7 +80,7 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("lokalizacjaZlobkow")}
               >
-                <div style={{ height: cardHeight - 60 }}>
+                <div style={{ height: "100%" }}>
                   <iframe
                     title="Lokalizacja żłobków"
                     src="https://experience.arcgis.com/experience/86668e37526d484cb7bf2393b77fb68b"
@@ -89,7 +98,7 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("wnioski")}
               >
-                <div style={{ height: cardHeight - 60 }}>
+                <div style={{ height: "100%" }}>
                   <ResponsiveContainer width="100%" height="90%">
                     <BarChart
                       data={GMINY.map((gmina) => {
@@ -125,16 +134,16 @@ export default function UslugiSpoleczne() {
                         textAnchor="end"
                         interval={0}
                         height={60}
-                        tick={{ fontSize: 11 }}
+                        tick={{ fontSize: chartFontSize }}
                       />
-                      <YAxis tick={{ fontSize: 11 }} />
+                      <YAxis tick={{ fontSize: chartFontSize }} />
                       <Tooltip
                         formatter={(v: number) => [
                           new Intl.NumberFormat("pl-PL").format(v),
                           "wnioski",
                         ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: chartFontSize }}
+                        itemStyle={{ fontSize: chartFontSize }}
                       />
                       <Bar
                         dataKey="liczba"
@@ -155,7 +164,7 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("programy")}
               >
-                <div style={{ height: cardHeight - 60 }}>
+                <div style={{ height: "100%" }}>
                   <ResponsiveContainer width="100%" height="90%">
                     <BarChart
                       data={[
@@ -185,13 +194,13 @@ export default function UslugiSpoleczne() {
                         textAnchor="end"
                         interval={0}
                         height={60}
-                        tick={{ fontSize: 11 }}
+                        tick={{ fontSize: chartFontSize }}
                       />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
+                      <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                       <Tooltip
                         formatter={(v: number) => [`${v}%`, "zadowolenie"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: chartFontSize }}
+                        itemStyle={{ fontSize: chartFontSize }}
                       />
                       <Bar
                         dataKey="procent"
@@ -210,7 +219,7 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("przychodnie")}
               >
-                <div style={{ height: cardHeight - 60 }}>
+                <div style={{ height: "100%" }}>
                   <ResponsiveContainer width="100%" height="90%">
                     <LineChart
                       data={[
@@ -224,18 +233,18 @@ export default function UslugiSpoleczne() {
                       margin={{ top: 24, right: 8, bottom: 16, left: 8 }}
                     >
                       <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="rok" tick={{ fontSize: 11 }} />
+                      <XAxis dataKey="rok" tick={{ fontSize: chartFontSize }} />
                       <YAxis
                         domain={["dataMin - 50", "dataMax + 50"]}
-                        tick={{ fontSize: 11 }}
+                        tick={{ fontSize: chartFontSize }}
                       />
                       <Tooltip
                         formatter={(v: number) => [
                           new Intl.NumberFormat("pl-PL").format(v),
                           "przychodnie",
                         ]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: chartFontSize }}
+                        itemStyle={{ fontSize: chartFontSize }}
                       />
                       <Line
                         type="monotone"
@@ -268,7 +277,7 @@ export default function UslugiSpoleczne() {
                 height={280}
                 onOpen={() => setOpenCard("ocena")}
               >
-                <div style={{ height: 220 }}>
+                <div style={{ height: "100%" }}>
                   <ResponsiveContainer width="100%" height="90%">
                     <BarChart
                       data={[
@@ -288,12 +297,15 @@ export default function UslugiSpoleczne() {
                       margin={{ top: 8, right: 8, bottom: 24, left: 8 }}
                     >
                       <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis dataKey="kategoria" tick={{ fontSize: 11 }} />
-                      <YAxis unit=" %" tick={{ fontSize: 11 }} />
+                      <XAxis
+                        dataKey="kategoria"
+                        tick={{ fontSize: chartFontSize }}
+                      />
+                      <YAxis unit=" %" tick={{ fontSize: chartFontSize }} />
                       <Tooltip
                         formatter={(v: number, n: string) => [`${v}%`, n]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: chartFontSize }}
+                        itemStyle={{ fontSize: chartFontSize }}
                       />
                       <Legend wrapperStyle={{ fontSize: 11 }} />
                       <Bar
@@ -326,7 +338,7 @@ export default function UslugiSpoleczne() {
                 height={320}
                 onOpen={() => setOpenCard("opiekaSpecjalistyczna")}
               >
-                <div style={{ height: 260 }}>
+                <div style={{ height: "100%" }}>
                   <ResponsiveContainer width="100%" height="90%">
                     <BarChart
                       data={[
@@ -356,11 +368,11 @@ export default function UslugiSpoleczne() {
                         height={60}
                         tick={{ fontSize: 9 }}
                       />
-                      <YAxis unit="%" tick={{ fontSize: 11 }} />
+                      <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
                       <Tooltip
                         formatter={(v: number) => [`${v}%`, "zadowolenie"]}
-                        labelStyle={{ fontSize: 11 }}
-                        itemStyle={{ fontSize: 11 }}
+                        labelStyle={{ fontSize: chartFontSize }}
+                        itemStyle={{ fontSize: chartFontSize }}
                       />
                       <Bar
                         dataKey="procent"
