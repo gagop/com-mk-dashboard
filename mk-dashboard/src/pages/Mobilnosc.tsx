@@ -182,7 +182,7 @@ export default function Mobilnosc() {
               onOpen={() => setOpenCard("czynniki")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { czynnik: "Komfort podróży", odsetek: 59 },
@@ -344,7 +344,7 @@ export default function Mobilnosc() {
               onOpen={() => setOpenCard("parkingPR")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Skawina", miejsca: 590 },
@@ -401,7 +401,7 @@ export default function Mobilnosc() {
               onOpen={() => setOpenCard("transportRowerowy")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2019", dlugosc: 6.1 },
@@ -444,7 +444,7 @@ export default function Mobilnosc() {
               onOpen={() => setOpenCard("miejsca")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2019", liczba: 14 },
@@ -525,7 +525,7 @@ export default function Mobilnosc() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <LineChart
               data={[
                 { rok: "2019", dlugosc: 6.1 },
@@ -567,7 +567,7 @@ export default function Mobilnosc() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { czynnik: "Komfort podróży", odsetek: 59 },
@@ -611,7 +611,7 @@ export default function Mobilnosc() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Michałowice", miejsca: 104 },
@@ -656,7 +656,7 @@ export default function Mobilnosc() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <LineChart
               data={[
                 { rok: "2019", liczba: 14 },

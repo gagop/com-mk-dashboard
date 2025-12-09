@@ -301,7 +301,7 @@ export default function SrodowiskoPrzestrzen() {
               onOpen={() => setOpenCard("recykling")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
@@ -358,7 +358,7 @@ export default function SrodowiskoPrzestrzen() {
               onOpen={() => setOpenCard("pm10")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Czernichów", pm10: 11.07 },
@@ -415,7 +415,7 @@ export default function SrodowiskoPrzestrzen() {
               onOpen={() => setOpenCard("mieszkania")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Wieliczka", wartosc: 118.4 },
@@ -480,7 +480,7 @@ export default function SrodowiskoPrzestrzen() {
               onOpen={() => setOpenCard("wodociagi")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2020", dlugosc: 4712.8 },
@@ -567,7 +567,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
@@ -618,7 +618,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Czernichów", pm10: 11.07 },
@@ -671,7 +671,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Wieliczka", wartosc: 118.4 },
@@ -727,7 +727,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <LineChart
               data={[
                 { rok: "2020", dlugosc: 4712.8 },

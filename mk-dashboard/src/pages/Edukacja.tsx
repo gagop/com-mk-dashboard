@@ -180,7 +180,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("srodki")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Kraków", kwota: 54216533.0 },
@@ -397,7 +397,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("szkoly")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Kraków-Podgórze", liczba: 75 },
@@ -458,7 +458,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("egzaminPolski")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
                       gmina,
@@ -514,7 +514,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("egzaminMatematyka")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
                       gmina,
@@ -568,7 +568,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("nauczycieleKwalifikacje")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Mogilany", odsetek: 89.6 },
@@ -659,7 +659,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Kraków", kwota: 54216533.0 },
@@ -719,7 +719,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={LATA.map((rok) => ({
                 rok: String(rok),
@@ -768,7 +768,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Kraków-Podgórze", liczba: 75 },
@@ -824,7 +824,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={GMINY.map((gmina) => ({
                 gmina,
@@ -874,7 +874,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={GMINY.map((gmina) => ({
                 gmina,
@@ -924,7 +924,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Mogilany", odsetek: 89.6 },

@@ -320,7 +320,7 @@ export default function KulturaCzasuWolnego() {
               onOpen={() => setOpenCard("czytelnicy")}
             >
               <div style={{ height: 280 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2019", czytelnicy: 273726 },
@@ -375,7 +375,7 @@ export default function KulturaCzasuWolnego() {
               onOpen={() => setOpenCard("czytelnicyTys")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((g) => {
                       const readers = CZYTELNICY_2024[g as Gmina] || 0;
@@ -510,7 +510,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 520 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <LineChart
               data={[
                 { rok: "2019", czytelnicy: 273726 },
@@ -561,7 +561,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={GMINY.map((g) => {
                 const readers = CZYTELNICY_2024[g as Gmina] || 0;
@@ -606,7 +606,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { typ: "biblioteki publiczne i filie", liczba: 116 },

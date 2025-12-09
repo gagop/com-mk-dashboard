@@ -295,7 +295,7 @@ export default function Gospodarka() {
               onOpen={() => setOpenCard("podmioty")}
             >
               <div style={{ height: 280 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <LineChart
                     data={[
                       { rok: "2019", podmioty: 15714 },
@@ -350,7 +350,7 @@ export default function Gospodarka() {
               onOpen={() => setOpenCard("bezrobotni")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={[
                       { gmina: "Skawina", wartosc: 2.8 },
@@ -407,7 +407,7 @@ export default function Gospodarka() {
               onOpen={() => setOpenCard("noclegowe")}
             >
               <div style={{ height: cardHeight - 60 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="90%">
                   <BarChart
                     data={GMINY.map((gmina) => {
                       const M2024: Record<string, number> = {
@@ -550,7 +550,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <LineChart
               data={[
                 { rok: "2019", podmioty: 15714 },
@@ -601,7 +601,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={[
                 { gmina: "Skawina", wartosc: 2.8 },
@@ -652,7 +652,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="90%">
             <BarChart
               data={GMINY.map((gmina) => {
                 const M2024: Record<string, number> = {
