@@ -95,7 +95,7 @@ export default function InteligentneZarzadzanie() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: 16,
+                    gap: 12,
                     padding: "12px 8px 4px",
                     fontSize: 10,
                     color: "#4b5563",
@@ -113,7 +113,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(60, 60, 60)",
+                        background: "rgb(135, 135, 135)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -126,7 +126,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(100, 100, 100)",
+                        background: "rgb(157, 157, 157)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -139,7 +139,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(140, 140, 140)",
+                        background: "rgb(178, 178, 178)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -152,7 +152,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(180, 180, 180)",
+                        background: "rgb(211, 211, 211)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -165,7 +165,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(220, 220, 220)",
+                        background: "rgb(245, 245, 245)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -202,7 +202,7 @@ export default function InteligentneZarzadzanie() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    gap: 16,
+                    gap: 12,
                     padding: "12px 8px 4px",
                     fontSize: 10,
                     color: "#4b5563",
@@ -220,7 +220,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(60, 60, 60)",
+                        background: "rgb(135, 135, 135)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -233,7 +233,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(100, 100, 100)",
+                        background: "rgb(157, 157, 157)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -246,7 +246,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(140, 140, 140)",
+                        background: "rgb(178, 178, 178)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -259,7 +259,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(180, 180, 180)",
+                        background: "rgb(211, 211, 211)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -272,7 +272,7 @@ export default function InteligentneZarzadzanie() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(220, 220, 220)",
+                        background: "rgb(245, 245, 245)",
                         border: "1px solid #ddd",
                       }}
                     />

@@ -127,7 +127,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 550</span>
+                    <span>&gt;550</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -140,7 +140,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>501 - 550</span>
+                    <span>501-550</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -153,7 +153,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>451 - 500</span>
+                    <span>451-500</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -166,7 +166,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>401 - 450</span>
+                    <span>401-450</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -179,7 +179,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 401</span>
+                    <span>&lt;401</span>
                   </div>
                 </div>
               </div>
@@ -238,7 +238,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 10</span>
+                    <span>&gt;10</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -251,7 +251,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>5 - 10</span>
+                    <span>5-10</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -264,7 +264,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>3 - 5</span>
+                    <span>3-5</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -277,7 +277,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>2 - 3</span>
+                    <span>2-3</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -290,7 +290,7 @@ export default function SrodowiskoPrzestrzen() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 2</span>
+                    <span>&lt;2</span>
                   </div>
                 </div>
               </div>

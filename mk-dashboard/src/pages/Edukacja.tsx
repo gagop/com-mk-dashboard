@@ -125,7 +125,7 @@ export default function Edukacja() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 88</span>
+                    <span>&gt;88</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -138,7 +138,7 @@ export default function Edukacja() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>85 - 88</span>
+                    <span>85-88</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -151,7 +151,7 @@ export default function Edukacja() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>78 - 84</span>
+                    <span>78-84</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -164,7 +164,7 @@ export default function Edukacja() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>66 - 77</span>
+                    <span>66-77</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -177,7 +177,7 @@ export default function Edukacja() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 66</span>
+                    <span>&lt;66</span>
                   </div>
                 </div>
               </div>

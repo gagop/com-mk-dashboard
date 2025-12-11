@@ -145,7 +145,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 71</span>
+                    <span>&gt;71</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -158,7 +158,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>68 - 71</span>
+                    <span>68-71</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -171,7 +171,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>55 - 67</span>
+                    <span>55-67</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -184,7 +184,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>50 - 54</span>
+                    <span>50-54</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -197,7 +197,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 50</span>
+                    <span>&lt;50</span>
                   </div>
                 </div>
               </div>
@@ -256,7 +256,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 250</span>
+                    <span>&gt;250</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -269,7 +269,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>201 - 250</span>
+                    <span>201-250</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -282,7 +282,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>151 - 200</span>
+                    <span>151-200</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -295,7 +295,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>75 - 150</span>
+                    <span>75-150</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -308,7 +308,7 @@ export default function KulturaCzasuWolnego() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 75</span>
+                    <span>&lt;75</span>
                   </div>
                 </div>
               </div>

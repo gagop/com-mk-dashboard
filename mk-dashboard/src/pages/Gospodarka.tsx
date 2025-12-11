@@ -104,7 +104,9 @@ export default function Gospodarka() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                  <div
+                    style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}
+                  >
                     [%]
                   </div>
                   <div
@@ -118,7 +120,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 75</span>
+                    <span>&gt;67%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -131,7 +133,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>59 - 74</span>
+                    <span>61%-67%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -144,7 +146,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>53 - 58</span>
+                    <span>54%-60%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -157,7 +159,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>43 - 52</span>
+                    <span>45%-53%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -170,7 +172,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 45</span>
+                    <span>&lt;45%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -222,7 +224,9 @@ export default function Gospodarka() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                  <div
+                    style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}
+                  >
                     [%]
                   </div>
                   <div
@@ -236,7 +240,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>3,46% - 6,47%</span>
+                    <span>3,46%-6,47%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -249,7 +253,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>1,1% - 3,45%</span>
+                    <span>1,1%-3,45%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -262,7 +266,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>0,37% - 1,09%</span>
+                    <span>0,37%-1,09%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -275,7 +279,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>0,31% - 0,36%</span>
+                    <span>0,31%-0,36%</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -288,7 +292,7 @@ export default function Gospodarka() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>0,08% - 0,3%</span>
+                    <span>0,08%-0,3%</span>
                   </div>
                 </div>
               </div>

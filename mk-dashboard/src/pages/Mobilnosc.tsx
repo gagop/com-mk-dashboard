@@ -123,7 +123,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 40</span>
+                    <span>&gt;40</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -136,7 +136,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>31 - 40</span>
+                    <span>31-40</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -149,7 +149,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>27 - 30</span>
+                    <span>27-30</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -162,7 +162,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>21 - 26</span>
+                    <span>21-26</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -175,7 +175,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 21</span>
+                    <span>&lt;21</span>
                   </div>
                 </div>
               </div>
@@ -282,7 +282,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&gt; 70</span>
+                    <span>&gt;70</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -295,7 +295,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>67 - 70</span>
+                    <span>67-70</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -308,7 +308,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>60 - 66</span>
+                    <span>60-66</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -321,7 +321,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>32 - 59</span>
+                    <span>32-59</span>
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -334,7 +334,7 @@ export default function Mobilnosc() {
                         border: "1px solid #ddd",
                       }}
                     />
-                    <span>&lt; 32</span>
+                    <span>&lt;32</span>
                   </div>
                 </div>
               </div>

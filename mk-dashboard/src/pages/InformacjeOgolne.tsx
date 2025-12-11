@@ -347,16 +347,31 @@ export default function InformacjeOgolne() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  gap: 16,
+                  flexWrap: "nowrap",
+                  gap: 12,
                   padding: "12px 8px 4px",
                   fontSize: 10,
                   color: "#4b5563",
                 }}
               >
-                <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                <div
+                  style={{
+                    fontWeight: 600,
+                    marginRight: 4,
+                    fontSize: 10,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   [os./km²]
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <div
                     style={{
                       width: 20,
@@ -365,9 +380,16 @@ export default function InformacjeOgolne() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span>&gt; 700</span>
+                  <span>&gt;700</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <div
                     style={{
                       width: 20,
@@ -376,9 +398,16 @@ export default function InformacjeOgolne() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span>450 - 700</span>
+                  <span>450-700</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <div
                     style={{
                       width: 20,
@@ -387,9 +416,16 @@ export default function InformacjeOgolne() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span>310 - 450</span>
+                  <span>310-450</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <div
                     style={{
                       width: 20,
@@ -398,9 +434,16 @@ export default function InformacjeOgolne() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span>200 - 310</span>
+                  <span>200-310</span>
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 4,
+                    whiteSpace: "nowrap",
+                  }}
+                >
                   <div
                     style={{
                       width: 20,
@@ -409,7 +452,7 @@ export default function InformacjeOgolne() {
                       border: "1px solid #ddd",
                     }}
                   />
-                  <span>&lt; 200</span>
+                  <span>&lt;200</span>
                 </div>
               </div>
             </div>
