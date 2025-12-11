@@ -399,7 +399,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("szkoly")}
             >
               <div style={{ flex: 1, minHeight: 0 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="120%">
                   <BarChart
                     data={[
                       { gmina: "Kraków-Podgórze", liczba: 75 },
@@ -514,7 +514,7 @@ export default function Edukacja() {
               onOpen={() => setOpenCard("egzaminMatematyka")}
             >
               <div style={{ flex: 1, minHeight: 0 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="120%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
                       gmina,

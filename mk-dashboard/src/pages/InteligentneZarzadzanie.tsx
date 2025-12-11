@@ -101,7 +101,9 @@ export default function InteligentneZarzadzanie() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                  <div
+                    style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}
+                  >
                     [%]
                   </div>
                   <div
@@ -206,7 +208,9 @@ export default function InteligentneZarzadzanie() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                  <div
+                    style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}
+                  >
                     [zł/os.]
                   </div>
                   <div
@@ -287,7 +291,7 @@ export default function InteligentneZarzadzanie() {
               onOpen={() => setOpenCard("frekwencja")}
             >
               <div style={{ flex: 1, minHeight: 0 }}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%" height="120%">
                   <BarChart
                     data={[
                       { gmina: "Zabierzów", frekwencja: 60.49 },

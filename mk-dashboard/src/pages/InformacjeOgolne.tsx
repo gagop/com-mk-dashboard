@@ -283,7 +283,7 @@ export default function InformacjeOgolne() {
             onOpen={() => setOpenCard("przyrost2024")}
           >
             <div style={{ flex: 1, minHeight: 0 }}>
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="120%">
                 <BarChart
                   data={useMemo(
                     () =>
@@ -547,7 +547,7 @@ export default function InformacjeOgolne() {
               100 osób w wieku produkcyjnym.
             </p>
             <div style={{ flex: 1, minHeight: 0 }}>
-              <ResponsiveContainer width="100%" height="100%">
+              <ResponsiveContainer width="100%" height="120%">
                 <BarChart
                   data={useMemo(
                     () =>

@@ -99,7 +99,7 @@ export default function UslugiSpoleczne() {
                 onOpen={() => setOpenCard("wnioski")}
               >
                 <div style={{ flex: 1, minHeight: 0 }}>
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer width="100%" height="120%">
                     <BarChart
                       data={GMINY.map((gmina) => {
                         const W2024: Record<string, number> = {
@@ -164,51 +164,53 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("programy")}
               >
-                <div style={{ flex: 1, minHeight: 0 }}>
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={[
-                        { gmina: "Mogilany", procent: 50 },
-                        { gmina: "Świątniki Górne", procent: 48 },
-                        { gmina: "Igołomia-Wawrzeńczyce", procent: 37 },
-                        { gmina: "Michałowice", procent: 33 },
-                        { gmina: "Liszki", procent: 31 },
-                        { gmina: "Zielonki", procent: 31 },
-                        { gmina: "Kocmyrzów-Luborzyca", procent: 26 },
-                        { gmina: "Skawina", procent: 26 },
-                        { gmina: "Wielka Wieś", procent: 24 },
-                        { gmina: "Czernichów", procent: 22 },
-                        { gmina: "Niepołomice", procent: 17 },
-                        { gmina: "Biskupice", procent: 10 },
-                        { gmina: "Zabierzów", procent: 8 },
-                        { gmina: "Wieliczka", procent: 4 },
-                      ]
-                        .slice()
-                        .sort((a, b) => b.procent - a.procent)}
-                      margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
-                    >
-                      <CartesianGrid vertical={false} stroke="#eee" />
-                      <XAxis
-                        dataKey="gmina"
-                        angle={-35}
-                        textAnchor="end"
-                        interval={0}
-                        height={60}
-                        tick={{ fontSize: chartFontSize }}
-                      />
-                      <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
-                      <Tooltip
-                        formatter={(v: number) => [`${v}%`, "zadowolenie"]}
-                        labelStyle={{ fontSize: chartFontSize }}
-                        itemStyle={{ fontSize: chartFontSize }}
-                      />
-                      <Bar
-                        dataKey="procent"
-                        name="Zadowolenie z jakości wsparcia dla potrzebujących [%]"
-                        fill="rgb(247, 183, 29)"
-                      />
-                    </BarChart>
-                  </ResponsiveContainer>
+                <div style={{ position: "relative", flex: 1, minHeight: 0 }}>
+                  <div style={{ position: "absolute", inset: 0 }}>
+                    <ResponsiveContainer width="100%" height="120%">
+                      <BarChart
+                        data={[
+                          { gmina: "Mogilany", procent: 50 },
+                          { gmina: "Świątniki Górne", procent: 48 },
+                          { gmina: "Igołomia-Wawrzeńczyce", procent: 37 },
+                          { gmina: "Michałowice", procent: 33 },
+                          { gmina: "Liszki", procent: 31 },
+                          { gmina: "Zielonki", procent: 31 },
+                          { gmina: "Kocmyrzów-Luborzyca", procent: 26 },
+                          { gmina: "Skawina", procent: 26 },
+                          { gmina: "Wielka Wieś", procent: 24 },
+                          { gmina: "Czernichów", procent: 22 },
+                          { gmina: "Niepołomice", procent: 17 },
+                          { gmina: "Biskupice", procent: 10 },
+                          { gmina: "Zabierzów", procent: 8 },
+                          { gmina: "Wieliczka", procent: 4 },
+                        ]
+                          .slice()
+                          .sort((a, b) => b.procent - a.procent)}
+                        margin={{ top: 8, right: 8, bottom: 84, left: 8 }}
+                      >
+                        <CartesianGrid vertical={false} stroke="#eee" />
+                        <XAxis
+                          dataKey="gmina"
+                          angle={-35}
+                          textAnchor="end"
+                          interval={0}
+                          height={60}
+                          tick={{ fontSize: chartFontSize }}
+                        />
+                        <YAxis unit="%" tick={{ fontSize: chartFontSize }} />
+                        <Tooltip
+                          formatter={(v: number) => [`${v}%`, "zadowolenie"]}
+                          labelStyle={{ fontSize: chartFontSize }}
+                          itemStyle={{ fontSize: chartFontSize }}
+                        />
+                        <Bar
+                          dataKey="procent"
+                          name="Zadowolenie z jakości wsparcia dla potrzebujących [%]"
+                          fill="rgb(247, 183, 29)"
+                        />
+                      </BarChart>
+                    </ResponsiveContainer>
+                  </div>
                 </div>
               </Card>
             </div>
@@ -339,7 +341,7 @@ export default function UslugiSpoleczne() {
                 onOpen={() => setOpenCard("opiekaSpecjalistyczna")}
               >
                 <div style={{ flex: 1, minHeight: 0 }}>
-                  <ResponsiveContainer width="100%" height="100%">
+                  <ResponsiveContainer width="100%" height="130%">
                     <BarChart
                       data={[
                         { gmina: "Igołomia-Wawrzeńczyce", procent: 52 },
