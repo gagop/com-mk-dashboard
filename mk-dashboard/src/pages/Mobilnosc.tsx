@@ -119,7 +119,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(0, 51, 153)",
+                        background: "rgb(56, 112, 179)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -132,7 +132,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(51, 102, 204)",
+                        background: "rgb(73, 139, 200)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -145,7 +145,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(102, 153, 255)",
+                        background: "rgb(90, 167, 220)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -158,7 +158,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(153, 204, 255)",
+                        background: "rgb(153, 203, 235)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -171,7 +171,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(230, 242, 255)",
+                        background: "rgb(226, 241, 249)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -278,7 +278,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(0, 51, 153)",
+                        background: "rgb(56, 112, 179)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -291,7 +291,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(51, 102, 204)",
+                        background: "rgb(73, 139, 200)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -304,7 +304,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(102, 153, 255)",
+                        background: "rgb(90, 167, 220)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -317,7 +317,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(153, 204, 255)",
+                        background: "rgb(153, 203, 235)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -330,7 +330,7 @@ export default function Mobilnosc() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(230, 242, 255)",
+                        background: "rgb(226, 241, 249)",
                         border: "1px solid #ddd",
                       }}
                     />

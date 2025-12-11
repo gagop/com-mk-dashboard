@@ -123,7 +123,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(0, 100, 0)",
+                        background: "rgb(82, 140, 46)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -136,7 +136,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(34, 139, 34)",
+                        background: "rgb(119, 167, 57)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -149,7 +149,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(124, 252, 0)",
+                        background: "rgb(158, 192, 67)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -162,7 +162,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(173, 255, 47)",
+                        background: "rgb(200, 219, 140)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -175,7 +175,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(240, 255, 240)",
+                        background: "rgb(243, 247, 229)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -234,7 +234,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(0, 100, 0)",
+                        background: "rgb(82, 140, 46)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -247,7 +247,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(34, 139, 34)",
+                        background: "rgb(119, 167, 57)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -260,7 +260,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(124, 252, 0)",
+                        background: "rgb(158, 192, 67)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -273,7 +273,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(173, 255, 47)",
+                        background: "rgb(200, 219, 140)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -286,7 +286,7 @@ export default function SrodowiskoPrzestrzen() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(240, 255, 240)",
+                        background: "rgb(243, 247, 229)",
                         border: "1px solid #ddd",
                       }}
                     />

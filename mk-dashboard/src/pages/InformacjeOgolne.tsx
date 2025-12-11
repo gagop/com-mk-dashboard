@@ -376,7 +376,7 @@ export default function InformacjeOgolne() {
                     style={{
                       width: 20,
                       height: 12,
-                      background: "rgb(139, 0, 0)",
+                      background: "rgb(132, 30, 15)",
                       border: "1px solid #ddd",
                     }}
                   />
@@ -394,7 +394,7 @@ export default function InformacjeOgolne() {
                     style={{
                       width: 20,
                       height: 12,
-                      background: "rgb(220, 20, 60)",
+                      background: "rgb(161, 39, 21)",
                       border: "1px solid #ddd",
                     }}
                   />
@@ -412,7 +412,7 @@ export default function InformacjeOgolne() {
                     style={{
                       width: 20,
                       height: 12,
-                      background: "rgb(255, 99, 71)",
+                      background: "rgb(188, 48, 27)",
                       border: "1px solid #ddd",
                     }}
                   />
@@ -430,7 +430,7 @@ export default function InformacjeOgolne() {
                     style={{
                       width: 20,
                       height: 12,
-                      background: "rgb(255, 160, 122)",
+                      background: "rgb(205, 122, 107)",
                       border: "1px solid #ddd",
                     }}
                   />
@@ -448,7 +448,7 @@ export default function InformacjeOgolne() {
                     style={{
                       width: 20,
                       height: 12,
-                      background: "rgb(255, 218, 185)",
+                      background: "rgb(226, 208, 205)",
                       border: "1px solid #ddd",
                     }}
                   />

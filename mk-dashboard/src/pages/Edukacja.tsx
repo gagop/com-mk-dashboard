@@ -121,7 +121,7 @@ export default function Edukacja() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(178, 34, 34)",
+                        background: "rgb(182, 70, 30)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -134,7 +134,7 @@ export default function Edukacja() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(205, 92, 92)",
+                        background: "rgb(204, 80, 35)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -147,7 +147,7 @@ export default function Edukacja() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(233, 150, 122)",
+                        background: "rgb(226, 89, 40)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -160,7 +160,7 @@ export default function Edukacja() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(250, 200, 180)",
+                        background: "rgb(236, 158, 117)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -173,7 +173,7 @@ export default function Edukacja() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(255, 228, 220)",
+                        background: "rgb(250, 230, 220)",
                         border: "1px solid #ddd",
                       }}
                     />
