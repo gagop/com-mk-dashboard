@@ -98,8 +98,8 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("wnioski")}
               >
-                <div style={{ height: "100%" }}>
-                  <ResponsiveContainer width="100%" height="90%">
+                <div style={{ flex: 1, minHeight: 0 }}>
+                  <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={GMINY.map((gmina) => {
                         const W2024: Record<string, number> = {
@@ -164,8 +164,8 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("programy")}
               >
-                <div style={{ height: "100%" }}>
-                  <ResponsiveContainer width="100%" height="90%">
+                <div style={{ flex: 1, minHeight: 0 }}>
+                  <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
                         { gmina: "Mogilany", procent: 50 },
@@ -219,8 +219,8 @@ export default function UslugiSpoleczne() {
                 height={cardHeight}
                 onOpen={() => setOpenCard("przychodnie")}
               >
-                <div style={{ height: "100%" }}>
-                  <ResponsiveContainer width="100%" height="90%">
+                <div style={{ flex: 1, minHeight: 0 }}>
+                  <ResponsiveContainer width="100%" height="100%">
                     <LineChart
                       data={[
                         { rok: "2019", przychodnie: 815 },
@@ -277,8 +277,8 @@ export default function UslugiSpoleczne() {
                 height={280}
                 onOpen={() => setOpenCard("ocena")}
               >
-                <div style={{ height: "100%" }}>
-                  <ResponsiveContainer width="100%" height="90%">
+                <div style={{ flex: 1, minHeight: 0 }}>
+                  <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
                         {
@@ -338,8 +338,8 @@ export default function UslugiSpoleczne() {
                 height={320}
                 onOpen={() => setOpenCard("opiekaSpecjalistyczna")}
               >
-                <div style={{ height: "100%" }}>
-                  <ResponsiveContainer width="100%" height="90%">
+                <div style={{ flex: 1, minHeight: 0 }}>
+                  <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                       data={[
                         { gmina: "Igołomia-Wawrzeńczyce", procent: 52 },
@@ -461,7 +461,7 @@ export default function UslugiSpoleczne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Mogilany", procent: 50 },
@@ -511,7 +511,7 @@ export default function UslugiSpoleczne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 {
@@ -564,7 +564,7 @@ export default function UslugiSpoleczne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <LineChart
               data={[
                 { rok: "2019", przychodnie: 815 },
@@ -615,7 +615,7 @@ export default function UslugiSpoleczne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={GMINY.map((gmina) => {
                 const W2024: Record<string, number> = {
@@ -674,7 +674,7 @@ export default function UslugiSpoleczne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Igołomia-Wawrzeńczyce", procent: 52 },

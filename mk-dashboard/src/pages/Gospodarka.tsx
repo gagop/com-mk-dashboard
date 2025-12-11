@@ -104,9 +104,8 @@ export default function Gospodarka() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    Poziom zadowolenia mieszkańców z możliwości rozwoju
-                    zawodowego [%]
+                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                    [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -223,8 +222,8 @@ export default function Gospodarka() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    % wpływu z podatku CIT w budżecie gminy ogółem [%] proc2024
+                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                    [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -303,8 +302,8 @@ export default function Gospodarka() {
               height={340}
               onOpen={() => setOpenCard("podmioty")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2019", podmioty: 15714 },
@@ -358,8 +357,8 @@ export default function Gospodarka() {
               height={cardHeight}
               onOpen={() => setOpenCard("bezrobotni")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Skawina", wartosc: 2.8 },
@@ -415,8 +414,8 @@ export default function Gospodarka() {
               height={cardHeight}
               onOpen={() => setOpenCard("noclegowe")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={GMINY.map((gmina) => {
                       const M2024: Record<string, number> = {
@@ -559,7 +558,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <LineChart
               data={[
                 { rok: "2019", podmioty: 15714 },
@@ -610,7 +609,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Skawina", wartosc: 2.8 },
@@ -661,7 +660,7 @@ export default function Gospodarka() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={GMINY.map((gmina) => {
                 const M2024: Record<string, number> = {

@@ -52,7 +52,7 @@ export default function Card({
           {right}
         </div>
       )}
-      <div style={{ flex: 1, minHeight: 0, overflow: "hidden" }}>
+      <div style={{ flex: 1, minHeight: 0, overflow: "hidden", display: "flex", flexDirection: "column" }}>
         {children}
       </div>
     </div>

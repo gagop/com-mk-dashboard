@@ -111,13 +111,10 @@ export default function SrodowiskoPrzestrzen() {
                     style={{
                       fontWeight: 600,
                       marginRight: 4,
-                      fontSize: 8,
-                      maxWidth: 240,
-                      lineHeight: 1.2,
+                      fontSize: 10,
                     }}
                   >
-                    Ilość odebranych odpadów komunalnych przypadająca na 1
-                    mieszkańca (kg/os./rok)
+                    [kg/os./rok]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -225,12 +222,10 @@ export default function SrodowiskoPrzestrzen() {
                     style={{
                       fontWeight: 600,
                       marginRight: 4,
-                      fontSize: 8,
-                      maxWidth: 240,
-                      lineHeight: 1.2,
+                      fontSize: 10,
                     }}
                   >
-                    Redukcja emisji pyłu PM2,5 (Mg)
+                    [Mg]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -309,8 +304,8 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("recykling")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
@@ -366,8 +361,8 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("pm10")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Czernichów", pm10: 11.07 },
@@ -423,8 +418,8 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("mieszkania")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Wieliczka", wartosc: 118.4 },
@@ -488,8 +483,8 @@ export default function SrodowiskoPrzestrzen() {
               height={cardHeight}
               onOpen={() => setOpenCard("wodociagi")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2020", dlugosc: 4712.8 },
@@ -576,7 +571,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Igołomia-Wawrzeńczyce", poziom: 67.52 },
@@ -627,7 +622,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Czernichów", pm10: 11.07 },
@@ -680,7 +675,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Wieliczka", wartosc: 118.4 },
@@ -736,7 +731,7 @@ export default function SrodowiskoPrzestrzen() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <LineChart
               data={[
                 { rok: "2020", dlugosc: 4712.8 },

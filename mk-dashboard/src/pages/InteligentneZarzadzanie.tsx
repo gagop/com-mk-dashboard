@@ -101,9 +101,8 @@ export default function InteligentneZarzadzanie() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    Poziom zadowolenia z jakości funkcjonowania administracji w
-                    gminie [%]
+                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                    [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -207,8 +206,8 @@ export default function InteligentneZarzadzanie() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    Dochody ogółem na 1 mieszkańca (zł/os.)
+                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                    [zł/os.]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -287,8 +286,8 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("frekwencja")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Zabierzów", frekwencja: 60.49 },
@@ -346,8 +345,8 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("zadluzenie")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Kraków", wartosc: 75.9 },
@@ -403,8 +402,8 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("pit")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       {
@@ -509,8 +508,8 @@ export default function InteligentneZarzadzanie() {
               height={cardHeight}
               onOpen={() => setOpenCard("cit")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Czernichów", v2019: 99717.69, v2024: 329946 },
@@ -655,7 +654,7 @@ export default function InteligentneZarzadzanie() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Zabierzów", frekwencja: 60.49 },
@@ -704,7 +703,7 @@ export default function InteligentneZarzadzanie() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Kraków", wartosc: 75.9 },
@@ -755,7 +754,7 @@ export default function InteligentneZarzadzanie() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 {
@@ -855,7 +854,7 @@ export default function InteligentneZarzadzanie() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Czernichów", v2019: 99717.69, v2024: 329946 },

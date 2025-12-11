@@ -129,13 +129,10 @@ export default function KulturaCzasuWolnego() {
                     style={{
                       fontWeight: 600,
                       marginRight: 4,
-                      fontSize: 8,
-                      maxWidth: 240,
-                      lineHeight: 1.2,
+                      fontSize: 10,
                     }}
                   >
-                    Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z
-                    oferty czasu wolnego [%]
+                    [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -243,13 +240,10 @@ export default function KulturaCzasuWolnego() {
                     style={{
                       fontWeight: 600,
                       marginRight: 4,
-                      fontSize: 8,
-                      maxWidth: 240,
-                      lineHeight: 1.2,
+                      fontSize: 10,
                     }}
                   >
-                    Wysokość wydatków bieżących z budżetu na kulturę i sport na
-                    1 mieszkańca [zł]
+                    [zł]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -328,8 +322,8 @@ export default function KulturaCzasuWolnego() {
               height={340}
               onOpen={() => setOpenCard("czytelnicy")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <LineChart
                     data={[
                       { rok: "2019", czytelnicy: 273726 },
@@ -383,8 +377,8 @@ export default function KulturaCzasuWolnego() {
               height={cardHeight}
               onOpen={() => setOpenCard("czytelnicyTys")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={GMINY.map((g) => {
                       const readers = CZYTELNICY_2024[g as Gmina] || 0;
@@ -435,8 +429,8 @@ export default function KulturaCzasuWolnego() {
               height={cardHeight}
               onOpen={() => setOpenCard("biblioteki")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { typ: "biblioteki publiczne i filie", liczba: 116 },
@@ -519,7 +513,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 520 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <LineChart
               data={[
                 { rok: "2019", czytelnicy: 273726 },
@@ -570,7 +564,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={GMINY.map((g) => {
                 const readers = CZYTELNICY_2024[g as Gmina] || 0;
@@ -615,7 +609,7 @@ export default function KulturaCzasuWolnego() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { typ: "biblioteki publiczne i filie", liczba: 116 },

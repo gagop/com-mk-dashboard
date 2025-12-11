@@ -109,9 +109,10 @@ export default function Edukacja() {
                     color: "#4b5563",
                   }}
                 >
-                  <div style={{ fontWeight: 600, marginRight: 4, fontSize: 8 }}>
-                    Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z
-                    jakości edukacji [%]
+                  <div
+                    style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}
+                  >
+                    [%]
                   </div>
                   <div
                     style={{ display: "flex", alignItems: "center", gap: 4 }}
@@ -188,8 +189,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("srodki")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Kraków", kwota: 54216533.0 },
@@ -257,8 +258,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("dzieci")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={LATA.map((rok) => ({
                       rok: String(rok),
@@ -397,8 +398,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("szkoly")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Kraków-Podgórze", liczba: 75 },
@@ -457,8 +458,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("egzaminPolski")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
                       gmina,
@@ -512,8 +513,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("egzaminMatematyka")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={GMINY.map((gmina) => ({
                       gmina,
@@ -565,8 +566,8 @@ export default function Edukacja() {
               height={cardHeight}
               onOpen={() => setOpenCard("nauczycieleKwalifikacje")}
             >
-              <div style={{ height: "100%" }}>
-                <ResponsiveContainer width="100%" height="90%">
+              <div style={{ flex: 1, minHeight: 0 }}>
+                <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
                       { gmina: "Mogilany", odsetek: 89.6 },
@@ -648,7 +649,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Kraków", kwota: 54216533.0 },
@@ -708,7 +709,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={LATA.map((rok) => ({
                 rok: String(rok),
@@ -746,7 +747,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Kraków-Podgórze", liczba: 75 },
@@ -801,7 +802,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={GMINY.map((gmina) => ({
                 gmina,
@@ -850,7 +851,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={GMINY.map((gmina) => ({
                 gmina,
@@ -899,7 +900,7 @@ export default function Edukacja() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
                 { gmina: "Mogilany", odsetek: 89.6 },

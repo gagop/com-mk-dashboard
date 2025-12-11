@@ -282,8 +282,8 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("przyrost2024")}
           >
-            <div style={{ height: "100%" }}>
-              <ResponsiveContainer width="100%" height="90%">
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={useMemo(
                     () =>
@@ -353,8 +353,8 @@ export default function InformacjeOgolne() {
                   color: "#4b5563",
                 }}
               >
-                <div style={{ fontWeight: 600, marginRight: 4 }}>
-                  Gęstość zaludnienia (os./km2)
+                <div style={{ fontWeight: 600, marginRight: 4, fontSize: 10 }}>
+                  [os./km²]
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
                   <div
@@ -421,8 +421,8 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("mkTrend")}
           >
-            <div style={{ height: "100%" }}>
-              <ResponsiveContainer width="100%" height="90%">
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <ResponsiveContainer width="100%" height="100%">
                 <LineChart
                   data={mkTrendData}
                   margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
@@ -546,8 +546,8 @@ export default function InformacjeOgolne() {
               Liczba osób w wieku nieprodukcyjnym (przed- i poprodukcyjnym) na
               100 osób w wieku produkcyjnym.
             </p>
-            <div style={{ height: "100%" }}>
-              <ResponsiveContainer width="100%" height="90%">
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={useMemo(
                     () =>
@@ -593,8 +593,8 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("zmianaGmin")}
           >
-            <div style={{ height: "100%" }}>
-              <ResponsiveContainer width="100%" height="90%">
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={useMemo(
                     () =>
@@ -645,8 +645,8 @@ export default function InformacjeOgolne() {
             height={cardHeight}
             onOpen={() => setOpenCard("strukturaWieku")}
           >
-            <div style={{ height: "100%" }}>
-              <ResponsiveContainer width="100%" height="90%">
+            <div style={{ flex: 1, minHeight: 0 }}>
+              <ResponsiveContainer width="100%" height="100%">
                 <BarChart
                   data={strukturaWiekuData}
                   layout="vertical"
@@ -762,7 +762,7 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={useMemo(
                 () =>
@@ -810,7 +810,7 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={useMemo(
                 () =>
@@ -860,7 +860,7 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div style={{ height: 520 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <LineChart
               data={mkTrendData}
               margin={{ top: 8, right: 8, bottom: 16, left: 8 }}
@@ -907,7 +907,7 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={useMemo(
                 () =>
@@ -949,7 +949,7 @@ export default function InformacjeOgolne() {
         maxWidth="95vw"
       >
         <div style={{ height: 600 }}>
-          <ResponsiveContainer width="100%" height="90%">
+          <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={strukturaWiekuData}
               layout="vertical"
