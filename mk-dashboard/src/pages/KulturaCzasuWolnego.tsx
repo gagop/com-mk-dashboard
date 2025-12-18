@@ -433,15 +433,15 @@ export default function KulturaCzasuWolnego() {
                 <ResponsiveContainer width="100%" height="100%">
                   <BarChart
                     data={[
-                      { typ: "biblioteki publiczne i filie", liczba: 116 },
+                      { typ: "biblioteki i filie", liczba: 112 },
                       {
-                        typ: "ośrodki kultury, kluby i świetlice",
-                        liczba: 85,
+                        typ: "Centra, domy i ośrodki kultury, kluby i świetlice",
+                        liczba: 87,
                       },
                       { typ: "muzea z oddziałami", liczba: 53 },
-                      { typ: "galerie i salony sztuki", liczba: 41 },
+                      { typ: "galerie i salony sztuki", liczba: 39 },
                       { typ: "kina stałe", liczba: 13 },
-                      { typ: "teatry dramatyczne", liczba: 9 },
+                      { typ: "teatr dramatyczny", liczba: 9 },
                     ]}
                     layout="vertical"
                     margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
@@ -612,15 +612,15 @@ export default function KulturaCzasuWolnego() {
           <ResponsiveContainer width="100%" height="95%">
             <BarChart
               data={[
-                { typ: "biblioteki publiczne i filie", liczba: 116 },
+                { typ: "biblioteki i filie", liczba: 112 },
                 {
-                  typ: "ośrodki kultury, kluby i świetlice",
-                  liczba: 85,
+                  typ: "Centra, domy i ośrodki kultury, kluby i świetlice",
+                  liczba: 87,
                 },
                 { typ: "muzea z oddziałami", liczba: 53 },
-                { typ: "galerie i salony sztuki", liczba: 41 },
+                { typ: "galerie i salony sztuki", liczba: 39 },
                 { typ: "kina stałe", liczba: 13 },
-                { typ: "teatry dramatyczne", liczba: 9 },
+                { typ: "teatr dramatyczny", liczba: 9 },
               ]}
               layout="vertical"
               margin={{ top: 20, right: 20, left: 20, bottom: 20 }}
