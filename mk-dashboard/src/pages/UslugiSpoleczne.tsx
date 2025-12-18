@@ -275,7 +275,7 @@ export default function UslugiSpoleczne() {
             <div>
               <Card
                 title="Ocena usług opiekuńczych"
-                subtitle="Źródło: Badanie jakościowe 2024"
+                subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
                 height={280}
                 onOpen={() => setOpenCard("ocena")}
               >
@@ -336,7 +336,7 @@ export default function UslugiSpoleczne() {
             <div>
               <Card
                 title="Zadowolenie z dostępu do specjalistycznej opieki zdrowotnej"
-                subtitle="Źródło: Badanie jakościowe 2024 (Oceny pozytywne)"
+                subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
                 height={320}
                 onOpen={() => setOpenCard("opiekaSpecjalistyczna")}
               >

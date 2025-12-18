@@ -183,7 +183,7 @@ export default function Mobilnosc() {
 
             <Card
               title="Czynniki wyboru środka transportu"
-              subtitle="Źródło: Raport z badań społecznych 2024"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("czynniki")}
             >

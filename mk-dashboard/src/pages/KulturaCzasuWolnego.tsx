@@ -96,7 +96,7 @@ export default function KulturaCzasuWolnego() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zadowolenie z oferty czasu wolnego"
-              subtitle="Źródło: BDL GUS"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowolenie")}
             >
@@ -141,7 +141,7 @@ export default function KulturaCzasuWolnego() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(139, 0, 0)",
+                        background: "rgb(132, 30, 15)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -154,7 +154,7 @@ export default function KulturaCzasuWolnego() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(205, 25, 0)",
+                        background: "rgb(161, 39, 21)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -167,7 +167,7 @@ export default function KulturaCzasuWolnego() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(220, 60, 60)",
+                        background: "rgb(188, 48, 27)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -180,7 +180,7 @@ export default function KulturaCzasuWolnego() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(240, 128, 128)",
+                        background: "rgb(205, 122, 107)",
                         border: "1px solid #ddd",
                       }}
                     />
@@ -193,7 +193,7 @@ export default function KulturaCzasuWolnego() {
                       style={{
                         width: 20,
                         height: 12,
-                        background: "rgb(255, 218, 218)",
+                        background: "rgb(226, 208, 205)",
                         border: "1px solid #ddd",
                       }}
                     />

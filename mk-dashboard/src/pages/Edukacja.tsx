@@ -80,7 +80,7 @@ export default function Edukacja() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zadowolenie z jakości edukacji"
-              subtitle="Źródło: Badania społeczne 2024"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowolenieEdukacja")}
             >
@@ -185,7 +185,7 @@ export default function Edukacja() {
 
             <Card
               title="Środki na infrastrukturę oświaty"
-              subtitle="Źródło: zestawienie budżetowe"
+              subtitle="Źródło: Gminy SMK"
               height={cardHeight}
               onOpen={() => setOpenCard("srodki")}
             >
@@ -561,7 +561,7 @@ export default function Edukacja() {
             </Card>
 
             <Card
-              title="Nauczyciele z najwyższymi kwalifikacjami"
+              title="Odsetek nauczycieli o najwyższych kwalifikacjach w samorządowych szkołach podstawowych"
               subtitle="Źródło: SIO 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("nauczycieleKwalifikacje")}

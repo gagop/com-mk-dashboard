@@ -72,7 +72,7 @@ export default function InteligentneZarzadzanie() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Poziom zadowolenia mieszkańców gmin Metropolii Krakowskiej z jakości funkcjonowania administracji w gminie"
-              subtitle="Badania społeczne 2024"
+              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030 oraz Barometru Krakowskiego 2024"
               height={cardHeight}
               onOpen={() => setOpenCard("zadowolenie")}
             >
@@ -179,7 +179,7 @@ export default function InteligentneZarzadzanie() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Dochody ogółem na 1 mieszkańca"
-              subtitle="Badania społeczne 2024"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("dochody")}
             >
