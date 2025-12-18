@@ -425,7 +425,7 @@ export default function KulturaCzasuWolnego() {
           <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             <Card
               title="Zestawienie placówek kulturalnych według typu"
-              subtitle="Źródło: Raport z badań społecznych - monitorowanie wskaźników Strategii Metropolia Krakowska 2030"
+              subtitle="Źródło: BDL GUS"
               height={cardHeight}
               onOpen={() => setOpenCard("biblioteki")}
             >
